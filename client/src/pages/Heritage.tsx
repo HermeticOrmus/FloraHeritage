@@ -23,7 +23,7 @@ export default function Heritage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-stone-cream">
+    <div className="relative min-h-screen bg-background">
       <GlassNavigation />
       
       {/* Heritage Hero Section */}
@@ -49,7 +49,7 @@ export default function Heritage() {
         <HeritageTimeline />
         
         {/* Heritage Values Section */}
-        <section className="py-24 bg-gradient-to-b from-stone-cream/80 via-mountain-light/30 to-stone-cream">
+        <section className="py-24 bg-gradient-to-b from-background/80 via-mountain-light/10 to-background">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="font-serif text-4xl font-bold text-foreground mb-6">

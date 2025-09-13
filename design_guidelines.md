@@ -101,8 +101,17 @@
 4. **Experiences**: Coffee farm tours, hiking, cultural activities
 5. **Booking**: Floating glass widget with multi-step form
 
+### Theme Mode
+**Dark Mode Default**: The website now defaults to a sophisticated dark theme inspired by Casa Flora's warm stone colors. The dark mode uses authentic property-derived colors:
+- Background: Deep warm stone (#140B08) for cozy evening ambiance
+- Foreground: Light cream (#F5F1EB) for elegant text
+- Cards: Rich stone tones for depth and warmth
+- Preserves all authentic Casa Flora blue, hydrangea, and mountain colors
+
+**Light Mode**: Available as alternative theme preserving the original cream-based design
+
 ### Accessibility & Responsiveness
-- Consistent dark mode across all components
-- Glass effects optimized for mobile performance
+- Sophisticated dark mode default with excellent contrast ratios
+- Glass effects optimized for mobile performance  
 - Touch-friendly interactive elements
 - WCAG 2.1 AA compliance for contrast ratios

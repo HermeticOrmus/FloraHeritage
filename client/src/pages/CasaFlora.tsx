@@ -27,7 +27,7 @@ export default function CasaFlora() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-stone-cream">
+    <div className="relative min-h-screen bg-background">
       <GlassNavigation />
       
       <main>
@@ -39,7 +39,7 @@ export default function CasaFlora() {
           <PropertyGallery />
         </section>
         
-        <section id="amenities" className="bg-gradient-to-b from-stone-warm/10 via-mountain-light/20 to-stone-cream">
+        <section id="amenities" className="bg-gradient-to-b from-stone-warm/5 via-mountain-light/10 to-background">
           <HouseAmenities />
         </section>
         

@@ -86,7 +86,7 @@ export default function PropertyGallery() {
   return (
     <section 
       ref={galleryRef}
-      className="py-24 bg-gradient-to-b from-stone-cream to-mountain-light/30"
+      className="py-24 bg-gradient-to-b from-background to-mountain-light/10"
       data-testid="property-gallery"
     >
       <div className="max-w-7xl mx-auto px-6">
