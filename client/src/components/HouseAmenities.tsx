@@ -93,7 +93,7 @@ export default function HouseAmenities() {
   return (
     <section 
       ref={amenitiesRef}
-      className="py-24 bg-gradient-to-b from-background to-background/50"
+      className="py-24 bg-gradient-to-b from-stone-cream to-stone-warm/10"
       data-testid="house-amenities"
     >
       <div className="max-w-7xl mx-auto px-6">
