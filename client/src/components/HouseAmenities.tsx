@@ -122,20 +122,20 @@ export default function HouseAmenities() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="flex flex-wrap gap-3 mb-4">
-                    <Badge className="bg-casa-blue-deep text-stone-cream text-sm px-3 py-1">
+                    <Badge className="bg-casa-blue-deep text-foreground text-sm px-3 py-1">
                       Entire House
                     </Badge>
-                    <Badge className="bg-stone-warm/40 backdrop-blur-sm text-stone-cream text-sm px-3 py-1">
+                    <Badge className="bg-stone-warm/40 backdrop-blur-sm text-foreground text-sm px-3 py-1">
                       Up to 10 Guests
                     </Badge>
-                    <Badge className="bg-mountain-sage/40 backdrop-blur-sm text-stone-cream text-sm px-3 py-1">
+                    <Badge className="bg-mountain-sage/40 backdrop-blur-sm text-foreground text-sm px-3 py-1">
                       Pet Friendly
                     </Badge>
                   </div>
-                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-stone-cream mb-2">
+                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-2">
                     Complete Heritage House Rental
                   </h3>
-                  <p className="text-stone-cream/90 text-lg">
+                  <p className="text-foreground/90 text-lg">
                     Experience authentic Boquete living in this iconic house with modern comforts
                   </p>
                 </div>
