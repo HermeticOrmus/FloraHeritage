@@ -9,7 +9,7 @@ interface GlassCardProps {
 export default function GlassCard({ children, className, variant = "default" }: GlassCardProps) {
   const variants = {
     default: "backdrop-blur-glass bg-glass-light border border-white/20",
-    nav: "backdrop-blur-glass-nav bg-glass-light border border-white/30", 
+    nav: "backdrop-blur-glass-nav bg-white/40 dark:bg-black/40 border border-white/50 shadow-xl", 
     modal: "backdrop-blur-glass-modal bg-glass-light border border-white/25"
   };
 

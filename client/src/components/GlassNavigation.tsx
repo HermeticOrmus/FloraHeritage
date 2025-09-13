@@ -56,11 +56,11 @@ export default function GlassNavigation() {
             variant={activeSection === item.id ? "default" : "ghost"}
             size="sm"
             className={cn(
-              "text-white font-medium transition-all duration-200",
+              "font-medium transition-all duration-200 text-shadow-sm",
               activeSection === item.id 
-                ? "bg-primary/20 text-white" 
-                : "text-white/80 hover:text-white hover:bg-white/10",
-              item.id === "booking" && "ml-2 bg-primary text-white hover:bg-primary/90"
+                ? "bg-primary text-white shadow-md" 
+                : "text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-white hover:bg-white/20 dark:hover:bg-white/10",
+              item.id === "booking" && "ml-2 bg-primary text-white hover:bg-primary/90 shadow-md"
             )}
             onClick={() => handleNavClick(item.href, item.id)}
             data-testid={`nav-${item.id}`}
