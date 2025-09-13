@@ -97,7 +97,7 @@ export default function HeritageTimeline() {
   return (
     <section 
       ref={timelineRef}
-      className="py-24 bg-gradient-to-b from-background via-hydrangea-light/10 to-background"
+      className="py-24 bg-background"
       data-testid="heritage-timeline"
     >
       <div className="max-w-6xl mx-auto px-6">
@@ -112,7 +112,7 @@ export default function HeritageTimeline() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-casa-blue-deep via-mountain-sage to-stone-warm"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-mountain-sage"></div>
 
           {/* Timeline events */}
           <div className="space-y-16">

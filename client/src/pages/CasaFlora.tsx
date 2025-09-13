@@ -39,7 +39,7 @@ export default function CasaFlora() {
           <PropertyGallery />
         </section>
         
-        <section id="amenities" className="bg-gradient-to-b from-stone-warm/5 via-mountain-light/10 to-background">
+        <section id="amenities" className="bg-background">
           <HouseAmenities />
         </section>
         
