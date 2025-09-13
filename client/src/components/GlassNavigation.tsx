@@ -44,7 +44,7 @@ export default function GlassNavigation() {
     <GlassCard 
       variant="nav" 
       className={cn(
-        "fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300",
+        "fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300",
         isScrolled ? "py-2 px-4" : "py-3 px-6"
       )}
     >
