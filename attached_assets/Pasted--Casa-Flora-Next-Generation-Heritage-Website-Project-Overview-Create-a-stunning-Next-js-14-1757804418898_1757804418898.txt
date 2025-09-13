@@ -1,0 +1,241 @@
+# Casa Flora - Next Generation Heritage Website
+
+## Project Overview
+Create a stunning Next.js 14 website for Casa Flora, a 100+ year heritage property in Boquete, Panama. Focus on glassmorphism design with sophisticated animations that tell the story of four generations of family stewardship.
+
+## Technical Stack
+- **Framework**: Next.js 14 with TypeScript
+- **Styling**: Tailwind CSS + Custom CSS for glassmorphism
+- **Animations**: Framer Motion + GSAP for advanced effects
+- **Backend**: Supabase integration
+- **Deployment**: Replit hosting
+
+## Brand Colors (Pantone)
+- **Primary Blue**: #6B9BC3 (Pantone 2148 C - mountain sky)
+- **Sage Green**: #A8B5A0 (Pantone P 149-10 C - lush vegetation)
+- **Supporting**: White, soft grays, warm earth tones
+
+## Core Design Principles
+
+### 1. Glassmorphism Implementation
+```css
+/* Base glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Layered glass depths */
+.glass-card { backdrop-filter: blur(15px); }
+.glass-nav { backdrop-filter: blur(25px); }
+.glass-modal { backdrop-filter: blur(30px); }
+```
+
+### 2. Animation Strategy
+- **Scroll-triggered**: Timeline reveals, image parallax
+- **Micro-interactions**: Button hovers, form validations
+- **Page transitions**: Smooth navigation between sections
+- **Loading states**: Skeleton screens with glass effect
+
+## Key Pages & Components
+
+### Homepage Structure
+1. **Hero Section**
+   - Full-screen gradient background (blue to sage)
+   - Glass navigation floating at top
+   - Animated heritage timeline trigger
+   - Call-to-action with glass booking widget
+
+2. **Heritage Timeline** (Interactive Scroll)
+   - 1920s: Property founding story
+   - 1950s-80s: Family expansion
+   - 1990s-2010s: Renovation period
+   - 2020s: Modern heritage tourism
+
+3. **Property Showcase**
+   - Glass cards for each accommodation
+   - Hover animations revealing amenities
+   - Virtual tour integration
+
+4. **Experience Gallery**
+   - Coffee farm tours
+   - Mountain hiking
+   - Cultural exchanges
+   - Garden experiences
+
+### Essential Components
+
+#### Glass Navigation
+```tsx
+// Floating glass navbar with smooth scroll anchors
+<nav className="glass fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+  <motion.div 
+    initial={{ y: -100, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+  >
+    {/* Navigation content */}
+  </motion.div>
+</nav>
+```
+
+#### Booking Widget
+```tsx
+// Floating glass booking form
+<motion.div 
+  className="glass fixed bottom-8 right-8 p-6"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+>
+  {/* Multi-step booking form */}
+</motion.div>
+```
+
+#### Heritage Timeline
+```tsx
+// Scroll-triggered timeline with GSAP
+useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+  
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: ".timeline",
+      start: "top center",
+      end: "bottom center",
+      scrub: 1
+    }
+  })
+  .to(".timeline-item", {
+    opacity: 1,
+    y: 0,
+    stagger: 0.3
+  });
+}, []);
+```
+
+## Advanced Animation Features
+
+### 1. Parallax Backgrounds
+- Mountain silhouettes move at different speeds
+- Garden imagery layers for depth
+- Coffee plantation scenes
+
+### 2. Morphing Elements
+- Logo that transforms between states
+- Navigation icons with smooth transitions
+- Image galleries with 3D flips
+
+### 3. Scroll Narratives
+- Text that types out as user scrolls
+- Images that fade in with story progression
+- Interactive maps revealing location details
+
+### 4. Micro-Interactions
+- Buttons with ripple effects
+- Form inputs with floating labels
+- Image hovers with glass overlay reveals
+
+## File Structure
+```
+/casa-flora-website
+├── components/
+│   ├── ui/
+│   │   ├── GlassCard.tsx
+│   │   ├── GlassModal.tsx
+│   │   └── AnimatedButton.tsx
+│   ├── layout/
+│   │   ├── GlassNavigation.tsx
+│   │   └── FloatingBooking.tsx
+│   └── sections/
+│       ├── HeroSection.tsx
+│       ├── HeritageTimeline.tsx
+│       └── PropertyShowcase.tsx
+├── styles/
+│   ├── globals.css
+│   ├── glassmorphism.css
+│   └── animations.css
+├── utils/
+│   ├── gsap-config.ts
+│   └── animation-utils.ts
+└── pages/
+    ├── index.tsx
+    ├── heritage.tsx
+    ├── accommodations.tsx
+    └── experiences.tsx
+```
+
+## Performance Optimization for Replit
+- Lazy load images with Next.js Image component
+- Code splitting for animation libraries
+- Optimize glass effects for mobile devices
+- Progressive enhancement for complex animations
+
+## Mobile Considerations
+- Touch-friendly glass elements
+- Simplified animations for lower-powered devices
+- Responsive glassmorphism scaling
+- Mobile-first booking flow
+
+## Implementation Priority
+1. **Phase 1**: Basic glassmorphism layout and navigation
+2. **Phase 2**: Heritage timeline with scroll animations
+3. **Phase 3**: Advanced micro-interactions and parallax
+4. **Phase 4**: Booking integration and form animations
+5. **Phase 5**: Performance optimization and mobile polish
+
+## Key Dependencies
+```json
+{
+  "gsap": "^3.12.5",
+  "@gsap/react": "^2.0.3",
+  "@supabase/supabase-js": "^2.38.4",
+  "tailwindcss": "^3.3.6",
+  "next": "14.0.3",
+  "typescript": "^5.3.2"
+}
+```
+
+## GSAP Setup for Replit
+```javascript
+// _app.tsx - Initialize GSAP
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TextPlugin } from 'gsap/TextPlugin';
+
+function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    
+    // Set GSAP defaults for consistent feel
+    gsap.defaults({
+      duration: 1.2,
+      ease: "power2.out"
+    });
+    
+    // Refresh ScrollTrigger on route changes
+    const handleRouteChange = () => {
+      ScrollTrigger.refresh();
+    };
+    
+    return () => {
+      ScrollTrigger.killAll();
+    };
+  }, []);
+
+  return <Component {...pageProps} />;
+}
+```
+
+## Success Metrics
+- Heritage story engagement (scroll completion rate)
+- Booking widget interaction rate
+- Mobile user experience scores
+- Page load performance on Replit
+- Visual polish that differentiates from typical vacation rental sites
+
+Focus on creating an immersive experience that makes visitors feel the property's century-long history while maintaining modern usability and performance.
