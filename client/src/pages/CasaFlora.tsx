@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassNavigation from "@/components/GlassNavigation";
 import HeroSection from "@/components/HeroSection";
 import PropertyGallery from "@/components/PropertyGallery";
-import PropertyShowcase from "@/components/PropertyShowcase";
+import HouseAmenities from "@/components/HouseAmenities";
 import ExperienceGallery from "@/components/ExperienceGallery";
 import FloatingBookingWidget from "@/components/FloatingBookingWidget";
 
@@ -40,8 +40,8 @@ export default function CasaFlora() {
           <PropertyGallery />
         </section>
         
-        <section id="property" className="bg-gradient-to-b from-primary/5 to-background">
-          <PropertyShowcase />
+        <section id="amenities" className="bg-gradient-to-b from-primary/5 to-background">
+          <HouseAmenities />
         </section>
         
         <section id="experiences" className="bg-gradient-to-b from-background to-primary/5">

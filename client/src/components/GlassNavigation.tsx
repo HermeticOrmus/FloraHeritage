@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const navigationItems = [
   { id: "home", label: "Home", href: "/" },
   { id: "heritage", label: "Heritage", href: "/heritage" },
-  { id: "property", label: "Property", href: "#property" },
+  { id: "amenities", label: "Amenities", href: "#amenities" },
   { id: "experiences", label: "Experiences", href: "#experiences" },
   { id: "booking", label: "Book Now", href: "#booking" },
 ];
