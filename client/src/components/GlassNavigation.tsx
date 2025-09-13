@@ -52,7 +52,7 @@ export default function GlassNavigation() {
           <span
             key={item.id}
             className={cn(
-              "font-serif text-lg cursor-pointer transition-all duration-200 text-shadow-sm hover-elevate px-3 py-2 rounded-md",
+              "font-serif text-lg cursor-pointer transition-all duration-200 text-shadow-sm hover-elevate px-3 py-2",
               activeSection === item.id 
                 ? "bg-casa-blue-deep text-foreground shadow-md font-semibold" 
                 : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-foreground/20 dark:hover:bg-foreground/10",
