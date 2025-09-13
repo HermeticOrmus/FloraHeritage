@@ -16,7 +16,7 @@ export default function GlassCard({ children, className, variant = "default" }: 
   return (
     <div 
       className={cn(
-        "rounded-2xl shadow-lg shadow-black/10 hover-elevate",
+        "shadow-lg shadow-black/10 hover-elevate",
         variants[variant],
         className
       )}

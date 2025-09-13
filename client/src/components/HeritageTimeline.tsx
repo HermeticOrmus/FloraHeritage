@@ -132,7 +132,7 @@ export default function HeritageTimeline() {
                         <img 
                           src={heritageImage} 
                           alt="Casa Flora heritage architecture"
-                          className="w-24 h-24 object-cover rounded-lg flex-shrink-0"
+                          className="w-24 h-24 object-cover flex-shrink-0"
                         />
                       )}
                       <div className="flex-1">

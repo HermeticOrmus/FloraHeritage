@@ -110,7 +110,7 @@ export default function HouseAmenities() {
         <div className="mb-16">
           <div
             ref={(el) => setCardRef(el, 0)}
-            className="relative overflow-hidden rounded-2xl"
+            className="relative overflow-hidden"
           >
             <GlassCard className="p-0 overflow-hidden">
               <div className="relative">

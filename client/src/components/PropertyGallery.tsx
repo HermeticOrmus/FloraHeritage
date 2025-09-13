@@ -103,7 +103,7 @@ export default function PropertyGallery() {
         <div className="mb-12">
           <div
             ref={(el) => setImageRef(el, 0)}
-            className="relative overflow-hidden rounded-2xl"
+            className="relative overflow-hidden"
           >
             <GlassCard className="p-0 overflow-hidden">
               <div className="relative">
