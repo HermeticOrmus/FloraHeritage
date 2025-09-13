@@ -5,7 +5,6 @@ import GlassNavigation from "@/components/GlassNavigation";
 import HeroSection from "@/components/HeroSection";
 import PropertyGallery from "@/components/PropertyGallery";
 import HouseAmenities from "@/components/HouseAmenities";
-import ExperienceGallery from "@/components/ExperienceGallery";
 import FloatingBookingWidget from "@/components/FloatingBookingWidget";
 
 // Register GSAP plugins
@@ -44,9 +43,6 @@ export default function CasaFlora() {
           <HouseAmenities />
         </section>
         
-        <section id="experiences" className="bg-gradient-to-b from-background via-tertiary/3 to-primary/5">
-          <ExperienceGallery />
-        </section>
         
         <section id="booking" className="py-24">
           <div className="max-w-4xl mx-auto text-center px-6">
