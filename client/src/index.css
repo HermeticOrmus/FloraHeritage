@@ -36,9 +36,9 @@
 
   --sidebar-primary-foreground: 0 0% 100%;
 
-  --sidebar-accent: 95 15% 80%;
+  --sidebar-accent: 208 25% 85%;
 
-  --sidebar-accent-foreground: 95 20% 25%;
+  --sidebar-accent-foreground: 208 35% 15%;
 
   --sidebar-ring: 208 45% 60%;
 
@@ -60,9 +60,9 @@
 
   --muted-foreground: 208 20% 35%;
 
-  --accent: 95 15% 82%;
+  --accent: 208 25% 85%;
 
-  --accent-foreground: 95 20% 25%;
+  --accent-foreground: 208 35% 15%;
 
   --destructive: 0 70% 50%;
 
@@ -71,7 +71,7 @@
   --input: 208 20% 70%;
   --ring: 208 45% 60%;
   --chart-1: 208 55% 45%;
-  --chart-2: 95 25% 45%;
+  --chart-2: 208 35% 55%;
   --chart-3: 25 65% 55%;
   --chart-4: 280 45% 55%;
   --chart-5: 180 45% 45%;
@@ -189,7 +189,7 @@
   --input: 0 0% 35%;
   --ring: 208 45% 60%;
   --chart-1: 208 55% 75%;
-  --chart-2: 95 25% 75%;
+  --chart-2: 208 35% 75%;
   --chart-3: 25 65% 75%;
   --chart-4: 280 45% 75%;
   --chart-5: 180 45% 75%;

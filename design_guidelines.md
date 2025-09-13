@@ -8,13 +8,13 @@
 ### Color Palette
 **Primary Colors:**
 - Mountain Blue: 208 45% 60% (#6B9BC3) - primary brand color
-- Sage Green: 95 15% 66% (#A8B5A0) - secondary natural tone
+- Light Blue: 208 25% 85% - secondary accent tone
 - Heritage Cream: 45 25% 95% - warm neutral background
 - Glass White: 0 0% 100% 20% opacity - glassmorphism elements
 
 **Dark Mode:**
 - Deep Mountain: 208 35% 15% - dark primary
-- Forest Sage: 95 20% 25% - dark secondary
+- Slate Blue: 208 25% 25% - dark secondary
 - Charcoal: 0 0% 12% - dark background
 
 ### Typography
