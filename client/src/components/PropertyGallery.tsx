@@ -14,7 +14,7 @@ const galleryImages = [
   {
     src: houseImage1,
     title: "Casa Flora Main House",
-    description: "The heart of our heritage property, surrounded by lush tropical gardens and century-old trees."
+    description: "One of Boquete's most iconic houses, surrounded by lush tropical gardens and century-old trees."
   },
   {
     src: houseImage2,

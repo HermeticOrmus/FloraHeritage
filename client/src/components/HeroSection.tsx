@@ -76,12 +76,14 @@ export default function HeroSection() {
           Casa Flora
         </h1>
         
-        <p 
-          ref={subtitleRef}
-          className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto"
-        >
-          Experience four generations of family stewardship in the heart of Boquete's coffee country
-        </p>
+        <div ref={subtitleRef} className="mb-8">
+          <p className="text-2xl md:text-3xl font-serif text-white/95 mb-4 leading-relaxed max-w-3xl mx-auto">
+            One of Boquete's most Iconic houses in the heart of town
+          </p>
+          <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
+            Experience four generations of family stewardship in Panama's coffee country
+          </p>
+        </div>
         
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
