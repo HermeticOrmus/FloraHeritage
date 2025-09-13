@@ -112,7 +112,7 @@ export default function HeritageTimeline() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary to-accent"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-tertiary to-accent"></div>
 
           {/* Timeline events */}
           <div className="space-y-16">
@@ -137,8 +137,12 @@ export default function HeritageTimeline() {
                       )}
                       <div className="flex-1">
                         <div className="flex items-center mb-3">
-                          <span className="inline-block w-3 h-3 bg-primary rounded-full mr-3"></span>
-                          <span className="text-primary font-bold text-lg">{event.year}</span>
+                          <span className={`inline-block w-3 h-3 rounded-full mr-3 ${
+                            event.generation === 1 || event.generation === 3 ? "bg-tertiary" : "bg-primary"
+                          }`}></span>
+                          <span className={`font-bold text-lg ${
+                            event.generation === 1 || event.generation === 3 ? "text-tertiary" : "text-primary"
+                          }`}>{event.year}</span>
                         </div>
                         <h3 className="font-serif text-2xl font-semibold text-foreground mb-3">
                           {event.title}
@@ -150,7 +154,9 @@ export default function HeritageTimeline() {
                           {event.details}
                         </p>
                         <div className="mt-4">
-                          <span className="text-sm font-medium text-primary">
+                          <span className={`text-sm font-medium ${
+                            event.generation === 1 || event.generation === 3 ? "text-tertiary" : "text-primary"
+                          }`}>
                             Generation {event.generation}
                           </span>
                         </div>
@@ -160,7 +166,9 @@ export default function HeritageTimeline() {
                 </div>
 
                 {/* Timeline dot */}
-                <div className="relative z-10 w-6 h-6 bg-primary rounded-full border-4 border-background shadow-lg flex-shrink-0"></div>
+                <div className={`relative z-10 w-6 h-6 rounded-full border-4 border-background shadow-lg flex-shrink-0 ${
+                  event.generation === 1 || event.generation === 3 ? "bg-tertiary" : "bg-primary"
+                }`}></div>
 
                 <div className="flex-1 px-8"></div>
               </div>

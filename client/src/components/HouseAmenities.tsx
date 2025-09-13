@@ -128,7 +128,7 @@ export default function HouseAmenities() {
                     <Badge className="bg-white/20 backdrop-blur-sm text-white text-sm px-3 py-1">
                       Up to 10 Guests
                     </Badge>
-                    <Badge className="bg-white/20 backdrop-blur-sm text-white text-sm px-3 py-1">
+                    <Badge className="bg-tertiary/30 backdrop-blur-sm text-white text-sm px-3 py-1">
                       Pet Friendly
                     </Badge>
                   </div>
@@ -155,8 +155,16 @@ export default function HouseAmenities() {
                 data-testid={`amenity-${amenity.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <GlassCard className="p-6 text-center hover-elevate h-full">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className="w-8 h-8 text-primary" />
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                    amenity.title === "Family Friendly" || amenity.title === "Baby Friendly" || amenity.title === "Dog Friendly" 
+                      ? "bg-tertiary/20" 
+                      : "bg-primary/20"
+                  }`}>
+                    <IconComponent className={`w-8 h-8 ${
+                      amenity.title === "Family Friendly" || amenity.title === "Baby Friendly" || amenity.title === "Dog Friendly" 
+                        ? "text-tertiary" 
+                        : "text-primary"
+                    }`} />
                   </div>
                   <h3 className="font-serif text-lg font-semibold text-foreground mb-3">
                     {amenity.title}
@@ -185,7 +193,9 @@ export default function HouseAmenities() {
                   key={index}
                   className="flex items-center space-x-2 text-left"
                 >
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
+                  <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                    feature.includes("garden") || feature.includes("Coffee") ? "bg-tertiary" : "bg-primary"
+                  }`} />
                   <span className="text-muted-foreground text-sm">
                     {feature}
                   </span>

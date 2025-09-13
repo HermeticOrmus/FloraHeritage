@@ -64,6 +64,10 @@
 
   --accent-foreground: 208 35% 15%;
 
+  --tertiary: 95 15% 66%;
+
+  --tertiary-foreground: 95 20% 25%;
+
   --destructive: 0 70% 50%;
 
   --destructive-foreground: 0 0% 100%;
@@ -116,6 +120,10 @@
   /* Fallback for older browsers */
   --accent-border: hsl(var(--accent));
   --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --tertiary-border: hsl(var(--tertiary));
+  --tertiary-border: hsl(from hsl(var(--tertiary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 
   /* Fallback for older browsers */
   --destructive-border: hsl(var(--destructive));
@@ -181,6 +189,10 @@
   --accent: 0 0% 24%;
 
   --accent-foreground: 45 15% 88%;
+
+  --tertiary: 95 20% 35%;
+
+  --tertiary-foreground: 95 15% 85%;
 
   --destructive: 0 70% 50%;
 

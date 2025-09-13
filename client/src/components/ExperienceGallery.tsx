@@ -99,7 +99,7 @@ export default function ExperienceGallery() {
   const getCategoryColor = (category: Experience["category"]) => {
     const colors = {
       Coffee: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
-      Nature: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200", 
+      Nature: "bg-tertiary/20 text-tertiary-foreground border border-tertiary/30", 
       Culture: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
     };
     return colors[category];

@@ -80,8 +80,16 @@ export default function Heritage() {
                 }
               ].map((value, index) => (
                 <GlassCard key={value.title} className="p-8 text-center hover-elevate">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-2xl font-serif font-bold text-primary">
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${
+                    value.title === "Stewardship" || value.title === "Sustainability" 
+                      ? "bg-tertiary/20" 
+                      : "bg-primary/20"
+                  }`}>
+                    <span className={`text-2xl font-serif font-bold ${
+                      value.title === "Stewardship" || value.title === "Sustainability" 
+                        ? "text-tertiary" 
+                        : "text-primary"
+                    }`}>
                       {index + 1}
                     </span>
                   </div>

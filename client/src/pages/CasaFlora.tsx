@@ -40,11 +40,11 @@ export default function CasaFlora() {
           <PropertyGallery />
         </section>
         
-        <section id="amenities" className="bg-gradient-to-b from-primary/5 to-background">
+        <section id="amenities" className="bg-gradient-to-b from-primary/5 via-tertiary/3 to-background">
           <HouseAmenities />
         </section>
         
-        <section id="experiences" className="bg-gradient-to-b from-background to-primary/5">
+        <section id="experiences" className="bg-gradient-to-b from-background via-tertiary/3 to-primary/5">
           <ExperienceGallery />
         </section>
         
