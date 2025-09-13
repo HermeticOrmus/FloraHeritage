@@ -88,7 +88,7 @@ export default function HeroSection() {
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             size="lg" 
-            className="bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30 text-lg px-8 py-3"
+            className="bg-stone-warm/30 backdrop-blur-sm text-white border border-stone-warm/50 hover:bg-stone-warm/40 text-lg px-8 py-3"
             onClick={() => handleCTAClick("Discover Heritage")}
             data-testid="button-discover-heritage"
           >
@@ -97,7 +97,7 @@ export default function HeroSection() {
           
           <Button 
             size="lg"
-            className="bg-primary text-white hover:bg-primary/90 text-lg px-8 py-3"
+            className="bg-casa-blue-deep text-white hover:bg-casa-blue-medium text-lg px-8 py-3"
             onClick={() => handleCTAClick("Book Stay")}
             data-testid="button-book-stay"
           >

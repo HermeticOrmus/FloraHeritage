@@ -112,7 +112,7 @@ export default function HeritageTimeline() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-tertiary to-accent"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-casa-blue-deep via-mountain-sage to-stone-warm"></div>
 
           {/* Timeline events */}
           <div className="space-y-16">
@@ -138,10 +138,16 @@ export default function HeritageTimeline() {
                       <div className="flex-1">
                         <div className="flex items-center mb-3">
                           <span className={`inline-block w-3 h-3 rounded-full mr-3 ${
-                            event.generation === 1 || event.generation === 3 ? "bg-tertiary" : "bg-primary"
+                            event.generation === 1 ? "bg-stone-warm" 
+                            : event.generation === 2 ? "bg-casa-blue-medium"
+                            : event.generation === 3 ? "bg-mountain-sage" 
+                            : "bg-hydrangea-medium"
                           }`}></span>
                           <span className={`font-bold text-lg ${
-                            event.generation === 1 || event.generation === 3 ? "text-tertiary" : "text-primary"
+                            event.generation === 1 ? "text-stone-dark" 
+                            : event.generation === 2 ? "text-casa-blue-deep"
+                            : event.generation === 3 ? "text-mountain-forest" 
+                            : "text-hydrangea-deep"
                           }`}>{event.year}</span>
                         </div>
                         <h3 className="font-serif text-2xl font-semibold text-foreground mb-3">
@@ -155,7 +161,10 @@ export default function HeritageTimeline() {
                         </p>
                         <div className="mt-4">
                           <span className={`text-sm font-medium ${
-                            event.generation === 1 || event.generation === 3 ? "text-tertiary" : "text-primary"
+                            event.generation === 1 ? "text-stone-dark" 
+                            : event.generation === 2 ? "text-casa-blue-deep"
+                            : event.generation === 3 ? "text-mountain-forest" 
+                            : "text-hydrangea-deep"
                           }`}>
                             Generation {event.generation}
                           </span>
@@ -167,7 +176,10 @@ export default function HeritageTimeline() {
 
                 {/* Timeline dot */}
                 <div className={`relative z-10 w-6 h-6 rounded-full border-4 border-background shadow-lg flex-shrink-0 ${
-                  event.generation === 1 || event.generation === 3 ? "bg-tertiary" : "bg-primary"
+                  event.generation === 1 ? "bg-stone-warm" 
+                  : event.generation === 2 ? "bg-casa-blue-medium"
+                  : event.generation === 3 ? "bg-mountain-sage" 
+                  : "bg-hydrangea-medium"
                 }`}></div>
 
                 <div className="flex-1 px-8"></div>

@@ -128,7 +128,7 @@ export default function HouseAmenities() {
                     <Badge className="bg-white/20 backdrop-blur-sm text-white text-sm px-3 py-1">
                       Up to 10 Guests
                     </Badge>
-                    <Badge className="bg-tertiary/30 backdrop-blur-sm text-white text-sm px-3 py-1">
+                    <Badge className="bg-mountain-sage/40 backdrop-blur-sm text-white text-sm px-3 py-1">
                       Pet Friendly
                     </Badge>
                   </div>
@@ -157,13 +157,17 @@ export default function HouseAmenities() {
                 <GlassCard className="p-6 text-center hover-elevate h-full">
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
                     amenity.title === "Family Friendly" || amenity.title === "Baby Friendly" || amenity.title === "Dog Friendly" 
-                      ? "bg-tertiary/20" 
-                      : "bg-primary/20"
+                      ? "bg-mountain-sage/20" 
+                      : amenity.title === "WiFi" 
+                      ? "bg-casa-blue-light/20"
+                      : "bg-hydrangea-soft/20"
                   }`}>
                     <IconComponent className={`w-8 h-8 ${
                       amenity.title === "Family Friendly" || amenity.title === "Baby Friendly" || amenity.title === "Dog Friendly" 
-                        ? "text-tertiary" 
-                        : "text-primary"
+                        ? "text-mountain-forest" 
+                        : amenity.title === "WiFi" 
+                        ? "text-casa-blue-deep"
+                        : "text-hydrangea-deep"
                     }`} />
                   </div>
                   <h3 className="font-serif text-lg font-semibold text-foreground mb-3">
@@ -194,7 +198,9 @@ export default function HouseAmenities() {
                   className="flex items-center space-x-2 text-left"
                 >
                   <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                    feature.includes("garden") || feature.includes("Coffee") ? "bg-tertiary" : "bg-primary"
+                    feature.includes("garden") || feature.includes("Coffee") ? "bg-mountain-sage" 
+                    : feature.includes("kitchen") || feature.includes("bathroom") ? "bg-stone-warm"
+                    : "bg-casa-blue-medium"
                   }`} />
                   <span className="text-muted-foreground text-sm">
                     {feature}

@@ -39,7 +39,7 @@ export default function CasaFlora() {
           <PropertyGallery />
         </section>
         
-        <section id="amenities" className="bg-gradient-to-b from-primary/5 via-tertiary/3 to-background">
+        <section id="amenities" className="bg-gradient-to-b from-stone-cream/50 via-mountain-light/30 to-background">
           <HouseAmenities />
         </section>
         
@@ -54,15 +54,15 @@ export default function CasaFlora() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">100+</div>
+                <div className="text-3xl font-bold text-stone-dark">100+</div>
                 <div className="text-muted-foreground">Years of Heritage</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">4</div>
+                <div className="text-3xl font-bold text-casa-blue-deep">4</div>
                 <div className="text-muted-foreground">Generations</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">∞</div>
+                <div className="text-3xl font-bold text-hydrangea-deep">∞</div>
                 <div className="text-muted-foreground">Memories Created</div>
               </div>
             </div>

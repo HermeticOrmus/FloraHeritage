@@ -6,18 +6,31 @@
 ## Core Design Elements
 
 ### Color Palette
-**Primary Colors:**
-- Mountain Blue: 208 45% 60% (#6B9BC3) - primary brand color
-- Sage Green: 95 15% 66% (#A8B5A0) - tertiary nature/heritage accent
-- Light Blue: 208 25% 85% - secondary accent tone
-- Heritage Cream: 45 25% 95% - warm neutral background
-- Glass White: 0 0% 100% 20% opacity - glassmorphism elements
+**Authentic Casa Flora Colors:**
 
-**Dark Mode:**
-- Deep Mountain: 208 35% 15% - dark primary
-- Forest Sage: 95 20% 35% - dark tertiary
-- Slate Blue: 208 25% 25% - dark secondary
-- Charcoal: 0 0% 12% - dark background
+**Casa Flora Blue Palette (from exterior siding):**
+- Light Blue: #8BB5C7 - headers and soft accents
+- Medium Blue: #6B9BAF - primary interactive elements  
+- Deep Blue: #4A7C95 - main buttons and links
+- Dark Blue: #355B6D - navigation and strong text
+
+**Stone & Earth Palette (from exterior walls):**
+- Warm Stone: #A8998A - accent backgrounds
+- Medium Stone: #8B7D6B - neutral elements
+- Dark Stone: #6B5E4F - grounding text
+- Light Cream: #F5F1EB - page backgrounds
+
+**Hydrangea Garden Palette (from blooms):**
+- Soft Purple: #B8A5C7 - special highlights
+- Medium Purple: #9B7FA8 - secondary buttons
+- Deep Purple: #7A6284 - strong accents
+- Light Purple: #E8DFF0 - subtle backgrounds
+
+**Mountain Green Palette (from foliage):**
+- Sage Green: #7A9B6E - nature elements
+- Forest Green: #5D7A52 - environmental accents
+- Deep Forest: #3F5238 - strong natural text
+- Light Green: #F0F5ED - success states
 
 ### Typography
 - **Primary**: Inter (Google Fonts) - clean, modern readability

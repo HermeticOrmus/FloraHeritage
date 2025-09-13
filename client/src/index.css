@@ -64,9 +64,41 @@
 
   --accent-foreground: 208 35% 15%;
 
-  --tertiary: 95 15% 66%;
+  --tertiary: 95 21% 52%;
 
-  --tertiary-foreground: 95 20% 25%;
+  --tertiary-foreground: 95 21% 27%;
+
+  --casa-blue-light: 200 35% 67%;
+
+  --casa-blue-medium: 200 32% 56%;
+
+  --casa-blue-deep: 200 35% 44%;
+
+  --casa-blue-dark: 200 36% 32%;
+
+  --stone-warm: 30 19% 59%;
+
+  --stone-medium: 30 17% 48%;
+
+  --stone-dark: 30 19% 36%;
+
+  --stone-cream: 45 33% 94%;
+
+  --hydrangea-soft: 285 28% 71%;
+
+  --hydrangea-medium: 285 23% 58%;
+
+  --hydrangea-deep: 285 21% 45%;
+
+  --hydrangea-light: 285 33% 91%;
+
+  --mountain-sage: 95 21% 52%;
+
+  --mountain-forest: 95 21% 41%;
+
+  --mountain-deep: 95 21% 27%;
+
+  --mountain-light: 95 33% 95%;
 
   --destructive: 0 70% 50%;
 
@@ -190,9 +222,41 @@
 
   --accent-foreground: 45 15% 88%;
 
-  --tertiary: 95 20% 35%;
+  --tertiary: 95 21% 41%;
 
-  --tertiary-foreground: 95 15% 85%;
+  --tertiary-foreground: 95 33% 95%;
+
+  --casa-blue-light: 200 35% 67%;
+
+  --casa-blue-medium: 200 32% 56%;
+
+  --casa-blue-deep: 200 35% 44%;
+
+  --casa-blue-dark: 200 36% 32%;
+
+  --stone-warm: 30 19% 59%;
+
+  --stone-medium: 30 17% 48%;
+
+  --stone-dark: 30 19% 36%;
+
+  --stone-cream: 45 33% 94%;
+
+  --hydrangea-soft: 285 28% 71%;
+
+  --hydrangea-medium: 285 23% 58%;
+
+  --hydrangea-deep: 285 21% 45%;
+
+  --hydrangea-light: 285 33% 91%;
+
+  --mountain-sage: 95 21% 52%;
+
+  --mountain-forest: 95 21% 41%;
+
+  --mountain-deep: 95 21% 27%;
+
+  --mountain-light: 95 33% 95%;
 
   --destructive: 0 70% 50%;
 

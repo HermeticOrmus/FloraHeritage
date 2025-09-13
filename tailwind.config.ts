@@ -51,6 +51,30 @@ export default {
           foreground: "hsl(var(--tertiary-foreground) / <alpha-value>)",
           border: "var(--tertiary-border)",
         },
+        'casa-blue': {
+          light: "hsl(var(--casa-blue-light) / <alpha-value>)",
+          medium: "hsl(var(--casa-blue-medium) / <alpha-value>)",
+          deep: "hsl(var(--casa-blue-deep) / <alpha-value>)",
+          dark: "hsl(var(--casa-blue-dark) / <alpha-value>)",
+        },
+        stone: {
+          warm: "hsl(var(--stone-warm) / <alpha-value>)",
+          medium: "hsl(var(--stone-medium) / <alpha-value>)",
+          dark: "hsl(var(--stone-dark) / <alpha-value>)",
+          cream: "hsl(var(--stone-cream) / <alpha-value>)",
+        },
+        hydrangea: {
+          soft: "hsl(var(--hydrangea-soft) / <alpha-value>)",
+          medium: "hsl(var(--hydrangea-medium) / <alpha-value>)",
+          deep: "hsl(var(--hydrangea-deep) / <alpha-value>)",
+          light: "hsl(var(--hydrangea-light) / <alpha-value>)",
+        },
+        mountain: {
+          sage: "hsl(var(--mountain-sage) / <alpha-value>)",
+          forest: "hsl(var(--mountain-forest) / <alpha-value>)",
+          deep: "hsl(var(--mountain-deep) / <alpha-value>)",
+          light: "hsl(var(--mountain-light) / <alpha-value>)",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
           foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
