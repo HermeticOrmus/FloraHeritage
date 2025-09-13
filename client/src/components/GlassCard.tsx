@@ -8,15 +8,15 @@ interface GlassCardProps {
 
 export default function GlassCard({ children, className, variant = "default" }: GlassCardProps) {
   const variants = {
-    default: "backdrop-blur-glass bg-glass-light border border-white/20",
-    nav: "backdrop-blur-glass-nav bg-white/40 dark:bg-black/40 border border-white/50 shadow-xl", 
-    modal: "backdrop-blur-glass-modal bg-glass-light border border-white/25"
+    default: "backdrop-blur-glass bg-antique-amber dark:bg-antique-sepia border-2 border-stone-warm/30 dark:border-stone-cream/20 shadow-xl shadow-stone-dark/10",
+    nav: "backdrop-blur-glass-nav bg-antique-sepia dark:bg-antique-sepia border-2 border-stone-warm/40 dark:border-stone-cream/25 shadow-2xl shadow-stone-dark/20", 
+    modal: "backdrop-blur-glass-modal bg-antique-amber dark:bg-antique-sepia border-2 border-stone-warm/35 dark:border-stone-cream/22 shadow-2xl shadow-stone-dark/15"
   };
 
   return (
     <div 
       className={cn(
-        "shadow-lg shadow-black/10 hover-elevate",
+        "relative antique-glass-texture antique-glass-imperfection hover-elevate",
         variants[variant],
         className
       )}
