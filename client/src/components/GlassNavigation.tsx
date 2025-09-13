@@ -4,8 +4,8 @@ import GlassCard from "./GlassCard";
 import { Button } from "@/components/ui/button";
 
 const navigationItems = [
-  { id: "home", label: "Home", href: "#home" },
-  { id: "heritage", label: "Heritage", href: "#heritage" },
+  { id: "home", label: "Home", href: "/" },
+  { id: "heritage", label: "Heritage", href: "/heritage" },
   { id: "property", label: "Property", href: "#property" },
   { id: "experiences", label: "Experiences", href: "#experiences" },
   { id: "booking", label: "Book Now", href: "#booking" },
@@ -25,14 +25,19 @@ export default function GlassNavigation() {
   }, []);
 
   const handleNavClick = (href: string, id: string) => {
-    // todo: remove mock functionality - replace with actual scroll behavior
+    // todo: remove mock functionality - replace with actual navigation
     console.log(`Navigating to ${href}`);
     setActiveSection(id);
     
-    // Smooth scroll simulation
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith('/')) {
+      // Page navigation
+      window.location.href = href;
+    } else {
+      // Smooth scroll for anchors
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 

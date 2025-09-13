@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import GlassCard from "./GlassCard";
-import heroImage from "@assets/generated_images/Boquete_mountain_coffee_landscape_0a96fbc9.png";
+import heroImage from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);

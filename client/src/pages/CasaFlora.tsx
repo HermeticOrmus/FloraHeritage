@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassNavigation from "@/components/GlassNavigation";
 import HeroSection from "@/components/HeroSection";
-import HeritageTimeline from "@/components/HeritageTimeline";
+import PropertyGallery from "@/components/PropertyGallery";
 import PropertyShowcase from "@/components/PropertyShowcase";
 import ExperienceGallery from "@/components/ExperienceGallery";
 import FloatingBookingWidget from "@/components/FloatingBookingWidget";
@@ -36,8 +36,8 @@ export default function CasaFlora() {
           <HeroSection />
         </section>
         
-        <section id="heritage">
-          <HeritageTimeline />
+        <section id="gallery">
+          <PropertyGallery />
         </section>
         
         <section id="property">

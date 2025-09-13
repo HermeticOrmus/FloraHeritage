@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "./GlassCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import propertyImage from "@assets/generated_images/Heritage_colonial_house_exterior_33dd1b9a.png";
+import propertyImage from "@assets/WhatsApp Image 2025-09-13 at 15.54.05_54df4d3a_1757805248590.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 

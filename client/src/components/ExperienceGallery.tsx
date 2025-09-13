@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "./GlassCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import coffeeImage from "@assets/generated_images/Coffee_farm_cultural_tour_805d0909.png";
+import gardenImage from "@assets/WhatsApp Image 2025-09-13 at 15.54.33_e68e17db_1757805248590.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -132,7 +132,7 @@ export default function ExperienceGallery() {
                 <div className="p-0">
                   <div className="relative overflow-hidden">
                     <img
-                      src={coffeeImage}
+                      src={gardenImage}
                       alt={experience.title}
                       className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
