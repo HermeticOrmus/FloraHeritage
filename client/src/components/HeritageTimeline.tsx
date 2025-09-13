@@ -1,0 +1,173 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GlassCard from "./GlassCard";
+import heritageImage from "@assets/generated_images/Heritage_family_portrait_1920s_4ee410ad.png";
+
+// Register GSAP plugin
+gsap.registerPlugin(ScrollTrigger);
+
+interface TimelineEvent {
+  year: string;
+  title: string;
+  description: string;
+  details: string;
+  generation: number;
+}
+
+const timelineEvents: TimelineEvent[] = [
+  {
+    year: "1920s",
+    title: "The Founding",
+    description: "Don Miguel establishes Casa Flora coffee plantation",
+    details: "The original homestead was built with locally sourced materials, embodying the sustainable practices that continue today.",
+    generation: 1
+  },
+  {
+    year: "1950s-60s",
+    title: "Expansion Era", 
+    description: "Second generation modernizes the property",
+    details: "Carlos Miguel adds guest accommodations while preserving the colonial architecture and coffee heritage.",
+    generation: 2
+  },
+  {
+    year: "1990s-2000s",
+    title: "Heritage Preservation",
+    description: "Third generation focuses on cultural tourism",
+    details: "María Elena transforms the property into a cultural destination, emphasizing authentic experiences and environmental stewardship.",
+    generation: 3
+  },
+  {
+    year: "2020s",
+    title: "Modern Heritage",
+    description: "Fourth generation blends tradition with innovation",
+    details: "Today's Casa Flora offers luxury amenities while maintaining the authentic spirit that has defined our family for over a century.",
+    generation: 4
+  }
+];
+
+export default function HeritageTimeline() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Set initial state
+      itemRefs.current.forEach((item, index) => {
+        if (item) {
+          gsap.set(item, {
+            opacity: 0,
+            x: index % 2 === 0 ? -100 : 100,
+            scale: 0.8
+          });
+        }
+      });
+
+      // Create scroll-triggered animations
+      itemRefs.current.forEach((item, index) => {
+        if (item) {
+          ScrollTrigger.create({
+            trigger: item,
+            start: "top 80%",
+            end: "bottom 20%",
+            animation: gsap.to(item, {
+              opacity: 1,
+              x: 0,
+              scale: 1,
+              duration: 1,
+              ease: "power3.out"
+            }),
+            toggleActions: "play none none reverse"
+          });
+        }
+      });
+
+    }, timelineRef);
+
+    return () => {
+      ctx.revert();
+      ScrollTrigger.killAll();
+    };
+  }, []);
+
+  const setItemRef = (el: HTMLDivElement | null, index: number) => {
+    itemRefs.current[index] = el;
+  };
+
+  return (
+    <section 
+      ref={timelineRef}
+      className="py-24 bg-gradient-to-b from-background/50 to-background"
+      data-testid="heritage-timeline"
+    >
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Four Generations of Heritage
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Discover the story of Casa Flora through a century of family stewardship and authentic hospitality
+          </p>
+        </div>
+
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary to-accent"></div>
+
+          {/* Timeline events */}
+          <div className="space-y-16">
+            {timelineEvents.map((event, index) => (
+              <div
+                key={event.year}
+                ref={(el) => setItemRef(el, index)}
+                className={`flex items-center ${
+                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                }`}
+                data-testid={`timeline-${event.year}`}
+              >
+                <div className="flex-1 px-8">
+                  <GlassCard className="p-8 hover-elevate">
+                    <div className="flex items-start space-x-4">
+                      {index === 0 && (
+                        <img 
+                          src={heritageImage} 
+                          alt="Heritage family portrait"
+                          className="w-24 h-24 object-cover rounded-lg flex-shrink-0"
+                        />
+                      )}
+                      <div className="flex-1">
+                        <div className="flex items-center mb-3">
+                          <span className="inline-block w-3 h-3 bg-primary rounded-full mr-3"></span>
+                          <span className="text-primary font-bold text-lg">{event.year}</span>
+                        </div>
+                        <h3 className="font-serif text-2xl font-semibold text-foreground mb-3">
+                          {event.title}
+                        </h3>
+                        <p className="text-lg text-muted-foreground mb-3">
+                          {event.description}
+                        </p>
+                        <p className="text-foreground/80 leading-relaxed">
+                          {event.details}
+                        </p>
+                        <div className="mt-4">
+                          <span className="text-sm font-medium text-primary">
+                            Generation {event.generation}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </GlassCard>
+                </div>
+
+                {/* Timeline dot */}
+                <div className="relative z-10 w-6 h-6 bg-primary rounded-full border-4 border-background shadow-lg flex-shrink-0"></div>
+
+                <div className="flex-1 px-8"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
