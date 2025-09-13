@@ -57,9 +57,9 @@ export default function GlassNavigation() {
             className={cn(
               "font-medium transition-all duration-200 text-shadow-sm",
               activeSection === item.id 
-                ? "bg-primary text-white shadow-md" 
-                : "text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-white hover:bg-white/20 dark:hover:bg-white/10",
-              item.id === "booking" && "ml-2 bg-primary text-white hover:bg-primary/90 shadow-md"
+                ? "bg-casa-blue-deep text-stone-cream shadow-md" 
+                : "text-gray-800 dark:text-stone-cream hover:text-gray-900 dark:hover:text-stone-cream hover:bg-stone-cream/20 dark:hover:bg-stone-cream/10",
+              item.id === "booking" && "ml-2 bg-casa-blue-deep text-stone-cream hover:bg-casa-blue-medium shadow-md"
             )}
             onClick={() => handleNavClick(item.href, item.id)}
             data-testid={`nav-${item.id}`}

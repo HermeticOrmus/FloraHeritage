@@ -113,10 +113,10 @@ export default function PropertyGallery() {
                   className="w-full h-[400px] md:h-[500px] object-cover hover-elevate"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8">
-                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-white mb-2">
+                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-stone-cream mb-2">
                     {galleryImages[0].title}
                   </h3>
-                  <p className="text-white/90 text-lg">
+                  <p className="text-stone-cream/90 text-lg">
                     {galleryImages[0].description}
                   </p>
                 </div>
@@ -144,10 +144,10 @@ export default function PropertyGallery() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="font-serif text-lg font-semibold text-white mb-1">
+                    <h3 className="font-serif text-lg font-semibold text-stone-cream mb-1">
                       {image.title}
                     </h3>
-                    <p className="text-white/80 text-sm">
+                    <p className="text-stone-cream/80 text-sm">
                       {image.description}
                     </p>
                   </div>

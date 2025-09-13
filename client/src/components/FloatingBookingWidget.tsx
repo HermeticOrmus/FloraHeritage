@@ -73,7 +73,7 @@ export default function FloatingBookingWidget() {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="check-in" className="text-white text-sm font-medium">
+                <Label htmlFor="check-in" className="text-stone-cream text-sm font-medium">
                   Check In
                 </Label>
                 <Input
@@ -81,12 +81,12 @@ export default function FloatingBookingWidget() {
                   type="date"
                   value={bookingData.checkIn}
                   onChange={(e) => setBookingData({...bookingData, checkIn: e.target.value})}
-                  className="bg-white/10 border-white/30 text-white placeholder-white/60"
+                  className="bg-stone-cream/10 border-stone-cream/30 text-stone-cream placeholder-stone-cream/60"
                   data-testid="input-check-in"
                 />
               </div>
               <div>
-                <Label htmlFor="check-out" className="text-white text-sm font-medium">
+                <Label htmlFor="check-out" className="text-stone-cream text-sm font-medium">
                   Check Out  
                 </Label>
                 <Input
@@ -94,20 +94,20 @@ export default function FloatingBookingWidget() {
                   type="date"
                   value={bookingData.checkOut}
                   onChange={(e) => setBookingData({...bookingData, checkOut: e.target.value})}
-                  className="bg-white/10 border-white/30 text-white placeholder-white/60"
+                  className="bg-stone-cream/10 border-stone-cream/30 text-stone-cream placeholder-stone-cream/60"
                   data-testid="input-check-out"
                 />
               </div>
             </div>
             <div>
-              <Label htmlFor="guests" className="text-white text-sm font-medium">
+              <Label htmlFor="guests" className="text-stone-cream text-sm font-medium">
                 Guests
               </Label>
               <select 
                 id="guests"
                 value={bookingData.guests}
                 onChange={(e) => setBookingData({...bookingData, guests: parseInt(e.target.value)})}
-                className="w-full p-2 rounded-md bg-white/10 border border-white/30 text-white"
+                className="w-full p-2 rounded-md bg-stone-cream/10 border border-stone-cream/30 text-stone-cream"
                 data-testid="select-guests"
               >
                 {[1,2,3,4,5,6].map(num => (
@@ -120,7 +120,7 @@ export default function FloatingBookingWidget() {
       case 2:
         return (
           <div className="space-y-4">
-            <Label className="text-white text-sm font-medium">Select Property</Label>
+            <Label className="text-stone-cream text-sm font-medium">Select Property</Label>
             <div className="space-y-2">
               {['Heritage Suite', 'Coffee Cottage', 'Family Villa'].map(property => (
                 <label key={property} className="flex items-center space-x-3 cursor-pointer">
@@ -133,7 +133,7 @@ export default function FloatingBookingWidget() {
                     className="text-primary"
                     data-testid={`radio-${property.toLowerCase().replace(' ', '-')}`}
                   />
-                  <span className="text-white">{property}</span>
+                  <span className="text-stone-cream">{property}</span>
                 </label>
               ))}
             </div>
@@ -142,8 +142,8 @@ export default function FloatingBookingWidget() {
       case 3:
         return (
           <div className="space-y-4">
-            <h3 className="text-white font-serif text-lg font-semibold">Booking Summary</h3>
-            <div className="space-y-2 text-sm text-white/80">
+            <h3 className="text-stone-cream font-serif text-lg font-semibold">Booking Summary</h3>
+            <div className="space-y-2 text-sm text-stone-cream/80">
               <p><strong>Property:</strong> {bookingData.property}</p>
               <p><strong>Check-in:</strong> {bookingData.checkIn}</p>
               <p><strong>Check-out:</strong> {bookingData.checkOut}</p>
@@ -166,7 +166,7 @@ export default function FloatingBookingWidget() {
         <Button
           onClick={handleExpand}
           size="lg"
-          className="bg-primary text-white hover:bg-primary/90 shadow-lg hover-elevate rounded-full px-6 py-3"
+          className="bg-casa-blue-deep text-stone-cream hover:bg-casa-blue-medium shadow-lg hover-elevate rounded-full px-6 py-3"
           data-testid="button-expand-booking"
         >
           <Calendar className="mr-2 h-5 w-5" />
@@ -186,8 +186,8 @@ export default function FloatingBookingWidget() {
         <div ref={contentRef}>
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-2">
-              <Calendar className="h-5 w-5 text-white" />
-              <h2 className="text-white font-serif text-lg font-semibold">
+              <Calendar className="h-5 w-5 text-stone-cream" />
+              <h2 className="text-stone-cream font-serif text-lg font-semibold">
                 Reserve Casa Flora
               </h2>
             </div>
@@ -195,7 +195,7 @@ export default function FloatingBookingWidget() {
               variant="ghost"
               size="icon"
               onClick={handleExpand}
-              className="text-white hover:bg-white/10"
+              className="text-stone-cream hover:bg-stone-cream/10"
               data-testid="button-close-booking"
             >
               <X className="h-4 w-4" />
@@ -209,7 +209,7 @@ export default function FloatingBookingWidget() {
                 <div
                   key={step}
                   className={`w-2 h-2 rounded-full transition-colors ${
-                    step <= currentStep ? 'bg-primary' : 'bg-white/30'
+                    step <= currentStep ? 'bg-casa-blue-deep' : 'bg-stone-cream/30'
                   }`}
                 />
               ))}
@@ -223,7 +223,7 @@ export default function FloatingBookingWidget() {
               <Button
                 variant="outline"
                 onClick={handlePreviousStep}
-                className="bg-white/10 border-white/30 text-white hover:bg-white/20"
+                className="bg-stone-cream/10 border-stone-cream/30 text-stone-cream hover:bg-stone-cream/20"
                 data-testid="button-previous-step"
               >
                 Previous
@@ -231,7 +231,7 @@ export default function FloatingBookingWidget() {
             )}
             <Button
               onClick={handleNextStep}
-              className={`bg-primary text-white hover:bg-primary/90 ${
+              className={`bg-casa-blue-deep text-stone-cream hover:bg-casa-blue-medium ${
                 currentStep === 1 ? 'ml-auto' : ''
               }`}
               data-testid="button-next-step"

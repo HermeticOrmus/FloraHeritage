@@ -68,7 +68,7 @@ export default function HeroSection() {
       }}
       data-testid="hero-section"
     >
-      <div className="relative z-10 text-center text-white max-w-4xl px-6">
+      <div className="relative z-10 text-center text-stone-cream max-w-4xl px-6">
         <h1 
           ref={titleRef}
           className="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight"
@@ -77,10 +77,10 @@ export default function HeroSection() {
         </h1>
         
         <div ref={subtitleRef} className="mb-8">
-          <p className="text-2xl md:text-3xl font-serif text-white/95 mb-4 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-2xl md:text-3xl font-serif text-stone-cream/95 mb-4 leading-relaxed max-w-3xl mx-auto">
             One of Boquete's most Iconic houses in the heart of town
           </p>
-          <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-stone-cream/80 leading-relaxed max-w-2xl mx-auto">
             Experience four generations of family stewardship in Panama's coffee country
           </p>
         </div>
@@ -88,7 +88,7 @@ export default function HeroSection() {
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             size="lg" 
-            className="bg-stone-warm/30 backdrop-blur-sm text-white border border-stone-warm/50 hover:bg-stone-warm/40 text-lg px-8 py-3"
+            className="bg-stone-warm/30 backdrop-blur-sm text-stone-cream border border-stone-warm/50 hover:bg-stone-warm/40 text-lg px-8 py-3"
             onClick={() => handleCTAClick("Discover Heritage")}
             data-testid="button-discover-heritage"
           >
@@ -97,7 +97,7 @@ export default function HeroSection() {
           
           <Button 
             size="lg"
-            className="bg-casa-blue-deep text-white hover:bg-casa-blue-medium text-lg px-8 py-3"
+            className="bg-casa-blue-deep text-stone-cream hover:bg-casa-blue-medium text-lg px-8 py-3"
             onClick={() => handleCTAClick("Book Stay")}
             data-testid="button-book-stay"
           >
@@ -108,9 +108,9 @@ export default function HeroSection() {
       
       {/* Floating glass info card */}
       <GlassCard className="absolute bottom-8 left-8 p-4 max-w-sm hidden md:block">
-        <div className="text-white">
+        <div className="text-stone-cream">
           <h3 className="font-serif font-semibold mb-2">Heritage Since 1920</h3>
-          <p className="text-sm text-white/80">
+          <p className="text-sm text-stone-cream/85">
             Four generations of authentic hospitality in Panama's mountain paradise
           </p>
         </div>
