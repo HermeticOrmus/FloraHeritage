@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import GlassCard from "./GlassCard";
-import { Button } from "@/components/ui/button";
 
 const navigationItems = [
   { id: "home", label: "Home", href: "/" },
@@ -48,24 +47,22 @@ export default function GlassNavigation() {
         isScrolled ? "py-2 px-4" : "py-3 px-6"
       )}
     >
-      <nav className="flex items-center space-x-1">
+      <nav className="flex items-center space-x-8">
         {navigationItems.map((item) => (
-          <Button
+          <span
             key={item.id}
-            variant={activeSection === item.id ? "default" : "ghost"}
-            size="sm"
             className={cn(
-              "font-medium transition-all duration-200 text-shadow-sm",
+              "font-serif text-lg cursor-pointer transition-all duration-200 text-shadow-sm hover-elevate px-3 py-2 rounded-md",
               activeSection === item.id 
-                ? "bg-casa-blue-deep text-foreground shadow-md" 
+                ? "bg-casa-blue-deep text-foreground shadow-md font-semibold" 
                 : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-foreground/20 dark:hover:bg-foreground/10",
-              item.id === "booking" && "ml-2 bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium shadow-md"
+              item.id === "booking" && "ml-2 bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium shadow-md font-semibold"
             )}
             onClick={() => handleNavClick(item.href, item.id)}
             data-testid={`nav-${item.id}`}
           >
             {item.label}
-          </Button>
+          </span>
         ))}
       </nav>
     </GlassCard>
