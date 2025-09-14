@@ -166,7 +166,7 @@ export default function FloatingBookingWidget() {
         <Button
           onClick={handleExpand}
           size="lg"
-          className="bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium shadow-lg hover-elevate rounded-full px-6 py-3"
+          className="font-serif bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium shadow-lg hover-elevate rounded-full px-6 py-3"
           data-testid="button-expand-booking"
         >
           <Calendar className="mr-2 h-5 w-5" />
