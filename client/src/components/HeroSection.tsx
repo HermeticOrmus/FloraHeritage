@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import GlassCard from "./GlassCard";
+import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 import heroImage from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";
 
 export default function HeroSection() {
@@ -9,6 +10,8 @@ export default function HeroSection() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const { createRipple: createHeritageRipple } = useRippleEffect('heritage');
+  const { createRipple: createBlueRipple } = useRippleEffect('blue');
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -45,7 +48,14 @@ export default function HeroSection() {
     return () => ctx.revert();
   }, []);
 
-  const handleCTAClick = (action: string) => {
+  const handleCTAClick = (event: React.MouseEvent, action: string) => {
+    // Create appropriate ripple effect based on action
+    if (action === "Discover Heritage") {
+      createHeritageRipple(event);
+    } else {
+      createBlueRipple(event);
+    }
+    
     // todo: remove mock functionality
     console.log(`${action} clicked`);
     gsap.to(ctaRef.current, {
@@ -88,8 +98,8 @@ export default function HeroSection() {
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             size="lg" 
-            className="bg-stone-warm/30 backdrop-blur-sm text-foreground border border-stone-warm/50 hover:bg-stone-warm/40 text-lg px-8 py-3"
-            onClick={() => handleCTAClick("Discover Heritage")}
+            className={`bg-stone-warm/30 backdrop-blur-sm text-foreground border border-stone-warm/50 hover:bg-stone-warm/40 text-lg px-8 py-3 ${rippleContainerClass}`}
+            onClick={(event) => handleCTAClick(event, "Discover Heritage")}
             data-testid="button-discover-heritage"
           >
             Discover Our Heritage
@@ -97,8 +107,8 @@ export default function HeroSection() {
           
           <Button 
             size="lg"
-            className="bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium text-lg px-8 py-3"
-            onClick={() => handleCTAClick("Book Stay")}
+            className={`bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium text-lg px-8 py-3 ${rippleContainerClass}`}
+            onClick={(event) => handleCTAClick(event, "Book Stay")}
             data-testid="button-book-stay"
           >
             Book Your Stay

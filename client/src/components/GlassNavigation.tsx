@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import GlassCard from "./GlassCard";
+import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 
 const navigationItems = [
   { id: "home", label: "Home", href: "/" },
@@ -12,6 +13,7 @@ const navigationItems = [
 export default function GlassNavigation() {
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
+  const { createRipple } = useRippleEffect('glass');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,19 +24,26 @@ export default function GlassNavigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string, id: string) => {
+  const handleNavClick = (event: React.MouseEvent, href: string, id: string) => {
+    // Create heritage glass ripple effect
+    createRipple(event);
+    
     // todo: remove mock functionality - replace with actual navigation
     console.log(`Navigating to ${href}`);
     setActiveSection(id);
     
     if (href.startsWith('/')) {
       // Page navigation
-      window.location.href = href;
+      setTimeout(() => {
+        window.location.href = href;
+      }, 200); // Small delay to show ripple
     } else {
       // Smooth scroll for anchors
       const element = document.querySelector(href);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 150);
       }
     }
   };
@@ -52,13 +61,14 @@ export default function GlassNavigation() {
           <span
             key={item.id}
             className={cn(
-              "font-serif text-lg cursor-pointer transition-all duration-200 text-shadow-sm hover-elevate px-3 py-2",
+              "font-serif text-lg cursor-pointer transition-all duration-200 text-shadow-sm hover-elevate px-3 py-2 rounded-md",
+              rippleContainerClass,
               activeSection === item.id 
                 ? "bg-stone-warm/20 text-foreground shadow-md font-semibold border border-stone-warm/30" 
                 : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-foreground/20 dark:hover:bg-foreground/10",
               item.id === "booking" && "ml-2 bg-stone-warm/25 text-foreground hover:bg-stone-warm/35 shadow-md font-semibold border border-stone-warm/40"
             )}
-            onClick={() => handleNavClick(item.href, item.id)}
+            onClick={(event) => handleNavClick(event, item.href, item.id)}
             data-testid={`nav-${item.id}`}
           >
             {item.label}

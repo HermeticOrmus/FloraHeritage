@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Calendar, Users, X } from "lucide-react";
+import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 
 interface BookingData {
   checkIn: string;
@@ -25,6 +26,8 @@ export default function FloatingBookingWidget() {
   
   const widgetRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const { createRipple: createBlueRipple } = useRippleEffect('blue');
+  const { createRipple: createStoneRipple } = useRippleEffect('stone');
 
   useEffect(() => {
     if (isExpanded && contentRef.current) {
@@ -35,13 +38,17 @@ export default function FloatingBookingWidget() {
     }
   }, [isExpanded]);
 
-  const handleExpand = () => {
+  const handleExpand = (event?: React.MouseEvent) => {
+    if (event) {
+      createBlueRipple(event);
+    }
     setIsExpanded(!isExpanded);
     // todo: remove mock functionality
     console.log(`Booking widget ${isExpanded ? 'collapsed' : 'expanded'}`);
   };
 
-  const handleNextStep = () => {
+  const handleNextStep = (event: React.MouseEvent) => {
+    createBlueRipple(event);
     if (currentStep < 3) {
       setCurrentStep(currentStep + 1);
       // todo: remove mock functionality  
@@ -51,7 +58,8 @@ export default function FloatingBookingWidget() {
     }
   };
 
-  const handlePreviousStep = () => {
+  const handlePreviousStep = (event: React.MouseEvent) => {
+    createStoneRipple(event);
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
       // todo: remove mock functionality
@@ -166,7 +174,7 @@ export default function FloatingBookingWidget() {
         <Button
           onClick={handleExpand}
           size="lg"
-          className="font-serif bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium shadow-lg hover-elevate rounded-full px-6 py-3"
+          className={`font-serif bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium shadow-lg hover-elevate rounded-full px-6 py-3 ${rippleContainerClass}`}
           data-testid="button-expand-booking"
         >
           <Calendar className="mr-2 h-5 w-5" />
@@ -195,7 +203,7 @@ export default function FloatingBookingWidget() {
               variant="ghost"
               size="icon"
               onClick={handleExpand}
-              className="text-foreground hover:bg-foreground/10"
+              className={`text-foreground hover:bg-foreground/10 ${rippleContainerClass}`}
               data-testid="button-close-booking"
             >
               <X className="h-4 w-4" />
@@ -223,7 +231,7 @@ export default function FloatingBookingWidget() {
               <Button
                 variant="outline"
                 onClick={handlePreviousStep}
-                className="bg-foreground/10 border-foreground/30 text-foreground hover:bg-foreground/20"
+                className={`bg-foreground/10 border-foreground/30 text-foreground hover:bg-foreground/20 ${rippleContainerClass}`}
                 data-testid="button-previous-step"
               >
                 Previous
@@ -231,7 +239,7 @@ export default function FloatingBookingWidget() {
             )}
             <Button
               onClick={handleNextStep}
-              className={`bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium ${
+              className={`bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium ${rippleContainerClass} ${
                 currentStep === 1 ? 'ml-auto' : ''
               }`}
               data-testid="button-next-step"
