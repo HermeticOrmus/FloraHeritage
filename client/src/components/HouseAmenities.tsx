@@ -162,13 +162,7 @@ export default function HouseAmenities() {
                       ? "bg-casa-blue-light/20"
                       : "bg-hydrangea-soft/20"
                   }`}>
-                    <IconComponent className={`w-8 h-8 ${
-                      amenity.title === "Family Friendly" || amenity.title === "Baby Friendly" || amenity.title === "Dog Friendly" 
-                        ? "text-mountain-forest" 
-                        : amenity.title === "WiFi" 
-                        ? "text-casa-blue-deep"
-                        : "text-hydrangea-deep"
-                    }`} />
+                    <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="font-serif text-lg font-semibold text-foreground mb-3">
                     {amenity.title}
