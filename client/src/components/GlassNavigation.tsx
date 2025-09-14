@@ -94,7 +94,8 @@ export default function GlassNavigation() {
         ? "0 8px 25px rgba(168, 153, 138, 0.2), 0 0 0 1px rgba(245, 241, 235, 0.3)" 
         : "0 0 0 rgba(168, 153, 138, 0), 0 0 0 1px rgba(245, 241, 235, 0)",
       duration: 0.4,
-      ease: "power2.out"
+      ease: "power2.out",
+      overwrite: "auto" // Prevent animation conflicts
     });
   };
   
@@ -103,42 +104,42 @@ export default function GlassNavigation() {
     const currentActiveIndex = navigationItems.findIndex(item => item.id === activeSection);
     const newActiveIndex = navigationItems.findIndex(item => item.id === newActiveId);
     
+    // Create a timeline for coordinated transitions
+    const tl = gsap.timeline();
+    
     if (currentActiveIndex >= 0) {
       const currentItem = itemRefs.current[currentActiveIndex];
       if (currentItem) {
-        gsap.to(currentItem, {
+        tl.to(currentItem, {
           scale: 0.95,
-          duration: 0.3,
+          duration: 0.2,
           ease: "power2.out",
-          onComplete: () => {
-            gsap.to(currentItem, {
-              scale: 1,
-              duration: 0.2,
-              ease: "power2.out"
-            });
-          }
-        });
+          overwrite: "auto"
+        })
+        .to(currentItem, {
+          scale: 1,
+          duration: 0.15,
+          ease: "power2.out"
+        }, "-=0.05");
       }
     }
     
     if (newActiveIndex >= 0) {
       const newItem = itemRefs.current[newActiveIndex];
       if (newItem) {
-        gsap.fromTo(newItem, 
+        tl.fromTo(newItem, 
           { scale: 1 },
           {
             scale: 1.08,
-            duration: 0.4,
+            duration: 0.25,
             ease: "power2.out",
-            onComplete: () => {
-              gsap.to(newItem, {
-                scale: 1,
-                duration: 0.3,
-                ease: "power2.out"
-              });
-            }
-          }
-        );
+            overwrite: "auto"
+          }, "-=0.1")
+        .to(newItem, {
+          scale: 1,
+          duration: 0.2,
+          ease: "power2.out"
+        }, "-=0.05");
       }
     }
   };

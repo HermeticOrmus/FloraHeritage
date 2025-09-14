@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, forwardRef } from "react";
+import { useState, useRef, useEffect, forwardRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { cn } from "@/lib/utils";
 
@@ -51,6 +51,7 @@ const FloatingLabelInput = forwardRef<
   const [hasValue, setHasValue] = useState(false);
   const labelRef = useRef<HTMLLabelElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement | HTMLSelectElement>(null);
 
   // Check if label should be floating (focused or has value)
   const shouldFloat = isFocused || hasValue || (value && value.toString().length > 0);
@@ -60,28 +61,33 @@ const FloatingLabelInput = forwardRef<
     setHasValue(value !== "" && value !== undefined && value !== null);
   }, [value]);
 
-  useEffect(() => {
-    if (!labelRef.current) return;
+  // Heritage-appropriate GSAP animations with proper context cleanup
+  useLayoutEffect(() => {
+    if (!labelRef.current || !containerRef.current) return;
 
-    if (shouldFloat) {
-      // Animate label up and scale down with heritage timing
-      gsap.to(labelRef.current, {
-        y: -24,
-        scale: 0.85,
-        color: "hsl(var(--stone-warm))",
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    } else {
-      // Animate label back to original position
-      gsap.to(labelRef.current, {
-        y: 0,
-        scale: 1,
-        color: "hsl(var(--foreground) / 0.6)",
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    }
+    const ctx = gsap.context(() => {
+      if (shouldFloat) {
+        // Animate label up and scale down with heritage timing
+        gsap.to(labelRef.current, {
+          y: -24,
+          scale: 0.85,
+          color: "hsl(var(--stone-warm))",
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      } else {
+        // Animate label back to original position
+        gsap.to(labelRef.current, {
+          y: 0,
+          scale: 1,
+          color: "hsl(var(--foreground) / 0.6)",
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      }
+    }, containerRef.current);
+
+    return () => ctx.revert();
   }, [shouldFloat]);
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -147,7 +153,14 @@ const FloatingLabelInput = forwardRef<
       className={cn("relative transition-all duration-300", className)}
     >
       <Element
-        ref={ref as any}
+        ref={(element) => {
+          inputRef.current = element;
+          if (typeof ref === 'function') {
+            ref(element);
+          } else if (ref) {
+            (ref as any).current = element;
+          }
+        }}
         id={id}
         type={as === 'input' ? type : undefined}
         value={value}

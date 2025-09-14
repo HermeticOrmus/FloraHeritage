@@ -56,14 +56,19 @@ export default function HeroSection() {
       createBlueRipple(event);
     }
     
-    // todo: remove mock functionality
-    console.log(`${action} clicked`);
-    gsap.to(ctaRef.current, {
+    // Animate the specific button that was clicked
+    const clickedButton = event.currentTarget as HTMLElement;
+    gsap.to(clickedButton, {
       scale: 0.95,
       duration: 0.1,
       yoyo: true,
-      repeat: 1
+      repeat: 1,
+      ease: "power2.out",
+      overwrite: "auto"
     });
+    
+    // todo: remove mock functionality
+    console.log(`${action} clicked`);
   };
 
   return (
@@ -81,12 +86,13 @@ export default function HeroSection() {
       <div className="relative z-10 text-center text-foreground max-w-4xl px-6">
         <h1 
           ref={titleRef}
-          className="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          className="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight transform-gpu"
+          style={{ backfaceVisibility: 'hidden' }}
         >
           Casa Flora
         </h1>
         
-        <div ref={subtitleRef} className="mb-8">
+        <div ref={subtitleRef} className="mb-8 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
           <p className="text-2xl md:text-3xl font-serif text-foreground/95 mb-4 leading-relaxed max-w-3xl mx-auto">
             One of Boquete's most Iconic houses in the heart of town
           </p>
@@ -95,7 +101,7 @@ export default function HeroSection() {
           </p>
         </div>
         
-        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
           <Button 
             size="lg" 
             className={`bg-stone-warm/30 backdrop-blur-sm text-foreground border border-stone-warm/50 hover:bg-stone-warm/40 text-lg px-8 py-3 ${rippleContainerClass}`}
