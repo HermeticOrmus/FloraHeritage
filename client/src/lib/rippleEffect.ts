@@ -27,9 +27,9 @@ export class RippleEffect {
   };
 
   private static variantColors = {
-    heritage: 'rgba(168, 153, 138, 0.25)', // stone-warm
-    glass: 'rgba(245, 241, 235, 0.2)',    // stone-cream
-    stone: 'rgba(139, 125, 107, 0.3)',    // stone-medium  
+    heritage: 'rgba(200, 220, 235, 0.25)', // glass-clear
+    glass: 'rgba(240, 248, 255, 0.2)',    // glass-light
+    stone: 'rgba(190, 210, 225, 0.3)',    // glass-medium  
     blue: 'rgba(107, 155, 175, 0.25)'     // casa-blue-medium
   };
 

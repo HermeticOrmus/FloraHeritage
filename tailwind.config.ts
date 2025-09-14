@@ -57,11 +57,11 @@ export default {
           deep: "hsl(var(--casa-blue-deep) / <alpha-value>)",
           dark: "hsl(var(--casa-blue-dark) / <alpha-value>)",
         },
-        stone: {
-          warm: "hsl(var(--stone-warm) / <alpha-value>)",
-          medium: "hsl(var(--stone-medium) / <alpha-value>)",
-          dark: "hsl(var(--stone-dark) / <alpha-value>)",
-          cream: "hsl(var(--stone-cream) / <alpha-value>)",
+        glass: {
+          clear: "hsl(var(--glass-clear) / <alpha-value>)",
+          medium: "hsl(var(--glass-medium) / <alpha-value>)",
+          deep: "hsl(var(--glass-deep) / <alpha-value>)",
+          light: "hsl(var(--glass-light) / <alpha-value>)",
         },
         hydrangea: {
           soft: "hsl(var(--hydrangea-soft) / <alpha-value>)",
@@ -122,11 +122,11 @@ export default {
         'glass-modal': '18px',
       },
       backgroundColor: {
-        'glass': 'rgba(245, 240, 230, 0.25)',
-        'glass-light': 'rgba(245, 240, 230, 0.35)',
-        'glass-dark': 'rgba(40, 35, 25, 0.45)',
-        'antique-amber': 'rgba(218, 195, 162, 0.3)',
-        'antique-sepia': 'rgba(205, 180, 140, 0.25)',
+        'glass': 'rgba(240, 248, 255, 0.25)',
+        'glass-light': 'rgba(240, 248, 255, 0.35)',
+        'glass-dark': 'rgba(230, 245, 255, 0.45)',
+        'natural-glass': 'rgba(235, 245, 250, 0.3)',
+        'clear-glass': 'rgba(245, 250, 255, 0.25)',
       },
       keyframes: {
         "accordion-down": {
