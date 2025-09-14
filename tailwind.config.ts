@@ -117,16 +117,16 @@ export default {
         mono: ["var(--font-mono)"],
       },
       backdropBlur: {
-        'glass': '12px',
-        'glass-nav': '15px', 
-        'glass-modal': '18px',
+        'glass': '8px',
+        'glass-nav': '10px', 
+        'glass-modal': '12px',
       },
       backgroundColor: {
-        'glass': 'rgba(240, 248, 255, 0.25)',
-        'glass-light': 'rgba(240, 248, 255, 0.35)',
-        'glass-dark': 'rgba(230, 245, 255, 0.45)',
-        'natural-glass': 'rgba(235, 245, 250, 0.3)',
-        'clear-glass': 'rgba(245, 250, 255, 0.25)',
+        'glass': 'rgba(240, 248, 255, 0.65)',
+        'glass-light': 'rgba(240, 248, 255, 0.75)',
+        'glass-dark': 'rgba(230, 245, 255, 0.85)',
+        'natural-glass': 'rgba(235, 245, 250, 0.7)',
+        'clear-glass': 'rgba(245, 250, 255, 0.6)',
       },
       keyframes: {
         "accordion-down": {
