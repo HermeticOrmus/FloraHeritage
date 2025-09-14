@@ -138,8 +138,8 @@ export default function BookingForm() {
         newErrors.checkInDate = "Check-in cannot be in the past";
       }
     }
-    if (step1Data.numberOfGuests < 1 || step1Data.numberOfGuests > 20) {
-      newErrors.numberOfGuests = "Guests must be between 1 and 20";
+    if (step1Data.numberOfGuests < 1 || step1Data.numberOfGuests > 10) {
+      newErrors.numberOfGuests = "Guests must be between 1 and 10";
     }
     
     setErrors(newErrors);
@@ -256,7 +256,7 @@ export default function BookingForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FloatingLabelInput
               id="checkInDate"
-              label="Check-in Date"
+              label=""
               type="date"
               value={step1Data.checkInDate}
               onChange={(e) => setStep1Data({...step1Data, checkInDate: e.target.value})}
@@ -265,7 +265,7 @@ export default function BookingForm() {
             />
             <FloatingLabelInput
               id="checkOutDate"
-              label="Check-out Date"
+              label=""
               type="date"
               value={step1Data.checkOutDate}
               onChange={(e) => setStep1Data({...step1Data, checkOutDate: e.target.value})}
@@ -286,7 +286,7 @@ export default function BookingForm() {
                 <SelectValue placeholder="Select guests" />
               </SelectTrigger>
               <SelectContent>
-                {Array.from({length: 20}, (_, i) => i + 1).map(num => (
+                {Array.from({length: 10}, (_, i) => i + 1).map(num => (
                   <SelectItem key={num} value={num.toString()}>
                     {num} Guest{num > 1 ? 's' : ''}
                   </SelectItem>
