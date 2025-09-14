@@ -54,9 +54,9 @@ export default function GlassNavigation() {
             className={cn(
               "font-serif text-lg cursor-pointer transition-all duration-200 text-shadow-sm hover-elevate px-3 py-2",
               activeSection === item.id 
-                ? "bg-casa-blue-deep text-foreground shadow-md font-semibold" 
+                ? "bg-stone-warm/20 text-foreground shadow-md font-semibold border border-stone-warm/30" 
                 : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground hover:bg-foreground/20 dark:hover:bg-foreground/10",
-              item.id === "booking" && "ml-2 bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium shadow-md font-semibold"
+              item.id === "booking" && "ml-2 bg-stone-warm/25 text-foreground hover:bg-stone-warm/35 shadow-md font-semibold border border-stone-warm/40"
             )}
             onClick={() => handleNavClick(item.href, item.id)}
             data-testid={`nav-${item.id}`}
