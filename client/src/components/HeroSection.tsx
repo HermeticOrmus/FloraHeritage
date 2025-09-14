@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
-import GlassCard from "./GlassCard";
+import GlassCard from "@/components/GlassCard";
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 import heroImage from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";
 

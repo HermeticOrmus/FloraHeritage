@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GlassCard from "./GlassCard";
+import GlassCard from "@/components/GlassCard";
 import houseImage1 from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";
 import houseImage2 from "@assets/WhatsApp Image 2025-09-13 at 15.54.05_54df4d3a_1757805248590.jpg";
 import gardenImage from "@assets/WhatsApp Image 2025-09-13 at 15.54.33_e68e17db_1757805248590.jpg";

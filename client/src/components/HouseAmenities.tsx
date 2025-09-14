@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GlassCard from "./GlassCard";
+import GlassCard from "@/components/GlassCard";
 import { Badge } from "@/components/ui/badge";
 import { Wifi, Bed, Users, Baby, Dog, Home, Coffee, Car } from "lucide-react";
 import houseImage from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";

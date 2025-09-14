@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import GlassCard from "./GlassCard";
+import GlassCard from "@/components/GlassCard";
 import { Button } from "@/components/ui/button";
 import { FloatingLabelInput } from "@/components/ui/floating-label-input";
 import { Calendar, Users, X } from "lucide-react";
