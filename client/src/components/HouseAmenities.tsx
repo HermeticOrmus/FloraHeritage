@@ -125,7 +125,7 @@ export default function HouseAmenities() {
                     <Badge className="bg-casa-blue-deep text-foreground text-sm px-3 py-1">
                       Entire House
                     </Badge>
-                    <Badge className="bg-glass-blue/30 backdrop-blur-sm text-foreground text-sm px-3 py-1">
+                    <Badge className="bg-glass-blue/20 backdrop-blur-[1px] text-foreground text-sm px-3 py-1">
                       Up to 10 Guests
                     </Badge>
                     <Badge className="bg-mountain-sage/40 backdrop-blur-sm text-foreground text-sm px-3 py-1">

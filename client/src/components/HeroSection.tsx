@@ -104,7 +104,7 @@ export default function HeroSection() {
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
           <Button 
             size="lg" 
-            className={`bg-glass-blue/25 backdrop-blur-sm text-foreground border border-glass-blue/40 hover:bg-glass-blue/35 text-lg px-8 py-3 ${rippleContainerClass}`}
+            className={`bg-glass-blue/20 backdrop-blur-[2px] text-foreground border border-glass-blue/30 hover:bg-glass-blue/25 text-lg px-8 py-3 ${rippleContainerClass}`}
             onClick={(event) => handleCTAClick(event, "Discover Heritage")}
             data-testid="button-discover-heritage"
           >

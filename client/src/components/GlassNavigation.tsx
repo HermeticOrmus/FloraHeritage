@@ -208,9 +208,9 @@ export default function GlassNavigation() {
               "relative transform-gpu will-change-transform", // Performance optimizations
               rippleContainerClass,
               activeSection === item.id 
-                ? "bg-glass-blue/25 text-foreground shadow-lg font-semibold border border-glass-blue/40 backdrop-blur-sm" 
+                ? "bg-glass-blue/20 text-foreground shadow-md font-semibold border border-glass-blue/30 backdrop-blur-[2px]" 
                 : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground",
-              item.id === "booking" && "ml-2 bg-glass-blue/25 text-foreground shadow-lg font-semibold border border-glass-blue/40"
+              item.id === "booking" && "ml-2 bg-glass-blue/20 text-foreground shadow-md font-semibold border border-glass-blue/30"
             )}
             onClick={(event) => handleNavClick(event, item.href, item.id)}
             onMouseEnter={() => handleItemHover(index, true)}
