@@ -71,7 +71,7 @@ const FloatingLabelInput = forwardRef<
         gsap.to(labelRef.current, {
           y: -24,
           scale: 0.85,
-          color: "rgb(168, 153, 138)",
+          color: "rgb(173, 216, 230)",
           duration: 0.3,
           ease: "power2.out"
         });
@@ -96,7 +96,7 @@ const FloatingLabelInput = forwardRef<
     // Subtle container glow effect
     if (containerRef.current) {
       gsap.to(containerRef.current, {
-        boxShadow: "0 0 0 2px rgba(168, 153, 138, 0.3), 0 4px 20px rgba(168, 153, 138, 0.1)",
+        boxShadow: "0 0 0 2px rgba(173, 216, 230, 0.3), 0 4px 20px rgba(173, 216, 230, 0.1)",
         duration: 0.2,
         ease: "power2.out"
       });

@@ -138,7 +138,7 @@ export default function HeritageTimeline() {
                       <div className="flex-1">
                         <div className="flex items-center mb-3">
                           <span className={`inline-block w-3 h-3 rounded-full mr-3 ${
-                            event.generation === 1 ? "bg-stone-warm" 
+                            event.generation === 1 ? "bg-glass-blue" 
                             : event.generation === 2 ? "bg-casa-blue-medium"
                             : event.generation === 3 ? "bg-mountain-sage" 
                             : "bg-hydrangea-medium"
@@ -176,7 +176,7 @@ export default function HeritageTimeline() {
 
                 {/* Timeline dot */}
                 <div className={`relative z-10 w-6 h-6 rounded-full border-4 border-background shadow-lg flex-shrink-0 ${
-                  event.generation === 1 ? "bg-stone-warm" 
+                  event.generation === 1 ? "bg-glass-blue" 
                   : event.generation === 2 ? "bg-casa-blue-medium"
                   : event.generation === 3 ? "bg-mountain-sage" 
                   : "bg-hydrangea-medium"

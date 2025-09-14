@@ -19,7 +19,7 @@ interface RipplePosition {
  */
 export class RippleEffect {
   private static defaultOptions: Required<RippleOptions> = {
-    color: 'rgba(168, 153, 138, 0.3)', // stone-warm default
+    color: 'rgba(173, 216, 230, 0.3)', // glass-blue default
     duration: 0.8,
     size: 100,
     opacity: 0.3,
