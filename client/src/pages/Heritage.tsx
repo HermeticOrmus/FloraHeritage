@@ -24,7 +24,6 @@ export default function Heritage() {
 
   return (
     <div className="relative min-h-screen bg-background">
-      <GlassNavigation />
       
       {/* Heritage Hero Section */}
       <section 

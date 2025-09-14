@@ -180,6 +180,7 @@ export default function GlassNavigation() {
         "fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500",
         isScrolled ? "mt-2" : "mt-3"
       )}
+      style={{ position: 'fixed' }}
     >
       <GlassCard 
         variant="nav" 

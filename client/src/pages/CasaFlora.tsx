@@ -28,7 +28,6 @@ export default function CasaFlora() {
 
   return (
     <div className="relative min-h-screen bg-background">
-      <GlassNavigation />
       
       <main>
         <section id="home">
