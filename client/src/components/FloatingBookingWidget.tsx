@@ -2,8 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import GlassCard from "./GlassCard";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { FloatingLabelInput } from "@/components/ui/floating-label-input";
 import { Calendar, Users, X } from "lucide-react";
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 
@@ -78,70 +77,98 @@ export default function FloatingBookingWidget() {
     switch (currentStep) {
       case 1:
         return (
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="check-in" className="text-foreground text-sm font-medium">
-                  Check In
-                </Label>
-                <Input
-                  id="check-in"
-                  type="date"
-                  value={bookingData.checkIn}
-                  onChange={(e) => setBookingData({...bookingData, checkIn: e.target.value})}
-                  className="bg-foreground/10 border-foreground/30 text-foreground placeholder-foreground/60"
-                  data-testid="input-check-in"
-                />
-              </div>
-              <div>
-                <Label htmlFor="check-out" className="text-foreground text-sm font-medium">
-                  Check Out  
-                </Label>
-                <Input
-                  id="check-out"
-                  type="date"
-                  value={bookingData.checkOut}
-                  onChange={(e) => setBookingData({...bookingData, checkOut: e.target.value})}
-                  className="bg-foreground/10 border-foreground/30 text-foreground placeholder-foreground/60"
-                  data-testid="input-check-out"
-                />
-              </div>
+              <FloatingLabelInput
+                id="check-in"
+                label="Check In"
+                type="date"
+                value={bookingData.checkIn}
+                onChange={(e) => setBookingData({...bookingData, checkIn: e.target.value})}
+                data-testid="input-check-in"
+                className="transition-all duration-300"
+              />
+              <FloatingLabelInput
+                id="check-out"
+                label="Check Out"
+                type="date"
+                value={bookingData.checkOut}
+                onChange={(e) => setBookingData({...bookingData, checkOut: e.target.value})}
+                data-testid="input-check-out"
+                className="transition-all duration-300"
+              />
             </div>
-            <div>
-              <Label htmlFor="guests" className="text-foreground text-sm font-medium">
-                Guests
-              </Label>
-              <select 
-                id="guests"
-                value={bookingData.guests}
-                onChange={(e) => setBookingData({...bookingData, guests: parseInt(e.target.value)})}
-                className="w-full p-2 rounded-md bg-foreground/10 border border-foreground/30 text-foreground"
-                data-testid="select-guests"
-              >
-                {[1,2,3,4,5,6].map(num => (
-                  <option key={num} value={num} className="text-black">{num} Guest{num > 1 ? 's' : ''}</option>
-                ))}
-              </select>
-            </div>
+            <FloatingLabelInput
+              id="guests"
+              label="Number of Guests"
+              as="select"
+              value={bookingData.guests}
+              onChange={(e) => setBookingData({...bookingData, guests: parseInt(e.target.value)})}
+              data-testid="select-guests"
+              className="transition-all duration-300"
+            >
+              {[1,2,3,4,5,6].map(num => (
+                <option key={num} value={num} className="bg-background text-foreground">
+                  {num} Guest{num > 1 ? 's' : ''}
+                </option>
+              ))}
+            </FloatingLabelInput>
           </div>
         );
       case 2:
         return (
-          <div className="space-y-4">
-            <Label className="text-foreground text-sm font-medium">Select Property</Label>
-            <div className="space-y-2">
-              {['Heritage Suite', 'Coffee Cottage', 'Family Villa'].map(property => (
-                <label key={property} className="flex items-center space-x-3 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="property"
-                    value={property}
-                    checked={bookingData.property === property}
-                    onChange={(e) => setBookingData({...bookingData, property: e.target.value})}
-                    className="text-primary"
-                    data-testid={`radio-${property.toLowerCase().replace(' ', '-')}`}
-                  />
-                  <span className="text-foreground">{property}</span>
+          <div className="space-y-6">
+            <h3 className="text-foreground font-serif text-base font-semibold text-stone-warm">
+              Select Your Property
+            </h3>
+            <div className="space-y-3">
+              {['Heritage Suite', 'Coffee Cottage', 'Family Villa'].map((property, index) => (
+                <label 
+                  key={property} 
+                  className={`
+                    group flex items-center space-x-4 p-4 rounded-lg cursor-pointer
+                    bg-gradient-to-br from-foreground/5 to-foreground/2
+                    border border-foreground/15 backdrop-blur-sm
+                    hover:bg-foreground/10 hover:border-stone-warm/30
+                    transition-all duration-300 hover-elevate
+                    ${bookingData.property === property ? 'bg-stone-warm/10 border-stone-warm/40' : ''}
+                  `}
+                >
+                  <div className="relative">
+                    <input
+                      type="radio"
+                      name="property"
+                      value={property}
+                      checked={bookingData.property === property}
+                      onChange={(e) => setBookingData({...bookingData, property: e.target.value})}
+                      className="sr-only"
+                      data-testid={`radio-${property.toLowerCase().replace(' ', '-')}`}
+                    />
+                    <div className={`
+                      w-5 h-5 rounded-full border-2 transition-all duration-300
+                      ${bookingData.property === property 
+                        ? 'border-stone-warm bg-stone-warm' 
+                        : 'border-foreground/40 group-hover:border-stone-warm/60'
+                      }
+                    `}>
+                      {bookingData.property === property && (
+                        <div className="w-2 h-2 bg-foreground rounded-full m-auto mt-0.5" />
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <span className={`
+                      font-serif font-medium transition-colors duration-300
+                      ${bookingData.property === property ? 'text-stone-warm' : 'text-foreground group-hover:text-stone-warm'}
+                    `}>
+                      {property}
+                    </span>
+                    <p className="text-sm text-foreground/60 mt-1">
+                      {property === 'Heritage Suite' && 'Elegant main house with antique furnishings'}
+                      {property === 'Coffee Cottage' && 'Cozy cottage overlooking the coffee plantation'}
+                      {property === 'Family Villa' && 'Spacious villa perfect for groups and families'}
+                    </p>
+                  </div>
                 </label>
               ))}
             </div>
