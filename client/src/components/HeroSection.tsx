@@ -101,36 +101,37 @@ export default function HeroSection() {
           </p>
         </div>
         
-        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
-          <Button 
-            size="lg" 
-            className={`bg-glass-blue/20 backdrop-blur-[2px] text-foreground border border-glass-blue/30 hover:bg-glass-blue/25 text-lg px-8 py-3 ${rippleContainerClass}`}
-            onClick={(event) => handleCTAClick(event, "Discover Heritage")}
-            data-testid="button-discover-heritage"
-          >
-            Discover Our Heritage
-          </Button>
+        <div ref={ctaRef} className="transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button 
+              size="lg" 
+              className={`bg-glass-blue/20 backdrop-blur-[2px] text-foreground border border-glass-blue/30 hover:bg-glass-blue/25 text-lg px-8 py-3 ${rippleContainerClass}`}
+              onClick={(event) => handleCTAClick(event, "Discover Heritage")}
+              data-testid="button-discover-heritage"
+            >
+              Discover Our Heritage
+            </Button>
+            
+            <Button 
+              size="lg"
+              className={`bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium text-lg px-8 py-3 ${rippleContainerClass}`}
+              onClick={(event) => handleCTAClick(event, "Book Stay")}
+              data-testid="button-book-stay"
+            >
+              Book Your Stay
+            </Button>
+          </div>
           
-          <Button 
-            size="lg"
-            className={`bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium text-lg px-8 py-3 ${rippleContainerClass}`}
-            onClick={(event) => handleCTAClick(event, "Book Stay")}
-            data-testid="button-book-stay"
-          >
-            Book Your Stay
-          </Button>
+          {/* Heritage info moved under buttons */}
+          <div className="text-center text-foreground max-w-md mx-auto">
+            <h3 className="font-serif font-semibold mb-2 text-xl">Heritage Since 1920</h3>
+            <p className="text-foreground/85 leading-relaxed">
+              Four generations of authentic hospitality in Panama's mountain paradise
+            </p>
+          </div>
         </div>
       </div>
       
-      {/* Floating glass info card */}
-      <GlassCard className="absolute bottom-8 left-8 p-4 max-w-sm hidden md:block">
-        <div className="text-foreground">
-          <h3 className="font-serif font-semibold mb-2">Heritage Since 1920</h3>
-          <p className="text-sm text-foreground/85">
-            Four generations of authentic hospitality in Panama's mountain paradise
-          </p>
-        </div>
-      </GlassCard>
     </section>
   );
 }
