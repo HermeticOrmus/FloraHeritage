@@ -75,6 +75,7 @@ export default {
           deep: "hsl(var(--mountain-deep) / <alpha-value>)",
           light: "hsl(var(--mountain-light) / <alpha-value>)",
         },
+        'stone-warm': "hsl(var(--stone-warm) / <alpha-value>)",
         destructive: {
           DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
           foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
