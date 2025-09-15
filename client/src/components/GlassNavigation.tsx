@@ -1,7 +1,7 @@
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { cn } from "@/lib/utils";
-import GlassCard from "@/components/GlassCard";
+
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 
 const navigationItems = [
@@ -20,7 +20,7 @@ export default function GlassNavigation() {
   // Refs for GSAP animations
   const navRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLSpanElement | null)[]>([]);
-  const glowRef = useRef<HTMLDivElement>(null);
+  
 
   // Heritage entrance animations with GSAP
   useLayoutEffect(() => {
@@ -182,63 +182,26 @@ export default function GlassNavigation() {
       )}
       style={{ position: 'fixed' }}
     >
-      <GlassCard 
-        variant="nav" 
-        className={cn(
-          "antique-glass-texture relative", // Add heritage glass texture
-          isScrolled ? "py-2 px-4" : "py-3 px-6"
-        )}
-      >
-        {/* Heritage glow effect overlay */}
-        <div 
-          ref={glowRef}
-          className="absolute inset-0 rounded-lg opacity-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle at 50% 50%, rgba(168, 153, 138, 0.1) 0%, transparent 70%)',
-            filter: 'blur(8px)'
-          }}
-        />
-        
-        <nav className="flex items-center space-x-8 relative z-10">
+        <nav className="flex items-center space-x-8"></nav>
         {navigationItems.map((item, index) => (
           <span
             key={item.id}
             ref={(el) => { itemRefs.current[index] = el; }}
             className={cn(
-              "font-serif text-lg cursor-pointer transition-all duration-300 text-shadow-sm px-3 py-2 rounded-md",
-              "relative transform-gpu will-change-transform", // Performance optimizations
-              rippleContainerClass,
+              "font-serif text-lg cursor-pointer transition-all duration-300",
               activeSection === item.id 
-                ? "bg-glass-blue/20 text-foreground shadow-md font-semibold border border-glass-blue/30 backdrop-blur-[2px]" 
-                : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground",
-              item.id === "booking" && "ml-2 bg-glass-blue/20 text-foreground shadow-md font-semibold border border-glass-blue/30"
+                ? "text-foreground font-semibold" 
+                : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground"
             )}
             onClick={(event) => handleNavClick(event, item.href, item.id)}
             onMouseEnter={() => handleItemHover(index, true)}
             onMouseLeave={() => handleItemHover(index, false)}
             data-testid={`nav-${item.id}`}
-            style={{
-              transformOrigin: 'center center',
-              backfaceVisibility: 'hidden' // Smooth 3D transforms
-            }}
           >
             {item.label}
-            
-            {/* Individual item glow effect */}
-            {activeSection === item.id && (
-              <div 
-                className="absolute inset-0 rounded-md pointer-events-none opacity-30"
-                style={{
-                  background: 'radial-gradient(circle at 50% 50%, rgba(168, 153, 138, 0.2) 0%, transparent 70%)',
-                  filter: 'blur(4px)',
-                  zIndex: -1
-                }}
-              />
-            )}
           </span>
         ))}
       </nav>
-    </GlassCard>
-  </div>
+    </div>
   );
 }
