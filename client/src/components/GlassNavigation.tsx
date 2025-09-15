@@ -176,19 +176,16 @@ export default function GlassNavigation() {
   return (
     <div 
       ref={navRef}
-      className={cn(
-        "fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500",
-        isScrolled ? "mt-2" : "mt-3"
-      )}
+      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 py-6 px-8"
       style={{ position: 'fixed' }}
     >
-      <nav className="flex items-center space-x-8">
+      <nav className="flex items-center space-x-12">
         {navigationItems.map((item, index) => (
           <span
             key={item.id}
             ref={(el) => { itemRefs.current[index] = el; }}
             className={cn(
-              "font-serif text-lg cursor-pointer transition-all duration-300",
+              "font-serif text-xl cursor-pointer transition-all duration-300",
               activeSection === item.id 
                 ? "text-foreground font-semibold" 
                 : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground"
