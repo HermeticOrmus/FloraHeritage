@@ -182,7 +182,7 @@ export default function GlassNavigation() {
       )}
       style={{ position: 'fixed' }}
     >
-        <nav className="flex items-center space-x-8"></nav>
+      <nav className="flex items-center space-x-8">
         {navigationItems.map((item, index) => (
           <span
             key={item.id}

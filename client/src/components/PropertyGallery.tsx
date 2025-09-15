@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const galleryImages = [
   {
     src: houseImage1,
-    title: "Casa Flora Main House",
+    title: "Casa Flora",
     description: "One of Boquete's most iconic houses, surrounded by lush tropical gardens and century-old trees."
   },
   {

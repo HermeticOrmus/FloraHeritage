@@ -10,9 +10,9 @@ interface GlassCardProps {
 const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
   ({ children, className, variant = "default" }, ref) => {
     const variants = {
-      default: "backdrop-blur-[2px] bg-glass-blue/20 border border-glass-blue/30 hover:bg-glass-blue/25 shadow-md shadow-glass-blue/10",
-      nav: "backdrop-blur-[2px] bg-glass-blue/20 border border-glass-blue/30 hover:bg-glass-blue/25 shadow-lg shadow-glass-blue/12", 
-      modal: "backdrop-blur-[3px] bg-glass-blue/22 border border-glass-blue/35 hover:bg-glass-blue/28 shadow-lg shadow-glass-blue/15"
+      default: "backdrop-blur-[1px] bg-glass-blue/15 border border-glass-blue/25 hover:bg-glass-blue/20 shadow-sm shadow-glass-blue/8",
+      nav: "backdrop-blur-[1px] bg-glass-blue/15 border border-glass-blue/25 hover:bg-glass-blue/20 shadow-md shadow-glass-blue/10", 
+      modal: "backdrop-blur-[2px] bg-glass-blue/18 border border-glass-blue/30 hover:bg-glass-blue/23 shadow-md shadow-glass-blue/12"
     };
 
     return (
