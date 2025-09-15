@@ -13,7 +13,7 @@ const navigationItems = [
 
 export default function GlassNavigation() {
   const [activeSection, setActiveSection] = useState("home");
-  const [isScrolled, setIsScrolled] = useState(false);
+  // Removed isScrolled state - navigation stays fixed
   const [isInitialized, setIsInitialized] = useState(false);
   const { createRipple } = useRippleEffect('glass');
   
@@ -72,30 +72,19 @@ export default function GlassNavigation() {
     }
   }, [isInitialized]);
 
-  // Scroll effects
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+  // Removed scroll effects - navigation stays fixed
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Enhanced heritage hover effects
+  // Color change and upscale hover effects
   const handleItemHover = (index: number, isEntering: boolean) => {
     const item = itemRefs.current[index];
     if (!item || !isInitialized) return;
     
     gsap.to(item, {
-      scale: isEntering ? 1.05 : 1,
-      rotationX: isEntering ? 2 : 0,
-      boxShadow: isEntering 
-        ? "0 8px 25px rgba(168, 153, 138, 0.2), 0 0 0 1px rgba(245, 241, 235, 0.3)" 
-        : "0 0 0 rgba(168, 153, 138, 0), 0 0 0 1px rgba(245, 241, 235, 0)",
-      duration: 0.4,
+      scale: isEntering ? 1.1 : 1,
+      color: isEntering ? "#6b7280" : "", // Subtle color change on hover
+      duration: 0.3,
       ease: "power2.out",
-      overwrite: "auto" // Prevent animation conflicts
+      overwrite: "auto"
     });
   };
   
@@ -176,7 +165,7 @@ export default function GlassNavigation() {
   return (
     <div 
       ref={navRef}
-      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 py-6 px-8"
+      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 py-6 px-8 bg-white/80 backdrop-blur-sm"
       style={{ position: 'fixed' }}
     >
       <nav className="flex items-center space-x-12">
