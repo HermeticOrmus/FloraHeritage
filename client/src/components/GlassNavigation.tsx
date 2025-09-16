@@ -38,7 +38,7 @@ export default function GlassNavigation() {
     
     gsap.to(item, {
       scale: isEntering ? 1.1 : 1,
-      color: isEntering ? "#6b7280" : "", // Subtle color change on hover
+      color: isEntering ? "#3b82f6" : "", // Blue color change on hover
       duration: 0.3,
       ease: "power2.out",
       overwrite: "auto"
@@ -122,7 +122,7 @@ export default function GlassNavigation() {
   return (
     <div 
       ref={navRef}
-      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] py-6 px-8"
+      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] py-4 px-8"
       style={{ position: 'fixed' }}
     >
       <nav className="flex items-center space-x-12">
