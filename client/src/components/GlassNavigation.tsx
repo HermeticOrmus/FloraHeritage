@@ -22,53 +22,10 @@ export default function GlassNavigation() {
   const itemRefs = useRef<(HTMLSpanElement | null)[]>([]);
   
 
-  // Heritage entrance animations with GSAP
+  // Simple initialization without transforms that interfere with fixed positioning
   useLayoutEffect(() => {
-    if (!isInitialized && navRef.current) {
-      // Filter out null refs before GSAP operations
-      const items = itemRefs.current.filter((el): el is HTMLSpanElement => !!el);
-      
-      const ctx = gsap.context(() => {
-        // Initial setup - hide elements
-        gsap.set(navRef.current, {
-          opacity: 0,
-          y: -30,
-          scale: 0.95
-        });
-        
-        gsap.set(items, {
-          opacity: 0,
-          y: 20,
-          scale: 0.9
-        });
-        
-        // Heritage entrance timeline with staggered items
-        const tl = gsap.timeline({ 
-          delay: 0.8, // Wait for page to settle
-          onComplete: () => setIsInitialized(true)
-        });
-        
-        // Animate navigation container first
-        tl.to(navRef.current, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1.0,
-          ease: "power3.out"
-        })
-        // Then stagger animate individual items
-        .to(items, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.12, // Heritage stagger timing
-          ease: "power3.out"
-        }, "-=0.6"); // Start before container animation completes
-        
-      }, navRef.current);
-      
-      return () => ctx.revert();
+    if (!isInitialized) {
+      setIsInitialized(true);
     }
   }, [isInitialized]);
 
@@ -165,7 +122,7 @@ export default function GlassNavigation() {
   return (
     <div 
       ref={navRef}
-      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-50 py-6 px-8 bg-white/80 backdrop-blur-sm"
+      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] py-6 px-8"
       style={{ position: 'fixed' }}
     >
       <nav className="flex items-center space-x-12">
