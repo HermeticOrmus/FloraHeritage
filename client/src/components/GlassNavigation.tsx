@@ -38,7 +38,7 @@ export default function GlassNavigation() {
     
     gsap.to(item, {
       scale: isEntering ? 1.1 : 1,
-      color: isEntering ? "#3b82f6" : "", // Blue color change on hover
+      color: isEntering ? "hsl(200, 32%, 56%)" : "", // Casa Flora brand blue hover
       duration: 0.3,
       ease: "power2.out",
       overwrite: "auto"
