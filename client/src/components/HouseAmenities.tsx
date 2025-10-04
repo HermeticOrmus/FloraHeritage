@@ -38,7 +38,7 @@ const mainAmenities = [
 
 const additionalFeatures = [
   "Full kitchen with modern appliances",
-  "Multiple bathrooms", 
+  "Multiple bathrooms",
   "Spacious living areas",
   "Private garden access",
   "Coffee station with local beans",
@@ -192,8 +192,8 @@ export default function HouseAmenities() {
                   className="flex items-center space-x-2 text-left"
                 >
                   <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                    feature.includes("garden") || feature.includes("Coffee") ? "bg-mountain-sage" 
-                    : feature.includes("kitchen") || feature.includes("bathroom") ? "bg-stone-warm"
+                    feature.toLowerCase().includes("garden") || feature.toLowerCase().includes("coffee") ? "bg-mountain-sage"
+                    : feature.toLowerCase().includes("kitchen") || feature.toLowerCase().includes("bathroom") ? "bg-stone-warm"
                     : "bg-casa-blue-medium"
                   }`} />
                   <span className="text-muted-foreground text-sm">
