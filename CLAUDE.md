@@ -198,3 +198,14 @@ Images are stored in `attached_assets/` and referenced via `@assets` alias. Use 
 ## Design Reference Files
 - `design_guidelines.md` - Complete design specifications and color system
 - `replit.md` - Project overview and architecture details
+
+## Current Project Status
+
+**Phase**: Concept & Planning
+**Location**: C:\Users\ormus\Downloads\Casa Flora
+
+This directory currently contains:
+- Photo gallery (37 heritage and property images)
+- Core documentation (README, CONCEPT, DEVELOPMENT, ROADMAP, CLAUDE)
+
+The full-stack application described above exists separately and will be integrated once the design and planning phase is complete.
