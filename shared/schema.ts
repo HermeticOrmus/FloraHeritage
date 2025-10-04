@@ -2,6 +2,7 @@ import { sql } from "drizzle-orm";
 import { pgTable, text, varchar, timestamp, integer, decimal, boolean, json } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
+import type { RoomName } from "./botanicalRooms";
 
 // Guest information table
 export const guests = pgTable("guests", {
@@ -63,6 +64,29 @@ export const reviews = pgTable("reviews", {
   comment: text("comment"),
   isPublic: boolean("is_public").default(true),
   createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+// Botanical rooms reference table (for informational purposes only - no booking per room)
+// This table stores the 5 botanical room data for API access
+export const botanicalRooms = pgTable("botanical_rooms", {
+  id: varchar("id").primaryKey().$type<RoomName>(),
+  displayName: text("display_name").notNull(),
+  flowerNameEnglish: text("flower_name_english").notNull(),
+  flowerNameSpanish: text("flower_name_spanish").notNull(),
+  floor: text("floor").notNull().$type<'downstairs' | 'upstairs'>(),
+  bathroomType: text("bathroom_type").notNull().$type<'ensuite' | 'shared'>(),
+  bedConfiguration: text("bed_configuration").notNull(),
+  capacity: integer("capacity").notNull(),
+  heritageStory: text("heritage_story").notNull(),
+  flowerStory: text("flower_story").notNull(),
+  gardenLocation: text("garden_location").notNull(),
+  bloomingSeason: text("blooming_season"),
+  features: json("features").$type<string[]>().notNull(),
+  viewDescription: text("view_description"),
+  mainImage: text("main_image").notNull(),
+  additionalImages: json("additional_images").$type<string[]>(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
 // Insert schemas for validation
@@ -148,6 +172,6 @@ export type ServerBookingData = {
   totalPrice: string;
   status: BookingStatus;
   isPaid: boolean;
-  notes?: string;
-  amenities?: string[];
+  notes?: string | null;
+  amenities?: string[] | null;
 };

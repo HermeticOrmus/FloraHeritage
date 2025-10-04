@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils";
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 
 const navigationItems = [
-  { id: "home", label: "Home", href: "/" },
-  { id: "heritage", label: "Heritage", href: "/heritage" },
+  { id: "home", label: "Home", href: "#home" },
+  { id: "rooms", label: "Rooms", href: "#rooms" },
+  { id: "gallery", label: "Gallery", href: "#gallery" },
   { id: "amenities", label: "Amenities", href: "#amenities" },
   { id: "booking", label: "Book Now", href: "#booking" },
 ];

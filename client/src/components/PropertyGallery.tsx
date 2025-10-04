@@ -2,39 +2,68 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
-import houseImage1 from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";
-import houseImage2 from "@assets/WhatsApp Image 2025-09-13 at 15.54.05_54df4d3a_1757805248590.jpg";
-import gardenImage from "@assets/WhatsApp Image 2025-09-13 at 15.54.33_e68e17db_1757805248590.jpg";
-import pathwayImage from "@assets/WhatsApp Image 2025-09-13 at 15.54.52_5c8d2b26_1757805248590.jpg";
-import flowerImage from "@assets/WhatsApp Image 2025-09-13 at 15.53.46_c3d0b191_1757805248589.jpg";
+
+// Exterior & Landscape
+import houseExterior from "@assets/exteriors/casa-flora-exterior-front-view-blue-roof.jpg";
+import houseWideAngle from "@assets/exteriors/casa-flora-exterior-wide-angle.jpg";
+import houseSunset from "@assets/exteriors/casa-flora-exterior-sunset-view.jpg";
+import houseAerial from "@assets/exteriors/casa-flora-exterior-aerial-perspective.jpg";
+import terracePatio from "@assets/exteriors/casa-flora-exterior-terrace-patio.jpg";
+import mountainView from "@assets/landscape/casa-flora-landscape-property-overview.jpg";
+import landscapeContext from "@assets/landscape/casa-flora-landscape-context.jpg";
+
+// Gardens & Flowers
+import gardenWalkway from "@assets/gardens/casa-flora-garden-covered-walkway-flowers.jpg";
+import gardenFlowers from "@assets/gardens/casa-flora-garden-flowers-orange-magenta.jpg";
+import tropicalPlants from "@assets/gardens/casa-flora-garden-tropical-plants.jpg";
+
+// Interior Common Areas
+import livingRoom from "@assets/common-areas/casa-flora-interior-common-living-room.jpg";
+import diningRoom from "@assets/common-areas/casa-flora-interior-common-dining-room.jpg";
+import libraryBookshelf from "@assets/common-areas/casa-flora-interior-library-bookshelf.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const galleryImages = [
   {
-    src: houseImage1,
-    title: "Casa Flora",
-    description: "One of Boquete's most iconic houses, surrounded by lush tropical gardens and century-old trees."
+    src: houseWideAngle,
+    title: "Casa Flora Heritage Home",
+    description: "A century-old landmark in Boquete's flower capital, featuring traditional blue-roof architecture and lush tropical gardens."
   },
   {
-    src: houseImage2,
-    title: "Architectural Details", 
-    description: "Traditional design elements that reflect our family's commitment to preserving authentic style."
+    src: gardenWalkway,
+    title: "Botanical Gardens",
+    description: "Hydrangeas, bougainvillea, and orchids thrive along our covered walkways—each bedroom is named for a flower in these gardens."
   },
   {
-    src: gardenImage,
-    title: "Vibrant Gardens",
-    description: "Colorful bougainvillea and native plants create a paradise for nature lovers."
+    src: livingRoom,
+    title: "Heritage Living Spaces",
+    description: "Authentic colonial charm meets modern comfort in our shared living areas, where four generations of family stories come alive."
   },
   {
-    src: pathwayImage,
-    title: "Garden Pathways",
-    description: "Winding paths through our botanical paradise, perfect for morning walks and meditation."
+    src: houseSunset,
+    title: "Mountain Sanctuary",
+    description: "Nestled in Boquete's cool highlands with breathtaking sunset views over Volcán Barú."
   },
   {
-    src: flowerImage,
-    title: "Tropical Flora",
-    description: "Indigenous flowers and plants that showcase the natural beauty of Boquete's ecosystem."
+    src: gardenFlowers,
+    title: "Veranera Blooms",
+    description: "Vibrant bougainvillea (veranera) cascades over our walls year-round, bringing tropical color to every corner."
+  },
+  {
+    src: diningRoom,
+    title: "Family Gathering Spaces",
+    description: "Share meals and memories in our spacious dining room, where generations have gathered."
+  },
+  {
+    src: tropicalPlants,
+    title: "Tropical Paradise",
+    description: "Coffee plants, orchids, and indigenous flora create an immersive botanical experience."
+  },
+  {
+    src: landscapeContext,
+    title: "Boquete's Mountain Paradise",
+    description: "Experience the natural beauty that has made Boquete Panama's premier mountain destination, surrounded by coffee plantations and cloud forests."
   }
 ];
 
@@ -91,11 +120,11 @@ export default function PropertyGallery() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-[#F0F5ED]">
-            Casa Flora in Pictures
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            A Century of Beauty
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover the natural beauty and architectural charm that makes Casa Flora a unique destination
+            Four generations have cultivated these gardens and preserved this heritage home in Boquete's flower capital
           </p>
         </div>
 

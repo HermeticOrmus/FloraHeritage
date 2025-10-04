@@ -96,9 +96,11 @@ export class DatabaseStorage implements IStorage {
     return updatedGuest;
   }
   
-  // Booking management
+  // Booking management (legacy - not used, kept for interface compatibility)
   async createBooking(booking: InsertBooking): Promise<Booking> {
-    const [newBooking] = await db.insert(bookings).values(booking).returning();
+    // This method requires all pricing fields to be pre-calculated
+    // Use createCompleteBookingWithPricing instead for server-side pricing
+    const [newBooking] = await db.insert(bookings).values(booking as any).returning();
     return newBooking;
   }
   

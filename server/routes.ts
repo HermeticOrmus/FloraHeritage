@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { 
+import {
   insertGuestSchema,
   insertBookingSchema,
   insertPaymentSchema,
@@ -10,6 +10,7 @@ import {
   type BookingStatus,
   type ServerBookingData
 } from "@shared/schema";
+import { BOTANICAL_ROOMS } from "@shared/botanicalRooms";
 import { z } from "zod";
 
 // Server-side pricing calculation
@@ -97,8 +98,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         totalPrice: pricing.totalPrice,
         status: 'pending',
         isPaid: false,
-        notes: formData.booking.notes,
-        amenities: formData.booking.amenities,
+        notes: formData.booking.notes ?? null,
+        amenities: formData.booking.amenities && Array.isArray(formData.booking.amenities) ? (formData.booking.amenities as string[]) : null,
       };
       
       const result = await storage.createCompleteBookingWithPricing(formData.guest, completeBookingData);
@@ -440,8 +441,59 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
+  // Botanical Rooms endpoints
+
+  // Get all botanical rooms (informational - not for booking)
+  app.get("/api/rooms", async (req, res) => {
+    try {
+      // Return the botanical rooms data structure
+      // This is purely informational - Casa Flora rents whole-house only
+      const rooms = Object.values(BOTANICAL_ROOMS);
+
+      res.json({
+        success: true,
+        data: {
+          rooms,
+          rentalType: 'whole-house-only',
+          totalBedrooms: 5,
+          totalCapacity: 10,
+          message: 'Casa Flora rents as a complete 5-bedroom home. Individual room booking is not available.'
+        }
+      });
+    } catch (error) {
+      console.error("Error fetching rooms:", error);
+      res.status(500).json({ error: "Failed to fetch room information" });
+    }
+  });
+
+  // Get single botanical room by ID (informational)
+  app.get("/api/rooms/:id", async (req, res) => {
+    try {
+      const roomId = req.params.id as keyof typeof BOTANICAL_ROOMS;
+      const room = BOTANICAL_ROOMS[roomId];
+
+      if (!room) {
+        return res.status(404).json({
+          error: "Room not found",
+          availableRooms: Object.keys(BOTANICAL_ROOMS)
+        });
+      }
+
+      res.json({
+        success: true,
+        data: {
+          room,
+          message: 'This room is part of the whole-house rental. Individual room booking is not available.'
+        }
+      });
+    } catch (error) {
+      console.error("Error fetching room:", error);
+      res.status(500).json({ error: "Failed to fetch room information" });
+    }
+  });
+
   // Analytics endpoints
-  
+
   // Get booking statistics
   app.get("/api/admin/stats", async (req, res) => {
     try {

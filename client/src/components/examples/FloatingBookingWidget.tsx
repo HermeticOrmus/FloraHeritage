@@ -1,4 +1,5 @@
-import FloatingBookingWidget from '../FloatingBookingWidget'
+// FloatingBookingWidget component not yet implemented
+// import FloatingBookingWidget from '../FloatingBookingWidget'
 
 export default function FloatingBookingWidgetExample() {
   return (
@@ -6,10 +7,10 @@ export default function FloatingBookingWidgetExample() {
       <div className="text-center text-white">
         <h1 className="font-serif text-4xl font-bold mb-4">Casa Flora</h1>
         <p className="text-white/80 text-lg">
-          Click the floating booking button in the bottom right corner
+          FloatingBookingWidget component not yet implemented
         </p>
+        {/* <FloatingBookingWidget /> */}
       </div>
-      <FloatingBookingWidget />
     </div>
   );
 }

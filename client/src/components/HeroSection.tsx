@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import GlassCard from "@/components/GlassCard";
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
-import heroImage from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";
+import heroImage from "@assets/gardens/casa-flora-garden-entrance-gate.jpg";
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -94,10 +94,10 @@ export default function HeroSection() {
         
         <div ref={subtitleRef} className="mb-8 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
           <p className="text-2xl md:text-3xl font-serif text-foreground/95 mb-4 leading-relaxed max-w-3xl mx-auto">
-            One of Boquete's most Iconic houses in the heart of town
+            5 Botanical Bedrooms, One Century-Old Story
           </p>
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-            Experience four generations of family stewardship in Panama's coffee country
+            Rent the entire heritage home in Boquete's flower capital
           </p>
         </div>
         

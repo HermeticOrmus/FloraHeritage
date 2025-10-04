@@ -153,12 +153,14 @@ const FloatingLabelInput = forwardRef<
       className={cn("relative transition-all duration-300", className)}
     >
       <Element
-        ref={(element) => {
-          inputRef.current = element;
+        ref={(element: HTMLInputElement | HTMLSelectElement | null) => {
+          if (inputRef) {
+            (inputRef as React.MutableRefObject<HTMLInputElement | HTMLSelectElement | null>).current = element;
+          }
           if (typeof ref === 'function') {
             ref(element);
           } else if (ref) {
-            (ref as any).current = element;
+            (ref as React.MutableRefObject<HTMLInputElement | HTMLSelectElement | null>).current = element;
           }
         }}
         id={id}

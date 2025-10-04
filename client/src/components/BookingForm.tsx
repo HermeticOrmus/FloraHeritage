@@ -55,19 +55,23 @@ export default function BookingForm() {
   // Check availability and get pricing mutation
   const checkAvailabilityMutation = useMutation({
     mutationFn: async ({ checkInDate, checkOutDate }: { checkInDate: Date; checkOutDate: Date }) => {
-      const availability = await apiRequest('/api/bookings/check-availability', {
-        method: 'POST',
-        body: { checkInDate: checkInDate.toISOString(), checkOutDate: checkOutDate.toISOString() }
-      });
-      
+      const availabilityRes = await apiRequest(
+        'POST',
+        '/api/bookings/check-availability',
+        { checkInDate: checkInDate.toISOString(), checkOutDate: checkOutDate.toISOString() }
+      );
+      const availability = await availabilityRes.json();
+
       if (availability.data.available) {
-        const pricing = await apiRequest('/api/bookings/pricing-estimate', {
-          method: 'POST',
-          body: { checkInDate: checkInDate.toISOString(), checkOutDate: checkOutDate.toISOString() }
-        });
+        const pricingRes = await apiRequest(
+          'POST',
+          '/api/bookings/pricing-estimate',
+          { checkInDate: checkInDate.toISOString(), checkOutDate: checkOutDate.toISOString() }
+        );
+        const pricing = await pricingRes.json();
         return { ...availability, pricing: pricing.data };
       }
-      
+
       return availability;
     },
     onSuccess: (data) => {
@@ -100,10 +104,8 @@ export default function BookingForm() {
   // Create booking mutation
   const createBookingMutation = useMutation({
     mutationFn: async (formData: BookingFormData) => {
-      return apiRequest('/api/bookings', {
-        method: 'POST',
-        body: formData
-      });
+      const res = await apiRequest('POST', '/api/bookings', formData);
+      return await res.json();
     },
     onSuccess: (data) => {
       toast({
@@ -139,7 +141,7 @@ export default function BookingForm() {
       }
     }
     if (step1Data.numberOfGuests < 1 || step1Data.numberOfGuests > 10) {
-      newErrors.numberOfGuests = "Guests must be between 1 and 10";
+      newErrors.numberOfGuests = "Maximum 10 guests (5 botanical bedrooms)";
     }
     
     setErrors(newErrors);
@@ -185,13 +187,13 @@ export default function BookingForm() {
           specialRequests: step2Data.specialRequests || undefined,
         },
         booking: {
-          checkInDate: step1Data.checkInDate,  // Send as string
-          checkOutDate: step1Data.checkOutDate,  // Send as string
+          checkInDate: new Date(step1Data.checkInDate).toISOString(),
+          checkOutDate: new Date(step1Data.checkOutDate).toISOString(),
           numberOfGuests: step1Data.numberOfGuests,
-          status: 'pending',
+          status: 'pending' as const,
           isPaid: false,
           notes: step2Data.specialRequests || undefined,
-        }
+        } as any
       };
       
       createBookingMutation.mutate(formData);
@@ -233,8 +235,11 @@ export default function BookingForm() {
     <GlassCard className="p-8 max-w-2xl mx-auto">
       <div className="mb-6">
         <h2 className="text-2xl font-serif font-semibold text-foreground mb-2">
-          Book Your Stay at Casa Flora
+          Reserve the Entire Heritage Home
         </h2>
+        <p className="text-sm text-muted-foreground mb-4">
+          Rent all 5 botanical bedrooms for your group (sleeps up to 10 guests)
+        </p>
         <div className="flex items-center space-x-4 text-sm text-muted-foreground">
           <span className={`flex items-center ${currentStep >= 1 ? 'text-foreground' : ''}`}>
             <span className={`w-6 h-6 rounded-full flex items-center justify-center mr-2 ${
@@ -254,24 +259,34 @@ export default function BookingForm() {
       {currentStep === 1 && (
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <FloatingLabelInput
-              id="checkInDate"
-              label=""
-              type="date"
-              value={step1Data.checkInDate}
-              onChange={(e) => setStep1Data({...step1Data, checkInDate: e.target.value})}
-              data-testid="input-checkin"
-              error={errors.checkInDate}
-            />
-            <FloatingLabelInput
-              id="checkOutDate"
-              label=""
-              type="date"
-              value={step1Data.checkOutDate}
-              onChange={(e) => setStep1Data({...step1Data, checkOutDate: e.target.value})}
-              data-testid="input-checkout"
-              error={errors.checkOutDate}
-            />
+            <div>
+              <label htmlFor="checkInDate" className="block text-sm font-medium text-foreground mb-2">
+                Check-in Date
+              </label>
+              <input
+                id="checkInDate"
+                type="date"
+                value={step1Data.checkInDate}
+                onChange={(e) => setStep1Data({...step1Data, checkInDate: e.target.value})}
+                data-testid="input-checkin"
+                className="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              {errors.checkInDate && <p className="text-sm text-destructive mt-1">{errors.checkInDate}</p>}
+            </div>
+            <div>
+              <label htmlFor="checkOutDate" className="block text-sm font-medium text-foreground mb-2">
+                Check-out Date
+              </label>
+              <input
+                id="checkOutDate"
+                type="date"
+                value={step1Data.checkOutDate}
+                onChange={(e) => setStep1Data({...step1Data, checkOutDate: e.target.value})}
+                data-testid="input-checkout"
+                className="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              {errors.checkOutDate && <p className="text-sm text-destructive mt-1">{errors.checkOutDate}</p>}
+            </div>
           </div>
 
           <div className="w-full md:w-1/2">
@@ -337,33 +352,39 @@ export default function BookingForm() {
       {currentStep === 2 && (
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <FloatingLabelInput
-              id="firstName"
-              label="First Name *"
-              value={step2Data.firstName}
-              onChange={(e) => setStep2Data({...step2Data, firstName: e.target.value})}
-              data-testid="input-firstname"
-              error={errors.firstName}
-            />
-            <FloatingLabelInput
-              id="lastName"
-              label="Last Name *"
-              value={step2Data.lastName}
-              onChange={(e) => setStep2Data({...step2Data, lastName: e.target.value})}
-              data-testid="input-lastname"
-              error={errors.lastName}
-            />
+            <div>
+              <FloatingLabelInput
+                id="firstName"
+                label="First Name *"
+                value={step2Data.firstName}
+                onChange={(e) => setStep2Data({...step2Data, firstName: e.target.value})}
+                data-testid="input-firstname"
+              />
+              {errors.firstName && <p className="text-sm text-destructive mt-1">{errors.firstName}</p>}
+            </div>
+            <div>
+              <FloatingLabelInput
+                id="lastName"
+                label="Last Name *"
+                value={step2Data.lastName}
+                onChange={(e) => setStep2Data({...step2Data, lastName: e.target.value})}
+                data-testid="input-lastname"
+              />
+              {errors.lastName && <p className="text-sm text-destructive mt-1">{errors.lastName}</p>}
+            </div>
           </div>
 
-          <FloatingLabelInput
-            id="email"
-            label="Email Address *"
-            type="email"
-            value={step2Data.email}
-            onChange={(e) => setStep2Data({...step2Data, email: e.target.value})}
-            data-testid="input-email"
-            error={errors.email}
-          />
+          <div>
+            <FloatingLabelInput
+              id="email"
+              label="Email Address *"
+              type="email"
+              value={step2Data.email}
+              onChange={(e) => setStep2Data({...step2Data, email: e.target.value})}
+              data-testid="input-email"
+            />
+            {errors.email && <p className="text-sm text-destructive mt-1">{errors.email}</p>}
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FloatingLabelInput
@@ -383,16 +404,20 @@ export default function BookingForm() {
             />
           </div>
 
-          <FloatingLabelInput
-            id="specialRequests"
-            label="Special Requests"
-            as="textarea"
-            rows={3}
-            value={step2Data.specialRequests}
-            onChange={(e) => setStep2Data({...step2Data, specialRequests: e.target.value})}
-            data-testid="textarea-requests"
-            placeholder="Any special requests or dietary requirements..."
-          />
+          <div>
+            <label className="block text-sm font-medium text-foreground mb-2">
+              Special Requests
+            </label>
+            <textarea
+              id="specialRequests"
+              rows={3}
+              value={step2Data.specialRequests}
+              onChange={(e) => setStep2Data({...step2Data, specialRequests: e.target.value})}
+              data-testid="textarea-requests"
+              placeholder="Any special requests or dietary requirements..."
+              className="w-full px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+          </div>
 
           <div className="flex space-x-4">
             <Button 
