@@ -3,14 +3,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
 import { Badge } from "@/components/ui/badge";
-import { BOTANICAL_ROOMS, CASA_FLORA_HOUSE, type BotanicalRoom } from "@shared/botanicalRooms";
+import { BOTANICAL_ROOMS, CASA_DEL_PUENTE_HOUSE, type BotanicalRoom } from "@shared/botanicalRooms";
 
 // Import room images statically for Vite bundling
 import geishaRoom from "@assets/bedrooms/casa-flora-room-geisha-main.jpg";
 import orquideaRoom from "@assets/bedrooms/casa-flora-room-orquidea-main.jpg";
 import hortensiaRoom from "@assets/bedrooms/casa-flora-room-hortensia-twin-beds.jpg";
 import veraneraRoom from "@assets/bedrooms/casa-flora-room-veranera-bunk-beds.jpg";
-import livingRoomPlaceholder from "@assets/common-areas/casa-flora-interior-common-living-room.jpg"; // Begonia placeholder
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,8 +18,7 @@ const ROOM_IMAGES: Record<string, string> = {
   geisha: geishaRoom,
   orquidea: orquideaRoom,
   hortensia: hortensiaRoom,
-  veranera: veraneraRoom,
-  begonia: livingRoomPlaceholder, // Placeholder until Begonia photos available
+  veranera: veraneraRoom
 };
 
 export default function BotanicalRoomStories() {
@@ -66,13 +64,12 @@ export default function BotanicalRoomStories() {
     cardRefs.current[index] = el;
   };
 
-  // Get rooms in display order: downstairs first (premium), then upstairs
+  // Get rooms in display order: Orquidea first (back room), then others
   const roomsInOrder: BotanicalRoom[] = [
-    BOTANICAL_ROOMS.geisha,
     BOTANICAL_ROOMS.orquidea,
+    BOTANICAL_ROOMS.geisha,
     BOTANICAL_ROOMS.hortensia,
-    BOTANICAL_ROOMS.veranera,
-    BOTANICAL_ROOMS.begonia
+    BOTANICAL_ROOMS.veranera
   ];
 
   return (
@@ -85,13 +82,13 @@ export default function BotanicalRoomStories() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Five Botanical Bedrooms
+            Four Botanical Bedrooms
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
             Each bedroom carries a beautiful name inspired by flowers from our century-old gardens
           </p>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            <span className="font-semibold text-primary">Your group receives the entire house</span> — all {CASA_FLORA_HOUSE.totalBedrooms} unique bedrooms with sleeping space for up to {CASA_FLORA_HOUSE.totalCapacity} guests
+            <span className="font-semibold text-primary">Your group receives the entire house</span> — all {CASA_DEL_PUENTE_HOUSE.totalBedrooms} unique bedrooms with sleeping space for up to {CASA_DEL_PUENTE_HOUSE.totalCapacity} guests
           </p>
         </div>
 
@@ -117,16 +114,15 @@ export default function BotanicalRoomStories() {
           </div>
         </div>
 
-        {/* Upstairs Family Suite */}
+        {/* Upstairs Rooms */}
         <div>
           <div className="text-center mb-8">
             <Badge className="bg-hydrangea-medium text-white px-4 py-2 text-sm mb-3">
-              Upstairs Family Suite
+              Upstairs Rooms
             </Badge>
-            <p className="text-muted-foreground">Three bedrooms sharing one full bathroom</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {roomsInOrder.slice(2).map((room, index) => (
               <RoomCard
                 key={room.id}

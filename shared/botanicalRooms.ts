@@ -1,12 +1,12 @@
 /**
- * Botanical Room Data for Casa Flora Heritage Home
+ * Botanical Room Data for Casa Del Puente Heritage Home
  *
- * These 5 bedrooms represent the botanical heritage storytelling system.
- * Casa Flora rents as a WHOLE HOUSE ONLY - rooms are for guest experience,
+ * These 4 bedrooms represent the botanical heritage storytelling system.
+ * Casa Del Puente rents as a WHOLE HOUSE ONLY - rooms are for guest experience,
  * not individual booking selection.
  */
 
-export type RoomName = 'geisha' | 'orquidea' | 'hortensia' | 'veranera' | 'begonia';
+export type RoomName = 'geisha' | 'orquidea' | 'hortensia' | 'veranera';
 
 export type BathroomType = 'ensuite' | 'shared';
 
@@ -41,30 +41,30 @@ export const BOTANICAL_ROOMS: Record<RoomName, BotanicalRoom> = {
   geisha: {
     id: 'geisha',
     displayName: 'Geisha',
-    flowerNameEnglish: 'Geisha Coffee Blossoms',
-    flowerNameSpanish: 'Café Geisha',
+    flowerNameEnglish: 'Geisha Flower',
+    flowerNameSpanish: 'Flor Geisha',
     floor: 'downstairs',
     bathroomType: 'ensuite',
-    bedConfiguration: 'Queen bed',
+    bedConfiguration: '2 single beds',
     capacity: 2,
 
-    heritageStory: 'Geisha honors Boquete\'s world-famous Geisha coffee—the most prized coffee varietal on earth. Originally from Ethiopia, Geisha thrives in Boquete\'s volcanic soil and cool highlands. Its delicate jasmine-scented blossoms perfume the valley each October-November.',
+    heritageStory: 'Geisha celebrates the delicate beauty and refined elegance that defines this special room. Named for its graceful aesthetic and serene atmosphere, this downstairs bedroom offers peaceful garden views.',
 
-    flowerStory: 'World-famous Boquete coffee heritage. Geisha coffee is the crown jewel of Panama\'s coffee industry, fetching record prices at auction and putting our mountain valley on the global specialty coffee map.',
+    flowerStory: 'Refined elegance. The Geisha room embodies grace, tranquility, and sophisticated simplicity—a peaceful retreat within our heritage home.',
 
-    gardenLocation: 'You\'ll find our coffee plants near the covered walkway. Visit in late autumn to experience their fragrant white blooms.',
+    gardenLocation: 'In the garden views from your room, you won\'t find coffee plants here, but they can be seen all over Boquete, Panama\'s renowned coffee-growing region.',
 
-    bloomingSeason: 'October - November',
+    bloomingSeason: 'Year-round garden beauty',
 
     features: [
       'Private en-suite bathroom',
-      'Queen bed',
+      '2 single beds',
       'Garden views',
       'Original hardwood details',
-      'Coffee-themed décor'
+      'Elegant décor'
     ],
 
-    viewDescription: 'Mountain and garden views with coffee plants visible from window',
+    viewDescription: 'Mountain and garden views from downstairs bedroom',
 
     mainImage: '/bedrooms/casa-flora-room-geisha-main.jpg',
     additionalImages: [
@@ -80,7 +80,7 @@ export const BOTANICAL_ROOMS: Record<RoomName, BotanicalRoom> = {
     flowerNameSpanish: 'Orquídea',
     floor: 'downstairs',
     bathroomType: 'ensuite',
-    bedConfiguration: 'King bed',
+    bedConfiguration: '2 single beds',
     capacity: 2,
 
     heritageStory: 'Orquídea honors Panama\'s national flower—the exquisite "Holy Ghost Orchid" (Peristeria elata). Orchids flourish in Boquete\'s cloud forests and are the crown jewel of our annual Flower Fair each January.',
@@ -93,7 +93,7 @@ export const BOTANICAL_ROOMS: Record<RoomName, BotanicalRoom> = {
 
     features: [
       'Private en-suite bathroom',
-      'King bed',
+      '2 single beds',
       'Premium room',
       'Cloud forest views',
       'Elegant orchid accents'
@@ -114,19 +114,19 @@ export const BOTANICAL_ROOMS: Record<RoomName, BotanicalRoom> = {
     flowerNameSpanish: 'Hortensia',
     floor: 'upstairs',
     bathroomType: 'shared',
-    bedConfiguration: 'Twin beds',
+    bedConfiguration: '2 single beds',
     capacity: 2,
 
-    heritageStory: 'Hortensia celebrates the romantic hydrangeas that thrive in Boquete\'s cool highland climate. These European immigrants have flourished here for over a century, their white and pink blooms cascading along our covered walkways.',
+    heritageStory: 'Hortensia celebrates the romantic hydrangeas that thrive in Boquete\'s cool highland climate. These European immigrants have flourished here for over a century, their white and light blue blossoms can be seen all over the garden.',
 
     flowerStory: 'Peaceful hydrangea gardens. Named "Hortensia" in Spanish, these romantic blooms evoke musical gardens and serene contemplation. They represent the successful European heritage plants that have made Boquete their home.',
 
-    gardenLocation: 'Find hydrangeas along our covered walkways and garden borders throughout the property.',
+    gardenLocation: 'Find hydrangeas in the garden and throughout the property.',
 
     bloomingSeason: 'Year-round (peak bloom in rainy season)',
 
     features: [
-      'Twin beds (perfect for friends or siblings)',
+      '2 single beds',
       'Shared upstairs bathroom',
       'Peaceful garden views',
       'Hydrangea-themed accents',
@@ -148,62 +148,28 @@ export const BOTANICAL_ROOMS: Record<RoomName, BotanicalRoom> = {
     flowerNameSpanish: 'Veranera',
     floor: 'upstairs',
     bathroomType: 'shared',
-    bedConfiguration: 'Bunk beds',
-    capacity: 2,
+    bedConfiguration: '2 bunk beds',
+    capacity: 4,
 
     heritageStory: 'Veranera celebrates the vibrant bougainvillea that cascades over our walls and fences in brilliant magenta and purple. The Spanish name "Veranera" means "summer flower," evoking endless tropical warmth.',
 
-    flowerStory: 'Bright summer colors. Bougainvillea brings year-round vibrancy to Casa Flora, its papery bracts creating living curtains of color. This hardy climbing plant symbolizes the resilient beauty of tropical Panama.',
+    flowerStory: 'Bright summer colors. Bougainvillea brings year-round vibrancy to Casa Del Puente, its papery bracts creating living curtains of color. This hardy climbing plant symbolizes the resilient beauty of tropical Panama.',
 
     gardenLocation: 'See bougainvillea cascading over walls and fences throughout the property, creating brilliant color cascades.',
 
     bloomingSeason: 'Year-round',
 
     features: [
-      'Bunk beds (great for kids or budget travelers)',
+      '2 bunk beds (sleeps 4)',
       'Shared upstairs bathroom',
-      'Colorful tropical décor',
-      'Mountain views',
+      'Cozy tropical décor',
+      'Bridge views',
       'Playful summer vibe'
     ],
 
-    viewDescription: 'Vibrant garden views with bougainvillea-draped walls',
+    viewDescription: 'Bridge and river views with bougainvillea-draped walls',
 
     mainImage: '/bedrooms/casa-flora-room-veranera-bunk-beds.jpg',
-    additionalImages: [
-      '/bathrooms/casa-flora-bathroom-upstairs-shared.jpg'
-    ]
-  },
-
-  begonia: {
-    id: 'begonia',
-    displayName: 'Begonia',
-    flowerNameEnglish: 'Begonia',
-    flowerNameSpanish: 'Begonia',
-    floor: 'upstairs',
-    bathroomType: 'shared',
-    bedConfiguration: 'Full bed',
-    capacity: 2,
-
-    heritageStory: 'Begonia celebrates the charming shade-loving begonias that flourish along our garden pathways. Simple, sweet, and perfect in both English and Spanish, this room embodies approachable beauty.',
-
-    flowerStory: 'Sweet simplicity. Begonias thrive in the dappled shade of our tropical gardens, their deep crimson and pink blooms adding cheerful color to shaded areas. They represent accessible beauty and joyful gardening.',
-
-    gardenLocation: 'Find begonias along shaded pathways and under tree canopies throughout the gardens.',
-
-    bloomingSeason: 'Year-round',
-
-    features: [
-      'Full bed (cozy for couples)',
-      'Shared upstairs bathroom',
-      'Charming garden views',
-      'Shade garden aesthetic',
-      'Intimate and welcoming'
-    ],
-
-    viewDescription: 'Shaded garden pathways with begonia borders',
-
-    mainImage: '/common-areas/casa-flora-interior-common-living-room.jpg', // Placeholder - Begonia photos not yet available per TODO.md
     additionalImages: [
       '/bathrooms/casa-flora-bathroom-upstairs-shared.jpg'
     ]
@@ -228,13 +194,15 @@ export function getRoomById(id: RoomName): BotanicalRoom | undefined {
 }
 
 // House configuration summary
-export const CASA_FLORA_HOUSE = {
-  totalBedrooms: 5,
-  totalCapacity: getTotalCapacity(), // Should be ~10 guests
+export const CASA_DEL_PUENTE_HOUSE = {
+  totalBedrooms: 4,
+  totalCapacity: getTotalCapacity(), // 10 guests (2+2+2+4)
   downstairsRooms: getRoomsByFloor('downstairs').length, // 2 (Geisha, Orquídea)
-  upstairsRooms: getRoomsByFloor('upstairs').length, // 3 (Hortensia, Veranera, Begonia)
+  upstairsRooms: getRoomsByFloor('upstairs').length, // 2 (Hortensia, Veranera)
   ensuiteRooms: getRoomsByBathroomType('ensuite').length, // 2
-  sharedBathRooms: getRoomsByBathroomType('shared').length, // 3
+  sharedBathRooms: getRoomsByBathroomType('shared').length, // 2
+  fullBathrooms: 3,
+  guestBathrooms: 1,
   rentalType: 'whole-house-only' as const,
-  description: '5 Botanical Bedrooms, One Century-Old Story'
+  description: '4 Botanical Bedrooms, One Century-Old Story'
 };

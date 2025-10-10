@@ -27,43 +27,43 @@ gsap.registerPlugin(ScrollTrigger);
 const galleryImages = [
   {
     src: houseWideAngle,
-    title: "Casa Flora Heritage Home",
-    description: "A century-old landmark in Boquete's flower capital, featuring traditional blue-roof architecture and lush tropical gardens."
+    title: "Casa Del Puente",
+    description: "Heritage home in Panama's Flower Capital—century-old gardens cultivated across four generations."
   },
   {
     src: gardenWalkway,
-    title: "Botanical Gardens",
-    description: "Hydrangeas, bougainvillea, and orchids thrive along our covered walkways—each bedroom is named for a flower in these gardens."
+    title: "Heritage Architecture",
+    description: "Century-old colonial design preserved through four generations of family stewardship."
   },
   {
     src: livingRoom,
-    title: "Heritage Living Spaces",
-    description: "Authentic colonial charm meets modern comfort in our shared living areas, where four generations of family stories come alive."
+    title: "Living Spaces",
+    description: "Comfortable gathering areas where our family has shared meals and memories since 1920."
   },
   {
     src: houseSunset,
-    title: "Mountain Sanctuary",
-    description: "Nestled in Boquete's cool highlands with breathtaking sunset views over Volcán Barú."
+    title: "Garden Views",
+    description: "Covered walkways connect the house to botanical gardens cultivated across generations."
   },
   {
     src: gardenFlowers,
-    title: "Veranera Blooms",
-    description: "Vibrant bougainvillea (veranera) cascades over our walls year-round, bringing tropical color to every corner."
+    title: "Botanical Heritage",
+    description: "Hydrangeas, begonias, and orchids thrive in our highland gardens."
   },
   {
     src: diningRoom,
-    title: "Family Gathering Spaces",
-    description: "Share meals and memories in our spacious dining room, where generations have gathered."
+    title: "Dining Room",
+    description: "Spacious dining area for family meals and celebrations."
   },
   {
     src: tropicalPlants,
-    title: "Tropical Paradise",
-    description: "Coffee plants, orchids, and indigenous flora create an immersive botanical experience."
+    title: "Coffee & Flora",
+    description: "Geisha coffee plants and native orchids create an immersive garden experience."
   },
   {
     src: landscapeContext,
-    title: "Boquete's Mountain Paradise",
-    description: "Experience the natural beauty that has made Boquete Panama's premier mountain destination, surrounded by coffee plantations and cloud forests."
+    title: "Mountain Setting",
+    description: "Nestled in Boquete's highlands on the slopes of Volcán Barú."
   }
 ];
 
@@ -121,10 +121,10 @@ export default function PropertyGallery() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            A Century of Beauty
+            Casa Del Puente in Pictures
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Four generations have cultivated these gardens and preserved this heritage home in Boquete's flower capital
+            From volcanic slopes to heritage gardens—100 years in Panama's Flower Capital
           </p>
         </div>
 

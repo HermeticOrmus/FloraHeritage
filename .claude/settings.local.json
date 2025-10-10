@@ -6,7 +6,8 @@
       "Bash(sort:*)",
       "Bash(cat:*)",
       "Bash(npm run dev:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(fuser:*)"
     ],
     "deny": [],
     "ask": []

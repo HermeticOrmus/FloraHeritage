@@ -8,7 +8,7 @@ import PropertyGallery from "@/components/PropertyGallery";
 import HouseAmenities from "@/components/HouseAmenities";
 import BookingForm from "@/components/BookingForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { CASA_FLORA_HOUSE } from "@shared/botanicalRooms";
+import { CASA_DEL_PUENTE_HOUSE } from "@shared/botanicalRooms";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -54,18 +54,18 @@ export default function CasaFlora() {
         <section id="booking" className="py-24">
           <div className="max-w-4xl mx-auto text-center px-6 mb-12">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Reserve Your Private Heritage Retreat
+              Book the Entire Heritage House
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Rent the entire {CASA_FLORA_HOUSE.totalBedrooms}-bedroom heritage home for your group. Experience the warmth of four generations of hospitality in the heart of Panama's flower capital.
+              Rent the complete {CASA_DEL_PUENTE_HOUSE.totalBedrooms}-bedroom home for your group in Boquete, Panama's flower capital and ideal climate, spring year round.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-glass-deep">{CASA_FLORA_HOUSE.totalBedrooms}</div>
+                <div className="text-3xl font-bold text-glass-deep">{CASA_DEL_PUENTE_HOUSE.totalBedrooms}</div>
                 <div className="text-muted-foreground">Botanical Bedrooms</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-casa-blue-deep">{CASA_FLORA_HOUSE.totalCapacity}</div>
+                <div className="text-3xl font-bold text-casa-blue-deep">{CASA_DEL_PUENTE_HOUSE.totalCapacity}</div>
                 <div className="text-muted-foreground">Guests Maximum</div>
               </div>
               <div className="space-y-2">

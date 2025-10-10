@@ -30,21 +30,23 @@ const mainAmenities = [
     description: "Safe and welcoming environment for your little ones"
   },
   {
-    icon: Dog,
-    title: "Dog Friendly",
-    description: "Your four-legged family members are welcome too"
+    icon: Home,
+    title: "NO PETS",
+    description: "Strict no pets policy to maintain property standards"
   }
 ];
 
 const additionalFeatures = [
   "Full kitchen with modern appliances",
-  "Multiple bathrooms",
-  "Spacious living areas",
-  "Private garden access",
-  "Coffee station with local beans",
+  "Multiple bathrooms (3 full + 1 guest)",
+  "Spacious and luminous living areas",
+  "Bar area",
+  "Office/workspace",
+  "Heritage garden access",
   "Parking available",
-  "Mountain views",
-  "Tropical garden setting"
+  "Mountain and river views",
+  "Walking distance to town center",
+  "Fantastic hike"
 ];
 
 export default function HouseAmenities() {
@@ -99,10 +101,10 @@ export default function HouseAmenities() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            What Casa Flora Includes
+            What Is Included
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Rent the entire iconic house with all modern amenities while preserving its historic charm
+            Experience authentic Boquete living in this iconic house, with all the modern comforts
           </p>
         </div>
 
@@ -116,7 +118,7 @@ export default function HouseAmenities() {
               <div className="relative">
                 <img
                   src={houseImage}
-                  alt="Casa Flora complete house rental"
+                  alt="Casa Del Puente complete house rental"
                   className="w-full h-[400px] md:h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -128,15 +130,15 @@ export default function HouseAmenities() {
                     <Badge className="bg-glass-blue/20 backdrop-blur-[1px] text-foreground text-sm px-3 py-1">
                       Up to 10 Guests
                     </Badge>
-                    <Badge className="bg-mountain-sage/40 backdrop-blur-sm text-foreground text-sm px-3 py-1">
-                      Pet Friendly
+                    <Badge className="bg-red-600/80 backdrop-blur-sm text-foreground text-sm px-3 py-1">
+                      NO PETS
                     </Badge>
                   </div>
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-2">
-                    Complete Heritage House Rental
+                    Casa del Puente
                   </h3>
                   <p className="text-foreground/90 text-lg">
-                    Experience authentic Boquete living in this iconic house with modern comforts
+                    A home with charming details and modern amenities, in an almost perfect location, near town and immersed in nature
                   </p>
                 </div>
               </div>
@@ -156,9 +158,11 @@ export default function HouseAmenities() {
               >
                 <GlassCard className="p-6 text-center hover-elevate h-full">
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                    amenity.title === "Family Friendly" || amenity.title === "Baby Friendly" || amenity.title === "Dog Friendly" 
-                      ? "bg-mountain-sage/20" 
-                      : amenity.title === "WiFi" 
+                    amenity.title === "Family Friendly" || amenity.title === "Baby Friendly"
+                      ? "bg-mountain-sage/20"
+                      : amenity.title === "NO PETS"
+                      ? "bg-red-600/20"
+                      : amenity.title === "High-Speed WiFi"
                       ? "bg-casa-blue-light/20"
                       : "bg-hydrangea-soft/20"
                   }`}>
@@ -192,8 +196,9 @@ export default function HouseAmenities() {
                   className="flex items-center space-x-2 text-left"
                 >
                   <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                    feature.toLowerCase().includes("garden") || feature.toLowerCase().includes("coffee") ? "bg-mountain-sage"
-                    : feature.toLowerCase().includes("kitchen") || feature.toLowerCase().includes("bathroom") ? "bg-stone-warm"
+                    feature.toLowerCase().includes("garden") ? "bg-mountain-sage"
+                    : feature.toLowerCase().includes("kitchen") || feature.toLowerCase().includes("bathroom") ? "bg-hydrangea-deep"
+                    : feature.toLowerCase().includes("bar") || feature.toLowerCase().includes("office") ? "bg-casa-blue-deep"
                     : "bg-casa-blue-medium"
                   }`} />
                   <span className="text-muted-foreground text-sm">

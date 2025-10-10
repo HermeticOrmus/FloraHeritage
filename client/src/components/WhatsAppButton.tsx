@@ -8,8 +8,8 @@ interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButton({
-  phoneNumber = "50768481234", // Replace with actual Casa Flora WhatsApp number
-  message = "Hello! I'm interested in booking Casa Flora heritage home in Boquete.",
+  phoneNumber = "50766717357", // Casa Del Puente WhatsApp: +507 6671-7357
+  message = "Hello! I'm interested in booking Casa Del Puente heritage home in Boquete.",
   className = ""
 }: WhatsAppButtonProps) {
 

@@ -17,31 +17,31 @@ interface TimelineEvent {
 
 const timelineEvents: TimelineEvent[] = [
   {
-    year: "1920s",
+    year: "1920",
     title: "The Founding",
-    description: "Don Miguel establishes Casa Flora coffee plantation",
-    details: "The original homestead was built with locally sourced materials in the heart of Boquete's emerging coffee industry. The first Geisha coffee plants arrived from Ethiopia, beginning Panama's legendary coffee heritage.",
+    description: "Don Miguel establishes Casa Del Puente",
+    details: "Original house built with local materials on the volcanic slopes of Volcán Barú, near the historic bridge.",
     generation: 1
   },
   {
-    year: "1950s-60s",
-    title: "Botanical Gardens Take Root",
-    description: "Second generation cultivates the heritage gardens",
-    details: "Carlos Miguel expands the gardens with orchids, hydrangeas, and bougainvillea. The covered walkways are built, creating shaded paths through our botanical paradise. The five bedrooms take shape, each with views of different garden areas.",
+    year: "1950-1960",
+    title: "Guest Rooms Added",
+    description: "Second generation opens to visitors",
+    details: "Carlos Miguel converts two upstairs bedrooms for guest accommodations. First bathrooms installed with indoor plumbing.",
     generation: 2
   },
   {
-    year: "1990s-2000s",
-    title: "Heritage Preservation",
-    description: "Third generation embraces Boquete's Flower Fair tradition",
-    details: "María Elena transforms the property into a cultural destination, naming it 'Casa Flora' to honor Boquete's identity as Panama's flower capital. The botanical gardens mature into a living museum of highland tropical flora.",
+    year: "1990-2000",
+    title: "Heritage Gardens",
+    description: "Third generation plants botanical heritage",
+    details: "María Elena establishes the heritage gardens featuring orchids, hydrangeas, bougainvillea, and begonias. Rooms named for signature flowers.",
     generation: 3
   },
   {
-    year: "2020s",
-    title: "Botanical Bedroom Heritage",
-    description: "Fourth generation names each room for our garden flowers",
-    details: "Today's Casa Flora celebrates its century of botanical stewardship by giving each bedroom a flower name: Geisha for world-famous coffee, Orquídea for Panama's national treasure, Hortensia for romantic hydrangeas, Veranera for vibrant bougainvillea, and Begonia for cheerful shade gardens. Each room tells a living story.",
+    year: "2020",
+    title: "Full Heritage Rental",
+    description: "Fourth generation opens entire house",
+    details: "Complete renovation preserves 1920 architecture while adding WiFi, modern kitchen, en-suite bathrooms. Now sleeps 10 guests.",
     generation: 4
   }
 ];

@@ -39,7 +39,7 @@ export default function Heritage() {
             Our Heritage Story
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
-            A century of family stewardship in the mountains of Boquete, where every generation has added their unique chapter to Casa Flora's story
+            Four generations have preserved this heritage home in Panama's Flower Capital
           </p>
         </div>
       </section>

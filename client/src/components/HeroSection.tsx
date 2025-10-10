@@ -84,32 +84,32 @@ export default function HeroSection() {
       data-testid="hero-section"
     >
       <div className="relative z-10 text-center text-foreground max-w-4xl px-6">
-        <h1 
+        <h1
           ref={titleRef}
           className="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight transform-gpu"
           style={{ backfaceVisibility: 'hidden' }}
         >
-          Casa Flora
+          Casa Del Puente
         </h1>
         
         <div ref={subtitleRef} className="mb-8 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
           <p className="text-2xl md:text-3xl font-serif text-foreground/95 mb-4 leading-relaxed max-w-3xl mx-auto">
-            5 Botanical Bedrooms, One Century-Old Story
+            4 Botanical Bedrooms, One Century-Old Story
           </p>
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-            Rent the entire heritage home in Boquete's flower capital
+            Rent the entire heritage home in Boquete, Panama's Flower Capital
           </p>
         </div>
         
         <div ref={ctaRef} className="transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className={`bg-glass-blue/20 backdrop-blur-[2px] text-foreground border border-glass-blue/30 hover:bg-glass-blue/25 text-lg px-8 py-3 ${rippleContainerClass}`}
-              onClick={(event) => handleCTAClick(event, "Discover Heritage")}
+              onClick={(event) => handleCTAClick(event, "Discover Home")}
               data-testid="button-discover-heritage"
             >
-              Discover Our Heritage
+              Discover Our Home
             </Button>
             
             <Button 
@@ -126,7 +126,7 @@ export default function HeroSection() {
           <div className="text-center text-foreground max-w-md mx-auto">
             <h3 className="font-serif font-semibold mb-2 text-xl">Heritage Since 1920</h3>
             <p className="text-foreground/85 leading-relaxed">
-              Four generations of authentic hospitality in Panama's mountain paradise
+              Four generations of family hospitality in Panama's highland gardens
             </p>
           </div>
         </div>
