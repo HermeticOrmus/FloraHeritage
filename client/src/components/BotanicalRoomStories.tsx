@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
+import DecorativeFrame from "@/components/DecorativeFrame";
 import { Badge } from "@/components/ui/badge";
 import { BOTANICAL_ROOMS, CASA_DEL_PUENTE_HOUSE, type BotanicalRoom } from "@shared/botanicalRooms";
 
@@ -81,15 +82,17 @@ export default function BotanicalRoomStories() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Four Botanical Bedrooms
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-            Each bedroom carries a beautiful name inspired by flowers from our century-old gardens
-          </p>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            <span className="font-semibold text-primary">Your group receives the entire house</span> — all {CASA_DEL_PUENTE_HOUSE.totalBedrooms} unique bedrooms with sleeping space for up to {CASA_DEL_PUENTE_HOUSE.totalCapacity} guests
-          </p>
+          <DecorativeFrame>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Four Botanical Bedrooms
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+              Each bedroom carries a beautiful name inspired by flowers from our century-old gardens
+            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <span className="font-semibold text-primary">Your group receives the entire house</span> — all {CASA_DEL_PUENTE_HOUSE.totalBedrooms} unique bedrooms with sleeping space for up to {CASA_DEL_PUENTE_HOUSE.totalCapacity} guests
+            </p>
+          </DecorativeFrame>
         </div>
 
         {/* Premium Downstairs Rooms */}

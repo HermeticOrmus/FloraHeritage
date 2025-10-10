@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
+import DecorativeFrame from "@/components/DecorativeFrame";
 import { Badge } from "@/components/ui/badge";
 import { Wifi, Bed, Users, Baby, Dog, Home, Coffee, Car } from "lucide-react";
 import houseImage from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";
@@ -100,12 +101,14 @@ export default function HouseAmenities() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            What Is Included
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Experience authentic Boquete living in this iconic house, with all the modern comforts
-          </p>
+          <DecorativeFrame>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+              What Is Included
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Experience authentic Boquete living in this iconic house, with all the modern comforts
+            </p>
+          </DecorativeFrame>
         </div>
 
         {/* Featured house image with overlay */}
