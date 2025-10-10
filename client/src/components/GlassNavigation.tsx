@@ -124,23 +124,23 @@ export default function GlassNavigation() {
   };
 
   return (
-    <div 
+    <div
       ref={navRef}
-      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] py-4 px-8"
+      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] mt-6"
       style={{ position: 'fixed' }}
     >
-      <nav className="flex items-center gap-12">
+      <nav className="flex items-center gap-8 bg-glass backdrop-blur-glass-nav rounded-2xl border border-white/20 shadow-lg px-8 py-5">
         {/* Casa Del Puente Logo */}
-        <a href="#home" className="mr-4" data-testid="nav-logo">
-          <img 
-            src={logoBlack} 
-            alt="Casa Del Puente Logo" 
-            className="h-10 w-auto dark:hidden transition-transform duration-300 hover:scale-105"
+        <a href="#home" className="mr-2 flex-shrink-0" data-testid="nav-logo">
+          <img
+            src={logoBlack}
+            alt="Casa Del Puente Logo"
+            className="h-14 w-auto dark:hidden transition-transform duration-300 hover:scale-105"
           />
-          <img 
-            src={logoWhite} 
-            alt="Casa Del Puente Logo" 
-            className="h-10 w-auto hidden dark:block transition-transform duration-300 hover:scale-105"
+          <img
+            src={logoWhite}
+            alt="Casa Del Puente Logo"
+            className="h-14 w-auto hidden dark:block transition-transform duration-300 hover:scale-105"
           />
         </a>
         

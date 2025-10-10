@@ -31,84 +31,96 @@ const houseRules = [
     title: "Check-In and Check-Out Times",
     description: "Check-in time is at 3:00 PM and check-out time is at 11:00 AM.",
     Icon: Clock,
-    color: "text-casa-blue-medium"
+    bgColor: "bg-casa-blue-light/30",
+    iconColor: "text-casa-blue-deep dark:text-casa-blue-light"
   },
   {
     number: 2,
     title: "No Parties Policy",
     description: "Parties of any kind are not allowed on the property.",
     Icon: Ban,
-    color: "text-red-500"
+    bgColor: "bg-red-500/20",
+    iconColor: "text-red-600 dark:text-red-400"
   },
   {
     number: 3,
     title: "No Smoking Policy",
     description: "Smoking is strictly prohibited inside the house.",
     Icon: Cigarette,
-    color: "text-stone-dark"
+    bgColor: "bg-stone-300/30",
+    iconColor: "text-stone-700 dark:text-stone-300"
   },
   {
     number: 4,
     title: "Pet Policy",
     description: "Pets are not allowed on the property.",
     Icon: PawPrint,
-    color: "text-hydrangea-medium"
+    bgColor: "bg-hydrangea-soft/30",
+    iconColor: "text-hydrangea-deep dark:text-hydrangea-medium"
   },
   {
     number: 5,
     title: "Plant Care",
     description: "Cutting flowers and/or plants from the garden is prohibited.",
     Icon: Flower2,
-    color: "text-hydrangea-deep"
+    bgColor: "bg-hydrangea-medium/20",
+    iconColor: "text-hydrangea-deep dark:text-hydrangea-soft"
   },
   {
     number: 6,
     title: "Commercial Photography",
     description: "Commercial photography is not authorized without prior consent.",
     Icon: Camera,
-    color: "text-casa-blue-deep"
+    bgColor: "bg-casa-blue-medium/20",
+    iconColor: "text-casa-blue-dark dark:text-casa-blue-light"
   },
   {
     number: 7,
     title: "Parental Responsibility",
     description: "Parents or guardians are responsible for ensuring the safety of their children during the stay.",
     Icon: Users,
-    color: "text-mountain-forest"
+    bgColor: "bg-mountain-sage/30",
+    iconColor: "text-mountain-forest dark:text-mountain-sage"
   },
   {
     number: 8,
     title: "Minimum Age to Book",
     description: "You must be at least 18 years old to make a reservation.",
     Icon: UserCheck,
-    color: "text-casa-blue-medium"
+    bgColor: "bg-casa-blue-light/30",
+    iconColor: "text-casa-blue-dark dark:text-casa-blue-medium"
   },
   {
     number: 9,
     title: "Liability for Damages",
     description: "Any damage caused to the property will be the responsibility of the guest.",
     Icon: AlertTriangle,
-    color: "text-amber-500"
+    bgColor: "bg-amber-500/20",
+    iconColor: "text-amber-600 dark:text-amber-400"
   },
   {
     number: 10,
     title: "Security of Belongings",
     description: "Each guest is responsible for locking doors and windows to ensure the security of their belongings.",
     Icon: Lock,
-    color: "text-stone-dark"
+    bgColor: "bg-stone-300/30",
+    iconColor: "text-stone-700 dark:text-stone-300"
   },
   {
     number: 11,
     title: "Lost Items",
     description: "If any item is left on the property, please notify us as soon as possible.",
     Icon: Search,
-    color: "text-mountain-sage"
+    bgColor: "bg-mountain-sage/30",
+    iconColor: "text-mountain-deep dark:text-mountain-sage"
   },
   {
     number: 12,
     title: "Smoking Fines",
     description: "If smoking is verified inside the house, a fine of $50.00 will be applied.",
     Icon: DollarSign,
-    color: "text-red-500"
+    bgColor: "bg-red-500/20",
+    iconColor: "text-red-600 dark:text-red-400"
   }
 ];
 
@@ -116,17 +128,17 @@ const checkOutConditions = [
   {
     Icon: Wind,
     text: "Hang towels in the bathrooms",
-    color: "text-casa-blue-medium"
+    color: "text-casa-blue-deep dark:text-casa-blue-light"
   },
   {
     Icon: UtensilsCrossed,
     text: "Wash used dishes",
-    color: "text-hydrangea-medium"
+    color: "text-hydrangea-deep dark:text-hydrangea-medium"
   },
   {
     Icon: Trash2,
     text: "Take trash to the designated area",
-    color: "text-mountain-forest"
+    color: "text-mountain-forest dark:text-mountain-sage"
   }
 ];
 
@@ -208,7 +220,7 @@ export default function Rules() {
                     className="rule-card p-6 hover-elevate"
                   >
                     <div className="flex items-start gap-4">
-                      <div className={`flex-shrink-0 p-3 rounded-lg bg-glass-light/50 ${rule.color}`}>
+                      <div className={`flex-shrink-0 p-3 rounded-lg ${rule.bgColor} ${rule.iconColor}`}>
                         <IconComponent size={28} strokeWidth={2} />
                       </div>
                       <div className="flex-1">
@@ -278,7 +290,7 @@ export default function Rules() {
               {/* Required Documentation */}
               <GlassCard className="p-8">
                 <h3 className="font-serif text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-casa-blue-light/20 text-casa-blue-deep">
+                  <div className="p-2 rounded-lg bg-casa-blue-light/30 text-casa-blue-dark dark:text-casa-blue-light">
                     <ClipboardList size={28} strokeWidth={2} />
                   </div>
                   Required Documentation
@@ -291,7 +303,7 @@ export default function Rules() {
               {/* Payment Schedule */}
               <GlassCard className="p-8">
                 <h3 className="font-serif text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-mountain-sage/20 text-mountain-forest">
+                  <div className="p-2 rounded-lg bg-mountain-sage/30 text-mountain-forest dark:text-mountain-sage">
                     <CreditCard size={28} strokeWidth={2} />
                   </div>
                   Payment Schedule
@@ -315,7 +327,7 @@ export default function Rules() {
               {/* Cancellation Policy */}
               <GlassCard className="p-8">
                 <h3 className="font-serif text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-hydrangea-soft/20 text-hydrangea-deep">
+                  <div className="p-2 rounded-lg bg-hydrangea-soft/30 text-hydrangea-deep dark:text-hydrangea-medium">
                     <RefreshCw size={28} strokeWidth={2} />
                   </div>
                   Cancellation Policy
