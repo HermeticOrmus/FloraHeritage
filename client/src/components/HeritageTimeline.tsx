@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
-import { TopFrame } from "@/components/DecorativeElements";
 import heritageImage from "@assets/WhatsApp Image 2025-09-13 at 15.54.52_5c8d2b26_1757805248590.jpg";
 
 // Register GSAP plugin
@@ -103,7 +102,6 @@ export default function HeritageTimeline() {
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <TopFrame className="mb-8" />
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
             Four Generations of Heritage
           </h2>

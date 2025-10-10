@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
 import { Badge } from "@/components/ui/badge";
-import { TopFrame, BottomFrame, LargeWindow } from "@/components/DecorativeElements";
 import { BOTANICAL_ROOMS, CASA_DEL_PUENTE_HOUSE, type BotanicalRoom } from "@shared/botanicalRooms";
 
 // Import room images statically for Vite bundling
@@ -82,7 +81,6 @@ export default function BotanicalRoomStories() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <TopFrame className="mb-8" />
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
             Four Botanical Bedrooms
           </h2>
@@ -97,7 +95,6 @@ export default function BotanicalRoomStories() {
         {/* Premium Downstairs Rooms */}
         <div className="mb-12">
           <div className="text-center mb-8">
-            <LargeWindow className="mb-4" />
             <Badge className="bg-casa-blue-deep text-white px-4 py-2 text-sm mb-3">
               Premium Downstairs Rooms
             </Badge>
@@ -117,13 +114,9 @@ export default function BotanicalRoomStories() {
           </div>
         </div>
 
-        {/* Decorative Divider */}
-        <BottomFrame className="my-12" />
-
         {/* Upstairs Rooms */}
         <div>
           <div className="text-center mb-8">
-            <LargeWindow className="mb-4" />
             <Badge className="bg-hydrangea-medium text-white px-4 py-2 text-sm mb-3">
               Upstairs Rooms
             </Badge>
