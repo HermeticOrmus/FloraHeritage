@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import GlassNavigation from "@/components/GlassNavigation";
 import CasaFlora from "@/pages/CasaFlora";
 import Heritage from "@/pages/Heritage";
+import Rules from "@/pages/Rules";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
     <Switch>
       <Route path="/" component={CasaFlora} />
       <Route path="/heritage" component={Heritage} />
+      <Route path="/rules" component={Rules} />
       <Route component={NotFound} />
     </Switch>
   );

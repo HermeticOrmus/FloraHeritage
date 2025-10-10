@@ -1,5 +1,5 @@
-import topFrame from "@assets/long-top-frame-white@4x_1760139257881.png";
-import bottomFrame from "@assets/long-bottom-frame-white@4x_1760139257881.png";
+import topFrame from "@assets/white-top-frame-long@4x_1760140465736.png";
+import bottomFrame from "@assets/white-bottom-frame-long@4x_1760140465737.png";
 
 interface DecorativeFrameProps {
   children: React.ReactNode;
