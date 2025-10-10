@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 import { cn } from "@/lib/utils";
 
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
+import logoWhite from "@assets/Logo Without Text-white@3x_1760138616483.png";
+import logoBlack from "@assets/Logo Without Text-black_1760138616482.png";
 
 const navigationItems = [
   { id: "home", label: "Home", href: "#home" },
@@ -126,7 +128,22 @@ export default function GlassNavigation() {
       className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] py-4 px-8"
       style={{ position: 'fixed' }}
     >
-      <nav className="flex items-center space-x-12">
+      <nav className="flex items-center gap-12">
+        {/* Casa Del Puente Logo */}
+        <a href="#home" className="mr-4" data-testid="nav-logo">
+          <img 
+            src={logoBlack} 
+            alt="Casa Del Puente Logo" 
+            className="h-10 w-auto dark:hidden transition-transform duration-300 hover:scale-105"
+          />
+          <img 
+            src={logoWhite} 
+            alt="Casa Del Puente Logo" 
+            className="h-10 w-auto hidden dark:block transition-transform duration-300 hover:scale-105"
+          />
+        </a>
+        
+        {/* Navigation Items */}
         {navigationItems.map((item, index) => (
           <span
             key={item.id}
