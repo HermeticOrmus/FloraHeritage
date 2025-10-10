@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import GlassCard from "@/components/GlassCard";
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
-import heroImage from "@assets/gardens/casa-flora-garden-entrance-gate.jpg";
+import heroImage from "@assets/foto-principal-casa-del-puente_1760137696009.jpg";
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
