@@ -9,7 +9,7 @@ import HouseAmenities from "@/components/HouseAmenities";
 import BookingForm from "@/components/BookingForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/Footer";
-import orchidDivider from "@assets/orchid-divider_1760143606913.png";
+import orchidDivider from "@assets/orchid-divider_1760144115381.png";
 import { CASA_DEL_PUENTE_HOUSE } from "@shared/botanicalRooms";
 
 // Register GSAP plugins
