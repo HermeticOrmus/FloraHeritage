@@ -121,14 +121,12 @@ export default function PropertyGallery() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <DecorativeFrame>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Casa Del Puente in Pictures
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From volcanic slopes to heritage gardens—100 years in Panama's Flower Capital
-            </p>
-          </DecorativeFrame>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            Casa Del Puente in Pictures
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            From volcanic slopes to heritage gardens—100 years in Panama's Flower Capital
+          </p>
         </div>
 
         {/* Main featured image */}

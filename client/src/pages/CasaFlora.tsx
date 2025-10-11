@@ -8,6 +8,7 @@ import PropertyGallery from "@/components/PropertyGallery";
 import HouseAmenities from "@/components/HouseAmenities";
 import BookingForm from "@/components/BookingForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Footer from "@/components/Footer";
 import { CASA_DEL_PUENTE_HOUSE } from "@shared/botanicalRooms";
 
 // Register GSAP plugins
@@ -87,6 +88,8 @@ export default function CasaFlora() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 }

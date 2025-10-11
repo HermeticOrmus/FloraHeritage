@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
+import Footer from "@/components/Footer";
 import {
   Clock,
   Ban,
@@ -357,6 +358,8 @@ export default function Rules() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 }
