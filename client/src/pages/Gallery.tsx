@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { X } from "lucide-react";
+import SEO from "@/components/SEO";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
 
@@ -134,6 +135,11 @@ export default function Gallery() {
 
   return (
     <div className="relative min-h-screen bg-background">
+      <SEO
+        title="Photo Gallery - Casa Flora Heritage Home"
+        description="Browse our collection of heritage photos, botanical gardens, and architectural details from Casa Flora's century-old property in Boquete, Panama."
+        keywords="casa flora photos, boquete property images, heritage home gallery, botanical gardens, panama vacation rental photos"
+      />
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-casa-blue-light/20 via-background to-hydrangea-soft/10">
         <div className="relative z-10 text-center max-w-4xl px-6">

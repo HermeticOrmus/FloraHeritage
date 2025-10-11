@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SEO from "@/components/SEO";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
 import {
@@ -195,6 +196,11 @@ export default function Rules() {
 
   return (
     <div className="relative min-h-screen bg-background">
+      <SEO
+        title="House Rules & Policies - Casa Flora"
+        description="Review Casa Flora's house rules, check-in/check-out times, cancellation policy, and reservation requirements for your stay in Boquete, Panama."
+        keywords="casa flora rules, vacation rental policies, boquete house rules, booking terms, cancellation policy"
+      />
 
       {/* Hero Section */}
       <section

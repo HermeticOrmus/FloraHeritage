@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SEO from "@/components/SEO";
 import GlassNavigation from "@/components/GlassNavigation";
 import HeritageTimeline from "@/components/HeritageTimeline";
 import GlassCard from "@/components/GlassCard";
@@ -25,7 +26,12 @@ export default function Heritage() {
 
   return (
     <div className="relative min-h-screen bg-background">
-      
+      <SEO
+        title="Heritage Story - Four Generations (1920-2024)"
+        description="Discover the rich heritage of Casa Flora, preserved through four generations of family stewardship in Boquete, Panama. From 1920 to 2024."
+        keywords="panama heritage, family history, boquete history, historic home, restoration story, generational legacy"
+      />
+
       {/* Heritage Hero Section */}
       <section 
         className="relative h-[60vh] flex items-center justify-center overflow-hidden"

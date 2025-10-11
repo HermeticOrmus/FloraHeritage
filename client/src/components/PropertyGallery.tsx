@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
 import DecorativeFrame from "@/components/DecorativeFrame";
+import orchidDivider from "@assets/orchid-divider_1760144115381.png";
 
 // Exterior & Landscape
 import houseExterior from "@assets/exteriors/casa-flora-exterior-front-view-blue-roof.jpg";
@@ -120,6 +121,15 @@ export default function PropertyGallery() {
       data-testid="property-gallery"
     >
       <div className="max-w-7xl mx-auto px-6">
+        {/* Orchid Divider */}
+        <div className="flex justify-center mb-12">
+          <img 
+            src={orchidDivider} 
+            alt="" 
+            className="w-full max-w-4xl h-auto opacity-90 dark:opacity-70" 
+          />
+        </div>
+
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
             Casa Del Puente in Pictures
