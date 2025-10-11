@@ -132,10 +132,10 @@ export default function PropertyGallery() {
 
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Casa Del Puente in Pictures
+            Casa Del Puente
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From volcanic slopes to heritage gardens—100 years in Panama's Flower Capital
+            a home with charming details and modern amenities, in an almost perfect location, near town and immerse in nature.
           </p>
         </div>
 
