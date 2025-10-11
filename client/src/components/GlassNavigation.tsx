@@ -1,7 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
 
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 import logoWhite from "@assets/Logo Without Text-white@3x_1760138616483.png";
@@ -18,14 +17,13 @@ const navigationItems = [
 
 export default function GlassNavigation() {
   const [activeSection, setActiveSection] = useState("home");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Removed isScrolled state - navigation stays fixed
   const [isInitialized, setIsInitialized] = useState(false);
   const { createRipple } = useRippleEffect('glass');
-
+  
   // Refs for GSAP animations
   const navRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLSpanElement | null)[]>([]);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
   
 
   // Simple initialization without transforms that interfere with fixed positioning
@@ -99,21 +97,16 @@ export default function GlassNavigation() {
   const handleNavClick = (event: React.MouseEvent, href: string, id: string) => {
     // Create heritage glass ripple effect
     createRipple(event);
-
-    // Close mobile menu if open
-    if (isMobileMenuOpen) {
-      toggleMobileMenu();
-    }
-
+    
     // Animate active state transition if changing sections
     if (id !== activeSection) {
       animateActiveTransition(id);
     }
-
+    
     // todo: remove mock functionality - replace with actual navigation
     console.log(`Navigating to ${href}`);
     setActiveSection(id);
-
+    
     if (href.startsWith('/')) {
       // Page navigation with heritage timing
       setTimeout(() => {
@@ -130,150 +123,47 @@ export default function GlassNavigation() {
     }
   };
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  // Animate mobile menu open/close
-  useEffect(() => {
-    if (!mobileMenuRef.current) return;
-
-    if (isMobileMenuOpen) {
-      // Lock body scroll
-      document.body.style.overflow = 'hidden';
-
-      // Animate menu in
-      gsap.to(mobileMenuRef.current, {
-        x: 0,
-        duration: 0.4,
-        ease: "power3.out"
-      });
-    } else {
-      // Unlock body scroll
-      document.body.style.overflow = 'auto';
-
-      // Animate menu out
-      gsap.to(mobileMenuRef.current, {
-        x: '100%',
-        duration: 0.3,
-        ease: "power3.in"
-      });
-    }
-  }, [isMobileMenuOpen]);
-
   return (
-    <>
-      {/* Desktop Navigation */}
-      <div
-        ref={navRef}
-        className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] mt-6 hidden lg:block"
-        style={{ position: 'fixed' }}
-      >
-        <nav className="flex items-center gap-8 px-8 py-5">
-          {/* Casa Del Puente Logo */}
-          <a href="#home" className="mr-2 flex-shrink-0" data-testid="nav-logo">
-            <img
-              src={logoBlack}
-              alt="Casa Del Puente Logo"
-              className="h-14 w-auto dark:hidden transition-transform duration-300 hover:scale-105"
-            />
-            <img
-              src={logoWhite}
-              alt="Casa Del Puente Logo"
-              className="h-14 w-auto hidden dark:block transition-transform duration-300 hover:scale-105"
-            />
-          </a>
-
-          {/* Navigation Items */}
-          {navigationItems.map((item, index) => (
-            <span
-              key={item.id}
-              ref={(el) => { itemRefs.current[index] = el; }}
-              className={cn(
-                "font-serif text-xl cursor-pointer transition-all duration-300",
-                activeSection === item.id
-                  ? "text-foreground font-semibold"
-                  : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground"
-              )}
-              onClick={(event) => handleNavClick(event, item.href, item.id)}
-              onMouseEnter={() => handleItemHover(index, true)}
-              onMouseLeave={() => handleItemHover(index, false)}
-              data-testid={`nav-${item.id}`}
-            >
-              {item.label}
-            </span>
-          ))}
-        </nav>
-      </div>
-
-      {/* Mobile Navigation Header */}
-      <div className="fixed top-0 left-0 right-0 z-[9999] lg:hidden">
-        <div className="flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-md border-b border-border">
-          {/* Logo */}
-          <a href="/" className="flex-shrink-0">
-            <img
-              src={logoBlack}
-              alt="Casa Del Puente Logo"
-              className="h-12 w-auto dark:hidden"
-            />
-            <img
-              src={logoWhite}
-              alt="Casa Del Puente Logo"
-              className="h-12 w-auto hidden dark:block"
-            />
-          </a>
-
-          {/* Hamburger Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="p-2 rounded-lg hover:bg-glass-light transition-colors"
-            aria-label="Toggle menu"
-            data-testid="mobile-menu-toggle"
-          >
-            {isMobileMenuOpen ? (
-              <X size={28} className="text-foreground" strokeWidth={2} />
-            ) : (
-              <Menu size={28} className="text-foreground" strokeWidth={2} />
+    <div
+      ref={navRef}
+      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] mt-6"
+      style={{ position: 'fixed' }}
+    >
+      <nav className="flex items-center gap-8 px-8 py-5">
+        {/* Casa Del Puente Logo */}
+        <a href="#home" className="mr-2 flex-shrink-0" data-testid="nav-logo">
+          <img
+            src={logoBlack}
+            alt="Casa Del Puente Logo"
+            className="h-14 w-auto dark:hidden transition-transform duration-300 hover:scale-105"
+          />
+          <img
+            src={logoWhite}
+            alt="Casa Del Puente Logo"
+            className="h-14 w-auto hidden dark:block transition-transform duration-300 hover:scale-105"
+          />
+        </a>
+        
+        {/* Navigation Items */}
+        {navigationItems.map((item, index) => (
+          <span
+            key={item.id}
+            ref={(el) => { itemRefs.current[index] = el; }}
+            className={cn(
+              "font-serif text-xl cursor-pointer transition-all duration-300",
+              activeSection === item.id 
+                ? "text-foreground font-semibold" 
+                : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground"
             )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu Panel */}
-      <div
-        ref={mobileMenuRef}
-        className="fixed top-0 right-0 bottom-0 w-full sm:w-80 z-[9998] lg:hidden"
-        style={{ transform: 'translateX(100%)' }}
-      >
-        <div className="h-full bg-background/95 backdrop-blur-xl border-l border-border shadow-2xl">
-          <div className="flex flex-col pt-24 px-6">
-            {navigationItems.map((item, index) => (
-              <button
-                key={item.id}
-                onClick={(event) => handleNavClick(event as any, item.href, item.id)}
-                className={cn(
-                  "font-serif text-2xl py-4 text-left border-b border-border/50 transition-all duration-300",
-                  activeSection === item.id
-                    ? "text-casa-blue-medium font-semibold"
-                    : "text-foreground hover:text-casa-blue-medium hover:translate-x-2"
-                )}
-                data-testid={`mobile-nav-${item.id}`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-[9997] lg:hidden"
-          onClick={toggleMobileMenu}
-          data-testid="mobile-menu-overlay"
-        />
-      )}
-    </>
+            onClick={(event) => handleNavClick(event, item.href, item.id)}
+            onMouseEnter={() => handleItemHover(index, true)}
+            onMouseLeave={() => handleItemHover(index, false)}
+            data-testid={`nav-${item.id}`}
+          >
+            {item.label}
+          </span>
+        ))}
+      </nav>
+    </div>
   );
 }
