@@ -104,47 +104,6 @@ export default function HouseAmenities() {
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
             What Is Included
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Experience authentic Boquete living in this iconic house, with all the modern comforts
-          </p>
-        </div>
-
-        {/* Featured house image with overlay */}
-        <div className="mb-16">
-          <div
-            ref={(el) => setCardRef(el, 0)}
-            className="relative overflow-hidden"
-          >
-            <GlassCard className="p-0 overflow-hidden">
-              <div className="relative">
-                <img
-                  src={houseImage}
-                  alt="Casa Del Puente complete house rental"
-                  className="w-full h-[400px] md:h-[500px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="flex flex-wrap gap-3 mb-4">
-                    <Badge className="bg-casa-blue-deep text-foreground text-sm px-3 py-1">
-                      Entire House
-                    </Badge>
-                    <Badge className="bg-glass-blue/20 backdrop-blur-[1px] text-foreground text-sm px-3 py-1">
-                      Up to 10 Guests
-                    </Badge>
-                    <Badge className="bg-red-600/80 backdrop-blur-sm text-foreground text-sm px-3 py-1">
-                      NO PETS
-                    </Badge>
-                  </div>
-                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-2">
-                    Casa del Puente
-                  </h3>
-                  <p className="text-foreground/90 text-lg">
-                    A home with charming details and modern amenities, in an almost perfect location, near town and immersed in nature
-                  </p>
-                </div>
-              </div>
-            </GlassCard>
-          </div>
         </div>
 
         {/* Main amenities grid */}
