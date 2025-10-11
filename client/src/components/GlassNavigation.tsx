@@ -129,7 +129,7 @@ export default function GlassNavigation() {
       className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] mt-6"
       style={{ position: 'fixed' }}
     >
-      <nav className="flex items-center gap-8 bg-glass backdrop-blur-glass-nav rounded-2xl border border-white/20 shadow-lg px-8 py-5">
+      <nav className="flex items-center gap-8 px-8 py-5">
         {/* Casa Del Puente Logo */}
         <a href="#home" className="mr-2 flex-shrink-0" data-testid="nav-logo">
           <img

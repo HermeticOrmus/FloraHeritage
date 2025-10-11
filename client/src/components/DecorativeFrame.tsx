@@ -1,20 +1,32 @@
-import topFrame from "@assets/white-top-frame-long@4x_1760140465736.png";
-import bottomFrame from "@assets/white-bottom-frame-long@4x_1760140465737.png";
+import bougainvilleaDivider from "@assets/bougainvillea-divider_1760143606912.png";
+import geishaDivider from "@assets/geisha-flower-divider_1760143606913.png";
+import hydrangeaDivider from "@assets/hydrangea-divider_1760143606913.png";
+import orchidDivider from "@assets/orchid-divider_1760143606913.png";
 
 interface DecorativeFrameProps {
   children: React.ReactNode;
   className?: string;
+  variant?: 'bougainvillea' | 'geisha' | 'hydrangea' | 'orchid';
 }
 
-export default function DecorativeFrame({ children, className = "" }: DecorativeFrameProps) {
+export default function DecorativeFrame({ children, className = "", variant = 'hydrangea' }: DecorativeFrameProps) {
+  const dividers = {
+    bougainvillea: bougainvilleaDivider,
+    geisha: geishaDivider,
+    hydrangea: hydrangeaDivider,
+    orchid: orchidDivider
+  };
+
+  const selectedDivider = dividers[variant];
+
   return (
     <div className={`relative ${className}`}>
-      {/* Top Frame */}
-      <div className="flex justify-center mb-4">
+      {/* Top Divider */}
+      <div className="flex justify-center mb-6">
         <img 
-          src={topFrame} 
+          src={selectedDivider} 
           alt="" 
-          className="w-64 h-auto opacity-80 dark:opacity-60" 
+          className="w-full max-w-4xl h-auto opacity-90 dark:opacity-70" 
         />
       </div>
       
@@ -23,12 +35,12 @@ export default function DecorativeFrame({ children, className = "" }: Decorative
         {children}
       </div>
       
-      {/* Bottom Frame */}
-      <div className="flex justify-center mt-4">
+      {/* Bottom Divider (flipped) */}
+      <div className="flex justify-center mt-6">
         <img 
-          src={bottomFrame} 
+          src={selectedDivider} 
           alt="" 
-          className="w-64 h-auto opacity-80 dark:opacity-60" 
+          className="w-full max-w-4xl h-auto opacity-90 dark:opacity-70 transform scale-y-[-1]" 
         />
       </div>
     </div>

@@ -128,17 +128,20 @@ const checkOutConditions = [
   {
     Icon: Wind,
     text: "Hang towels in the bathrooms",
-    color: "text-casa-blue-deep dark:text-casa-blue-light"
+    bgColor: "bg-casa-blue-light/30",
+    iconColor: "text-casa-blue-dark dark:text-casa-blue-light"
   },
   {
     Icon: UtensilsCrossed,
     text: "Wash used dishes",
-    color: "text-hydrangea-deep dark:text-hydrangea-medium"
+    bgColor: "bg-hydrangea-soft/30",
+    iconColor: "text-hydrangea-deep dark:text-hydrangea-medium"
   },
   {
     Icon: Trash2,
     text: "Take trash to the designated area",
-    color: "text-mountain-forest dark:text-mountain-sage"
+    bgColor: "bg-mountain-sage/30",
+    iconColor: "text-mountain-forest dark:text-mountain-sage"
   }
 ];
 
@@ -262,8 +265,8 @@ export default function Rules() {
                       key={index}
                       className="text-center p-6 rounded-lg bg-glass-light/50 backdrop-blur-sm border border-white/10"
                     >
-                      <div className={`flex items-center justify-center mb-4 ${condition.color}`}>
-                        <IconComponent size={48} strokeWidth={1.5} />
+                      <div className={`flex items-center justify-center mb-4 p-4 rounded-lg ${condition.bgColor} ${condition.iconColor}`}>
+                        <IconComponent size={40} strokeWidth={2} />
                       </div>
                       <p className="text-foreground font-medium">{condition.text}</p>
                     </div>
