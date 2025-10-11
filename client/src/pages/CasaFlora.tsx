@@ -91,11 +91,11 @@ export default function CasaFlora() {
       </main>
 
       {/* Bougainvillea Divider before Footer */}
-      <div className="flex justify-center py-12">
+      <div className="py-12">
         <img 
           src={bougainvilleaDivider} 
           alt="" 
-          className="w-full max-w-4xl h-auto opacity-90 dark:opacity-70" 
+          className="w-full h-auto opacity-90 dark:opacity-70" 
         />
       </div>
 
