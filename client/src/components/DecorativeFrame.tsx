@@ -1,6 +1,6 @@
 import bougainvilleaDivider from "@assets/bougainvillea-divider_1760143606912.png";
 import geishaDivider from "@assets/geisha-flower-divider_1760143606913.png";
-import hydrangeaDivider from "@assets/hydrangea-divider_1760143606913.png";
+import hydrangeaDivider from "@assets/hydrangea-divider_1760143750601.png";
 import orchidDivider from "@assets/orchid-divider_1760143606913.png";
 
 interface DecorativeFrameProps {
