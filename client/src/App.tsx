@@ -8,6 +8,8 @@ import GlassNavigation from "@/components/GlassNavigation";
 import CasaFlora from "@/pages/CasaFlora";
 import Heritage from "@/pages/Heritage";
 import Rules from "@/pages/Rules";
+import Gallery from "@/pages/Gallery";
+import RoomDetail from "@/pages/RoomDetail";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +18,8 @@ function Router() {
       <Route path="/" component={CasaFlora} />
       <Route path="/heritage" component={Heritage} />
       <Route path="/rules" component={Rules} />
+      <Route path="/gallery" component={Gallery} />
+      <Route path="/rooms/:id" component={RoomDetail} />
       <Route component={NotFound} />
     </Switch>
   );

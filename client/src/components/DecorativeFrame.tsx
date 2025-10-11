@@ -7,9 +7,10 @@ interface DecorativeFrameProps {
   children: React.ReactNode;
   className?: string;
   variant?: 'bougainvillea' | 'geisha' | 'hydrangea' | 'orchid';
+  position?: 'top' | 'bottom' | 'both';
 }
 
-export default function DecorativeFrame({ children, className = "", variant = 'hydrangea' }: DecorativeFrameProps) {
+export default function DecorativeFrame({ children, className = "", variant = 'hydrangea', position = 'both' }: DecorativeFrameProps) {
   const dividers = {
     bougainvillea: bougainvilleaDivider,
     geisha: geishaDivider,
@@ -22,13 +23,15 @@ export default function DecorativeFrame({ children, className = "", variant = 'h
   return (
     <div className={`relative ${className}`}>
       {/* Top Divider */}
-      <div className="flex justify-center mb-6">
-        <img 
-          src={selectedDivider} 
-          alt="" 
-          className="w-full max-w-4xl h-auto opacity-90 dark:opacity-70" 
-        />
-      </div>
+      {(position === 'top' || position === 'both') && (
+        <div className="flex justify-center mb-6">
+          <img 
+            src={selectedDivider} 
+            alt="" 
+            className="w-full max-w-4xl h-auto opacity-90 dark:opacity-70" 
+          />
+        </div>
+      )}
       
       {/* Content */}
       <div className="px-4">
@@ -36,13 +39,15 @@ export default function DecorativeFrame({ children, className = "", variant = 'h
       </div>
       
       {/* Bottom Divider (flipped) */}
-      <div className="flex justify-center mt-6">
-        <img 
-          src={selectedDivider} 
-          alt="" 
-          className="w-full max-w-4xl h-auto opacity-90 dark:opacity-70 transform scale-y-[-1]" 
-        />
-      </div>
+      {(position === 'bottom' || position === 'both') && (
+        <div className="flex justify-center mt-6">
+          <img 
+            src={selectedDivider} 
+            alt="" 
+            className="w-full max-w-4xl h-auto opacity-90 dark:opacity-70 transform scale-y-[-1]" 
+          />
+        </div>
+      )}
     </div>
   );
 }

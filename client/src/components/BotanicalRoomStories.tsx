@@ -82,7 +82,7 @@ export default function BotanicalRoomStories() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <DecorativeFrame>
+          <DecorativeFrame position="top">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
               Four Botanical Bedrooms
             </h2>

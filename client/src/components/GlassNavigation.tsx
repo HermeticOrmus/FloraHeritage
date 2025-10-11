@@ -7,9 +7,9 @@ import logoWhite from "@assets/Logo Without Text-white@3x_1760138616483.png";
 import logoBlack from "@assets/Logo Without Text-black_1760138616482.png";
 
 const navigationItems = [
-  { id: "home", label: "Home", href: "#home" },
+  { id: "home", label: "Home", href: "/" },
   { id: "rooms", label: "Rooms", href: "#rooms" },
-  { id: "gallery", label: "Gallery", href: "#gallery" },
+  { id: "gallery", label: "Gallery", href: "/gallery" },
   { id: "amenities", label: "Amenities", href: "#amenities" },
   { id: "rules", label: "Rules", href: "/rules" },
   { id: "booking", label: "Book Now", href: "#booking" },

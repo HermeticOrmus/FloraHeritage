@@ -9,6 +9,7 @@ import HouseAmenities from "@/components/HouseAmenities";
 import BookingForm from "@/components/BookingForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/Footer";
+import orchidDivider from "@assets/orchid-divider_1760143606913.png";
 import { CASA_DEL_PUENTE_HOUSE } from "@shared/botanicalRooms";
 
 // Register GSAP plugins
@@ -88,6 +89,15 @@ export default function CasaFlora() {
           </div>
         </section>
       </main>
+
+      {/* Orchid Divider before Footer */}
+      <div className="flex justify-center py-12">
+        <img 
+          src={orchidDivider} 
+          alt="" 
+          className="w-full max-w-4xl h-auto opacity-90 dark:opacity-70" 
+        />
+      </div>
 
       <Footer />
     </div>
