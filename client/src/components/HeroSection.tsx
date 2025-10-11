@@ -1,79 +1,9 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { Button } from "@/components/ui/button";
-import GlassCard from "@/components/GlassCard";
-import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 import heroImage from "@assets/foto-principal-casa-del-puente_1760137696009.jpg";
 
 export default function HeroSection() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-  const { createRipple: createHeritageRipple } = useRippleEffect('heritage');
-  const { createRipple: createBlueRipple } = useRippleEffect('blue');
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Initial setup
-      gsap.set([titleRef.current, subtitleRef.current, ctaRef.current], {
-        opacity: 0,
-        y: 60
-      });
-
-      // Staggered entrance animation
-      const tl = gsap.timeline({ delay: 0.5 });
-      
-      tl.to(titleRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power3.out"
-      })
-      .to(subtitleRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out"
-      }, "-=0.8")
-      .to(ctaRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out"
-      }, "-=0.6");
-
-    }, heroRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  const handleCTAClick = (event: React.MouseEvent, action: string) => {
-    // Create appropriate ripple effect based on action
-    if (action === "Discover Heritage") {
-      createHeritageRipple(event);
-    } else {
-      createBlueRipple(event);
-    }
-    
-    // Animate the specific button that was clicked
-    const clickedButton = event.currentTarget as HTMLElement;
-    gsap.to(clickedButton, {
-      scale: 0.95,
-      duration: 0.1,
-      yoyo: true,
-      repeat: 1,
-      ease: "power2.out",
-      overwrite: "auto"
-    });
-    
-    // todo: remove mock functionality
-    console.log(`${action} clicked`);
-  };
 
   return (
-    <section 
-      ref={heroRef}
+    <section
       className="relative h-screen flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url(${heroImage})`,
@@ -83,55 +13,6 @@ export default function HeroSection() {
       }}
       data-testid="hero-section"
     >
-      <div className="relative z-10 text-center text-foreground max-w-4xl px-6">
-        <h1
-          ref={titleRef}
-          className="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight transform-gpu"
-          style={{ backfaceVisibility: 'hidden' }}
-        >
-          Casa Del Puente
-        </h1>
-        
-        <div ref={subtitleRef} className="mb-8 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
-          <p className="text-2xl md:text-3xl font-serif text-foreground/95 mb-4 leading-relaxed max-w-3xl mx-auto">
-            4 Botanical Bedrooms, One Century-Old Story
-          </p>
-          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-            Rent the entire heritage home in Boquete, Panama's Flower Capital
-          </p>
-        </div>
-        
-        <div ref={ctaRef} className="transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button
-              size="lg"
-              className={`bg-glass-blue/20 backdrop-blur-[2px] text-foreground border border-glass-blue/30 hover:bg-glass-blue/25 text-lg px-8 py-3 ${rippleContainerClass}`}
-              onClick={(event) => handleCTAClick(event, "Discover Home")}
-              data-testid="button-discover-heritage"
-            >
-              Discover Our Home
-            </Button>
-            
-            <Button 
-              size="lg"
-              className={`bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium text-lg px-8 py-3 ${rippleContainerClass}`}
-              onClick={(event) => handleCTAClick(event, "Book Stay")}
-              data-testid="button-book-stay"
-            >
-              Book Your Stay
-            </Button>
-          </div>
-          
-          {/* Heritage info moved under buttons */}
-          <div className="text-center text-foreground max-w-md mx-auto">
-            <h3 className="font-serif font-semibold mb-2 text-xl">Heritage Since 1920</h3>
-            <p className="text-foreground/85 leading-relaxed">
-              Four generations of family hospitality in Panama's highland gardens
-            </p>
-          </div>
-        </div>
-      </div>
-      
     </section>
   );
 }
