@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 import logoWhite from "@assets/Logo Without Text-white@3x_1760138616483.png";
 import logoBlack from "@assets/Logo Without Text-black_1760138616482.png";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const navigationItems = [
   { id: "home", label: "Home", href: "/" },
@@ -164,6 +165,11 @@ export default function GlassNavigation() {
             {item.label}
           </span>
         ))}
+        
+        {/* Language Switcher */}
+        <div className="ml-2">
+          <LanguageSwitcher />
+        </div>
       </nav>
     </div>
   );
