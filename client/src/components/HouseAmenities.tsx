@@ -32,8 +32,8 @@ const mainAmenities = [
   },
   {
     icon: Home,
-    title: "NO PETS",
-    description: "Strict no pets policy to maintain property standards"
+    title: "Garden & Property Care",
+    description: "We maintain our heritage garden and ensure safety for all guests"
   }
 ];
 
@@ -43,11 +43,13 @@ const additionalFeatures = [
   "Spacious and luminous living areas",
   "Bar area",
   "Office/workspace",
-  "Heritage garden access",
+  "Private heritage garden",
   "Parking available",
   "Mountain and river views",
-  "Walking distance to town center",
-  "Fantastic hike"
+  "8-minute walk to town center",
+  "Public riverside walkway in front",
+  "Fantastic hikes within walking distance",
+  "Perfect location for exploring Boquete"
 ];
 
 export default function HouseAmenities() {
@@ -118,10 +120,8 @@ export default function HouseAmenities() {
               >
                 <GlassCard className="p-6 text-center hover-elevate h-full">
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                    amenity.title === "Family Friendly" || amenity.title === "Baby Friendly"
+                    amenity.title === "Family Friendly" || amenity.title === "Baby Friendly" || amenity.title === "Garden & Property Care"
                       ? "bg-mountain-sage/20"
-                      : amenity.title === "NO PETS"
-                      ? "bg-red-600/20"
                       : amenity.title === "High-Speed WiFi"
                       ? "bg-casa-blue-light/20"
                       : "bg-hydrangea-soft/20"
@@ -159,6 +159,7 @@ export default function HouseAmenities() {
                     feature.toLowerCase().includes("garden") ? "bg-mountain-sage"
                     : feature.toLowerCase().includes("kitchen") || feature.toLowerCase().includes("bathroom") ? "bg-hydrangea-deep"
                     : feature.toLowerCase().includes("bar") || feature.toLowerCase().includes("office") ? "bg-casa-blue-deep"
+                    : feature.toLowerCase().includes("walk") || feature.toLowerCase().includes("location") || feature.toLowerCase().includes("hike") || feature.toLowerCase().includes("riverside") ? "bg-mountain-forest"
                     : "bg-casa-blue-medium"
                   }`} />
                   <span className="text-muted-foreground text-sm">

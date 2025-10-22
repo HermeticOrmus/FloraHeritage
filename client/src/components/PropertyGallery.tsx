@@ -29,43 +29,35 @@ gsap.registerPlugin(ScrollTrigger);
 const galleryImages = [
   {
     src: houseWideAngle,
-    title: "Casa Del Puente",
-    description: "Heritage home in Panama's Flower Capital—century-old gardens cultivated across four generations."
+    title: "Casa Del Puente"
   },
   {
     src: gardenWalkway,
-    title: "Heritage Architecture",
-    description: "Century-old colonial design preserved through four generations of family stewardship."
+    title: "Heritage Architecture"
   },
   {
     src: livingRoom,
-    title: "Living Spaces",
-    description: "Comfortable gathering areas where our family has shared meals and memories since 1920."
+    title: "Living Spaces"
   },
   {
     src: houseSunset,
-    title: "Garden Views",
-    description: "Covered walkways connect the house to botanical gardens cultivated across generations."
+    title: "Garden Views"
   },
   {
     src: gardenFlowers,
-    title: "Botanical Heritage",
-    description: "Hydrangeas, begonias, and orchids thrive in our highland gardens."
+    title: "Botanical Heritage"
   },
   {
     src: diningRoom,
-    title: "Dining Room",
-    description: "Spacious dining area for family meals and celebrations."
+    title: "Dining Room"
   },
   {
     src: tropicalPlants,
-    title: "Coffee & Flora",
-    description: "Geisha coffee plants and native orchids create an immersive garden experience."
+    title: "Coffee & Flora"
   },
   {
     src: landscapeContext,
-    title: "Mountain Setting",
-    description: "Nestled in Boquete's highlands on the slopes of Volcán Barú."
+    title: "Mountain Setting"
   }
 ];
 
@@ -135,7 +127,7 @@ export default function PropertyGallery() {
             Casa Del Puente
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            a home with charming details and modern amenities, in an almost perfect location, near town and immerse in nature.
+            A home with charming details and modern amenities in a fantastic location — just an 8-minute walk to town center, with a private heritage garden, fantastic hikes within walking distance, and a public riverside walkway right in front.
           </p>
         </div>
 
@@ -153,12 +145,9 @@ export default function PropertyGallery() {
                   className="w-full h-[400px] md:h-[500px] object-cover hover-elevate"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8">
-                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-white">
                     {galleryImages[0].title}
                   </h3>
-                  <p className="text-foreground/90 text-lg">
-                    {galleryImages[0].description}
-                  </p>
                 </div>
               </div>
             </GlassCard>
@@ -184,12 +173,9 @@ export default function PropertyGallery() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="font-serif text-lg font-semibold text-foreground mb-1">
+                    <h3 className="font-serif text-lg font-semibold text-white">
                       {image.title}
                     </h3>
-                    <p className="text-foreground/80 text-sm">
-                      {image.description}
-                    </p>
                   </div>
                 </div>
               </GlassCard>

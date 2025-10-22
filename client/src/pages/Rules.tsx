@@ -54,14 +54,22 @@ const houseRules = [
   },
   {
     number: 4,
-    title: "Pet Policy",
-    description: "Pets are not allowed on the property.",
+    title: "Smoking Fines",
+    description: "If smoking is verified inside the house, a fine of $50.00 will be applied.",
+    Icon: DollarSign,
+    bgColor: "bg-red-500/20",
+    iconColor: "text-red-600 dark:text-red-400"
+  },
+  {
+    number: 5,
+    title: "Garden Care & Property Safety",
+    description: "To ensure the best care of our century-old heritage garden and maintain the security and safety of the property for all guests, we kindly ask that pets not accompany you during your stay.",
     Icon: PawPrint,
     bgColor: "bg-hydrangea-soft/30",
     iconColor: "text-hydrangea-deep dark:text-hydrangea-medium"
   },
   {
-    number: 5,
+    number: 6,
     title: "Plant Care",
     description: "Cutting flowers and/or plants from the garden is prohibited.",
     Icon: Flower2,
@@ -69,7 +77,7 @@ const houseRules = [
     iconColor: "text-hydrangea-deep dark:text-hydrangea-soft"
   },
   {
-    number: 6,
+    number: 7,
     title: "Commercial Photography",
     description: "Commercial photography is not authorized without prior consent.",
     Icon: Camera,
@@ -77,7 +85,7 @@ const houseRules = [
     iconColor: "text-casa-blue-dark dark:text-casa-blue-light"
   },
   {
-    number: 7,
+    number: 8,
     title: "Parental Responsibility",
     description: "Parents or guardians are responsible for ensuring the safety of their children during the stay.",
     Icon: Users,
@@ -85,7 +93,7 @@ const houseRules = [
     iconColor: "text-mountain-forest dark:text-mountain-sage"
   },
   {
-    number: 8,
+    number: 9,
     title: "Minimum Age to Book",
     description: "You must be at least 18 years old to make a reservation.",
     Icon: UserCheck,
@@ -93,7 +101,7 @@ const houseRules = [
     iconColor: "text-casa-blue-dark dark:text-casa-blue-medium"
   },
   {
-    number: 9,
+    number: 10,
     title: "Liability for Damages",
     description: "Any damage caused to the property will be the responsibility of the guest.",
     Icon: AlertTriangle,
@@ -101,7 +109,7 @@ const houseRules = [
     iconColor: "text-amber-600 dark:text-amber-400"
   },
   {
-    number: 10,
+    number: 11,
     title: "Security of Belongings",
     description: "Each guest is responsible for locking doors and windows to ensure the security of their belongings.",
     Icon: Lock,
@@ -109,20 +117,12 @@ const houseRules = [
     iconColor: "text-stone-700 dark:text-stone-300"
   },
   {
-    number: 11,
+    number: 12,
     title: "Lost Items",
     description: "If any item is left on the property, please notify us as soon as possible.",
     Icon: Search,
     bgColor: "bg-mountain-sage/30",
     iconColor: "text-mountain-deep dark:text-mountain-sage"
-  },
-  {
-    number: 12,
-    title: "Smoking Fines",
-    description: "If smoking is verified inside the house, a fine of $50.00 will be applied.",
-    Icon: DollarSign,
-    bgColor: "bg-red-500/20",
-    iconColor: "text-red-600 dark:text-red-400"
   }
 ];
 

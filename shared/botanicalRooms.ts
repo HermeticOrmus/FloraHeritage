@@ -52,7 +52,7 @@ export const BOTANICAL_ROOMS: Record<RoomName, BotanicalRoom> = {
 
     flowerStory: 'Refined elegance. The Geisha room embodies grace, tranquility, and sophisticated simplicity—a peaceful retreat within our heritage home.',
 
-    gardenLocation: 'In the garden views from your room, you won\'t find coffee plants here, but they can be seen all over Boquete, Panama\'s renowned coffee-growing region.',
+    gardenLocation: 'Boquete is one of the world\'s geisha coffee capitals, with prized coffee plants thriving throughout this renowned growing region. You\'ll find geisha coffee farms and plantations all around town.',
 
     bloomingSeason: 'Year-round garden beauty',
 
