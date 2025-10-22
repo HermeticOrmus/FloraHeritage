@@ -6,6 +6,7 @@ import HeroSection from "@/components/HeroSection";
 import BotanicalRoomStories from "@/components/BotanicalRoomStories";
 import PropertyGallery from "@/components/PropertyGallery";
 import HouseAmenities from "@/components/HouseAmenities";
+import LocationMap from "@/components/LocationMap";
 import BookingForm from "@/components/BookingForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/Footer";
@@ -52,6 +53,9 @@ export default function CasaFlora() {
           <HouseAmenities />
         </section>
 
+        <section id="location">
+          <LocationMap />
+        </section>
 
         <section id="booking" className="py-24">
           <div className="max-w-4xl mx-auto text-center px-6 mb-12">
