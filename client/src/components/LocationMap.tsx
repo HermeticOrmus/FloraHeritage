@@ -6,8 +6,8 @@ import DecorativeFrame from "@/components/DecorativeFrame";
 import { MapPin, Coffee, Mountain, Waves, Store } from "lucide-react";
 
 // Casa Del Puente coordinates in Boquete, Panama
-const CASA_DEL_PUENTE_COORDS: [number, number] = [-82.4350, 8.7795];
-const TOWN_CENTER_COORDS: [number, number] = [-82.4339, 8.7803];
+const CASA_DEL_PUENTE_COORDS: [number, number] = [-82.42905447930899, 8.783454651241962];
+const TOWN_CENTER_COORDS: [number, number] = [-82.4326, 8.7798]; // Downtown Boquete (8-min walk northeast)
 
 const locationHighlights = [
   {
@@ -51,9 +51,8 @@ export default function LocationMap() {
     if (!mapContainer.current) return;
     if (map.current) return; // Initialize map only once
 
-    // Set your Mapbox access token here
-    // Users will need to add their own token via environment variable
-    const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN || 'pk.eyJ1IjoiZXhhbXBsZSIsImEiOiJjbGV4YW1wbGUifQ.example';
+    // Set Mapbox access token
+    const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN || 'pk.eyJ1IjoiaGVybWV0aWNvcm11cyIsImEiOiJjbWgyanRzMnkwZWRrMm1vZnhycGx0d3ZkIn0.Xd8MTIn8OjShUK4KQJAPDw';
     mapboxgl.accessToken = mapboxToken;
 
     map.current = new mapboxgl.Map({

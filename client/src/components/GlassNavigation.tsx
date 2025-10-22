@@ -11,6 +11,7 @@ const navigationItems = [
   { id: "rooms", label: "Rooms", href: "#rooms" },
   { id: "gallery", label: "Gallery", href: "/gallery" },
   { id: "amenities", label: "Amenities", href: "#amenities" },
+  { id: "location", label: "Location", href: "#location" },
   { id: "rules", label: "Rules", href: "/rules" },
   { id: "booking", label: "Book Now", href: "#booking" },
 ];
