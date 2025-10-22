@@ -57,11 +57,23 @@ export default function LocationMap() {
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
+      style: 'mapbox://styles/mapbox/satellite-streets-v12',
       center: CASA_DEL_PUENTE_COORDS,
-      zoom: 14,
-      pitch: 45,
-      bearing: 0
+      zoom: 15,
+      pitch: 30,
+      bearing: 0,
+      attributionControl: true
+    });
+
+    // Add error handler
+    map.current.on('error', (e) => {
+      console.error('Mapbox GL error:', e);
+      console.log('Token being used:', mapboxToken.substring(0, 20) + '...');
+    });
+
+    // Log when style loads
+    map.current.on('style.load', () => {
+      console.log('Map style loaded successfully');
     });
 
     map.current.on('load', () => {
