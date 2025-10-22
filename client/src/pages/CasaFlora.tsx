@@ -41,6 +41,10 @@ export default function CasaFlora() {
           <HeroSection />
         </section>
 
+        <section id="location">
+          <LocationMap />
+        </section>
+
         <section id="rooms">
           <BotanicalRoomStories />
         </section>
@@ -51,10 +55,6 @@ export default function CasaFlora() {
 
         <section id="amenities" className="bg-background">
           <HouseAmenities />
-        </section>
-
-        <section id="location">
-          <LocationMap />
         </section>
 
         <section id="booking" className="py-24">

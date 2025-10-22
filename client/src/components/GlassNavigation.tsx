@@ -1,23 +1,25 @@
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 import logoWhite from "@assets/Logo Without Text-white@3x_1760138616483.png";
 import logoBlack from "@assets/Logo Without Text-black_1760138616482.png";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-const navigationItems = [
-  { id: "home", label: "Home", href: "/" },
-  { id: "rooms", label: "Rooms", href: "#rooms" },
-  { id: "gallery", label: "Gallery", href: "/gallery" },
-  { id: "amenities", label: "Amenities", href: "#amenities" },
-  { id: "location", label: "Location", href: "#location" },
-  { id: "rules", label: "Rules", href: "/rules" },
-  { id: "booking", label: "Book Now", href: "#booking" },
+const navigationItemsKeys = [
+  { id: "home", key: "nav.home", href: "/" },
+  { id: "rooms", key: "nav.rooms", href: "#rooms" },
+  { id: "gallery", key: "nav.gallery", href: "/gallery" },
+  { id: "amenities", key: "nav.amenities", href: "#amenities" },
+  { id: "location", key: "nav.location", href: "#location" },
+  { id: "rules", key: "nav.rules", href: "/rules" },
+  { id: "booking", key: "nav.booking", href: "#booking" },
 ];
 
 export default function GlassNavigation() {
+  const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState("home");
   // Removed isScrolled state - navigation stays fixed
   const [isInitialized, setIsInitialized] = useState(false);
@@ -53,8 +55,8 @@ export default function GlassNavigation() {
   
   // Smooth active state transitions
   const animateActiveTransition = (newActiveId: string) => {
-    const currentActiveIndex = navigationItems.findIndex(item => item.id === activeSection);
-    const newActiveIndex = navigationItems.findIndex(item => item.id === newActiveId);
+    const currentActiveIndex = navigationItemsKeys.findIndex(item => item.id === activeSection);
+    const newActiveIndex = navigationItemsKeys.findIndex(item => item.id === newActiveId);
     
     // Create a timeline for coordinated transitions
     const tl = gsap.timeline();
@@ -147,7 +149,7 @@ export default function GlassNavigation() {
         </a>
         
         {/* Navigation Items */}
-        {navigationItems.map((item, index) => (
+        {navigationItemsKeys.map((item, index) => (
           <span
             key={item.id}
             ref={(el) => { itemRefs.current[index] = el; }}
@@ -162,7 +164,7 @@ export default function GlassNavigation() {
             onMouseLeave={() => handleItemHover(index, false)}
             data-testid={`nav-${item.id}`}
           >
-            {item.label}
+            {t(item.key)}
           </span>
         ))}
         
