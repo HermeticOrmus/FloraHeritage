@@ -13,8 +13,10 @@
     "title": "Casa Del Puente",
     "subtitle": "4 Botanical Bedrooms, One Century-Old Story",
     "description": "Rent the entire heritage home in Boquete, Panama's Flower Capital",
-    "bookNow": "Book Now",
-    "learnMore": "Learn More"
+    "bookNow": "Book Your Stay",
+    "learnMore": "Discover Our Home",
+    "heritageSince": "Heritage Since 1920",
+    "heritageDesc": "Four generations of family hospitality in Panama's highland gardens"
   },
   "rooms": {
     "title": "Four Botanical Bedrooms",
@@ -39,6 +41,8 @@
     "familyDesc": "Perfect for multi-generational family gatherings and celebrations",
     "babyFriendly": "Baby Friendly",
     "babyDesc": "Safe and welcoming environment for your little ones",
+    "gardenCare": "Garden & Property Care",
+    "gardenCareDesc": "We maintain our heritage garden and ensure safety for all guests",
     "noPets": "NO PETS",
     "noPetsDesc": "Strict no pets policy to maintain property standards",
     "additionalTitle": "Additional Features",
@@ -47,11 +51,14 @@
     "livingAreas": "Spacious and luminous living areas",
     "barArea": "Bar area",
     "office": "Office/workspace",
-    "gardenAccess": "Heritage garden access",
+    "gardenAccess": "Private heritage garden",
     "parking": "Parking available",
     "mountainViews": "Mountain and river views",
-    "walkingDistance": "Walking distance to town center",
-    "hiking": "Fantastic hike"
+    "walkingDistance": "8-minute walk to town center",
+    "riverside": "Public riverside walkway in front",
+    "hiking": "Fantastic hikes",
+    "hikingDistance": "within walking distance",
+    "exploreLocation": "Perfect location for exploring Boquete"
   },
   "location": {
     "title": "Prime Location in Boquete",

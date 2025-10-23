@@ -13,8 +13,10 @@
     "title": "Casa Del Puente",
     "subtitle": "4 Habitaciones Botánicas, Una Historia Centenaria",
     "description": "Alquila la casa patrimonial completa en Boquete, la Capital de las Flores de Panamá",
-    "bookNow": "Reservar Ahora",
-    "learnMore": "Saber Más"
+    "bookNow": "Reserva Tu Estadía",
+    "learnMore": "Descubre Nuestro Hogar",
+    "heritageSince": "Patrimonio Desde 1920",
+    "heritageDesc": "Cuatro generaciones de hospitalidad familiar en los jardines de montaña de Panamá"
   },
   "rooms": {
     "title": "Cuatro Habitaciones Botánicas",
@@ -39,6 +41,8 @@
     "familyDesc": "Perfecto para reuniones y celebraciones familiares multigeneracionales",
     "babyFriendly": "Para Bebés",
     "babyDesc": "Ambiente seguro y acogedor para los más pequeños",
+    "gardenCare": "Cuidado de Jardín y Propiedad",
+    "gardenCareDesc": "Mantenemos nuestro jardín patrimonial y aseguramos la seguridad de todos los huéspedes",
     "noPets": "NO SE PERMITEN MASCOTAS",
     "noPetsDesc": "Política estricta de no mascotas para mantener los estándares de la propiedad",
     "additionalTitle": "Características Adicionales",
@@ -47,11 +51,14 @@
     "livingAreas": "Áreas de estar espaciosas y luminosas",
     "barArea": "Área de bar",
     "office": "Oficina/espacio de trabajo",
-    "gardenAccess": "Acceso al jardín patrimonial",
+    "gardenAccess": "Jardín patrimonial privado",
     "parking": "Estacionamiento disponible",
     "mountainViews": "Vistas a la montaña y el río",
-    "walkingDistance": "A poca distancia del centro del pueblo",
-    "hiking": "Senderos fantásticos"
+    "walkingDistance": "8 minutos a pie del centro del pueblo",
+    "riverside": "Paseo junto al río frente a la propiedad",
+    "hiking": "Senderos fantásticos",
+    "hikingDistance": "a poca distancia a pie",
+    "exploreLocation": "Ubicación perfecta para explorar Boquete"
   },
   "location": {
     "title": "Ubicación Privilegiada en Boquete",

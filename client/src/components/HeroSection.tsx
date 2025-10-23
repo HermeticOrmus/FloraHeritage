@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import GlassCard from "@/components/GlassCard";
@@ -6,6 +7,7 @@ import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 import heroImage from "@assets/foto-principal-casa-del-puente_1760137696009.jpg";
 
 export default function HeroSection() {
+  const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -89,15 +91,15 @@ export default function HeroSection() {
           className="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight transform-gpu"
           style={{ backfaceVisibility: 'hidden' }}
         >
-          Casa Del Puente
+          {t('hero.title')}
         </h1>
         
         <div ref={subtitleRef} className="mb-8 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
           <p className="text-2xl md:text-3xl font-serif text-foreground/95 mb-4 leading-relaxed max-w-3xl mx-auto">
-            4 Botanical Bedrooms, One Century-Old Story
+            {t('hero.subtitle')}
           </p>
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-            Rent the entire heritage home in Boquete, Panama's Flower Capital
+            {t('hero.description')}
           </p>
         </div>
         
@@ -109,7 +111,7 @@ export default function HeroSection() {
               onClick={(event) => handleCTAClick(event, "Discover Home")}
               data-testid="button-discover-heritage"
             >
-              Discover Our Home
+              {t('hero.learnMore')}
             </Button>
             
             <Button 
@@ -118,15 +120,15 @@ export default function HeroSection() {
               onClick={(event) => handleCTAClick(event, "Book Stay")}
               data-testid="button-book-stay"
             >
-              Book Your Stay
+              {t('hero.bookNow')}
             </Button>
           </div>
           
-          {/* Heritage info moved under buttons */}
+          {/* Heritage info */}
           <div className="text-center text-foreground max-w-md mx-auto">
-            <h3 className="font-serif font-semibold mb-2 text-xl">Heritage Since 1920</h3>
+            <h3 className="font-serif font-semibold mb-2 text-xl">{t('hero.heritageSince')}</h3>
             <p className="text-foreground/85 leading-relaxed">
-              Four generations of family hospitality in Panama's highland gardens
+              {t('hero.heritageDesc')}
             </p>
           </div>
         </div>

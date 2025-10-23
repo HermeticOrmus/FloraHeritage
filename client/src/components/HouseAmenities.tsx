@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
@@ -9,52 +10,58 @@ import houseImage from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1
 
 gsap.registerPlugin(ScrollTrigger);
 
-const mainAmenities = [
-  {
-    icon: Wifi,
-    title: "High-Speed WiFi",
-    description: "Stay connected with reliable internet throughout the property"
-  },
-  {
-    icon: Bed,
-    title: "Up to 10 Beds",
-    description: "Comfortable sleeping arrangements for large groups and families"
-  },
-  {
-    icon: Users,
-    title: "Family Friendly",
-    description: "Perfect for multi-generational family gatherings and celebrations"
-  },
-  {
-    icon: Baby,
-    title: "Baby Friendly",
-    description: "Safe and welcoming environment for your little ones"
-  },
-  {
-    icon: Home,
-    title: "Garden & Property Care",
-    description: "We maintain our heritage garden and ensure safety for all guests"
-  }
-];
-
-const additionalFeatures = [
-  "Full kitchen with modern appliances",
-  "Multiple bathrooms (3 full + 1 guest)",
-  "Spacious and luminous living areas",
-  "Bar area",
-  "Office/workspace",
-  "Private heritage garden",
-  "Parking available",
-  "Mountain and river views",
-  "8-minute walk to town center",
-  "Public riverside walkway in front",
-  "Fantastic hikes within walking distance",
-  "Perfect location for exploring Boquete"
-];
-
 export default function HouseAmenities() {
+  const { t } = useTranslation();
   const amenitiesRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  
+  const mainAmenities = [
+    {
+      icon: Wifi,
+      title: t('amenities.highSpeedWifi'),
+      description: t('amenities.wifiDesc'),
+      color: 'bg-casa-blue-light/20'
+    },
+    {
+      icon: Bed,
+      title: t('amenities.beds'),
+      description: t('amenities.bedsDesc'),
+      color: 'bg-hydrangea-soft/20'
+    },
+    {
+      icon: Users,
+      title: t('amenities.familyFriendly'),
+      description: t('amenities.familyDesc'),
+      color: 'bg-mountain-sage/20'
+    },
+    {
+      icon: Baby,
+      title: t('amenities.babyFriendly'),
+      description: t('amenities.babyDesc'),
+      color: 'bg-mountain-sage/20'
+    },
+    {
+      icon: Home,
+      title: t('amenities.gardenCare'),
+      description: t('amenities.gardenCareDesc'),
+      color: 'bg-mountain-sage/20'
+    }
+  ];
+
+  const additionalFeatures = [
+    { text: t('amenities.fullKitchen'), color: 'bg-hydrangea-deep' },
+    { text: t('amenities.bathrooms'), color: 'bg-hydrangea-deep' },
+    { text: t('amenities.livingAreas'), color: 'bg-casa-blue-medium' },
+    { text: t('amenities.barArea'), color: 'bg-casa-blue-deep' },
+    { text: t('amenities.office'), color: 'bg-casa-blue-deep' },
+    { text: t('amenities.gardenAccess'), color: 'bg-mountain-sage' },
+    { text: t('amenities.parking'), color: 'bg-casa-blue-medium' },
+    { text: t('amenities.mountainViews'), color: 'bg-casa-blue-medium' },
+    { text: t('amenities.walkingDistance'), color: 'bg-mountain-forest' },
+    { text: t('amenities.riverside'), color: 'bg-mountain-forest' },
+    { text: `${t('amenities.hiking')} ${t('amenities.hikingDistance')}`, color: 'bg-mountain-forest' },
+    { text: t('amenities.exploreLocation'), color: 'bg-mountain-forest' }
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -104,7 +111,7 @@ export default function HouseAmenities() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            What Is Included
+            {t('amenities.title')}
           </h2>
         </div>
 
@@ -119,13 +126,7 @@ export default function HouseAmenities() {
                 data-testid={`amenity-${amenity.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <GlassCard className="p-6 text-center hover-elevate h-full">
-                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                    amenity.title === "Family Friendly" || amenity.title === "Baby Friendly" || amenity.title === "Garden & Property Care"
-                      ? "bg-mountain-sage/20"
-                      : amenity.title === "High-Speed WiFi"
-                      ? "bg-casa-blue-light/20"
-                      : "bg-hydrangea-soft/20"
-                  }`}>
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${amenity.color}`}>
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="font-serif text-lg font-semibold text-foreground mb-3">
@@ -147,7 +148,7 @@ export default function HouseAmenities() {
         >
           <GlassCard className="p-8 max-w-4xl mx-auto">
             <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">
-              Additional Features
+              {t('amenities.additionalTitle')}
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {additionalFeatures.map((feature, index) => (
@@ -155,15 +156,9 @@ export default function HouseAmenities() {
                   key={index}
                   className="flex items-center space-x-2 text-left"
                 >
-                  <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                    feature.toLowerCase().includes("garden") ? "bg-mountain-sage"
-                    : feature.toLowerCase().includes("kitchen") || feature.toLowerCase().includes("bathroom") ? "bg-hydrangea-deep"
-                    : feature.toLowerCase().includes("bar") || feature.toLowerCase().includes("office") ? "bg-casa-blue-deep"
-                    : feature.toLowerCase().includes("walk") || feature.toLowerCase().includes("location") || feature.toLowerCase().includes("hike") || feature.toLowerCase().includes("riverside") ? "bg-mountain-forest"
-                    : "bg-casa-blue-medium"
-                  }`} />
+                  <div className={`w-2 h-2 rounded-full flex-shrink-0 ${feature.color}`} />
                   <span className="text-muted-foreground text-sm">
-                    {feature}
+                    {feature.text}
                   </span>
                 </div>
               ))}

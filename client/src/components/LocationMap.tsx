@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import GlassCard from "@/components/GlassCard";
@@ -9,43 +10,44 @@ import { MapPin, Coffee, Mountain, Waves, Store } from "lucide-react";
 const CASA_DEL_PUENTE_COORDS: [number, number] = [-82.42905447930899, 8.783454651241962];
 const TOWN_CENTER_COORDS: [number, number] = [-82.4326, 8.7798]; // Downtown Boquete (8-min walk northeast)
 
-const locationHighlights = [
-  {
-    icon: MapPin,
-    title: "Casa Del Puente",
-    description: "Your heritage home retreat",
-    color: "text-casa-blue-deep"
-  },
-  {
-    icon: Store,
-    title: "8-Minute Walk to Town Center",
-    description: "Easy access to shops, restaurants, and local attractions",
-    color: "text-hydrangea-deep"
-  },
-  {
-    icon: Waves,
-    title: "Riverside Walkway",
-    description: "Public walkway right in front of the property",
-    color: "text-casa-blue-medium"
-  },
-  {
-    icon: Mountain,
-    title: "Fantastic Hiking",
-    description: "World-class trails within walking distance",
-    color: "text-mountain-forest"
-  },
-  {
-    icon: Coffee,
-    title: "Geisha Coffee Capital",
-    description: "Surrounded by renowned coffee farms",
-    color: "text-mountain-sage"
-  }
-];
-
 export default function LocationMap() {
+  const { t } = useTranslation();
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
+  
+  const locationHighlights = [
+    {
+      icon: MapPin,
+      title: t('location.property'),
+      description: t('location.propertyDesc'),
+      color: "text-casa-blue-deep"
+    },
+    {
+      icon: Store,
+      title: t('location.townCenter'),
+      description: t('location.townDesc'),
+      color: "text-hydrangea-deep"
+    },
+    {
+      icon: Waves,
+      title: t('location.riverside'),
+      description: t('location.riversideDesc'),
+      color: "text-casa-blue-medium"
+    },
+    {
+      icon: Mountain,
+      title: t('location.hiking'),
+      description: t('location.hikingDesc'),
+      color: "text-mountain-forest"
+    },
+    {
+      icon: Coffee,
+      title: t('location.coffee'),
+      description: t('location.coffeeDesc'),
+      color: "text-mountain-sage"
+    }
+  ];
 
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -177,10 +179,10 @@ export default function LocationMap() {
         <div className="text-center mb-16">
           <DecorativeFrame position="top">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-              A Fantastic Location
+              {t('location.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Casa Del Puente offers the perfect balance — close to Boquete's vibrant town center while surrounded by nature's tranquility
+              {t('location.description')}
             </p>
           </DecorativeFrame>
         </div>

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassNavigation from "@/components/GlassNavigation";
@@ -17,6 +18,7 @@ import { CASA_DEL_PUENTE_HOUSE } from "@shared/botanicalRooms";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CasaFlora() {
+  const { t } = useTranslation();
   useEffect(() => {
     // Set GSAP defaults for consistent feel
     gsap.defaults({
@@ -60,23 +62,23 @@ export default function CasaFlora() {
         <section id="booking" className="py-24">
           <div className="max-w-4xl mx-auto text-center px-6 mb-12">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Book the Entire Heritage House
+              {t('booking.title')}
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Rent the complete {CASA_DEL_PUENTE_HOUSE.totalBedrooms}-bedroom home for your group in Boquete, Panama's flower capital and ideal climate, spring year round.
+              {t('booking.description', { bedrooms: CASA_DEL_PUENTE_HOUSE.totalBedrooms })}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
               <div className="space-y-2">
                 <div className="text-3xl font-bold text-glass-deep">{CASA_DEL_PUENTE_HOUSE.totalBedrooms}</div>
-                <div className="text-muted-foreground">Botanical Bedrooms</div>
+                <div className="text-muted-foreground">{t('booking.bedrooms')}</div>
               </div>
               <div className="space-y-2">
                 <div className="text-3xl font-bold text-casa-blue-deep">{CASA_DEL_PUENTE_HOUSE.totalCapacity}</div>
-                <div className="text-muted-foreground">Guests Maximum</div>
+                <div className="text-muted-foreground">{t('booking.guests')}</div>
               </div>
               <div className="space-y-2">
                 <div className="text-3xl font-bold text-hydrangea-deep">100+</div>
-                <div className="text-muted-foreground">Years of Heritage</div>
+                <div className="text-muted-foreground">{t('booking.heritage')}</div>
               </div>
             </div>
           </div>
@@ -87,7 +89,7 @@ export default function CasaFlora() {
           {/* WhatsApp Contact */}
           <div className="max-w-4xl mx-auto text-center px-6 mt-12">
             <p className="text-muted-foreground mb-4">
-              Prefer to chat directly? Reach out via WhatsApp for instant assistance.
+              {t('booking.whatsapp')}
             </p>
             <WhatsAppButton />
           </div>

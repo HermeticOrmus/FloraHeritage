@@ -16,15 +16,16 @@ const languages = [
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
-  const currentLang = i18n.language;
+  // Extract just the language code (e.g., "en" from "en-US")
+  const currentLangCode = i18n.language.split('-')[0];
 
   const toggleLanguage = () => {
-    const newLang = currentLang === 'en' ? 'es' : 'en';
+    const newLang = currentLangCode === 'en' ? 'es' : 'en';
     i18n.changeLanguage(newLang);
   };
 
-  const currentLanguage = languages.find(lang => lang.code === currentLang) || languages[0];
-  const otherLanguage = languages.find(lang => lang.code !== currentLang) || languages[1];
+  const currentLanguage = languages.find(lang => lang.code === currentLangCode) || languages[0];
+  const otherLanguage = languages.find(lang => lang.code !== currentLangCode) || languages[1];
 
   return (
     <Button
