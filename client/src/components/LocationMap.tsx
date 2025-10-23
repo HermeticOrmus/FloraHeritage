@@ -140,28 +140,7 @@ export default function LocationMap() {
       if (!map.current) return;
 
       // Add custom markers
-      // Casa Del Puente marker (main property)
-      const casaEl = document.createElement('div');
-      casaEl.className = 'custom-marker';
-      casaEl.innerHTML = `
-        <div class="w-12 h-12 bg-casa-blue-deep rounded-full flex items-center justify-center shadow-lg border-4 border-white cursor-pointer hover:scale-110 transition-transform">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/>
-            <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/>
-          </svg>
-        </div>
-      `;
-
-      new mapboxgl.Marker(casaEl)
-        .setLngLat(CASA_DEL_PUENTE_COORDS)
-        .setPopup(
-          new mapboxgl.Popup({ offset: 25 })
-            .setHTML(`
-              <div style="font-family: serif; font-weight: bold; font-size: 18px; color: #1a1a1a; margin-bottom: 4px;">Casa Del Puente</div>
-              <div style="font-size: 14px; color: #666;">Your Heritage Home</div>
-            `)
-        )
-        .addTo(map.current);
+      // Note: Casa Del Puente marker will be added LAST to ensure it's on top
 
       // Town center marker
       const townEl = document.createElement('div');
@@ -255,6 +234,36 @@ export default function LocationMap() {
 
       // Add navigation controls
       map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
+      // Add Casa Del Puente marker LAST (so it appears on top of everything)
+      const casaEl = document.createElement('div');
+      casaEl.className = 'custom-marker';
+      casaEl.style.zIndex = '1000'; // Ensure it's on top
+      casaEl.innerHTML = `
+        <div class="w-16 h-16 bg-casa-blue-deep rounded-full flex items-center justify-center shadow-xl border-4 border-white cursor-pointer hover:scale-110 transition-transform" style="box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/>
+            <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/>
+          </svg>
+        </div>
+      `;
+
+      const casaMarker = new mapboxgl.Marker(casaEl)
+        .setLngLat(CASA_DEL_PUENTE_COORDS)
+        .setPopup(
+          new mapboxgl.Popup({ offset: 30 })
+            .setHTML(`
+              <div style="font-family: serif; font-weight: bold; font-size: 18px; color: #1a1a1a; margin-bottom: 4px;">Casa Del Puente</div>
+              <div style="font-size: 14px; color: #666;">Your Heritage Home</div>
+            `)
+        )
+        .addTo(map.current);
+
+      // Ensure the marker element gets the highest z-index
+      const casaMarkerEl = casaMarker.getElement();
+      if (casaMarkerEl) {
+        casaMarkerEl.style.zIndex = '1000';
+      }
     });
 
     return () => {
