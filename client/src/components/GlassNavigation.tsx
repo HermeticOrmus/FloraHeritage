@@ -160,17 +160,17 @@ export default function GlassNavigation() {
             </a>
             
             {/* Language & Menu */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <LanguageSwitcher />
               
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild>
                   <button
-                    className="p-2 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-sm hover:shadow-md transition-all"
+                    className="p-2 transition-all hover:scale-110"
                     data-testid="button-mobile-menu"
                     aria-label="Menu"
                   >
-                    <Menu className="h-5 w-5 text-gray-800 dark:text-gray-200" strokeWidth={2.5} />
+                    <Menu className="h-6 w-6 text-gray-900 dark:text-white drop-shadow-md" strokeWidth={2} />
                   </button>
                 </SheetTrigger>
                 <SheetContent 

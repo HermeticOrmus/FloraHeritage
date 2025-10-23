@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button';
 const languages = [
   {
     code: 'en',
-    flag: '🇺🇸',
+    label: 'EN',
     name: 'English'
   },
   {
     code: 'es',
-    flag: '🇪🇸',
+    label: 'ES',
     name: 'Español'
   }
 ];
@@ -30,14 +30,14 @@ export default function LanguageSwitcher() {
   return (
     <Button
       variant="ghost"
-      size="icon"
+      size="sm"
       onClick={toggleLanguage}
-      className="hover-elevate"
+      className="hover-elevate font-serif font-semibold min-w-[3rem]"
       data-testid="button-language-switch"
       title={`Switch to ${otherLanguage.name}`}
     >
-      <span className="text-2xl" role="img" aria-label={`Current language: ${currentLanguage.name}`}>
-        {currentLanguage.flag}
+      <span className="text-sm tracking-wide" aria-label={`Current language: ${currentLanguage.name}`}>
+        {currentLanguage.label}
       </span>
     </Button>
   );
