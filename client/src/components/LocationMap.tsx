@@ -157,8 +157,8 @@ export default function LocationMap() {
         .setPopup(
           new mapboxgl.Popup({ offset: 25 })
             .setHTML(`
-              <div class="font-serif font-bold text-lg mb-1">Casa Del Puente</div>
-              <div class="text-sm text-muted-foreground">Your Heritage Home</div>
+              <div style="font-family: serif; font-weight: bold; font-size: 18px; color: #1a1a1a; margin-bottom: 4px;">Casa Del Puente</div>
+              <div style="font-size: 14px; color: #666;">Your Heritage Home</div>
             `)
         )
         .addTo(map.current);
@@ -180,8 +180,8 @@ export default function LocationMap() {
         .setPopup(
           new mapboxgl.Popup({ offset: 25 })
             .setHTML(`
-              <div class="font-serif font-bold text-base mb-1">Boquete Town Center</div>
-              <div class="text-sm text-muted-foreground">8-minute walk</div>
+              <div style="font-family: serif; font-weight: bold; font-size: 16px; color: #1a1a1a; margin-bottom: 4px;">Boquete Town Center</div>
+              <div style="font-size: 14px; color: #666;">8-minute walk</div>
             `)
         )
         .addTo(map.current);
@@ -207,9 +207,9 @@ export default function LocationMap() {
           .setPopup(
             new mapboxgl.Popup({ offset: 25 })
               .setHTML(`
-                <div class="font-serif font-bold text-base mb-1">${trail.name}</div>
-                <div class="text-sm text-muted-foreground mb-1">${trail.description}</div>
-                <div class="text-xs font-semibold">${difficultyBadge}</div>
+                <div style="font-family: serif; font-weight: bold; font-size: 16px; color: #1a1a1a; margin-bottom: 4px;">${trail.name}</div>
+                <div style="font-size: 14px; color: #666; margin-bottom: 4px;">${trail.description}</div>
+                <div style="font-size: 13px; font-weight: 600; color: #333;">${difficultyBadge}</div>
               `)
           )
           .addTo(map.current);
