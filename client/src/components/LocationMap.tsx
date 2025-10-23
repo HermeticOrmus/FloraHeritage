@@ -54,7 +54,13 @@ export default function LocationMap() {
     if (map.current) return; // Initialize map only once
 
     // Set Mapbox access token
-    const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN || 'pk.eyJ1IjoiaGVybWV0aWNvcm11cyIsImEiOiJjbWgyanRzMnkwZWRrMm1vZnhycGx0d3ZkIn0.Xd8MTIn8OjShUK4KQJAPDw';
+    const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
+    
+    if (!mapboxToken) {
+      console.error('VITE_MAPBOX_TOKEN environment variable is not set');
+      return;
+    }
+    
     mapboxgl.accessToken = mapboxToken;
 
     map.current = new mapboxgl.Map({
@@ -67,18 +73,22 @@ export default function LocationMap() {
       attributionControl: true
     });
 
+    console.log('Initializing Mapbox with coordinates:', CASA_DEL_PUENTE_COORDS);
+    console.log('Token status:', mapboxToken ? 'Token is set (length: ' + mapboxToken.length + ')' : 'NO TOKEN');
+
     // Add error handler
     map.current.on('error', (e) => {
       console.error('Mapbox GL error:', e);
-      console.log('Token being used:', mapboxToken.substring(0, 20) + '...');
+      console.error('Error type:', e.error?.message || 'Unknown error');
     });
 
     // Log when style loads
     map.current.on('style.load', () => {
-      console.log('Map style loaded successfully');
+      console.log('✓ Map style loaded successfully');
     });
 
     map.current.on('load', () => {
+      console.log('✓ Map fully loaded');
       setMapLoaded(true);
 
       if (!map.current) return;
