@@ -65,10 +65,10 @@ export default function LocationMap() {
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/satellite-streets-v12',
+      style: 'mapbox://styles/mapbox/streets-v12', // Try basic streets first
       center: CASA_DEL_PUENTE_COORDS,
       zoom: 15,
-      pitch: 30,
+      pitch: 0,
       bearing: 0,
       attributionControl: true
     });
