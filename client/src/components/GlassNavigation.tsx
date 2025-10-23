@@ -141,94 +141,83 @@ export default function GlassNavigation() {
   // Mobile Navigation
   if (isMobile) {
     return (
-      <div className="fixed top-0 left-0 right-0 z-[9999]">
-        <div className="bg-white/90 dark:bg-black/80 backdrop-blur-lg border-b border-casa-stone/20">
-          <nav className="flex items-center justify-between px-4 py-3 max-w-7xl mx-auto">
+      <>
+        {/* Minimalist Mobile Header */}
+        <div className="fixed top-0 left-0 right-0 z-[9999] px-4 py-4">
+          <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="#home" className="flex-shrink-0" data-testid="nav-logo">
               <img
                 src={logoBlack}
                 alt="Casa Del Puente Logo"
-                className="h-12 w-auto dark:hidden"
+                className="h-11 w-auto dark:hidden drop-shadow-sm"
               />
               <img
                 src={logoWhite}
                 alt="Casa Del Puente Logo"
-                className="h-12 w-auto hidden dark:block"
+                className="h-11 w-auto hidden dark:block drop-shadow-lg"
               />
             </a>
             
-            {/* Language Switcher and Menu */}
-            <div className="flex items-center gap-2">
+            {/* Language & Menu */}
+            <div className="flex items-center gap-3">
               <LanguageSwitcher />
               
-              {/* Hamburger Menu */}
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild>
                   <button
-                    className="p-2.5 rounded-md transition-all duration-200 hover:bg-casa-blue-light/30"
+                    className="p-2 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-sm hover:shadow-md transition-all"
                     data-testid="button-mobile-menu"
                     aria-label="Menu"
                   >
-                    <Menu className="h-7 w-7 text-casa-blue-deep dark:text-casa-blue-light" strokeWidth={2} />
+                    <Menu className="h-5 w-5 text-gray-800 dark:text-gray-200" strokeWidth={2.5} />
                   </button>
                 </SheetTrigger>
                 <SheetContent 
                   side="right" 
-                  className="w-[85vw] max-w-[400px] border-l border-casa-stone/20 bg-gradient-to-b from-white/98 via-white/95 to-casa-blue-light/10 dark:from-gray-900/98 dark:via-gray-900/95 dark:to-casa-blue-deep/20 backdrop-blur-2xl p-0"
+                  className="w-[280px] border-0 bg-white dark:bg-gray-950 p-0"
                 >
-                  {/* Header with Close Button */}
-                  <div className="flex items-center justify-between px-6 py-5 border-b border-casa-stone/20">
-                    <SheetTitle className="font-serif text-2xl text-casa-blue-deep dark:text-casa-blue-light font-semibold">
-                      Menu
-                    </SheetTitle>
-                    <SheetDescription className="sr-only">
-                      Navigation menu for Casa Del Puente
-                    </SheetDescription>
-                    <SheetClose asChild>
-                      <button 
-                        className="p-2 rounded-md hover:bg-casa-stone/10 transition-colors"
-                        aria-label="Close menu"
-                      >
-                        <X className="h-6 w-6 text-casa-stone dark:text-casa-stone-light" />
-                      </button>
-                    </SheetClose>
-                  </div>
+                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                  <SheetDescription className="sr-only">
+                    Main navigation for Casa Del Puente
+                  </SheetDescription>
                   
-                  {/* Navigation Items */}
-                  <div className="flex flex-col gap-1 px-4 py-6">
-                    {navigationItemsKeys.map((item) => (
-                      <button
-                        key={item.id}
-                        className={cn(
-                          "font-serif text-xl text-left transition-all duration-200 px-5 py-4 rounded-lg",
-                          activeSection === item.id 
-                            ? "text-white dark:text-white font-semibold bg-casa-blue-medium shadow-sm" 
-                            : "text-casa-stone dark:text-gray-300 hover:bg-casa-blue-light/20 dark:hover:bg-casa-blue-deep/30"
-                        )}
-                        onClick={(event) => handleNavClick(event, item.href, item.id)}
-                        data-testid={`nav-${item.id}`}
-                      >
-                        {t(item.key)}
-                      </button>
-                    ))}
-                  </div>
-                  
-                  {/* Footer with Casa Info */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-casa-stone/20 bg-gradient-to-t from-casa-blue-light/5 to-transparent">
-                    <p className="font-serif text-sm text-casa-stone/70 dark:text-gray-400 text-center italic">
-                      Casa Del Puente
-                    </p>
-                    <p className="text-xs text-casa-stone/50 dark:text-gray-500 text-center mt-1">
-                      Boquete, Panamá
-                    </p>
+                  {/* Clean Navigation List */}
+                  <div className="flex flex-col h-full py-8">
+                    <div className="flex-1 px-6 space-y-1">
+                      {navigationItemsKeys.map((item) => (
+                        <button
+                          key={item.id}
+                          className={cn(
+                            "w-full font-serif text-lg text-left transition-all duration-200 px-4 py-3.5 rounded-md",
+                            activeSection === item.id 
+                              ? "text-casa-blue-deep dark:text-casa-blue-light font-semibold bg-casa-blue-light/30 dark:bg-casa-blue-deep/30" 
+                              : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900"
+                          )}
+                          onClick={(event) => handleNavClick(event, item.href, item.id)}
+                          data-testid={`nav-${item.id}`}
+                        >
+                          {t(item.key)}
+                        </button>
+                      ))}
+                    </div>
+                    
+                    {/* Subtle Footer */}
+                    <div className="px-6 pt-6 border-t border-gray-200 dark:border-gray-800">
+                      <p className="font-serif text-sm text-gray-500 dark:text-gray-500 italic">
+                        Casa Del Puente
+                      </p>
+                      <p className="text-xs text-gray-400 dark:text-gray-600 mt-0.5">
+                        Boquete, Panamá
+                      </p>
+                    </div>
                   </div>
                 </SheetContent>
               </Sheet>
             </div>
-          </nav>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
