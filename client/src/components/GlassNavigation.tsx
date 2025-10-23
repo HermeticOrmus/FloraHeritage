@@ -11,6 +11,8 @@ import {
   SheetClose,
   SheetTitle,
   SheetDescription,
+  SheetOverlay,
+  SheetPortal,
 } from "@/components/ui/sheet";
 
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
@@ -169,20 +171,26 @@ export default function GlassNavigation() {
                     data-testid="button-mobile-menu"
                     aria-label="Menu"
                   >
-                    <Menu className="h-6 w-6 text-gray-900 dark:text-white drop-shadow-md" strokeWidth={2} />
+                    {mobileMenuOpen ? (
+                      <X className="h-6 w-6 text-gray-900 dark:text-white drop-shadow-md" strokeWidth={2} />
+                    ) : (
+                      <Menu className="h-6 w-6 text-gray-900 dark:text-white drop-shadow-md" strokeWidth={2} />
+                    )}
                   </button>
                 </SheetTrigger>
-                <SheetContent 
-                  side="right" 
-                  className="w-[280px] border-0 bg-white dark:bg-gray-950 p-0"
-                >
-                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                  <SheetDescription className="sr-only">
-                    Main navigation for Casa Del Puente
-                  </SheetDescription>
+                <SheetPortal>
+                  <SheetOverlay className="bg-black/20 backdrop-blur-[2px]" />
+                  <SheetContent 
+                    side="right" 
+                    className="w-[280px] border-0 bg-white/98 dark:bg-gray-950/98 backdrop-blur-xl p-0"
+                  >
+                    <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                    <SheetDescription className="sr-only">
+                      Main navigation for Casa Del Puente
+                    </SheetDescription>
                   
                   {/* Clean Navigation List */}
-                  <div className="flex flex-col h-full py-8">
+                  <div className="flex flex-col h-full py-12 pt-20">
                     <div className="flex-1 px-6 space-y-1">
                       {navigationItemsKeys.map((item) => (
                         <button
@@ -212,6 +220,7 @@ export default function GlassNavigation() {
                     </div>
                   </div>
                 </SheetContent>
+                </SheetPortal>
               </Sheet>
             </div>
           </div>
