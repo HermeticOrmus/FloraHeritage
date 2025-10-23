@@ -6,12 +6,58 @@ import SEO from "@/components/SEO";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
 
-// Import available images
+// Import exterior images
 import mainHouse from "@assets/foto-principal-casa-del-puente_1760137696009.jpg";
-import exteriorImage1 from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";
-import exteriorImage2 from "@assets/WhatsApp Image 2025-09-13 at 15.53.46_c3d0b191_1757805248589.jpg";
-import exteriorImage3 from "@assets/WhatsApp Image 2025-09-13 at 15.54.05_54df4d3a_1757805248590.jpg";
-import exteriorImage4 from "@assets/WhatsApp Image 2025-09-13 at 15.54.33_e68e17db_1757805248590.jpg";
+import ext1 from "@assets/exteriors/casa-flora-exterior-front-view-blue-roof.jpg";
+import ext2 from "@assets/exteriors/casa-flora-exterior-front-view-garden-flowers.jpg";
+import ext3 from "@assets/exteriors/casa-flora-exterior-full-house-landscape.jpg";
+import ext4 from "@assets/exteriors/casa-flora-exterior-side-angle-gardens.jpg";
+import ext5 from "@assets/exteriors/casa-flora-exterior-wide-angle.jpg";
+import ext6 from "@assets/exteriors/casa-flora-exterior-entrance-perspective.jpg";
+import ext7 from "@assets/exteriors/casa-flora-exterior-terrace-patio.jpg";
+import ext8 from "@assets/exteriors/casa-flora-exterior-terrace-entrance-door.jpg";
+import ext9 from "@assets/exteriors/casa-flora-exterior-aerial-perspective.jpg";
+import ext10 from "@assets/exteriors/casa-flora-exterior-sunset-view.jpg";
+import ext11 from "@assets/exteriors/casa-flora-detail-architectural-feature.jpg";
+import ext12 from "@assets/exteriors/casa-flora-detail-exterior-close-up.jpg";
+
+// Import garden images
+import garden1 from "@assets/gardens/casa-flora-garden-covered-walkway-flowers.jpg";
+import garden2 from "@assets/gardens/casa-flora-garden-entrance-gate.jpg";
+import garden3 from "@assets/gardens/casa-flora-garden-flowers-orange-magenta.jpg";
+import garden4 from "@assets/gardens/casa-flora-garden-tropical-plants.jpg";
+import garden5 from "@assets/gardens/casa-flora-detail-garden-close-up.jpg";
+
+// Import bedroom images
+import bedroom1 from "@assets/bedrooms/casa-flora-room-geisha-main.jpg";
+import bedroom2 from "@assets/bedrooms/casa-flora-room-orquidea-main.jpg";
+import bedroom3 from "@assets/bedrooms/casa-flora-room-hortensia-twin-beds.jpg";
+import bedroom4 from "@assets/bedrooms/casa-flora-room-veranera-bunk-beds.jpg";
+
+// Import bathroom images (amenities)
+import bath1 from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite.jpg";
+import bath2 from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite-angle2.jpg";
+import bath3 from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite-shower.jpg";
+import bath4 from "@assets/bathrooms/casa-flora-bathroom-orquidea-ensuite.jpg";
+import bath5 from "@assets/bathrooms/casa-flora-bathroom-upstairs-shared.jpg";
+import bath6 from "@assets/bathrooms/casa-flora-bathroom-groundfloor-guest.jpg";
+
+// Import common area images (amenities)
+import common1 from "@assets/common-areas/casa-flora-interior-common-living-room.jpg";
+import common2 from "@assets/common-areas/casa-flora-interior-common-living-room-angle2.jpg";
+import common3 from "@assets/common-areas/casa-flora-interior-common-living-room-bridge-view.jpg";
+import common4 from "@assets/common-areas/casa-flora-interior-common-dining-room.jpg";
+import common5 from "@assets/common-areas/casa-flora-interior-common-entryway.jpg";
+import common6 from "@assets/common-areas/casa-flora-interior-common-tv-room.jpg";
+import common7 from "@assets/common-areas/casa-flora-interior-common-stairs-upstairs.jpg";
+import common8 from "@assets/common-areas/casa-flora-interior-hallway.jpg";
+import common9 from "@assets/common-areas/casa-flora-interior-library-bookshelf.jpg";
+
+// Import landscape images
+import landscape1 from "@assets/landscape/casa-flora-landscape-context.jpg";
+import landscape2 from "@assets/landscape/casa-flora-landscape-property-overview.jpg";
+
+// Import heritage images
 import heritageImage from "@assets/WhatsApp Image 2025-09-13 at 15.54.52_5c8d2b26_1757805248590.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -25,6 +71,7 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
+  // Main exterior
   {
     id: "main-house",
     src: mainHouse,
@@ -32,34 +79,286 @@ const galleryImages: GalleryImage[] = [
     category: "exterior",
     title: "Heritage House Facade"
   },
+  
+  // Exterior images
   {
-    id: "exterior-1",
-    src: exteriorImage1,
-    alt: "Casa Flora Exterior View",
+    id: "ext-1",
+    src: ext1,
+    alt: "Casa Flora front view with blue roof",
     category: "exterior",
-    title: "Mountain Vista"
+    title: "Classic Blue Roof"
   },
   {
-    id: "exterior-2",
-    src: exteriorImage2,
-    alt: "Casa Flora Garden View",
+    id: "ext-2",
+    src: ext2,
+    alt: "Casa Flora front view with garden flowers",
+    category: "exterior",
+    title: "Garden Entrance"
+  },
+  {
+    id: "ext-3",
+    src: ext3,
+    alt: "Casa Flora full house landscape",
+    category: "exterior",
+    title: "Mountain Setting"
+  },
+  {
+    id: "ext-4",
+    src: ext4,
+    alt: "Casa Flora side angle with gardens",
+    category: "exterior",
+    title: "Garden Perspective"
+  },
+  {
+    id: "ext-5",
+    src: ext5,
+    alt: "Casa Flora wide angle view",
+    category: "exterior",
+    title: "Wide Angle Vista"
+  },
+  {
+    id: "ext-6",
+    src: ext6,
+    alt: "Casa Flora entrance perspective",
+    category: "exterior",
+    title: "Welcoming Entrance"
+  },
+  {
+    id: "ext-7",
+    src: ext7,
+    alt: "Casa Flora terrace patio",
+    category: "exterior",
+    title: "Terrace Living"
+  },
+  {
+    id: "ext-8",
+    src: ext8,
+    alt: "Casa Flora terrace entrance door",
+    category: "exterior",
+    title: "Heritage Doorway"
+  },
+  {
+    id: "ext-9",
+    src: ext9,
+    alt: "Casa Flora aerial perspective",
+    category: "exterior",
+    title: "Aerial View"
+  },
+  {
+    id: "ext-10",
+    src: ext10,
+    alt: "Casa Flora at sunset",
+    category: "exterior",
+    title: "Golden Hour"
+  },
+  {
+    id: "ext-11",
+    src: ext11,
+    alt: "Casa Flora architectural detail",
+    category: "exterior",
+    title: "Architectural Detail"
+  },
+  {
+    id: "ext-12",
+    src: ext12,
+    alt: "Casa Flora exterior close-up",
+    category: "exterior",
+    title: "Colonial Craftsmanship"
+  },
+  
+  // Garden images
+  {
+    id: "garden-1",
+    src: garden1,
+    alt: "Casa Flora covered walkway with flowers",
     category: "gardens",
-    title: "Tropical Gardens"
+    title: "Floral Walkway"
   },
   {
-    id: "exterior-3",
-    src: exteriorImage3,
-    alt: "Casa Flora Architectural Detail",
-    category: "exterior",
-    title: "Colonial Architecture"
+    id: "garden-2",
+    src: garden2,
+    alt: "Casa Flora garden entrance gate",
+    category: "gardens",
+    title: "Garden Gate"
   },
   {
-    id: "exterior-4",
-    src: exteriorImage4,
-    alt: "Casa Flora Terrace",
-    category: "exterior",
-    title: "Covered Terrace"
+    id: "garden-3",
+    src: garden3,
+    alt: "Casa Flora garden orange and magenta flowers",
+    category: "gardens",
+    title: "Tropical Blooms"
   },
+  {
+    id: "garden-4",
+    src: garden4,
+    alt: "Casa Flora tropical plants",
+    category: "gardens",
+    title: "Lush Greenery"
+  },
+  {
+    id: "garden-5",
+    src: garden5,
+    alt: "Casa Flora garden close-up detail",
+    category: "gardens",
+    title: "Garden Details"
+  },
+  
+  // Bedroom images
+  {
+    id: "room-geisha",
+    src: bedroom1,
+    alt: "Geisha Room - Main bedroom with en-suite",
+    category: "rooms",
+    title: "Geisha Suite"
+  },
+  {
+    id: "room-orquidea",
+    src: bedroom2,
+    alt: "Orquídea Room - Orchid themed bedroom",
+    category: "rooms",
+    title: "Orquídea Suite"
+  },
+  {
+    id: "room-hortensia",
+    src: bedroom3,
+    alt: "Hortensia Room - Twin beds upstairs",
+    category: "rooms",
+    title: "Hortensia Room"
+  },
+  {
+    id: "room-veranera",
+    src: bedroom4,
+    alt: "Veranera Room - Bunk bed room",
+    category: "rooms",
+    title: "Veranera Room"
+  },
+  
+  // Bathroom images (amenities)
+  {
+    id: "bath-geisha-1",
+    src: bath1,
+    alt: "Geisha en-suite bathroom",
+    category: "amenities",
+    title: "En-suite Bathroom"
+  },
+  {
+    id: "bath-geisha-2",
+    src: bath2,
+    alt: "Geisha bathroom alternative angle",
+    category: "amenities",
+    title: "En-suite Detail"
+  },
+  {
+    id: "bath-geisha-3",
+    src: bath3,
+    alt: "Geisha bathroom shower",
+    category: "amenities",
+    title: "Modern Shower"
+  },
+  {
+    id: "bath-orquidea",
+    src: bath4,
+    alt: "Orquídea en-suite bathroom",
+    category: "amenities",
+    title: "Orquídea Bathroom"
+  },
+  {
+    id: "bath-shared",
+    src: bath5,
+    alt: "Upstairs shared bathroom",
+    category: "amenities",
+    title: "Shared Bathroom"
+  },
+  {
+    id: "bath-guest",
+    src: bath6,
+    alt: "Ground floor guest bathroom",
+    category: "amenities",
+    title: "Guest Bathroom"
+  },
+  
+  // Common areas (amenities)
+  {
+    id: "common-living-1",
+    src: common1,
+    alt: "Casa Flora living room",
+    category: "amenities",
+    title: "Living Room"
+  },
+  {
+    id: "common-living-2",
+    src: common2,
+    alt: "Casa Flora living room angle 2",
+    category: "amenities",
+    title: "Cozy Seating"
+  },
+  {
+    id: "common-living-3",
+    src: common3,
+    alt: "Casa Flora living room with bridge view",
+    category: "amenities",
+    title: "Bridge View Lounge"
+  },
+  {
+    id: "common-dining",
+    src: common4,
+    alt: "Casa Flora dining room",
+    category: "amenities",
+    title: "Dining Room"
+  },
+  {
+    id: "common-entry",
+    src: common5,
+    alt: "Casa Flora entryway",
+    category: "amenities",
+    title: "Grand Entryway"
+  },
+  {
+    id: "common-tv",
+    src: common6,
+    alt: "Casa Flora TV room",
+    category: "amenities",
+    title: "TV Room"
+  },
+  {
+    id: "common-stairs",
+    src: common7,
+    alt: "Casa Flora upstairs stairway",
+    category: "amenities",
+    title: "Heritage Staircase"
+  },
+  {
+    id: "common-hallway",
+    src: common8,
+    alt: "Casa Flora interior hallway",
+    category: "amenities",
+    title: "Interior Hallway"
+  },
+  {
+    id: "common-library",
+    src: common9,
+    alt: "Casa Flora library bookshelf",
+    category: "amenities",
+    title: "Library Corner"
+  },
+  
+  // Landscape images
+  {
+    id: "landscape-1",
+    src: landscape1,
+    alt: "Casa Flora landscape context",
+    category: "exterior",
+    title: "Mountain Context"
+  },
+  {
+    id: "landscape-2",
+    src: landscape2,
+    alt: "Casa Flora property overview",
+    category: "exterior",
+    title: "Property Overview"
+  },
+  
+  // Heritage images
   {
     id: "heritage-1",
     src: heritageImage,
@@ -123,49 +422,60 @@ export default function Gallery() {
 
   // Handle keyboard navigation
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && selectedImage) {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!selectedImage) return;
+
+      if (e.key === 'Escape') {
         closeLightbox();
+      } else if (e.key === 'ArrowRight') {
+        const currentIndex = filteredImages.findIndex(img => img.id === selectedImage.id);
+        const nextIndex = (currentIndex + 1) % filteredImages.length;
+        setSelectedImage(filteredImages[nextIndex]);
+      } else if (e.key === 'ArrowLeft') {
+        const currentIndex = filteredImages.findIndex(img => img.id === selectedImage.id);
+        const prevIndex = currentIndex === 0 ? filteredImages.length - 1 : currentIndex - 1;
+        setSelectedImage(filteredImages[prevIndex]);
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImage]);
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [selectedImage, filteredImages]);
 
   return (
-    <div className="relative min-h-screen bg-background">
-      <SEO
-        title="Photo Gallery - Casa Flora Heritage Home"
-        description="Browse our collection of heritage photos, botanical gardens, and architectural details from Casa Flora's century-old property in Boquete, Panama."
-        keywords="casa flora photos, boquete property images, heritage home gallery, botanical gardens, panama vacation rental photos"
+    <>
+      <SEO 
+        title="Photo Gallery | Casa Del Puente - Heritage Home in Boquete"
+        description="Explore our stunning photo gallery showcasing Casa Del Puente's colonial architecture, botanical bedrooms, tropical gardens, and breathtaking mountain views in Boquete, Panama."
       />
-      {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-casa-blue-light/20 via-background to-hydrangea-soft/10">
-        <div className="relative z-10 text-center max-w-4xl px-6">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6 text-foreground">
-            Photo Gallery
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-            Explore Casa Flora's century-old charm through our collection of heritage photos, botanical gardens, and architectural details
-          </p>
-        </div>
-      </section>
 
-      <main className="relative">
+      <div className="min-h-screen bg-background">
+        {/* Hero Header */}
+        <section className="relative py-20 px-6 bg-gradient-to-b from-casa-blue-light/10 to-background">
+          <div className="max-w-7xl mx-auto text-center">
+            <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
+              Photo Gallery
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Experience the beauty and heritage of Casa Del Puente through our curated collection of photographs
+            </p>
+          </div>
+        </section>
+
         {/* Category Filter */}
-        <section className="py-12 bg-background">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-wrap gap-4 justify-center">
+        <section className="py-8 px-6 sticky top-0 bg-background/95 backdrop-blur-md z-40 border-b border-border">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-3">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-6 py-2 rounded-full font-medium transition-all ${
+                  className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? 'bg-casa-blue-medium text-white'
-                      : 'bg-glass-light text-muted-foreground hover:bg-glass-medium'
+                      ? 'bg-casa-blue-deep text-white shadow-lg scale-105'
+                      : 'bg-card text-foreground hover-elevate active-elevate-2'
                   }`}
+                  data-testid={`filter-${category.id}`}
                 >
                   {category.label}
                 </button>
@@ -175,13 +485,11 @@ export default function Gallery() {
         </section>
 
         {/* Gallery Grid */}
-        <section className="py-12 bg-background">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="py-16 px-6">
+          <div className="max-w-7xl mx-auto">
             {filteredImages.length === 0 ? (
               <div className="text-center py-20">
-                <p className="text-xl text-muted-foreground">
-                  No photos available in this category yet. Check back soon!
-                </p>
+                <p className="text-muted-foreground text-lg">No images found in this category.</p>
               </div>
             ) : (
               <div className="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -190,6 +498,7 @@ export default function Gallery() {
                     key={image.id}
                     className="gallery-item cursor-pointer group"
                     onClick={() => openLightbox(image)}
+                    data-testid={`gallery-image-${image.id}`}
                   >
                     <GlassCard className="overflow-hidden hover-elevate">
                       <div className="aspect-[4/3] relative overflow-hidden">
@@ -212,75 +521,43 @@ export default function Gallery() {
           </div>
         </section>
 
-        {/* Coming Soon Section */}
-        <section className="py-20 bg-gradient-to-br from-background to-casa-blue-light/5">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <GlassCard className="p-12">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-6">
-                More Photos Coming Soon
-              </h2>
-              <p className="text-xl text-muted-foreground mb-8">
-                We're continuously adding more photos of our botanical bedrooms, tropical gardens, and heritage details. Follow us on social media to see the latest updates!
-              </p>
-              <div className="flex gap-4 justify-center">
-                <a
-                  href="https://instagram.com/casaflorapanama"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 bg-hydrangea-deep text-white rounded-lg hover:bg-hydrangea-medium transition-colors"
-                >
-                  Follow on Instagram
-                </a>
-                <a
-                  href="https://facebook.com/casaflorapanama"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 bg-casa-blue-medium text-white rounded-lg hover:bg-casa-blue-deep transition-colors"
-                >
-                  Like on Facebook
-                </a>
-              </div>
-            </GlassCard>
-          </div>
-        </section>
-      </main>
-
-      {/* Lightbox */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-[99999] bg-black/90 flex items-center justify-center p-4"
-          onClick={closeLightbox}
-        >
-          <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
-            aria-label="Close"
-          >
-            <X size={24} className="text-white" />
-          </button>
-
+        {/* Lightbox */}
+        {selectedImage && (
           <div
-            className="relative max-w-6xl w-full"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
+            onClick={closeLightbox}
           >
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
-            />
-            <div className="mt-4 text-center">
-              <h3 className="font-serif text-2xl font-semibold text-white mb-2">
-                {selectedImage.title}
-              </h3>
-              <p className="text-white/70 capitalize">
-                {selectedImage.category}
-              </p>
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 text-white hover:text-casa-blue-light transition-colors z-50"
+              data-testid="button-close-lightbox"
+            >
+              <X size={32} />
+            </button>
+
+            <div className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="max-w-full max-h-full object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+              
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center text-white bg-black/60 backdrop-blur-sm px-6 py-4 rounded-lg">
+                <h2 className="font-serif text-2xl font-bold mb-2">{selectedImage.title}</h2>
+                <p className="text-sm text-white/80">{selectedImage.alt}</p>
+              </div>
+
+              {/* Navigation hints */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white/60 text-sm">
+                Use arrow keys to navigate • ESC to close
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }
