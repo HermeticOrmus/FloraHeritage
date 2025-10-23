@@ -2,6 +2,14 @@ import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
+import { Menu, X } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 import logoWhite from "@assets/Logo Without Text-white@3x_1760138616483.png";
@@ -20,9 +28,10 @@ const navigationItemsKeys = [
 
 export default function GlassNavigation() {
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
   const [activeSection, setActiveSection] = useState("home");
-  // Removed isScrolled state - navigation stays fixed
   const [isInitialized, setIsInitialized] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { createRipple } = useRippleEffect('glass');
   
   // Refs for GSAP animations
@@ -36,8 +45,6 @@ export default function GlassNavigation() {
       setIsInitialized(true);
     }
   }, [isInitialized]);
-
-  // Removed scroll effects - navigation stays fixed
 
   // Color change and upscale hover effects
   const handleItemHover = (index: number, isEntering: boolean) => {
@@ -107,7 +114,9 @@ export default function GlassNavigation() {
       animateActiveTransition(id);
     }
     
-    // todo: remove mock functionality - replace with actual navigation
+    // Close mobile menu if open
+    setMobileMenuOpen(false);
+    
     console.log(`Navigating to ${href}`);
     setActiveSection(id);
     
@@ -127,6 +136,69 @@ export default function GlassNavigation() {
     }
   };
 
+  // Mobile Navigation
+  if (isMobile) {
+    return (
+      <div
+        className="fixed top-0 left-0 right-0 z-[9999] bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
+      >
+        <nav className="flex items-center justify-between px-4 py-3">
+          {/* Logo */}
+          <a href="#home" className="flex-shrink-0" data-testid="nav-logo">
+            <img
+              src={logoBlack}
+              alt="Casa Del Puente Logo"
+              className="h-10 w-auto dark:hidden"
+            />
+            <img
+              src={logoWhite}
+              alt="Casa Del Puente Logo"
+              className="h-10 w-auto hidden dark:block"
+            />
+          </a>
+          
+          {/* Language Switcher */}
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+            
+            {/* Hamburger Menu */}
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <button
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  data-testid="button-mobile-menu"
+                  aria-label="Menu"
+                >
+                  <Menu className="h-6 w-6 text-gray-900 dark:text-gray-100" />
+                </button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl">
+                <div className="flex flex-col gap-6 mt-8">
+                  {navigationItemsKeys.map((item) => (
+                    <button
+                      key={item.id}
+                      className={cn(
+                        "font-serif text-2xl text-left transition-all duration-300 px-4 py-3 rounded-lg",
+                        activeSection === item.id 
+                          ? "text-casa-blue-medium font-semibold bg-casa-blue-light/20" 
+                          : "text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      )}
+                      onClick={(event) => handleNavClick(event, item.href, item.id)}
+                      data-testid={`nav-${item.id}`}
+                    >
+                      {t(item.key)}
+                    </button>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </nav>
+      </div>
+    );
+  }
+
+  // Desktop Navigation
   return (
     <div
       ref={navRef}
