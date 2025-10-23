@@ -179,10 +179,10 @@ export default function GlassNavigation() {
                   </button>
                 </SheetTrigger>
                 <SheetPortal>
-                  <SheetOverlay className="bg-black/20 backdrop-blur-[2px]" />
+                  <SheetOverlay className="bg-black/40" />
                   <SheetContent 
                     side="right" 
-                    className="w-[280px] border-0 bg-white/98 dark:bg-gray-950/98 backdrop-blur-xl p-0"
+                    className="w-[280px] border-0 bg-white dark:bg-gray-900 p-0 [&>button]:hidden"
                   >
                     <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                     <SheetDescription className="sr-only">
@@ -190,7 +190,7 @@ export default function GlassNavigation() {
                     </SheetDescription>
                   
                   {/* Clean Navigation List */}
-                  <div className="flex flex-col h-full py-12 pt-20">
+                  <div className="flex flex-col h-full py-8 pt-16">
                     <div className="flex-1 px-6 space-y-1">
                       {navigationItemsKeys.map((item) => (
                         <button
