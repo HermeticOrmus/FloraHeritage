@@ -10,6 +10,52 @@ import { MapPin, Coffee, Mountain, Waves, Store } from "lucide-react";
 const CASA_DEL_PUENTE_COORDS: [number, number] = [-82.42905447930899, 8.783454651241962];
 const TOWN_CENTER_COORDS: [number, number] = [-82.4326, 8.7798]; // Downtown Boquete (8-min walk northeast)
 
+// Hiking trails and points of interest
+const HIKING_TRAILS = [
+  {
+    name: "Paseo del Río",
+    coords: [-82.42925090149991, 8.783680189585954] as [number, number],
+    description: "Riverside walkway",
+    type: "easy",
+    color: "#4A90E2"
+  },
+  {
+    name: "Sendero Del Pianista",
+    coords: [-82.42738208414508, 8.80927385242555] as [number, number],
+    description: "Pianist Trail - Popular hiking route",
+    type: "moderate",
+    color: "#7B68EE"
+  },
+  {
+    name: "Sendero Piedra Lino",
+    coords: [-82.43688363549963, 8.800717213736007] as [number, number],
+    description: "Scenic mountain trail",
+    type: "moderate",
+    color: "#8B4789"
+  },
+  {
+    name: "Sendero Los Quetzales",
+    coords: [-82.48894235222419, 8.847129542054434] as [number, number],
+    description: "Quetzal bird watching trail",
+    type: "challenging",
+    color: "#2E8B57"
+  },
+  {
+    name: "Senderos Finca Lerida",
+    coords: [-82.48290419932694, 8.813081218354894] as [number, number],
+    description: "Coffee plantation trails",
+    type: "easy",
+    color: "#D2691E"
+  },
+  {
+    name: "Finca Bonita Springs",
+    coords: [-82.4310817958232, 8.806518208755282] as [number, number],
+    description: "Natural springs and gardens",
+    type: "easy",
+    color: "#48C9B0"
+  }
+];
+
 export default function LocationMap() {
   const { t } = useTranslation();
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -65,9 +111,9 @@ export default function LocationMap() {
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12', // Try basic streets first
+      style: 'mapbox://styles/mapbox/outdoors-v12', // Outdoors style shows trails better
       center: CASA_DEL_PUENTE_COORDS,
-      zoom: 15,
+      zoom: 12, // Zoomed out to show more hiking trails
       pitch: 0,
       bearing: 0,
       attributionControl: true
@@ -139,6 +185,35 @@ export default function LocationMap() {
             `)
         )
         .addTo(map.current);
+
+      // Add hiking trail markers
+      HIKING_TRAILS.forEach((trail) => {
+        if (!map.current) return;
+        
+        const trailEl = document.createElement('div');
+        trailEl.className = 'custom-marker';
+        trailEl.innerHTML = `
+          <div class="w-8 h-8 rounded-full flex items-center justify-center shadow-lg border-2 border-white cursor-pointer hover:scale-110 transition-transform" style="background-color: ${trail.color}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+        `;
+
+        const difficultyBadge = trail.type === 'easy' ? '🟢 Easy' : trail.type === 'moderate' ? '🟡 Moderate' : '🔴 Challenging';
+
+        new mapboxgl.Marker(trailEl)
+          .setLngLat(trail.coords)
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 })
+              .setHTML(`
+                <div class="font-serif font-bold text-base mb-1">${trail.name}</div>
+                <div class="text-sm text-muted-foreground mb-1">${trail.description}</div>
+                <div class="text-xs font-semibold">${difficultyBadge}</div>
+              `)
+          )
+          .addTo(map.current);
+      });
 
       // Add walking radius circle (8-minute walk ≈ 600m radius)
       map.current.addSource('walking-radius', {
