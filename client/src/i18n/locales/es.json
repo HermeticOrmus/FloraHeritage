@@ -25,7 +25,14 @@
     "bedrooms": "habitaciones únicas con capacidad para",
     "guests": "huéspedes",
     "downstairs": "Habitaciones Premium Planta Baja",
-    "upstairs": "Habitaciones Jardín Planta Alta"
+    "upstairs": "Habitaciones Planta Alta",
+    "privateBathrooms": "Baños privados en suite",
+    "ensuite": "En suite",
+    "beds": "Camas",
+    "sleeps": "Capacidad",
+    "guestsCount": "huéspedes",
+    "blooms": "Floración",
+    "inGarden": "En el jardín"
   },
   "gallery": {
     "title": "Casa Del Puente",
@@ -140,8 +147,8 @@
     "thankYou": "Apreciamos tu cooperación y esperamos que disfrutes tu estancia."
   },
   "footer": {
-    "about": "Casa Flora",
-    "aboutDesc": "Una casa patrimonial centenaria en Boquete, Panamá. Cuatro generaciones de cuidado familiar, cinco habitaciones botánicas, infinitos recuerdos.",
+    "about": "Casa Del Puente",
+    "aboutDesc": "Una casa patrimonial centenaria en Boquete, Panamá. Cuatro generaciones de cuidado familiar, cuatro habitaciones botánicas, infinitos recuerdos.",
     "quickLinks": "Enlaces Rápidos",
     "contact": "Contacto",
     "location": "Boquete, Panamá",

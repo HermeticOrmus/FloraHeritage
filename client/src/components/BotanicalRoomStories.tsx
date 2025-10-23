@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 import GlassCard from "@/components/GlassCard";
 import DecorativeFrame from "@/components/DecorativeFrame";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +24,7 @@ const ROOM_IMAGES: Record<string, string> = {
 };
 
 export default function BotanicalRoomStories() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -84,13 +86,13 @@ export default function BotanicalRoomStories() {
         <div className="text-center mb-16">
           <DecorativeFrame position="top">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Four Botanical Bedrooms
+              {t('rooms.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-              Each bedroom carries a beautiful name inspired by flowers from our century-old gardens
+              {t('rooms.description')}
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              <span className="font-semibold text-primary">Your group receives the entire house</span> — all {CASA_DEL_PUENTE_HOUSE.totalBedrooms} unique bedrooms with sleeping space for up to {CASA_DEL_PUENTE_HOUSE.totalCapacity} guests
+              <span className="font-semibold text-primary">{t('rooms.wholeHouse')}</span> — all {CASA_DEL_PUENTE_HOUSE.totalBedrooms} {t('rooms.bedrooms')} {CASA_DEL_PUENTE_HOUSE.totalCapacity} {t('rooms.guests')}
             </p>
           </DecorativeFrame>
         </div>
@@ -99,9 +101,9 @@ export default function BotanicalRoomStories() {
         <div className="mb-12">
           <div className="text-center mb-8">
             <Badge className="bg-casa-blue-deep text-white px-4 py-2 text-sm mb-3">
-              Premium Downstairs Rooms
+              {t('rooms.downstairs')}
             </Badge>
-            <p className="text-muted-foreground">Private en-suite bathrooms</p>
+            <p className="text-muted-foreground">{t('rooms.privateBathrooms')}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -112,6 +114,7 @@ export default function BotanicalRoomStories() {
                 index={index}
                 setCardRef={setCardRef}
                 isPremium={true}
+                t={t}
               />
             ))}
           </div>
@@ -121,7 +124,7 @@ export default function BotanicalRoomStories() {
         <div>
           <div className="text-center mb-8">
             <Badge className="bg-hydrangea-medium text-white px-4 py-2 text-sm mb-3">
-              Upstairs Rooms
+              {t('rooms.upstairs')}
             </Badge>
           </div>
 
@@ -133,6 +136,7 @@ export default function BotanicalRoomStories() {
                 index={index + 2}
                 setCardRef={setCardRef}
                 isPremium={false}
+                t={t}
               />
             ))}
           </div>
@@ -147,9 +151,10 @@ interface RoomCardProps {
   index: number;
   setCardRef: (el: HTMLDivElement | null, index: number) => void;
   isPremium: boolean;
+  t: any;
 }
 
-function RoomCard({ room, index, setCardRef, isPremium }: RoomCardProps) {
+function RoomCard({ room, index, setCardRef, isPremium, t }: RoomCardProps) {
   return (
     <div
       ref={(el) => setCardRef(el, index)}
@@ -160,13 +165,13 @@ function RoomCard({ room, index, setCardRef, isPremium }: RoomCardProps) {
         <div className="relative">
           <img
             src={ROOM_IMAGES[room.id]}
-            alt={`${room.displayName} bedroom at Casa Flora`}
+            alt={`${room.displayName} bedroom at Casa Del Puente`}
             className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute top-4 right-4 flex gap-2">
             {isPremium && (
               <Badge className="bg-casa-blue-deep text-white">
-                En-suite
+                {t('rooms.ensuite')}
               </Badge>
             )}
             <Badge className="bg-mountain-sage text-white">
@@ -196,7 +201,7 @@ function RoomCard({ room, index, setCardRef, isPremium }: RoomCardProps) {
           {room.gardenLocation && (
             <div className="mb-4 p-3 bg-mountain-sage/10 rounded-lg">
               <p className="text-sm text-foreground/80">
-                <span className="font-semibold text-mountain-forest">In the garden:</span> {room.gardenLocation}
+                <span className="font-semibold text-mountain-forest">{t('rooms.inGarden')}:</span> {room.gardenLocation}
               </p>
             </div>
           )}
@@ -204,16 +209,16 @@ function RoomCard({ room, index, setCardRef, isPremium }: RoomCardProps) {
           {/* Room Details */}
           <div className="space-y-3 border-t border-foreground/10 pt-4">
             <div className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground">Beds:</span>
+              <span className="text-sm text-muted-foreground">{t('rooms.beds')}:</span>
               <span className="text-sm font-medium text-foreground">{room.bedConfiguration}</span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground">Sleeps:</span>
-              <span className="text-sm font-medium text-foreground">{room.capacity} guests</span>
+              <span className="text-sm text-muted-foreground">{t('rooms.sleeps')}:</span>
+              <span className="text-sm font-medium text-foreground">{room.capacity} {t('rooms.guestsCount')}</span>
             </div>
             {room.bloomingSeason && (
               <div className="flex justify-between items-center">
-                <span className="text-sm text-muted-foreground">Blooms:</span>
+                <span className="text-sm text-muted-foreground">{t('rooms.blooms')}:</span>
                 <span className="text-sm font-medium text-hydrangea-deep">{room.bloomingSeason}</span>
               </div>
             )}

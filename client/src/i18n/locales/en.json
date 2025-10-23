@@ -24,8 +24,15 @@
     "wholeHouse": "Your group receives the entire house",
     "bedrooms": "unique bedrooms with sleeping space for up to",
     "guests": "guests",
-    "downstairs": "Downstairs Premium Rooms",
-    "upstairs": "Upstairs Garden Rooms"
+    "downstairs": "Premium Downstairs Rooms",
+    "upstairs": "Upstairs Rooms",
+    "privateBathrooms": "Private en-suite bathrooms",
+    "ensuite": "En-suite",
+    "beds": "Beds",
+    "sleeps": "Sleeps",
+    "guestsCount": "guests",
+    "blooms": "Blooms",
+    "inGarden": "In the garden"
   },
   "gallery": {
     "title": "Casa Del Puente",
@@ -140,8 +147,8 @@
     "thankYou": "We appreciate your cooperation and hope you enjoy your stay."
   },
   "footer": {
-    "about": "Casa Flora",
-    "aboutDesc": "A century-old heritage home in Boquete, Panama. Four generations of family stewardship, five botanical bedrooms, endless memories.",
+    "about": "Casa Del Puente",
+    "aboutDesc": "A century-old heritage home in Boquete, Panama. Four generations of family stewardship, four botanical bedrooms, endless memories.",
     "quickLinks": "Quick Links",
     "contact": "Contact",
     "location": "Boquete, Panama",
