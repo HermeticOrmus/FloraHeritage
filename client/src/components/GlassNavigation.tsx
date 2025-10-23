@@ -48,13 +48,12 @@ export default function GlassNavigation() {
     }
   }, [isInitialized]);
 
-  // Color change and upscale hover effects
+  // Subtle hover effect - color only, no scale
   const handleItemHover = (index: number, isEntering: boolean) => {
     const item = itemRefs.current[index];
     if (!item || !isInitialized) return;
     
     gsap.to(item, {
-      scale: isEntering ? 1.1 : 1,
       color: isEntering ? "hsl(200, 32%, 56%)" : "", // Casa Del Puente brand blue hover
       duration: 0.3,
       ease: "power2.out",
@@ -166,7 +165,7 @@ export default function GlassNavigation() {
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild>
                   <button
-                    className="p-2 transition-all hover:scale-110"
+                    className="p-2"
                     data-testid="button-mobile-menu"
                     aria-label="Menu"
                   >
@@ -252,7 +251,7 @@ export default function GlassNavigation() {
               "font-serif text-xl cursor-pointer transition-all duration-300",
               activeSection === item.id 
                 ? "text-foreground font-semibold" 
-                : "text-gray-800 dark:text-foreground hover:text-gray-900 dark:hover:text-foreground"
+                : "text-gray-800 dark:text-foreground"
             )}
             onClick={(event) => handleNavClick(event, item.href, item.id)}
             onMouseEnter={() => handleItemHover(index, true)}
