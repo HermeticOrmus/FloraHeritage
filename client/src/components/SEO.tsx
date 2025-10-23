@@ -10,14 +10,14 @@ interface SEOProps {
 }
 
 export default function SEO({
-  title = 'Casa Flora - Heritage Vacation Rental in Boquete, Panama',
-  description = 'Experience four generations of heritage at Casa Flora, a century-old vacation home in Boquete, Panama. Five botanical bedrooms, lush gardens, and authentic Panamanian hospitality.',
+  title = 'Casa Del Puente - Heritage Vacation Rental in Boquete, Panama',
+  description = 'Experience four generations of heritage at Casa Del Puente, a century-old vacation home in Boquete, Panama. Four botanical bedrooms, lush gardens, and authentic Panamanian hospitality.',
   keywords = 'vacation rental Panama, Boquete accommodation, heritage home, botanical bedrooms, Panama vacation, cloud forest, coffee region',
   image = '/og-image.jpg',
-  url = 'https://casaflorapanama.com',
+  url = 'https://casadelpuente.com',
   type = 'website'
 }: SEOProps) {
-  const siteTitle = 'Casa Flora';
+  const siteTitle = 'Casa Del Puente';
   const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
 
   return (
@@ -43,7 +43,7 @@ export default function SEO({
       <meta property="twitter:image" content={image} />
 
       {/* Additional Meta Tags */}
-      <meta name="author" content="Casa Flora" />
+      <meta name="author" content="Casa Del Puente" />
       <meta name="robots" content="index, follow" />
       <meta name="googlebot" content="index, follow" />
 

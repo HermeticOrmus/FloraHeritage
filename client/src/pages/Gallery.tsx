@@ -75,7 +75,7 @@ const galleryImages: GalleryImage[] = [
   {
     id: "main-house",
     src: mainHouse,
-    alt: "Casa Flora - Main House Exterior",
+    alt: "Casa Del Puente - Main House Exterior",
     category: "exterior",
     title: "Heritage House Facade"
   },
@@ -84,84 +84,84 @@ const galleryImages: GalleryImage[] = [
   {
     id: "ext-1",
     src: ext1,
-    alt: "Casa Flora front view with blue roof",
+    alt: "Casa Del Puente front view with blue roof",
     category: "exterior",
     title: "Classic Blue Roof"
   },
   {
     id: "ext-2",
     src: ext2,
-    alt: "Casa Flora front view with garden flowers",
+    alt: "Casa Del Puente front view with garden flowers",
     category: "exterior",
     title: "Garden Entrance"
   },
   {
     id: "ext-3",
     src: ext3,
-    alt: "Casa Flora full house landscape",
+    alt: "Casa Del Puente full house landscape",
     category: "exterior",
     title: "Mountain Setting"
   },
   {
     id: "ext-4",
     src: ext4,
-    alt: "Casa Flora side angle with gardens",
+    alt: "Casa Del Puente side angle with gardens",
     category: "exterior",
     title: "Garden Perspective"
   },
   {
     id: "ext-5",
     src: ext5,
-    alt: "Casa Flora wide angle view",
+    alt: "Casa Del Puente wide angle view",
     category: "exterior",
     title: "Wide Angle Vista"
   },
   {
     id: "ext-6",
     src: ext6,
-    alt: "Casa Flora entrance perspective",
+    alt: "Casa Del Puente entrance perspective",
     category: "exterior",
     title: "Welcoming Entrance"
   },
   {
     id: "ext-7",
     src: ext7,
-    alt: "Casa Flora terrace patio",
+    alt: "Casa Del Puente terrace patio",
     category: "exterior",
     title: "Terrace Living"
   },
   {
     id: "ext-8",
     src: ext8,
-    alt: "Casa Flora terrace entrance door",
+    alt: "Casa Del Puente terrace entrance door",
     category: "exterior",
     title: "Heritage Doorway"
   },
   {
     id: "ext-9",
     src: ext9,
-    alt: "Casa Flora aerial perspective",
+    alt: "Casa Del Puente aerial perspective",
     category: "exterior",
     title: "Aerial View"
   },
   {
     id: "ext-10",
     src: ext10,
-    alt: "Casa Flora at sunset",
+    alt: "Casa Del Puente at sunset",
     category: "exterior",
     title: "Golden Hour"
   },
   {
     id: "ext-11",
     src: ext11,
-    alt: "Casa Flora architectural detail",
+    alt: "Casa Del Puente architectural detail",
     category: "exterior",
     title: "Architectural Detail"
   },
   {
     id: "ext-12",
     src: ext12,
-    alt: "Casa Flora exterior close-up",
+    alt: "Casa Del Puente exterior close-up",
     category: "exterior",
     title: "Colonial Craftsmanship"
   },
@@ -170,35 +170,35 @@ const galleryImages: GalleryImage[] = [
   {
     id: "garden-1",
     src: garden1,
-    alt: "Casa Flora covered walkway with flowers",
+    alt: "Casa Del Puente covered walkway with flowers",
     category: "gardens",
     title: "Floral Walkway"
   },
   {
     id: "garden-2",
     src: garden2,
-    alt: "Casa Flora garden entrance gate",
+    alt: "Casa Del Puente garden entrance gate",
     category: "gardens",
     title: "Garden Gate"
   },
   {
     id: "garden-3",
     src: garden3,
-    alt: "Casa Flora garden orange and magenta flowers",
+    alt: "Casa Del Puente garden orange and magenta flowers",
     category: "gardens",
     title: "Tropical Blooms"
   },
   {
     id: "garden-4",
     src: garden4,
-    alt: "Casa Flora tropical plants",
+    alt: "Casa Del Puente tropical plants",
     category: "gardens",
     title: "Lush Greenery"
   },
   {
     id: "garden-5",
     src: garden5,
-    alt: "Casa Flora garden close-up detail",
+    alt: "Casa Del Puente garden close-up detail",
     category: "gardens",
     title: "Garden Details"
   },
@@ -281,63 +281,63 @@ const galleryImages: GalleryImage[] = [
   {
     id: "common-living-1",
     src: common1,
-    alt: "Casa Flora living room",
+    alt: "Casa Del Puente living room",
     category: "amenities",
     title: "Living Room"
   },
   {
     id: "common-living-2",
     src: common2,
-    alt: "Casa Flora living room angle 2",
+    alt: "Casa Del Puente living room angle 2",
     category: "amenities",
     title: "Cozy Seating"
   },
   {
     id: "common-living-3",
     src: common3,
-    alt: "Casa Flora living room with bridge view",
+    alt: "Casa Del Puente living room with bridge view",
     category: "amenities",
     title: "Bridge View Lounge"
   },
   {
     id: "common-dining",
     src: common4,
-    alt: "Casa Flora dining room",
+    alt: "Casa Del Puente dining room",
     category: "amenities",
     title: "Dining Room"
   },
   {
     id: "common-entry",
     src: common5,
-    alt: "Casa Flora entryway",
+    alt: "Casa Del Puente entryway",
     category: "amenities",
     title: "Grand Entryway"
   },
   {
     id: "common-tv",
     src: common6,
-    alt: "Casa Flora TV room",
+    alt: "Casa Del Puente TV room",
     category: "amenities",
     title: "TV Room"
   },
   {
     id: "common-stairs",
     src: common7,
-    alt: "Casa Flora upstairs stairway",
+    alt: "Casa Del Puente upstairs stairway",
     category: "amenities",
     title: "Heritage Staircase"
   },
   {
     id: "common-hallway",
     src: common8,
-    alt: "Casa Flora interior hallway",
+    alt: "Casa Del Puente interior hallway",
     category: "amenities",
     title: "Interior Hallway"
   },
   {
     id: "common-library",
     src: common9,
-    alt: "Casa Flora library bookshelf",
+    alt: "Casa Del Puente library bookshelf",
     category: "amenities",
     title: "Library Corner"
   },
@@ -346,14 +346,14 @@ const galleryImages: GalleryImage[] = [
   {
     id: "landscape-1",
     src: landscape1,
-    alt: "Casa Flora landscape context",
+    alt: "Casa Del Puente landscape context",
     category: "exterior",
     title: "Mountain Context"
   },
   {
     id: "landscape-2",
     src: landscape2,
-    alt: "Casa Flora property overview",
+    alt: "Casa Del Puente property overview",
     category: "exterior",
     title: "Property Overview"
   },
@@ -362,7 +362,7 @@ const galleryImages: GalleryImage[] = [
   {
     id: "heritage-1",
     src: heritageImage,
-    alt: "Casa Flora Heritage Photo",
+    alt: "Casa Del Puente Heritage Photo",
     category: "heritage",
     title: "Four Generations (1920-2024)"
   },

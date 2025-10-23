@@ -14,7 +14,7 @@ interface RipplePosition {
 }
 
 /**
- * GSAP-powered ripple effect system for Casa Flora heritage interactions
+ * GSAP-powered ripple effect system for Casa Del Puente heritage interactions
  * Creates warm, sophisticated ripple animations that complement the antique glass aesthetic
  */
 export class RippleEffect {

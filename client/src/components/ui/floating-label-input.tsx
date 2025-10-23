@@ -23,7 +23,7 @@ interface FloatingLabelInputProps {
 
 /**
  * Heritage-inspired floating label input with GSAP animations
- * Provides sophisticated label transitions that complement Casa Flora's antique glass aesthetic
+ * Provides sophisticated label transitions that complement Casa Del Puente's antique glass aesthetic
  */
 const FloatingLabelInput = forwardRef<
   HTMLInputElement | HTMLSelectElement,

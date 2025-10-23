@@ -9,7 +9,7 @@ export default function GlassNavigationExample() {
       <div className="pt-20 space-y-16">
         <section id="home" className="h-96 flex items-center justify-center">
           <div className="text-center text-white">
-            <h1 className="font-serif text-4xl font-bold mb-4">Casa Flora</h1>
+            <h1 className="font-serif text-4xl font-bold mb-4">Casa Del Puente</h1>
             <p className="text-white/80">Heritage Property in Boquete, Panama</p>
           </div>
         </section>

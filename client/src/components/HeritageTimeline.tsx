@@ -106,7 +106,7 @@ export default function HeritageTimeline() {
             Four Generations of Heritage
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover the story of Casa Flora through a century of family stewardship and authentic hospitality
+            Discover the story of Casa Del Puente through a century of family stewardship and authentic hospitality
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export default function HeritageTimeline() {
                       {index === 0 && (
                         <img 
                           src={heritageImage} 
-                          alt="Casa Flora heritage architecture"
+                          alt="Casa Del Puente heritage architecture"
                           className="w-24 h-24 object-cover flex-shrink-0"
                         />
                       )}

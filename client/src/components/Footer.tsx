@@ -60,7 +60,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
                 <Mail size={16} className="flex-shrink-0 text-casa-blue-medium" />
-                <a href="mailto:info@casaflorapanama.com">info@casaflorapanama.com</a>
+                <a href="mailto:info@casadelpuente.com">info@casadelpuente.com</a>
               </li>
             </ul>
           </div>
@@ -70,7 +70,7 @@ export default function Footer() {
             <h3 className="font-serif text-lg font-semibold text-foreground">{t('footer.followUs')}</h3>
             <div className="flex gap-4">
               <a
-                href="https://facebook.com/casaflorapanama"
+                href="https://facebook.com/casadelpuentepanama"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-casa-blue-medium transition-colors"
@@ -79,7 +79,7 @@ export default function Footer() {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://instagram.com/casaflorapanama"
+                href="https://instagram.com/casadelpuentepanama"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-hydrangea-deep transition-colors"
@@ -101,7 +101,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>
-              © {currentYear} Casa Flora. {t('footer.rights')}. Four generations of stewardship (1920-{currentYear}).
+              © {currentYear} Casa Del Puente. {t('footer.rights')} Four generations of stewardship (1920-{currentYear}).
             </p>
             <div className="flex gap-6">
               <Link href="/rules" className="hover:text-foreground transition-colors">

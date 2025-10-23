@@ -199,7 +199,7 @@ export default function RoomDetail() {
           <div className="max-w-4xl mx-auto px-6 text-center">
             <GlassCard className="p-12 bg-gradient-to-br from-casa-blue-light/10 to-hydrangea-soft/10">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-6">
-                Experience Casa Flora's Heritage
+                Experience Casa Del Puente's Heritage
               </h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                 The {room.displayName} room is part of our whole-house rental. Book the entire heritage home and enjoy all four botanical bedrooms.
