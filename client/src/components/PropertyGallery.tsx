@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 import GlassCard from "@/components/GlassCard";
 import DecorativeFrame from "@/components/DecorativeFrame";
 import orchidDivider from "@assets/orchid-divider_1760144115381.png";
@@ -62,6 +63,7 @@ const galleryImages = [
 ];
 
 export default function PropertyGallery() {
+  const { t } = useTranslation();
   const galleryRef = useRef<HTMLDivElement>(null);
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -124,10 +126,10 @@ export default function PropertyGallery() {
 
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Casa Del Puente
+            {t('gallery.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A home with charming details and modern amenities in a fantastic location — just an 8-minute walk to town center, with a private heritage garden, fantastic hikes within walking distance, and a public riverside walkway right in front.
+            {t('gallery.description')}
           </p>
         </div>
 
