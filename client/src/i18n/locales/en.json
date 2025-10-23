@@ -34,6 +34,36 @@
     "blooms": "Blooms",
     "inGarden": "In the garden"
   },
+  "roomDetails": {
+    "geisha": {
+      "heritageStory": "Geisha celebrates the delicate beauty and refined elegance that defines this special room. Named for its graceful aesthetic and serene atmosphere, this downstairs bedroom offers peaceful garden views.",
+      "gardenLocation": "Boquete is one of the world's geisha coffee capitals, with prized coffee plants thriving throughout this renowned growing region. You'll find geisha coffee farms and plantations all around town.",
+      "bloomingSeason": "Year-round garden beauty",
+      "bedConfiguration": "2 single beds",
+      "features": ["Private en-suite bathroom", "2 single beds", "Garden views", "Original hardwood details", "Elegant décor"]
+    },
+    "orquidea": {
+      "heritageStory": "Orquídea honors Panama's national flower—the exquisite \"Holy Ghost Orchid\" (Peristeria elata). Orchids flourish in Boquete's cloud forests and are the crown jewel of our annual Flower Fair each January.",
+      "gardenLocation": "Look for orchids throughout our gardens, especially near shaded walkways and tree trunks where they grow naturally.",
+      "bloomingSeason": "Year-round (peak in January during Flower Fair)",
+      "bedConfiguration": "2 single beds",
+      "features": ["Private en-suite bathroom", "2 single beds", "Premium room", "Cloud forest views", "Elegant orchid accents"]
+    },
+    "hortensia": {
+      "heritageStory": "Hortensia celebrates the romantic hydrangeas that thrive in Boquete's cool highland climate. These European immigrants have flourished here for over a century, their white and light blue blossoms can be seen all over the garden.",
+      "gardenLocation": "Find hydrangeas in the garden and throughout the property.",
+      "bloomingSeason": "Year-round (peak bloom in rainy season)",
+      "bedConfiguration": "2 single beds",
+      "features": ["2 single beds", "Shared upstairs bathroom", "Peaceful garden views", "Hydrangea-themed accents", "Mountain breeze windows"]
+    },
+    "veranera": {
+      "heritageStory": "Veranera celebrates the vibrant bougainvillea that cascades over our walls and fences in brilliant magenta and purple. The Spanish name \"Veranera\" means \"summer flower,\" evoking endless tropical warmth.",
+      "gardenLocation": "See bougainvillea cascading over walls and fences throughout the property, creating brilliant color cascades.",
+      "bloomingSeason": "Year-round",
+      "bedConfiguration": "2 bunk beds",
+      "features": ["2 bunk beds (sleeps 4)", "Shared upstairs bathroom", "Cozy tropical décor", "Bridge views", "Playful summer vibe"]
+    }
+  },
   "gallery": {
     "title": "Casa Del Puente",
     "description": "a home with charming details and modern amenities, in an almost perfect location, near town and immerse in nature."

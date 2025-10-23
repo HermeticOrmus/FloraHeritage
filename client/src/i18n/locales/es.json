@@ -34,6 +34,36 @@
     "blooms": "Floración",
     "inGarden": "En el jardín"
   },
+  "roomDetails": {
+    "geisha": {
+      "heritageStory": "Geisha celebra la belleza delicada y la elegancia refinada que define esta habitación especial. Nombrada por su estética graciosa y atmósfera serena, esta habitación de planta baja ofrece vistas tranquilas al jardín.",
+      "gardenLocation": "Boquete es una de las capitales mundiales del café geisha, con plantas de café premiadas prosperando en toda esta reconocida región cafetalera. Encontrarás fincas y plantaciones de café geisha por toda la ciudad.",
+      "bloomingSeason": "Belleza del jardín todo el año",
+      "bedConfiguration": "2 camas individuales",
+      "features": ["Baño privado en suite", "2 camas individuales", "Vistas al jardín", "Detalles originales de madera", "Decoración elegante"]
+    },
+    "orquidea": {
+      "heritageStory": "Orquídea honra la flor nacional de Panamá—la exquisita \"Orquídea del Espíritu Santo\" (Peristeria elata). Las orquídeas florecen en los bosques nublados de Boquete y son la joya de la corona de nuestra Feria de las Flores anual cada enero.",
+      "gardenLocation": "Busca orquídeas en nuestros jardines, especialmente cerca de los pasillos sombreados y troncos de árboles donde crecen naturalmente.",
+      "bloomingSeason": "Todo el año (pico en enero durante la Feria de las Flores)",
+      "bedConfiguration": "2 camas individuales",
+      "features": ["Baño privado en suite", "2 camas individuales", "Habitación premium", "Vistas al bosque nublado", "Acentos elegantes de orquídeas"]
+    },
+    "hortensia": {
+      "heritageStory": "Hortensia celebra las románticas hortensias que prosperan en el clima fresco de las tierras altas de Boquete. Estas inmigrantes europeas han florecido aquí durante más de un siglo, sus flores blancas y azul claro se pueden ver por todo el jardín.",
+      "gardenLocation": "Encuentra hortensias en el jardín y por toda la propiedad.",
+      "bloomingSeason": "Todo el año (floración máxima en temporada de lluvias)",
+      "bedConfiguration": "2 camas individuales",
+      "features": ["2 camas individuales", "Baño compartido planta alta", "Vistas tranquilas al jardín", "Acentos temáticos de hortensias", "Ventanas con brisa de montaña"]
+    },
+    "veranera": {
+      "heritageStory": "Veranera celebra las vibrantes buganvilias que caen en cascada sobre nuestros muros y cercas en brillante magenta y púrpura. El nombre español \"Veranera\" significa \"flor de verano,\" evocando la calidez tropical sin fin.",
+      "gardenLocation": "Ve buganvilias cayendo en cascada sobre muros y cercas por toda la propiedad, creando cascadas de color brillante.",
+      "bloomingSeason": "Todo el año",
+      "bedConfiguration": "2 literas",
+      "features": ["2 literas (4 personas)", "Baño compartido planta alta", "Decoración tropical acogedora", "Vistas al puente", "Ambiente veraniego alegre"]
+    }
+  },
   "gallery": {
     "title": "Casa Del Puente",
     "description": "una casa con encantadores detalles y comodidades modernas, en una ubicación casi perfecta, cerca del pueblo e inmersa en la naturaleza."

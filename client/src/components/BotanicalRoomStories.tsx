@@ -194,40 +194,36 @@ function RoomCard({ room, index, setCardRef, isPremium, t }: RoomCardProps) {
 
           {/* Heritage Story */}
           <p className="text-foreground/90 leading-relaxed mb-4 flex-1">
-            {room.heritageStory}
+            {t(`roomDetails.${room.id}.heritageStory`)}
           </p>
 
           {/* Garden Location */}
-          {room.gardenLocation && (
-            <div className="mb-4 p-3 bg-mountain-sage/10 rounded-lg">
-              <p className="text-sm text-foreground/80">
-                <span className="font-semibold text-mountain-forest">{t('rooms.inGarden')}:</span> {room.gardenLocation}
-              </p>
-            </div>
-          )}
+          <div className="mb-4 p-3 bg-mountain-sage/10 rounded-lg">
+            <p className="text-sm text-foreground/80">
+              <span className="font-semibold text-mountain-forest">{t('rooms.inGarden')}:</span> {t(`roomDetails.${room.id}.gardenLocation`)}
+            </p>
+          </div>
 
           {/* Room Details */}
           <div className="space-y-3 border-t border-foreground/10 pt-4">
             <div className="flex justify-between items-center">
               <span className="text-sm text-muted-foreground">{t('rooms.beds')}:</span>
-              <span className="text-sm font-medium text-foreground">{room.bedConfiguration}</span>
+              <span className="text-sm font-medium text-foreground">{t(`roomDetails.${room.id}.bedConfiguration`)}</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-sm text-muted-foreground">{t('rooms.sleeps')}:</span>
               <span className="text-sm font-medium text-foreground">{room.capacity} {t('rooms.guestsCount')}</span>
             </div>
-            {room.bloomingSeason && (
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-muted-foreground">{t('rooms.blooms')}:</span>
-                <span className="text-sm font-medium text-hydrangea-deep">{room.bloomingSeason}</span>
-              </div>
-            )}
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-muted-foreground">{t('rooms.blooms')}:</span>
+              <span className="text-sm font-medium text-hydrangea-deep">{t(`roomDetails.${room.id}.bloomingSeason`)}</span>
+            </div>
           </div>
 
           {/* Features */}
           <div className="mt-4">
             <div className="flex flex-wrap gap-2">
-              {room.features.slice(0, 3).map((feature, i) => (
+              {(t(`roomDetails.${room.id}.features`, { returnObjects: true }) as string[]).slice(0, 3).map((feature, i) => (
                 <Badge
                   key={i}
                   variant="outline"
