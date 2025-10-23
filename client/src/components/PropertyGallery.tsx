@@ -27,38 +27,38 @@ import libraryBookshelf from "@assets/common-areas/casa-flora-interior-library-b
 
 gsap.registerPlugin(ScrollTrigger);
 
-const galleryImages = [
+const getGalleryImages = (t: any) => [
   {
     src: houseWideAngle,
-    title: "Casa Del Puente"
+    title: t('gallery.images.casaDelPuente')
   },
   {
     src: gardenWalkway,
-    title: "Heritage Architecture"
+    title: t('gallery.images.heritageArchitecture')
   },
   {
     src: livingRoom,
-    title: "Living Spaces"
+    title: t('gallery.images.livingSpaces')
   },
   {
     src: houseSunset,
-    title: "Garden Views"
+    title: t('gallery.images.gardenViews')
   },
   {
     src: gardenFlowers,
-    title: "Botanical Heritage"
+    title: t('gallery.images.botanicalHeritage')
   },
   {
     src: diningRoom,
-    title: "Dining Room"
+    title: t('gallery.images.diningRoom')
   },
   {
     src: tropicalPlants,
-    title: "Coffee & Flora"
+    title: t('gallery.images.coffeeFlora')
   },
   {
     src: landscapeContext,
-    title: "Mountain Setting"
+    title: t('gallery.images.mountainSetting')
   }
 ];
 
@@ -66,6 +66,7 @@ export default function PropertyGallery() {
   const { t } = useTranslation();
   const galleryRef = useRef<HTMLDivElement>(null);
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const galleryImages = getGalleryImages(t);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

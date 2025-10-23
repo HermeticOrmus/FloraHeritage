@@ -66,7 +66,17 @@
   },
   "gallery": {
     "title": "Casa Del Puente",
-    "description": "Una casa con encantadores detalles y comodidades modernas en una ubicación fantástica — a solo 8 minutos a pie del centro del pueblo, con un jardín patrimonial privado, fantásticas caminatas a poca distancia, y un paseo público junto al río justo enfrente."
+    "description": "Una casa con encantadores detalles y comodidades modernas en una ubicación fantástica — a solo 8 minutos a pie del centro del pueblo, con un jardín patrimonial privado, fantásticas caminatas a poca distancia, y un paseo público junto al río justo enfrente.",
+    "images": {
+      "casaDelPuente": "Casa Del Puente",
+      "heritageArchitecture": "Arquitectura Patrimonial",
+      "livingSpaces": "Espacios de Estar",
+      "gardenViews": "Vistas al Jardín",
+      "botanicalHeritage": "Herencia Botánica",
+      "diningRoom": "Comedor",
+      "coffeeFlora": "Café y Flora",
+      "mountainSetting": "Entorno Montañoso"
+    }
   },
   "amenities": {
     "title": "Lo Que Está Incluido",
