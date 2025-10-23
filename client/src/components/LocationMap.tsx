@@ -194,8 +194,13 @@ export default function LocationMap() {
         trailEl.className = 'custom-marker';
         trailEl.innerHTML = `
           <div class="w-8 h-8 rounded-full flex items-center justify-center shadow-lg border-2 border-white cursor-pointer hover:scale-110 transition-transform" style="background-color: ${trail.color}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 4.5c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/>
+              <path d="M7 21c0-1.7 1.3-3 3-3h4c1.7 0 3 1.3 3 3"/>
+              <path d="M12 12l-2 7"/>
+              <path d="M12 12l2 7"/>
+              <path d="M12 12V7"/>
+              <path d="M9 7l3-3 3 3"/>
             </svg>
           </div>
         `;
