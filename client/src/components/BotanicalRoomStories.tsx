@@ -172,7 +172,7 @@ function RoomCard({ room, index, setCardRef, isPremium, t }: RoomCardProps) {
               </Badge>
             )}
             <Badge className="bg-mountain-sage text-white">
-              {room.floor}
+              {room.floor === 'downstairs' ? t('rooms.groundFloor') : t('rooms.topFloor')}
             </Badge>
           </div>
         </div>

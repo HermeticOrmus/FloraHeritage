@@ -33,7 +33,9 @@
     "guestsCount": "guests",
     "blooms": "Blooms",
     "inGarden": "In the garden",
-    "inArea": "In the area"
+    "inArea": "In the area",
+    "groundFloor": "Ground Floor",
+    "topFloor": "Top Floor"
   },
   "roomDetails": {
     "geisha": {
