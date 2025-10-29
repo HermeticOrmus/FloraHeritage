@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "wouter";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import GlassCard from "@/components/GlassCard";
@@ -8,6 +9,7 @@ import heroImage from "@assets/foto-principal-casa-del-puente_1760137696009.jpg"
 
 export default function HeroSection() {
   const { t } = useTranslation();
+  const [, setLocation] = useLocation();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -52,7 +54,7 @@ export default function HeroSection() {
 
   const handleCTAClick = (event: React.MouseEvent, action: string) => {
     // Create appropriate ripple effect based on action
-    if (action === "Discover Heritage") {
+    if (action === "Discover Home") {
       createHeritageRipple(event);
     } else {
       createBlueRipple(event);
@@ -69,8 +71,16 @@ export default function HeroSection() {
       overwrite: "auto"
     });
     
-    // todo: remove mock functionality
-    console.log(`${action} clicked`);
+    // Navigate based on action
+    if (action === "Discover Home") {
+      setTimeout(() => setLocation("/gallery"), 300);
+    } else if (action === "Book Stay") {
+      // Scroll to booking section
+      const bookingSection = document.querySelector("#booking");
+      if (bookingSection) {
+        bookingSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
