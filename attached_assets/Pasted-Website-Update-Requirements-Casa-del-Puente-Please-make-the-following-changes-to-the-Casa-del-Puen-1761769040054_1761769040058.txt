@@ -1,0 +1,110 @@
+Website Update Requirements - Casa del Puente
+Please make the following changes to the Casa del Puente website (both English and Spanish versions):
+CONTACT INFORMATION
+
+Add administrator phone number: +507 6416-0902 (WhatsApp)
+This is Erika's number - DO NOT display her name, just the number
+Update ALL existing WhatsApp links to direct to: +507 6416-0902
+WhatsApp link format should be: https://wa.me/50764160902 (remove spaces and + symbol for the link)
+In Booking section: Show ONLY Erika's cell (+507 6416-0902 WhatsApp) and email address
+Remove any other contact numbers from booking section
+Display the number as: +507 6416-0902
+Ensure WhatsApp button/link uses the correct wa.me format
+
+ENGLISH VERSION UPDATES
+Photos/Gallery
+
+"Discover Our Home" button should navigate to the complete photo gallery
+Add kitchen photos to the gallery
+
+What's Included Section
+
+Add: Washer and dryer
+Add: Full kitchen
+Add: TV
+
+Additional Features Section
+
+Reorder items: House features FIRST, then exterior features LAST
+Add: "Open terrace" or "Open deck" (client wants clarification on correct term)
+
+Rules/Normas Section
+
+Add: NO PETS
+Fix: Rules are currently displaying in English when they should be in Spanish on Spanish version
+
+Booking Section
+
+Display: +507 6416-0902 (WhatsApp)
+WhatsApp clickable link: https://wa.me/50764160902
+Display email address
+Remove all other contact numbers
+
+Other English Sections
+
+Check out policy: Ensure it's displaying in correct language
+Reservation policy: Ensure it's displaying in correct language
+
+SPANISH VERSION UPDATES
+4 Habitaciones Section
+
+Remove the word "all"
+
+Veranera Section
+
+Change text to: "Observa veraneras cayendo sobre muros y cercas por toda la propiedad, creando cascadas de brillantes colores."
+
+Casa del Puente Section
+
+Change to: "Detalles auténticos y comodidades..."
+Further down: "fabulosas caminatas..."
+Add comma after "junto al río": "junto al río, justo frente a la propiedad"
+
+Lo Que Está Incluido (What's Included)
+
+Para Familias: "Perfecto para estadías familiares"
+Para Bebés: "Ambiente acogedor y divertido para los más pequeños"
+
+Características (Features)
+
+Reorder: House features FIRST, exterior features LAST
+Add: Lavadora y secadora (Washer and dryer)
+
+Normas (Rules)
+
+Add: NO MASCOTAS (NO PETS)
+Fix: Rules are currently appearing in English instead of Spanish
+
+Booking Section (Spanish)
+
+Display: +507 6416-0902 (WhatsApp)
+WhatsApp clickable link: https://wa.me/50764160902
+Display email address
+Remove all other contact numbers
+
+NAVIGATION/FUNCTIONALITY BUGS TO FIX
+
+Location/Ubicación button is NOT working - needs to be fixed
+Top navigation buttons: Some are not working (example: Location button)
+Gallery navigation: Buttons within the gallery are not working properly
+Review ALL navigation buttons and ensure they function correctly
+
+GENERAL REQUIREMENTS
+
+All changes must be implemented in BOTH English and Spanish versions
+Ensure language consistency throughout (Spanish sections in Spanish, English sections in English)
+Test all navigation buttons after implementation
+Verify washer/dryer appears in both language versions
+Find and replace ALL WhatsApp links throughout the site to point to +507 6416-0902
+
+
+Priority Items:
+
+Fix non-functioning buttons (Location, Gallery navigation)
+Update ALL WhatsApp links to Erika's number (+507 6416-0902 / https://wa.me/50764160902)
+Add NO PETS rule in both languages
+Display Erika's contact info in booking sections (remove other numbers)
+Add washer/dryer to amenities list
+
+
+This ensures that both the displayed number and all WhatsApp clickable links are updated to Erika's number throughout the entire website.

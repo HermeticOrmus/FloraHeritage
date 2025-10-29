@@ -197,7 +197,7 @@ function RoomCard({ room, index, setCardRef, isPremium, t }: RoomCardProps) {
           {/* Garden Location */}
           <div className="mb-4 p-3 bg-mountain-sage/10 rounded-lg">
             <p className="text-sm text-foreground/80">
-              <span className="font-semibold text-mountain-forest">{t('rooms.inGarden')}:</span> {t(`roomDetails.${room.id}.gardenLocation`)}
+              <span className="font-semibold text-mountain-forest">{room.id === 'geisha' ? t('rooms.inArea') : t('rooms.inGarden')}:</span> {t(`roomDetails.${room.id}.gardenLocation`)}
             </p>
           </div>
 

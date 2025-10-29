@@ -32,7 +32,8 @@
     "sleeps": "Capacidad",
     "guestsCount": "huéspedes",
     "blooms": "Floración",
-    "inGarden": "En el jardín"
+    "inGarden": "En el jardín",
+    "inArea": "En el área"
   },
   "roomDetails": {
     "geisha": {
