@@ -88,11 +88,8 @@ export default function BotanicalRoomStories() {
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
               {t('rooms.title')}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               {t('rooms.description')}
-            </p>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              <span className="font-semibold text-primary">{t('rooms.wholeHouse')}</span> — all {CASA_DEL_PUENTE_HOUSE.totalBedrooms} {t('rooms.bedrooms')} {CASA_DEL_PUENTE_HOUSE.totalCapacity} {t('rooms.guests')}
             </p>
           </DecorativeFrame>
         </div>
