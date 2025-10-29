@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
 import DecorativeFrame from "@/components/DecorativeFrame";
 import { Badge } from "@/components/ui/badge";
-import { Wifi, Bed, Users, Baby, Dog, Home, Coffee, Car } from "lucide-react";
+import { Wifi, Bed, Users, Baby, Dog, Home, Coffee, Car, Tv, WashingMachine } from "lucide-react";
 import houseImage from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,6 +27,18 @@ export default function HouseAmenities() {
       title: t('amenities.beds'),
       description: t('amenities.bedsDesc'),
       color: 'bg-hydrangea-soft/20'
+    },
+    {
+      icon: Tv,
+      title: t('amenities.tv'),
+      description: t('amenities.tvDesc'),
+      color: 'bg-casa-blue-medium/20'
+    },
+    {
+      icon: WashingMachine,
+      title: t('amenities.washerDryer'),
+      description: t('amenities.washerDryerDesc'),
+      color: 'bg-hydrangea-deep/20'
     },
     {
       icon: Users,
@@ -54,9 +66,10 @@ export default function HouseAmenities() {
     { text: t('amenities.livingAreas'), color: 'bg-casa-blue-medium' },
     { text: t('amenities.barArea'), color: 'bg-casa-blue-deep' },
     { text: t('amenities.office'), color: 'bg-casa-blue-deep' },
-    { text: t('amenities.gardenAccess'), color: 'bg-mountain-sage' },
-    { text: t('amenities.parking'), color: 'bg-casa-blue-medium' },
     { text: t('amenities.mountainViews'), color: 'bg-casa-blue-medium' },
+    { text: t('amenities.parking'), color: 'bg-casa-blue-medium' },
+    { text: t('amenities.openTerrace'), color: 'bg-mountain-sage' },
+    { text: t('amenities.gardenAccess'), color: 'bg-mountain-sage' },
     { text: t('amenities.walkingDistance'), color: 'bg-mountain-forest' },
     { text: t('amenities.riverside'), color: 'bg-mountain-forest' },
     { text: `${t('amenities.hiking')} ${t('amenities.hikingDistance')}`, color: 'bg-mountain-forest' },
