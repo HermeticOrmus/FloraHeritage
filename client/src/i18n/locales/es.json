@@ -14,7 +14,7 @@
   },
   "hero": {
     "title": "Casa Del Puente",
-    "subtitle": "4 Habitaciones Botánicas, Una Historia Centenaria",
+    "subtitle": "4 Habitaciones, Una Historia Centenaria",
     "description": "Alquila la casa patrimonial completa en Boquete, la Capital de las Flores de Panamá",
     "bookNow": "Reserva Tu Estadía",
     "learnMore": "Descubre Nuestro Hogar",
@@ -22,7 +22,7 @@
     "heritageDesc": "Cuatro generaciones de hospitalidad familiar en los jardines de montaña de Panamá"
   },
   "rooms": {
-    "title": "Cuatro Habitaciones Botánicas",
+    "title": "Cuatro Habitaciones",
     "description": "Cada habitación lleva un hermoso nombre inspirado en flores de nuestros jardines centenarios",
     "wholeHouse": "Tu grupo recibe la casa completa",
     "bedrooms": "habitaciones únicas con capacidad para",
@@ -135,13 +135,13 @@
   "booking": {
     "title": "Reserva la Casa Patrimonial Completa",
     "description": "Alquila la casa completa de {{bedrooms}} habitaciones para tu grupo en Boquete, la capital de las flores de Panamá con clima ideal, primavera todo el año.",
-    "bedrooms": "Habitaciones Botánicas",
+    "bedrooms": "Habitaciones",
     "guestsMax": "Huéspedes Máximo",
     "heritage": "Años de Historia",
     "whatsapp": "¿Prefieres chatear directamente? Contáctanos por WhatsApp para asistencia instantánea.",
     "contactWhatsApp": "Contactar por WhatsApp",
     "formTitle": "Reserva la Casa Patrimonial Completa",
-    "formSubtitle": "Alquila las {{bedrooms}} habitaciones botánicas para tu grupo (capacidad para {{guests}} huéspedes)",
+    "formSubtitle": "Alquila las {{bedrooms}} habitaciones para tu grupo (capacidad para {{guests}} huéspedes)",
     "name": "Nombre Completo",
     "email": "Correo Electrónico",
     "phone": "Número de Teléfono",
@@ -211,7 +211,7 @@
   },
   "footer": {
     "about": "Casa Del Puente",
-    "aboutDesc": "Una casa patrimonial centenaria en Boquete, Panamá. Cuatro generaciones de cuidado familiar, cuatro habitaciones botánicas, infinitos recuerdos.",
+    "aboutDesc": "Una casa patrimonial centenaria en Boquete, Panamá. Cuatro generaciones de cuidado familiar, cuatro habitaciones, infinitos recuerdos.",
     "quickLinks": "Enlaces Rápidos",
     "contact": "Contacto",
     "location": "Boquete, Panamá",

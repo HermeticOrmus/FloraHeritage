@@ -14,7 +14,7 @@
   },
   "hero": {
     "title": "Casa Del Puente",
-    "subtitle": "4 Botanical Bedrooms, One Century-Old Story",
+    "subtitle": "4 Bedrooms, One Century-Old Story",
     "description": "Rent the entire heritage home in Boquete, Panama's Flower Capital",
     "bookNow": "Book Your Stay",
     "learnMore": "Discover Our Home",
@@ -22,7 +22,7 @@
     "heritageDesc": "Four generations of family hospitality in Panama's highland gardens"
   },
   "rooms": {
-    "title": "Four Botanical Bedrooms",
+    "title": "Four Bedrooms",
     "description": "Each bedroom carries a beautiful name inspired by flowers from our century-old gardens",
     "wholeHouse": "Your group receives the entire house",
     "bedrooms": "unique bedrooms with sleeping space for up to",
@@ -135,13 +135,13 @@
   "booking": {
     "title": "Book the Entire Heritage House",
     "description": "Rent the complete {{bedrooms}}-bedroom home for your group in Boquete, Panama's flower capital and ideal climate, spring year round.",
-    "bedrooms": "Botanical Bedrooms",
+    "bedrooms": "Bedrooms",
     "guestsMax": "Guests Maximum",
     "heritage": "Years of Heritage",
     "whatsapp": "Prefer to chat directly? Reach out via WhatsApp for instant assistance.",
     "contactWhatsApp": "Contact via WhatsApp",
     "formTitle": "Reserve the Entire Heritage Home",
-    "formSubtitle": "Rent all {{bedrooms}} botanical bedrooms for your group (sleeps up to {{guests}} guests)",
+    "formSubtitle": "Rent all {{bedrooms}} bedrooms for your group (sleeps up to {{guests}} guests)",
     "name": "Full Name",
     "email": "Email Address",
     "phone": "Phone Number",
@@ -211,7 +211,7 @@
   },
   "footer": {
     "about": "Casa Del Puente",
-    "aboutDesc": "A century-old heritage home in Boquete, Panama. Four generations of family stewardship, four botanical bedrooms, endless memories.",
+    "aboutDesc": "A century-old heritage home in Boquete, Panama. Four generations of family stewardship, four bedrooms, endless memories.",
     "quickLinks": "Quick Links",
     "contact": "Contact",
     "location": "Boquete, Panama",
