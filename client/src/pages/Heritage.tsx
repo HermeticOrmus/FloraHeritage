@@ -6,6 +6,7 @@ import GlassNavigation from "@/components/GlassNavigation";
 import HeritageTimeline from "@/components/HeritageTimeline";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import heroImage from "@assets/WhatsApp Image 2025-09-13 at 15.54.52_5c8d2b26_1757805248590.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -115,6 +116,9 @@ export default function Heritage() {
       </main>
 
       <Footer />
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton floating />
     </div>
   );
 }

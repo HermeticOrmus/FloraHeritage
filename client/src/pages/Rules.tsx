@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SEO from "@/components/SEO";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import {
   Clock,
   Ban,
@@ -360,6 +361,9 @@ export default function Rules() {
       </main>
 
       <Footer />
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton floating />
     </div>
   );
 }

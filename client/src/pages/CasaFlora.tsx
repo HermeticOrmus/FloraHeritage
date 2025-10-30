@@ -8,6 +8,7 @@ import PropertyGallery from "@/components/PropertyGallery";
 import HouseAmenities from "@/components/HouseAmenities";
 import LocationMap from "@/components/LocationMap";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import bougainvilleaDivider from "@assets/bougainvillea-divider_1760151444026.png";
 
 // Register GSAP plugins
@@ -65,6 +66,9 @@ export default function CasaFlora() {
       </div>
 
       <Footer />
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton floating />
     </div>
   );
 }

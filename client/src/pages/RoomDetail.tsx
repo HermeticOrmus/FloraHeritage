@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Bed, Users, MapPin, Calendar, Check } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { BOTANICAL_ROOMS, type RoomName } from "@shared/botanicalRooms";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -264,6 +265,9 @@ export default function RoomDetail() {
       </main>
 
       <Footer />
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton floating />
     </div>
   );
 }

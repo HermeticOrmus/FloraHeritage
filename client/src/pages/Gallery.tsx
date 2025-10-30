@@ -5,6 +5,7 @@ import { X } from "lucide-react";
 import SEO from "@/components/SEO";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 // Import exterior images
 import mainHouse from "@assets/foto-principal-casa-del-puente_1760137696009.jpg";
@@ -557,6 +558,9 @@ export default function Gallery() {
         )}
 
         <Footer />
+
+        {/* Floating WhatsApp Button */}
+        <WhatsAppButton floating />
       </div>
     </>
   );
