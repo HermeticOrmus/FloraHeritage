@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import { Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { SiTiktok } from "react-icons/si";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -70,13 +71,13 @@ export default function Footer() {
             <h3 className="font-serif text-lg font-semibold text-foreground">{t('footer.followUs')}</h3>
             <div className="flex gap-4">
               <a
-                href="https://facebook.com/casadelpuentepanama"
+                href="https://tiktok.com/@casadelpuentepanama"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-casa-blue-medium transition-colors"
-                aria-label="Facebook"
+                aria-label="TikTok"
               >
-                <Facebook size={20} />
+                <SiTiktok size={20} />
               </a>
               <a
                 href="https://instagram.com/casadelpuentepanama"
