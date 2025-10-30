@@ -25,9 +25,7 @@ const navigationItemsKeys = [
   { id: "rooms", key: "nav.rooms", href: "#rooms" },
   { id: "gallery", key: "nav.gallery", href: "/gallery" },
   { id: "amenities", key: "nav.amenities", href: "#amenities" },
-  { id: "location", key: "nav.location", href: "#location" },
   { id: "rules", key: "nav.rules", href: "/rules" },
-  { id: "booking", key: "nav.booking", href: "#booking" },
 ];
 
 export default function GlassNavigation() {
