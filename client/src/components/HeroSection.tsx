@@ -75,11 +75,11 @@ export default function HeroSection() {
     if (action === "Discover Home") {
       setTimeout(() => setLocation("/gallery"), 300);
     } else if (action === "Book Stay") {
-      // Scroll to booking section
-      const bookingSection = document.querySelector("#booking");
-      if (bookingSection) {
-        bookingSection.scrollIntoView({ behavior: "smooth" });
-      }
+      // Open WhatsApp with pre-filled message
+      const message = t('whatsapp.message');
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/50764160902?text=${encodedMessage}`;
+      setTimeout(() => window.open(whatsappUrl, '_blank'), 300);
     }
   };
 
