@@ -451,40 +451,6 @@ export default function Gallery() {
       />
 
       <div className="min-h-screen bg-background">
-        {/* Hero Header */}
-        <section className="relative py-20 px-6 bg-gradient-to-b from-casa-blue-light/10 to-background">
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Photo Gallery
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Experience the beauty and heritage of Casa Del Puente through our curated collection of photographs
-            </p>
-          </div>
-        </section>
-
-        {/* Category Filter */}
-        <section className="py-8 px-6 sticky top-0 bg-background/95 backdrop-blur-md z-40 border-b border-border">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-wrap justify-center gap-3">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                    selectedCategory === category.id
-                      ? 'bg-casa-blue-deep text-white shadow-lg scale-105'
-                      : 'bg-card text-foreground hover-elevate active-elevate-2'
-                  }`}
-                  data-testid={`filter-${category.id}`}
-                >
-                  {category.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Gallery Grid */}
         <section className="py-16 px-6">
           <div className="max-w-7xl mx-auto">
