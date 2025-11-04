@@ -108,7 +108,7 @@ export default function HeroSection() {
           <p className="text-2xl md:text-3xl font-serif text-foreground/95 mb-4 leading-relaxed max-w-3xl mx-auto">
             {t('hero.subtitle')}
           </p>
-          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto whitespace-pre-line">
             {t('hero.description')}
           </p>
         </div>
