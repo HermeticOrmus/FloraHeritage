@@ -61,6 +61,7 @@ export default function HouseAmenities() {
   ];
 
   const additionalFeatures = [
+    // House characteristics first
     { text: t('amenities.fullKitchen'), color: 'bg-hydrangea-deep' },
     { text: t('amenities.bathrooms'), color: 'bg-hydrangea-deep' },
     { text: t('amenities.livingAreas'), color: 'bg-casa-blue-medium' },
@@ -70,6 +71,7 @@ export default function HouseAmenities() {
     { text: t('amenities.parking'), color: 'bg-casa-blue-medium' },
     { text: t('amenities.openTerrace'), color: 'bg-mountain-sage' },
     { text: t('amenities.gardenAccess'), color: 'bg-mountain-sage' },
+    // Location characteristics second
     { text: t('amenities.walkingDistance'), color: 'bg-mountain-forest' },
     { text: t('amenities.riverside'), color: 'bg-mountain-forest' },
     { text: `${t('amenities.hiking')} ${t('amenities.hikingDistance')}`, color: 'bg-mountain-forest' },
