@@ -333,6 +333,18 @@ export default function Rules() {
 
               <GlassCard className="p-8">
                 <h3 className="font-serif text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400">
+                    <DollarSign size={28} strokeWidth={2} />
+                  </div>
+                  {t('rules.damageDeposit')}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t('rules.damageDepositDesc')}
+                </p>
+              </GlassCard>
+
+              <GlassCard className="p-8">
+                <h3 className="font-serif text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-hydrangea-soft/30 text-hydrangea-deep dark:text-hydrangea-medium">
                     <RefreshCw size={28} strokeWidth={2} />
                   </div>
