@@ -80,7 +80,7 @@ export default function Footer() {
                 <SiTiktok size={20} />
               </a>
               <a
-                href="https://instagram.com/casadelpuentepanama"
+                href="https://instagram.com/casadelpuente_bqt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-hydrangea-deep transition-colors"

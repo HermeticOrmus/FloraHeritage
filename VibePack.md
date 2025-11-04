@@ -358,7 +358,7 @@ The website defaults to a sophisticated dark theme inspired by warm evening ambi
 - **Location**: Boquete, Chiriquí, Panama
 
 ### Social Media
-- **Instagram**: @casadelpuente
+- **Instagram**: @casadelpuente_bqt
 - **TikTok**: @casadelpuentepanama
 
 ### WhatsApp Pre-filled Messages
