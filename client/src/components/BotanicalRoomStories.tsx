@@ -211,42 +211,20 @@ function RoomCard({ room, index, setCardRef, isPremium, t }: RoomCardProps) {
             </div>
           </div>
           
-          {/* Carousel Controls */}
+          {/* Carousel Dots Indicator */}
           {images.length > 1 && (
-            <>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm hover:bg-background/90 h-8 w-8"
-                onClick={scrollPrev}
-                data-testid={`button-prev-${room.id}`}
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm hover:bg-background/90 h-8 w-8"
-                onClick={scrollNext}
-                data-testid={`button-next-${room.id}`}
-              >
-                <ChevronRight className="h-4 w-4" />
-              </Button>
-              
-              {/* Dots Indicator */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
-                {images.map((_, dotIndex) => (
-                  <div
-                    key={dotIndex}
-                    className={`h-1.5 rounded-full transition-all ${
-                      dotIndex === selectedIndex 
-                        ? 'w-6 bg-casa-blue-deep' 
-                        : 'w-1.5 bg-foreground/40'
-                    }`}
-                  />
-                ))}
-              </div>
-            </>
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {images.map((_, dotIndex) => (
+                <div
+                  key={dotIndex}
+                  className={`h-1.5 rounded-full transition-all ${
+                    dotIndex === selectedIndex 
+                      ? 'w-6 bg-casa-blue-deep' 
+                      : 'w-1.5 bg-foreground/40'
+                  }`}
+                />
+              ))}
+            </div>
           )}
           
           {/* Room Badges */}
