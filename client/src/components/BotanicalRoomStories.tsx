@@ -1,10 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
 import DecorativeFrame from "@/components/DecorativeFrame";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { BOTANICAL_ROOMS, CASA_DEL_PUENTE_HOUSE, type BotanicalRoom } from "@shared/botanicalRooms";
 
 // Import room images statically for Vite bundling
@@ -13,14 +16,22 @@ import orquideaRoom from "@assets/bedrooms/casa-flora-room-orquidea-main.jpg";
 import hortensiaRoom from "@assets/bedrooms/casa-flora-room-hortensia-twin-beds.jpg";
 import veraneraRoom from "@assets/bedrooms/casa-flora-room-veranera-bunk-beds.jpg";
 
+// Import bathroom images
+import geishaBathroom from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite.jpg";
+import geishaBathroom2 from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite-angle2.jpg";
+import geishaBathroomShower from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite-shower.jpg";
+import orquideaBathroom from "@assets/bathrooms/casa-flora-bathroom-orquidea-ensuite.jpg";
+import groundFloorGuestBathroom from "@assets/bathrooms/casa-flora-bathroom-groundfloor-guest.jpg";
+import upstairsSharedBathroom from "@assets/bathrooms/casa-flora-bathroom-upstairs-shared.jpg";
+
 gsap.registerPlugin(ScrollTrigger);
 
-// Map room IDs to imported images
-const ROOM_IMAGES: Record<string, string> = {
-  geisha: geishaRoom,
-  orquidea: orquideaRoom,
-  hortensia: hortensiaRoom,
-  veranera: veraneraRoom
+// Map room IDs to their image arrays (bedroom + bathrooms)
+const ROOM_IMAGE_GALLERIES: Record<string, string[]> = {
+  geisha: [geishaRoom, geishaBathroom, geishaBathroom2, geishaBathroomShower],
+  orquidea: [orquideaRoom, orquideaBathroom],
+  hortensia: [hortensiaRoom, upstairsSharedBathroom],
+  veranera: [veraneraRoom, upstairsSharedBathroom]
 };
 
 export default function BotanicalRoomStories() {
@@ -152,19 +163,93 @@ interface RoomCardProps {
 }
 
 function RoomCard({ room, index, setCardRef, isPremium, t }: RoomCardProps) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const images = ROOM_IMAGE_GALLERIES[room.id] || [];
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
   return (
     <div
       ref={(el) => setCardRef(el, index)}
       data-testid={`room-card-${room.id}`}
     >
       <GlassCard className="p-0 overflow-hidden group hover-elevate h-full flex flex-col">
-        {/* Room Image */}
+        {/* Room Image Carousel */}
         <div className="relative">
-          <img
-            src={ROOM_IMAGES[room.id]}
-            alt={`${room.displayName} bedroom at Casa Del Puente`}
-            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
+              {images.map((image, imgIndex) => (
+                <div key={imgIndex} className="flex-[0_0_100%] min-w-0">
+                  <img
+                    src={image}
+                    alt={`${room.displayName} ${imgIndex === 0 ? 'bedroom' : 'bathroom'} at Casa Del Puente`}
+                    className="w-full h-56 object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Carousel Controls */}
+          {images.length > 1 && (
+            <>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm hover:bg-background/90 h-8 w-8"
+                onClick={scrollPrev}
+                data-testid={`button-prev-${room.id}`}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm hover:bg-background/90 h-8 w-8"
+                onClick={scrollNext}
+                data-testid={`button-next-${room.id}`}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+              
+              {/* Dots Indicator */}
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+                {images.map((_, dotIndex) => (
+                  <div
+                    key={dotIndex}
+                    className={`h-1.5 rounded-full transition-all ${
+                      dotIndex === selectedIndex 
+                        ? 'w-6 bg-casa-blue-deep' 
+                        : 'w-1.5 bg-foreground/40'
+                    }`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+          
+          {/* Room Badges */}
           <div className="absolute top-4 right-4 flex gap-2">
             {isPremium && (
               <Badge className="bg-casa-blue-deep text-white">
