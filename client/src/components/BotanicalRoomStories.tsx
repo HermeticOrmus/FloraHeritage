@@ -20,8 +20,8 @@ import veraneraRoom from "@assets/bedrooms/casa-flora-room-veranera-bunk-beds.jp
 import geishaBathroom from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite.jpg";
 import geishaBathroom2 from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite-angle2.jpg";
 import geishaBathroomShower from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite-shower.jpg";
-import orquideaBathroom from "@assets/bathrooms/casa-flora-bathroom-orquidea-ensuite.jpg";
-import groundFloorGuestBathroom from "@assets/bathrooms/casa-flora-bathroom-groundfloor-guest.jpg";
+import orquideaBathroom from "@assets/bathrooms/casa-flora-bathroom-groundfloor-guest.jpg";
+import groundFloorGuestBathroom from "@assets/bathrooms/casa-flora-bathroom-orquidea-ensuite.jpg";
 import upstairsSharedBathroom from "@assets/bathrooms/casa-flora-bathroom-upstairs-shared.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -211,19 +211,42 @@ function RoomCard({ room, index, setCardRef, isPremium, t }: RoomCardProps) {
             </div>
           </div>
           
-          {/* Carousel Dots Indicator */}
+          {/* Carousel Navigation - Bottom Center */}
           {images.length > 1 && (
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
-              {images.map((_, dotIndex) => (
-                <div
-                  key={dotIndex}
-                  className={`h-1.5 rounded-full transition-all ${
-                    dotIndex === selectedIndex 
-                      ? 'w-6 bg-casa-blue-deep' 
-                      : 'w-1.5 bg-foreground/40'
-                  }`}
-                />
-              ))}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-3">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="bg-background/80 backdrop-blur-sm hover:bg-background/90 h-8 w-8"
+                onClick={scrollPrev}
+                data-testid={`button-prev-${room.id}`}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              
+              {/* Dots Indicator */}
+              <div className="flex gap-1.5">
+                {images.map((_, dotIndex) => (
+                  <div
+                    key={dotIndex}
+                    className={`h-1.5 rounded-full transition-all ${
+                      dotIndex === selectedIndex 
+                        ? 'w-6 bg-casa-blue-deep' 
+                        : 'w-1.5 bg-foreground/40'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <Button
+                variant="ghost"
+                size="icon"
+                className="bg-background/80 backdrop-blur-sm hover:bg-background/90 h-8 w-8"
+                onClick={scrollNext}
+                data-testid={`button-next-${room.id}`}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
             </div>
           )}
           
