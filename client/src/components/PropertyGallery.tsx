@@ -125,15 +125,6 @@ export default function PropertyGallery() {
           />
         </div>
 
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            {t('gallery.title')}
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {t('gallery.description')}
-          </p>
-        </div>
-
         {/* Main featured image */}
         <div className="mb-12">
           <div
