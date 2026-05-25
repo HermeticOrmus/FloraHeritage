@@ -1,5 +1,21 @@
-# Casa Flora
+<p align="center">
+  <img src="https://ormus.solutions/mascot/chain_braces_to_swan.gif" alt="Casa Flora" width="128" style="image-rendering: pixelated;" />
+</p>
 
+<h1 align="center">Casa Flora</h1>
+
+<p align="center">
+  <em>Flora Heritage - Botanical heritage preservation and education.</em>
+</p>
+
+<p align="center">
+  <a href="https://github.com/HermeticOrmus/FloraHeritage/stargazers"><img src="https://img.shields.io/github/stars/HermeticOrmus/FloraHeritage?style=flat-square&color=aa8142" alt="Stars" /></a>
+  <a href="https://github.com/HermeticOrmus/FloraHeritage/blob/main/LICENSE"><img src="https://img.shields.io/github/license/HermeticOrmus/FloraHeritage?style=flat-square&color=aa8142" alt="License" /></a>
+  <a href="https://github.com/HermeticOrmus/FloraHeritage/commits"><img src="https://img.shields.io/github/last-commit/HermeticOrmus/FloraHeritage?style=flat-square&color=aa8142" alt="Last Commit" /></a>
+  <img src="https://img.shields.io/badge/Claude_Code-aa8142?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code" />
+</p>
+
+---
 A botanical sanctuary and creative space concept.
 
 ## Overview
