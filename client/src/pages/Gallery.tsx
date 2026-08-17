@@ -445,9 +445,10 @@ export default function Gallery() {
 
   return (
     <>
-      <SEO 
-        title="Photo Gallery | Casa Del Puente - Heritage Home in Boquete"
-        description="Explore our stunning photo gallery showcasing Casa Del Puente's colonial architecture, botanical bedrooms, tropical gardens, and breathtaking mountain views in Boquete, Panama."
+      <SEO
+        path="/gallery"
+        title="Photo Gallery | Casa Del Puente, Boquete"
+        description="Photos of Casa Del Puente: heritage architecture, botanical bedrooms, gardens, kitchen, and mountain views in Boquete, Panama."
       />
 
       <div className="min-h-screen bg-background">

@@ -28,9 +28,10 @@ export default function Heritage() {
   return (
     <div className="relative min-h-screen bg-background">
       <SEO
-        title="Heritage Story - Four Generations (1920-2024)"
-        description="Discover the rich heritage of Casa Del Puente, preserved through four generations of family stewardship in Boquete, Panama. From 1920 to 2024."
-        keywords="panama heritage, family history, boquete history, historic home, restoration story, generational legacy"
+        path="/heritage"
+        title="Heritage Story — Four Generations in Boquete"
+        description="Four generations of family stewardship at Casa Del Puente in Boquete, Panama, from 1920 to today."
+        keywords="Casa Del Puente heritage, Boquete family history, historic home Panama"
       />
 
       {/* Heritage Hero Section */}

@@ -198,9 +198,10 @@ export default function Rules() {
   return (
     <div className="relative min-h-screen bg-background">
       <SEO
-        title={`${t('rules.title')} - Casa Del Puente`}
+        path="/rules"
+        title={`${t('rules.title')} | Casa Del Puente`}
         description={t('rules.description')}
-        keywords="casa del puente rules, vacation rental policies, boquete house rules, booking terms, cancellation policy"
+        keywords="Casa Del Puente house rules, Boquete rental policy, cancellation, no pets"
       />
 
       <section

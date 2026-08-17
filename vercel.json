@@ -5,6 +5,6 @@
   "installCommand": "npm ci",
   "framework": null,
   "rewrites": [
-    { "source": "/((?!assets/|bedrooms/|bathrooms/|gardens/|exteriors/|common-areas/|landscape/).*)", "destination": "/index.html" }
+    { "source": "/((?!assets/|bedrooms/|bathrooms/|gardens/|exteriors/|common-areas/|landscape/|videos/|robots\\.txt|sitemap\\.xml|llms\\.txt|og\\.jpg).*)", "destination": "/index.html" }
   ]
 }

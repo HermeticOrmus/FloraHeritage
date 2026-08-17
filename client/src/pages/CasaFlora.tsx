@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SEO from "@/components/SEO";
 import GlassNavigation from "@/components/GlassNavigation";
 import HeroSection from "@/components/HeroSection";
 import BotanicalRoomStories from "@/components/BotanicalRoomStories";
@@ -32,6 +33,7 @@ export default function CasaFlora() {
 
   return (
     <div className="relative min-h-screen bg-background">
+      <SEO path="/" />
       <GlassNavigation />
 
       <main>

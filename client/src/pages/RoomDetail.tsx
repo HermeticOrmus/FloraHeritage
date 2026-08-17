@@ -3,6 +3,7 @@ import { useRoute, Link } from "wouter";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Bed, Users, MapPin, Calendar, Check } from "lucide-react";
+import SEO from "@/components/SEO";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -55,6 +56,11 @@ export default function RoomDetail() {
 
   return (
     <div className="relative min-h-screen bg-background">
+      <SEO
+        path={`/rooms/${room.id}`}
+        title={`${room.displayName} Room | Casa Del Puente, Boquete`}
+        description={`${room.displayName} at Casa Del Puente — ${room.bedConfiguration}, ${room.bathroomType === 'ensuite' ? 'en-suite bathroom' : 'shared bathroom'}. Whole-house rental in Boquete, Panama.`}
+      />
       {/* Hero Section with Room Image */}
       <section className="relative h-[60vh] overflow-hidden">
         <div

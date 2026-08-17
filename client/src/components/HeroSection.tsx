@@ -3,9 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useLocation } from "wouter";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
-import GlassCard from "@/components/GlassCard";
 import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
-import heroImage from "@assets/foto-principal-casa-del-puente_1760137696009.jpg";
 
 export default function HeroSection() {
   const { t } = useTranslation();
@@ -84,17 +82,28 @@ export default function HeroSection() {
   };
 
   return (
-    <section 
+    <section
       ref={heroRef}
-      className="relative h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url(${heroImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-stone-950"
       data-testid="hero-section"
     >
+      <video
+        className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/videos/hero-poster.jpg"
+        aria-hidden="true"
+      >
+        <source src="/videos/hero-tour.mp4" type="video/mp4" />
+      </video>
+      <img
+        src="/videos/hero-poster.jpg"
+        alt=""
+        className="absolute inset-0 hidden h-full w-full object-cover motion-reduce:block"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/55" />
       <div className="relative z-10 text-center text-foreground max-w-4xl px-6">
         <h1
           ref={titleRef}
