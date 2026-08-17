@@ -10,7 +10,13 @@
     "rules": "Normas"
   },
   "whatsapp": {
-    "message": "¡Hola! Estoy interesado en alquilar Casa Del Puente en Boquete, Panamá."
+    "message": "¡Hola! Estoy interesado en alquilar Casa Del Puente en Boquete, Panamá ($550/noche, casa completa, mínimo 2 noches)."
+  },
+  "pricing": {
+    "amount": "$550",
+    "night": "noche",
+    "minNights": "Mínimo 2 noches",
+    "sleeps": "Hasta 10 huéspedes"
   },
   "hero": {
     "title": "Casa Del Puente",

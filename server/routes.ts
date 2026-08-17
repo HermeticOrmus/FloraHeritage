@@ -27,7 +27,7 @@ function calculateBookingPricing(checkInDate: Date, checkOutDate: Date): {
     throw new Error("Invalid date range: check-out must be after check-in");
   }
   
-  const basePrice = nights * 250; // $250 per night base rate
+  const basePrice = nights * 550;
   const taxes = basePrice * 0.12; // 12% taxes
   const fees = 50; // Flat cleaning fee
   const total = basePrice + taxes + fees;

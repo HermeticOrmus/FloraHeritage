@@ -10,7 +10,13 @@
     "rules": "Rules"
   },
   "whatsapp": {
-    "message": "Hello! I'm interested in renting Casa Del Puente in Boquete, Panama."
+    "message": "Hello! I'm interested in renting Casa Del Puente in Boquete, Panama ($550/night, whole house, minimum 2 nights)."
+  },
+  "pricing": {
+    "amount": "$550",
+    "night": "night",
+    "minNights": "Minimum 2 nights",
+    "sleeps": "Sleeps up to 10 guests"
   },
   "hero": {
     "title": "Casa Del Puente",
