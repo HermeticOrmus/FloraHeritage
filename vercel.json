@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npx vite build && mkdir -p dist/public && cp -a attached_assets/bedrooms attached_assets/bathrooms attached_assets/gardens attached_assets/exteriors attached_assets/common-areas attached_assets/landscape dist/public/",
+  "outputDirectory": "dist/public",
+  "installCommand": "npm ci",
+  "framework": null,
+  "rewrites": [
+    { "source": "/((?!assets/|bedrooms/|bathrooms/|gardens/|exteriors/|common-areas/|landscape/).*)", "destination": "/index.html" }
+  ]
+}

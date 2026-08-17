@@ -1,0 +1,10 @@
+plugins
+.claude
+.claude-agents
+.claude-plugin
+server
+migrations
+.git
+*.md
+.env
+.env.*

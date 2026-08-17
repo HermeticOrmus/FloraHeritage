@@ -14,7 +14,7 @@ export default function SEO({
   description = 'Experience four generations of heritage at Casa Del Puente, a century-old vacation home in Boquete, Panama. Four botanical bedrooms, lush gardens, and authentic Panamanian hospitality.',
   keywords = 'vacation rental Panama, Boquete accommodation, heritage home, botanical bedrooms, Panama vacation, cloud forest, coffee region',
   image = '/og-image.jpg',
-  url = 'https://casadelpuente.com',
+  url = 'https://casadelpuente.site',
   type = 'website'
 }: SEOProps) {
   const siteTitle = 'Casa Del Puente';
