@@ -223,7 +223,7 @@ export default function HouseWalkthrough() {
         ))}
 
         {hintVisible && (
-          <p className="absolute bottom-16 left-1/2 z-10 -translate-x-1/2 rounded-full bg-black/55 px-4 py-2 text-sm text-white/90">
+          <p className="absolute bottom-16 left-1/2 z-10 -translate-x-1/2 rounded-full bg-black/80 px-4 py-2 text-sm text-white">
             {t("tour.hint")}
           </p>
         )}

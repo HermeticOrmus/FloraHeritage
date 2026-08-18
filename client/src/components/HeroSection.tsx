@@ -103,27 +103,27 @@ export default function HeroSection() {
         alt=""
         className="absolute inset-0 hidden h-full w-full object-cover motion-reduce:block"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/55" />
-      <div className="relative z-10 text-center text-foreground max-w-4xl px-6">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/75" />
+      <div className="relative z-10 text-center text-white max-w-4xl px-6">
         <h1
           ref={titleRef}
-          className="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight transform-gpu"
+          className="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight transform-gpu drop-shadow"
           style={{ backfaceVisibility: 'hidden' }}
         >
           {t('hero.title')}
         </h1>
         
         <div ref={subtitleRef} className="mb-8 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
-          <p className="text-2xl md:text-3xl font-serif text-foreground/95 mb-4 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-2xl md:text-3xl font-serif text-white mb-4 leading-relaxed max-w-3xl mx-auto">
             {t('hero.subtitle')}
           </p>
-          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto whitespace-pre-line">
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto whitespace-pre-line">
             {t('hero.description')}
           </p>
-          <div className="mt-6 inline-flex items-baseline gap-2 bg-black/30 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/20">
+          <div className="mt-6 inline-flex items-baseline gap-2 bg-black/55 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/25">
             <span className="text-4xl md:text-5xl font-serif font-bold text-white">{t('pricing.amount')}</span>
-            <span className="text-lg text-white/90">/ {t('pricing.night')}</span>
-            <span className="text-white/70 ml-2">• {t('pricing.minNights')}</span>
+            <span className="text-lg text-white/95">/ {t('pricing.night')}</span>
+            <span className="text-white/85 ml-2">• {t('pricing.minNights')}</span>
           </div>
         </div>
         
@@ -131,7 +131,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button
               size="lg"
-              className={`bg-glass-blue/20 backdrop-blur-[2px] text-foreground border border-glass-blue/30 hover:bg-glass-blue/25 text-lg px-8 py-3 ${rippleContainerClass}`}
+              className={`bg-white/15 backdrop-blur-sm text-white border border-white/70 hover:bg-white/25 text-lg px-8 py-3 ${rippleContainerClass}`}
               onClick={(event) => handleCTAClick(event, "Discover Home")}
               data-testid="button-discover-heritage"
             >
@@ -140,7 +140,7 @@ export default function HeroSection() {
             
             <Button 
               size="lg"
-              className={`bg-casa-blue-deep text-foreground hover:bg-casa-blue-medium text-lg px-8 py-3 ${rippleContainerClass}`}
+              className={`bg-casa-blue-deep text-white hover:bg-casa-blue-medium text-lg px-8 py-3 ${rippleContainerClass}`}
               onClick={(event) => handleCTAClick(event, "Book Stay")}
               data-testid="button-book-stay"
             >
@@ -148,10 +148,9 @@ export default function HeroSection() {
             </Button>
           </div>
           
-          {/* Heritage info */}
-          <div className="text-center text-foreground max-w-md mx-auto">
+          <div className="text-center text-white max-w-md mx-auto">
             <h3 className="font-serif font-semibold mb-2 text-xl">{t('hero.heritageSince')}</h3>
-            <p className="text-foreground/85 leading-relaxed">
+            <p className="text-white/90 leading-relaxed">
               {t('hero.heritageDesc')}
             </p>
           </div>

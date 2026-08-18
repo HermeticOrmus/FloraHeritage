@@ -136,7 +136,7 @@ export default function GlassNavigation() {
 
   return (
     <div className="fixed top-0 left-1/2 -translate-x-1/2 z-[9999] mt-5">
-      <nav className="flex items-center gap-5 rounded-full bg-background/80 backdrop-blur-xl border border-border/70 px-6 py-3 shadow-sm">
+      <nav className="flex items-center gap-4 rounded-full bg-background/90 backdrop-blur-xl border border-border/70 px-5 py-2.5 shadow-sm">
         <button type="button" className="mr-1 flex-shrink-0" data-testid="nav-logo" onClick={() => go("/", "home")}>
           <img src={logoBlack} alt="Casa Del Puente" className="h-11 w-auto dark:hidden" />
           <img src={logoWhite} alt="Casa Del Puente" className="h-11 w-auto hidden dark:block" />
@@ -146,7 +146,7 @@ export default function GlassNavigation() {
             key={item.id}
             type="button"
             className={cn(
-              "font-serif text-lg cursor-pointer transition-colors",
+              "font-serif text-base cursor-pointer transition-colors px-1 py-2",
               activeSection === item.id
                 ? "text-casa-blue-deep font-semibold"
                 : "text-foreground/80 hover:text-casa-blue-medium",
@@ -159,7 +159,7 @@ export default function GlassNavigation() {
         ))}
         <button
           type="button"
-          className="font-serif text-lg rounded-full bg-casa-blue-deep text-white px-4 py-1.5 hover:bg-casa-blue-medium"
+          className="font-serif text-base rounded-full bg-casa-blue-deep text-white px-4 py-2 hover:bg-casa-blue-medium"
           onClick={book}
           data-testid="nav-book"
         >

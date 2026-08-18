@@ -87,7 +87,7 @@ export default function Footer() {
                 className="text-muted-foreground hover:text-casa-blue-medium transition-colors"
                 aria-label="TikTok"
               >
-                <SiTiktok size={20} />
+                <SiTiktok size={20} aria-hidden="true" />
               </a>
               <a
                 href="https://instagram.com/casadelpuente_bqt"
@@ -96,7 +96,7 @@ export default function Footer() {
                 className="text-muted-foreground hover:text-hydrangea-deep transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram size={20} />
+                <Instagram size={20} aria-hidden="true" />
               </a>
             </div>
             <div className="pt-4">

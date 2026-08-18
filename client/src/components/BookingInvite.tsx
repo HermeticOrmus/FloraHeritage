@@ -30,7 +30,7 @@ export default function BookingInvite() {
         <button
           type="button"
           onClick={() => openErikaWhatsApp(t("whatsapp.message"))}
-          className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white px-8 py-3 rounded-md transition-colors"
+          className="inline-flex items-center gap-2 bg-[#157a3e] hover:bg-[#116433] text-white px-8 py-3 rounded-md transition-colors"
           data-testid="booking-whatsapp"
         >
           <MessageCircle className="w-5 h-5" />

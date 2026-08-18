@@ -219,6 +219,7 @@ function RoomCard({ room, index, setCardRef, isPremium, t }: RoomCardProps) {
                 size="icon"
                 className="bg-background/80 backdrop-blur-sm hover:bg-background/90 h-8 w-8"
                 onClick={scrollPrev}
+                aria-label={`Previous ${room.displayName} photo`}
                 data-testid={`button-prev-${room.id}`}
               >
                 <ChevronLeft className="h-4 w-4" />
@@ -243,6 +244,7 @@ function RoomCard({ room, index, setCardRef, isPremium, t }: RoomCardProps) {
                 size="icon"
                 className="bg-background/80 backdrop-blur-sm hover:bg-background/90 h-8 w-8"
                 onClick={scrollNext}
+                aria-label={`Next ${room.displayName} photo`}
                 data-testid={`button-next-${room.id}`}
               >
                 <ChevronRight className="h-4 w-4" />
