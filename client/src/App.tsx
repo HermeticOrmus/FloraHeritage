@@ -10,6 +10,7 @@ import CasaFlora from "@/pages/CasaFlora";
 import Heritage from "@/pages/Heritage";
 import Rules from "@/pages/Rules";
 import Gallery from "@/pages/Gallery";
+import Tour from "@/pages/Tour";
 import RoomDetail from "@/pages/RoomDetail";
 import NotFound from "@/pages/not-found";
 
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/heritage" component={Heritage} />
       <Route path="/rules" component={Rules} />
       <Route path="/gallery" component={Gallery} />
+      <Route path="/tour" component={Tour} />
       <Route path="/rooms/:id" component={RoomDetail} />
       <Route component={NotFound} />
     </Switch>

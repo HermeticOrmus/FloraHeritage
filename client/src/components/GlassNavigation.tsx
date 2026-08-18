@@ -23,6 +23,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 const navigationItemsKeys = [
   { id: "home", key: "nav.home", href: "/" },
   { id: "rooms", key: "nav.rooms", href: "#rooms" },
+  { id: "tour", key: "nav.tour", href: "/tour" },
   { id: "gallery", key: "nav.gallery", href: "/gallery" },
   { id: "amenities", key: "nav.amenities", href: "#amenities" },
   { id: "rules", key: "nav.rules", href: "/rules" },
@@ -51,6 +52,7 @@ export default function GlassNavigation() {
   useEffect(() => {
     const path = window.location.pathname;
     if (path.startsWith("/gallery")) setActiveSection("gallery");
+    else if (path.startsWith("/tour")) setActiveSection("tour");
     else if (path.startsWith("/rules")) setActiveSection("rules");
     else if (path.startsWith("/heritage")) setActiveSection("home");
   }, []);
@@ -241,7 +243,7 @@ export default function GlassNavigation() {
       className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] mt-6"
       style={{ position: 'fixed' }}
     >
-      <nav className="flex items-center gap-8 px-8 py-5">
+      <nav className="flex items-center gap-6 px-8 py-5">
         {/* Casa Del Puente Logo */}
         <a href="/" className="mr-2 flex-shrink-0" data-testid="nav-logo">
           <img

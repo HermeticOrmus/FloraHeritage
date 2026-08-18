@@ -84,6 +84,13 @@ export default function PropertyWalkthroughs() {
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t("walkthroughs.subtitle")}
             </p>
+            <a
+              href="/tour"
+              className="inline-block mt-6 font-serif text-lg text-casa-blue-deep dark:text-casa-blue-light underline-offset-4 hover:underline"
+              data-testid="walkthroughs-full-tour"
+            >
+              {t("walkthroughs.watchFull")}
+            </a>
           </div>
         </DecorativeFrame>
 

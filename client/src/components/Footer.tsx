@@ -30,6 +30,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/tour" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {t('nav.tour')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/gallery" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {t('nav.gallery')}
+                </Link>
+              </li>
+              <li>
                 <Link href="/heritage" className="text-muted-foreground hover:text-foreground transition-colors">
                   {t('nav.heritage')}
                 </Link>

@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "rooms": "Rooms",
+    "tour": "Tour",
     "gallery": "Gallery",
     "amenities": "Amenities",
     "location": "Location",
@@ -94,6 +95,23 @@
     "bridge": {
       "title": "The bridge",
       "caption": "Bougainvillea in the foreground, the steel arch over the river that gives the house its name."
+    },
+    "watchFull": "Watch the full tour"
+  },
+  "tour": {
+    "pageTitle": "House tour",
+    "description": "A walk through Casa Del Puente woven from photographs of the house — the turquoise roof, the garden path, the rooms, the kitchen, and the bridge that gives it its name.",
+    "bookHint": "The whole house is $550 a night, minimum two nights, sleeps 10. Book on WhatsApp with Erika.",
+    "seeGallery": "See all photos",
+    "chapters": {
+      "arrival": "Arrival",
+      "garden": "Garden",
+      "living": "Living room",
+      "dining": "Dining room",
+      "kitchen": "Kitchen",
+      "bedrooms": "Bedrooms",
+      "terrace": "Terrace",
+      "bridge": "The bridge"
     }
   },
   "gallery": {

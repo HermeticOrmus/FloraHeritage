@@ -2,6 +2,7 @@
   "nav": {
     "home": "Inicio",
     "rooms": "Habitaciones",
+    "tour": "Recorrido",
     "gallery": "Galería",
     "amenities": "Comodidades",
     "location": "Ubicación",
@@ -94,6 +95,23 @@
     "bridge": {
       "title": "El puente",
       "caption": "Buganvilia en primer plano y el arco de acero sobre el río que da nombre a la casa."
+    },
+    "watchFull": "Ver el recorrido completo"
+  },
+  "tour": {
+    "pageTitle": "Recorrido",
+    "description": "Un paseo por Casa Del Puente tejido con fotografías de la casa: el techo turquesa, el sendero del jardín, las habitaciones, la cocina y el puente que le da nombre.",
+    "bookHint": "La casa completa es $550 por noche, mínimo dos noches, hasta 10 huéspedes. Reserva por WhatsApp con Erika.",
+    "seeGallery": "Ver todas las fotos",
+    "chapters": {
+      "arrival": "Llegada",
+      "garden": "Jardín",
+      "living": "Sala",
+      "dining": "Comedor",
+      "kitchen": "Cocina",
+      "bedrooms": "Habitaciones",
+      "terrace": "Terraza",
+      "bridge": "El puente"
     }
   },
   "gallery": {
