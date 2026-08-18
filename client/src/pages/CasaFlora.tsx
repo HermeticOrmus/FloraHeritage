@@ -7,6 +7,7 @@ import HeroSection from "@/components/HeroSection";
 import BotanicalRoomStories from "@/components/BotanicalRoomStories";
 import PropertyGallery from "@/components/PropertyGallery";
 import HouseAmenities from "@/components/HouseAmenities";
+import PropertyWalkthroughs from "@/components/PropertyWalkthroughs";
 import LocationMap from "@/components/LocationMap";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -48,6 +49,8 @@ export default function CasaFlora() {
         <section id="rooms">
           <BotanicalRoomStories />
         </section>
+
+        <PropertyWalkthroughs />
 
         <section id="gallery">
           <PropertyGallery />

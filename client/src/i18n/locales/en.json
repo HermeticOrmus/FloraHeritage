@@ -76,6 +76,26 @@
       "features": ["2 bunk beds (sleeps 4)", "Shared upstairs bathroom", "Cozy tropical décor", "Bridge views", "Playful summer vibe"]
     }
   },
+  "walkthroughs": {
+    "title": "Walk through the house",
+    "subtitle": "Short clips animated from photographs of Casa Del Puente — the rooms, the kitchen, the garden path, and the namesake bridge.",
+    "hall": {
+      "title": "Dining room through the arches",
+      "caption": "Sage-green arches open onto the dining room, checkerboard floor, and the round table in the entry."
+    },
+    "kitchen": {
+      "title": "Kitchen",
+      "caption": "Sage cabinets, pink tile, and a full stove — the working kitchen for the whole house."
+    },
+    "garden": {
+      "title": "Garden arbor",
+      "caption": "The flower-covered walk along the house, looking out to the Boquete hills."
+    },
+    "bridge": {
+      "title": "The bridge",
+      "caption": "Bougainvillea in the foreground, the steel arch over the river that gives the house its name."
+    }
+  },
   "gallery": {
     "title": "Casa Del Puente",
     "pageTitle": "Photo Gallery",

@@ -76,6 +76,26 @@
       "features": ["2 literas (4 personas)", "Baño compartido planta alta", "Decoración tropical acogedora", "Vistas al puente", "Ambiente veraniego alegre"]
     }
   },
+  "walkthroughs": {
+    "title": "Recorre la casa",
+    "subtitle": "Clips cortos animados a partir de fotografías de Casa Del Puente: las salas, la cocina, el jardín y el puente que le da nombre.",
+    "hall": {
+      "title": "Comedor entre los arcos",
+      "caption": "Arcos verde salvia que abren al comedor, el piso de damero y la mesa redonda de la entrada."
+    },
+    "kitchen": {
+      "title": "Cocina",
+      "caption": "Gabinetes verde salvia, azulejo rosa y cocina completa para toda la casa."
+    },
+    "garden": {
+      "title": "Emparrado del jardín",
+      "caption": "El sendero cubierto de flores a lo largo de la casa, con vista a las colinas de Boquete."
+    },
+    "bridge": {
+      "title": "El puente",
+      "caption": "Buganvilia en primer plano y el arco de acero sobre el río que da nombre a la casa."
+    }
+  },
   "gallery": {
     "title": "Casa Del Puente",
     "pageTitle": "Galería",

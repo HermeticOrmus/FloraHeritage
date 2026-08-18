@@ -1,0 +1,110 @@
+import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import GlassCard from "@/components/GlassCard";
+import DecorativeFrame from "@/components/DecorativeFrame";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const CLIPS = [
+  { id: "hall", src: "/videos/walk-hall.mp4", poster: "/videos/walk-hall.jpg" },
+  { id: "kitchen", src: "/videos/walk-kitchen.mp4", poster: "/videos/walk-kitchen.jpg" },
+  { id: "garden", src: "/videos/walk-garden.mp4", poster: "/videos/walk-garden.jpg" },
+  { id: "bridge", src: "/videos/walk-bridge.mp4", poster: "/videos/walk-bridge.jpg" },
+] as const;
+
+export default function PropertyWalkthroughs() {
+  const { t } = useTranslation();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      cardRefs.current.forEach((card) => {
+        if (card) {
+          gsap.set(card, { opacity: 0, y: 60, scale: 0.95 });
+        }
+      });
+
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top 70%",
+        animation: gsap.to(cardRefs.current, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power3.out",
+        }),
+      });
+    }, sectionRef);
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      id="tour"
+      className="py-24 bg-background"
+      data-testid="property-walkthroughs"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        <DecorativeFrame variant="hydrangea" position="top">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+              {t("walkthroughs.title")}
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              {t("walkthroughs.subtitle")}
+            </p>
+          </div>
+        </DecorativeFrame>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {CLIPS.map((clip, index) => (
+            <div
+              key={clip.id}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
+            >
+              <GlassCard className="p-0 overflow-hidden">
+                <div className="relative aspect-video bg-stone-950">
+                  <video
+                    className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    poster={clip.poster}
+                    aria-hidden="true"
+                  >
+                    <source src={clip.src} type="video/mp4" />
+                  </video>
+                  <img
+                    src={clip.poster}
+                    alt=""
+                    className="absolute inset-0 hidden h-full w-full object-cover motion-reduce:block"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+                    {t(`walkthroughs.${clip.id}.title`)}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {t(`walkthroughs.${clip.id}.caption`)}
+                  </p>
+                </div>
+              </GlassCard>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
