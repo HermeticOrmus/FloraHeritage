@@ -99,17 +99,25 @@
     "watchFull": "Ver el recorrido completo"
   },
   "tour": {
-    "pageTitle": "Recorrido",
-    "description": "Un paseo por Casa Del Puente tejido con fotografías de la casa: el techo turquesa, el sendero del jardín, las habitaciones, la cocina y el puente que le da nombre.",
+    "pageTitle": "Recorre la casa",
+    "description": "Entra a Casa Del Puente. Mira alrededor de cada habitación y toca una puerta — o las flechas — para seguir caminando.",
+    "hint": "Mueve para mirar. Toca un punto brillante para entrar.",
+    "back": "Habitación anterior",
+    "forward": "Siguiente habitación",
     "bookHint": "La casa completa es $550 por noche, mínimo dos noches, hasta 10 huéspedes. Reserva por WhatsApp con Erika.",
     "seeGallery": "Ver todas las fotos",
-    "chapters": {
-      "arrival": "Llegada",
-      "garden": "Jardín",
+    "rooms": {
+      "facade": "La casa",
+      "garden": "Sendero del jardín",
+      "entry": "Entrada",
+      "arches": "Los arcos",
       "living": "Sala",
       "dining": "Comedor",
       "kitchen": "Cocina",
-      "bedrooms": "Habitaciones",
+      "geisha": "Geisha",
+      "orquidea": "Orquídea",
+      "hortensia": "Hortensia",
+      "veranera": "Veranera",
       "terrace": "Terraza",
       "bridge": "El puente"
     }

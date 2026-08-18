@@ -99,17 +99,25 @@
     "watchFull": "Watch the full tour"
   },
   "tour": {
-    "pageTitle": "House tour",
-    "description": "A walk through Casa Del Puente woven from photographs of the house — the turquoise roof, the garden path, the rooms, the kitchen, and the bridge that gives it its name.",
+    "pageTitle": "Walk the house",
+    "description": "Step through Casa Del Puente. Look around each room, then click a doorway — or use the arrows — to walk on.",
+    "hint": "Move to look around. Click a glowing spot to walk through.",
+    "back": "Previous room",
+    "forward": "Next room",
     "bookHint": "The whole house is $550 a night, minimum two nights, sleeps 10. Book on WhatsApp with Erika.",
     "seeGallery": "See all photos",
-    "chapters": {
-      "arrival": "Arrival",
-      "garden": "Garden",
+    "rooms": {
+      "facade": "The house",
+      "garden": "Garden path",
+      "entry": "Entry",
+      "arches": "The arches",
       "living": "Living room",
       "dining": "Dining room",
       "kitchen": "Kitchen",
-      "bedrooms": "Bedrooms",
+      "geisha": "Geisha",
+      "orquidea": "Orquídea",
+      "hortensia": "Hortensia",
+      "veranera": "Veranera",
       "terrace": "Terrace",
       "bridge": "The bridge"
     }

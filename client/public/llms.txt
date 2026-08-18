@@ -20,7 +20,7 @@ Heritage whole-house vacation rental in Boquete, Chiriqui, Panama.
 ## Pages
 
 - / — home, location map, rooms, gallery, amenities
-- /tour — photo-woven house tour video
+- /tour — interactive room-to-room walkthrough
 - /heritage — family history
 - /gallery — property photos
 - /rules — house rules and reservation policy
