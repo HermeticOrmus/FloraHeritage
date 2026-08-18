@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SITE = 'https://casadelpuente.site';
 const SITE_NAME = 'Casa Del Puente';
-const DEFAULT_IMAGE = `${SITE}/og.jpg`;
+const DEFAULT_IMAGE = `${SITE}/og.jpg?v=2`;
 const PHONE = '+50764160902';
 
 const LODGING_JSON_LD = {
