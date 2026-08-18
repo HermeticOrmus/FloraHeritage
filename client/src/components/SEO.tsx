@@ -113,7 +113,7 @@ export default function SEO({
             'Tour of Casa Del Puente in Boquete: the original house still, then drone of the gardens, the turquoise roof, and the namesake bridge.',
           thumbnailUrl: `${SITE}/videos/hero-poster.jpg`,
           contentUrl: `${SITE}/videos/hero-tour.mp4`,
-          uploadDate: '2026-08-17',
+          uploadDate: '2026-08-18',
           duration: 'PT19S',
         })}
       </script>

@@ -21,13 +21,13 @@ const SITE = "https://casadelpuente.site";
 
 const CHAPTERS = [
   { id: "arrival", start: 0, still: facadeStill },
-  { id: "garden", start: 4.33, still: gardenStill },
-  { id: "living", start: 12.97, still: livingStill },
-  { id: "dining", start: 17.3, still: diningStill },
-  { id: "kitchen", start: 26.97, still: kitchenStill },
-  { id: "bedrooms", start: 36.63, still: geishaStill },
-  { id: "terrace", start: 51.9, still: terraceStill },
-  { id: "bridge", start: 55.2, still: bridgeStill },
+  { id: "garden", start: 3.2, still: gardenStill },
+  { id: "living", start: 6.4, still: livingStill },
+  { id: "dining", start: 9.6, still: diningStill },
+  { id: "kitchen", start: 12.8, still: kitchenStill },
+  { id: "bedrooms", start: 16, still: geishaStill },
+  { id: "terrace", start: 28.8, still: terraceStill },
+  { id: "bridge", start: 32, still: bridgeStill },
 ] as const;
 
 export default function Tour() {
@@ -64,7 +64,7 @@ export default function Tour() {
             thumbnailUrl: `${SITE}/videos/property-tour.jpg`,
             contentUrl: `${SITE}/videos/property-tour.mp4`,
             uploadDate: "2026-08-18",
-            duration: "PT71S",
+            duration: "PT38S",
           })}
         </script>
       </Helmet>
@@ -89,10 +89,10 @@ export default function Tour() {
                   controls
                   playsInline
                   preload="metadata"
-                  poster="/videos/property-tour.jpg"
+                  poster="/videos/property-tour.jpg?v=2"
                   data-testid="tour-video"
                 >
-                  <source src="/videos/property-tour.mp4" type="video/mp4" />
+                  <source src="/videos/property-tour.mp4?v=2" type="video/mp4" />
                 </video>
               </div>
             </GlassCard>

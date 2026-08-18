@@ -93,13 +93,13 @@ export default function HeroSection() {
         muted
         loop
         playsInline
-        poster="/videos/hero-poster.jpg?v=4"
+        poster="/videos/hero-poster.jpg?v=5"
         aria-hidden="true"
       >
-        <source src="/videos/hero-tour.mp4?v=4" type="video/mp4" />
+        <source src="/videos/hero-tour.mp4?v=5" type="video/mp4" />
       </video>
       <img
-        src="/videos/hero-poster.jpg?v=4"
+        src="/videos/hero-poster.jpg?v=5"
         alt=""
         className="absolute inset-0 hidden h-full w-full object-cover motion-reduce:block"
       />
