@@ -18,6 +18,21 @@
     "minNights": "Minimum 2 nights",
     "sleeps": "Sleeps up to 10 guests"
   },
+  "cinema": {
+    "kicker": "Scroll to fly",
+    "bridge": {
+      "title": "The namesake bridge",
+      "caption": "Boquete, the river, and the steel arch that gives the house its name."
+    },
+    "house": {
+      "title": "The house in the trees",
+      "caption": "Turquoise roof, garden terraces, and the road that arrives at the gate."
+    },
+    "roof": {
+      "title": "Close over the roof",
+      "caption": "Green trim, stone walls, and the highland light on corrugated metal."
+    }
+  },
   "hero": {
     "title": "Casa Del Puente",
     "subtitle": "4 Bedrooms, One Century-Old Story",

@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SEO from "@/components/SEO";
 import GlassNavigation from "@/components/GlassNavigation";
 import HeroSection from "@/components/HeroSection";
+import ScrollCinema from "@/components/ScrollCinema";
 import BotanicalRoomStories from "@/components/BotanicalRoomStories";
 import PropertyGallery from "@/components/PropertyGallery";
 import HouseAmenities from "@/components/HouseAmenities";
@@ -41,6 +42,8 @@ export default function CasaFlora() {
         <section id="home">
           <HeroSection />
         </section>
+
+        <ScrollCinema />
 
         <section id="location">
           <LocationMap />

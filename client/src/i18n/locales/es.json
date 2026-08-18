@@ -18,6 +18,21 @@
     "minNights": "Mínimo 2 noches",
     "sleeps": "Hasta 10 huéspedes"
   },
+  "cinema": {
+    "kicker": "Desplaza para volar",
+    "bridge": {
+      "title": "El puente que le da nombre",
+      "caption": "Boquete, el río y el arco de acero que nombra la casa."
+    },
+    "house": {
+      "title": "La casa entre los árboles",
+      "caption": "Techo turquesa, terrazas de jardín y el camino que llega al portón."
+    },
+    "roof": {
+      "title": "Sobre el techo",
+      "caption": "Molduras verdes, muros de piedra y la luz de la sierra en el metal."
+    }
+  },
   "hero": {
     "title": "Casa Del Puente",
     "subtitle": "4 Habitaciones, Una Historia Centenaria",

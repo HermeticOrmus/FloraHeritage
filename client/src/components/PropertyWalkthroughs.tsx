@@ -18,12 +18,34 @@ export default function PropertyWalkthroughs() {
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const ctx = gsap.context(() => {
-      cardRefs.current.forEach((card) => {
+      cardRefs.current.forEach((card, index) => {
         if (card) {
           gsap.set(card, { opacity: 0, y: 60, scale: 0.95 });
+        }
+        const video = videoRefs.current[index];
+        if (!reduce && card && video) {
+          ScrollTrigger.create({
+            trigger: card,
+            start: "top 80%",
+            end: "bottom 20%",
+            onEnter: () => {
+              void video.play();
+            },
+            onEnterBack: () => {
+              void video.play();
+            },
+            onLeave: () => {
+              video.pause();
+            },
+            onLeaveBack: () => {
+              video.pause();
+            },
+          });
         }
       });
 
@@ -76,11 +98,14 @@ export default function PropertyWalkthroughs() {
               <GlassCard className="p-0 overflow-hidden">
                 <div className="relative aspect-video bg-stone-950">
                   <video
+                    ref={(el) => {
+                      videoRefs.current[index] = el;
+                    }}
                     className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
-                    autoPlay
                     muted
                     loop
                     playsInline
+                    preload="metadata"
                     poster={clip.poster}
                     aria-hidden="true"
                   >

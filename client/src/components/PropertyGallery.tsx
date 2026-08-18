@@ -71,7 +71,6 @@ export default function PropertyGallery() {
         }
       });
 
-      // Scroll-triggered masonry animation
       ScrollTrigger.create({
         trigger: galleryRef.current,
         start: "top 70%",
@@ -86,11 +85,32 @@ export default function PropertyGallery() {
         })
       });
 
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduce) {
+        imageRefs.current.forEach((wrap) => {
+          const img = wrap?.querySelector("img");
+          if (!wrap || !img) return;
+          gsap.fromTo(
+            img,
+            { yPercent: -8 },
+            {
+              yPercent: 8,
+              ease: "none",
+              scrollTrigger: {
+                trigger: wrap,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            }
+          );
+        });
+      }
+
     }, galleryRef);
 
     return () => {
       ctx.revert();
-      ScrollTrigger.killAll();
     };
   }, []);
 
@@ -121,11 +141,11 @@ export default function PropertyGallery() {
             className="relative overflow-hidden"
           >
             <GlassCard className="p-0 overflow-hidden">
-              <div className="relative">
+              <div className="relative overflow-hidden">
                 <img
                   src={galleryImages[0].src}
                   alt={galleryImages[0].title}
-                  className="w-full h-[400px] md:h-[500px] object-cover hover-elevate"
+                  className="w-full h-[400px] md:h-[500px] object-cover scale-110 hover-elevate"
                   decoding="async"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8">
@@ -147,13 +167,13 @@ export default function PropertyGallery() {
               className={index === 1 ? "lg:col-span-2" : ""}
             >
               <GlassCard className="p-0 overflow-hidden group hover-elevate">
-                <div className="relative">
+                <div className="relative overflow-hidden">
                   <img
                     src={image.src}
                     alt={image.title}
                     loading="lazy"
                     decoding="async"
-                    className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
+                    className={`w-full object-cover scale-110 transition-transform duration-500 ${
                       index === 1 ? "h-[250px]" : "h-[300px]"
                     }`}
                   />
