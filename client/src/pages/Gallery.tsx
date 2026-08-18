@@ -15,7 +15,6 @@ import ext1 from "@assets/exteriors/casa-flora-exterior-front-view-blue-roof.jpg
 import ext2 from "@assets/exteriors/casa-flora-exterior-front-view-garden-flowers.jpg";
 import ext3 from "@assets/exteriors/casa-flora-exterior-full-house-landscape.jpg";
 import ext4 from "@assets/exteriors/casa-flora-exterior-side-angle-gardens.jpg";
-import ext5 from "@assets/exteriors/casa-flora-exterior-wide-angle.jpg";
 import ext6 from "@assets/exteriors/casa-flora-exterior-entrance-perspective.jpg";
 import ext7 from "@assets/exteriors/casa-flora-exterior-terrace-patio.jpg";
 import ext8 from "@assets/exteriors/casa-flora-exterior-terrace-entrance-door.jpg";
@@ -110,13 +109,6 @@ const galleryImages: GalleryImage[] = [
     alt: "Casa Del Puente side angle with gardens",
     category: "exterior",
     title: "Garden Perspective"
-  },
-  {
-    id: "ext-5",
-    src: ext5,
-    alt: "Casa Del Puente wide angle view",
-    category: "exterior",
-    title: "Wide Angle Vista"
   },
   {
     id: "ext-6",
@@ -484,6 +476,8 @@ export default function Gallery() {
                         <img
                           src={image.src}
                           alt={image.alt}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

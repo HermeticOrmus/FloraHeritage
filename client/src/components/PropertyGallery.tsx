@@ -3,33 +3,22 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
 import GlassCard from "@/components/GlassCard";
-import DecorativeFrame from "@/components/DecorativeFrame";
 import orchidDivider from "@assets/orchid-divider_1760144115381.png";
 
-// Exterior & Landscape
 import houseExterior from "@assets/exteriors/casa-flora-exterior-front-view-blue-roof.jpg";
-import houseWideAngle from "@assets/exteriors/casa-flora-exterior-wide-angle.jpg";
 import houseSunset from "@assets/exteriors/casa-flora-exterior-sunset-view.jpg";
-import houseAerial from "@assets/exteriors/casa-flora-exterior-aerial-perspective.jpg";
-import terracePatio from "@assets/exteriors/casa-flora-exterior-terrace-patio.jpg";
-import mountainView from "@assets/landscape/casa-flora-landscape-property-overview.jpg";
 import landscapeContext from "@assets/landscape/casa-flora-landscape-context.jpg";
-
-// Gardens & Flowers
 import gardenWalkway from "@assets/gardens/casa-flora-garden-covered-walkway-flowers.jpg";
 import gardenFlowers from "@assets/gardens/casa-flora-garden-flowers-orange-magenta.jpg";
 import tropicalPlants from "@assets/gardens/casa-flora-garden-tropical-plants.jpg";
-
-// Interior Common Areas
 import livingRoom from "@assets/common-areas/casa-flora-interior-common-living-room.jpg";
 import diningRoom from "@assets/common-areas/casa-flora-interior-common-dining-room.jpg";
-import libraryBookshelf from "@assets/common-areas/casa-flora-interior-library-bookshelf.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const getGalleryImages = (t: any) => [
   {
-    src: houseWideAngle,
+    src: houseExterior,
     title: t('gallery.images.casaDelPuente')
   },
   {
@@ -54,7 +43,7 @@ const getGalleryImages = (t: any) => [
   },
   {
     src: tropicalPlants,
-    title: t('gallery.images.coffeeFlora')
+    title: t('gallery.images.tropicalGarden')
   },
   {
     src: landscapeContext,
@@ -137,6 +126,7 @@ export default function PropertyGallery() {
                   src={galleryImages[0].src}
                   alt={galleryImages[0].title}
                   className="w-full h-[400px] md:h-[500px] object-cover hover-elevate"
+                  decoding="async"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8">
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-white">
@@ -161,6 +151,8 @@ export default function PropertyGallery() {
                   <img
                     src={image.src}
                     alt={image.title}
+                    loading="lazy"
+                    decoding="async"
                     className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
                       index === 1 ? "h-[250px]" : "h-[300px]"
                     }`}

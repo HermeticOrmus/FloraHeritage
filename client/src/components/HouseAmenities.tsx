@@ -3,9 +3,7 @@ import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import GlassCard from "@/components/GlassCard";
-import DecorativeFrame from "@/components/DecorativeFrame";
-import { Badge } from "@/components/ui/badge";
-import { Wifi, Bed, Users, Baby, Dog, Home, Coffee, Car, Tv, WashingMachine } from "lucide-react";
+import { Wifi, Bed, Users, Baby, Home, Tv, WashingMachine } from "lucide-react";
 import houseImage from "@assets/WhatsApp Image 2025-09-13 at 15.51.54_5a202e28_1757805248589.jpg";
 
 gsap.registerPlugin(ScrollTrigger);

@@ -1,10 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npx vite build && mkdir -p dist/public && cp -a attached_assets/bedrooms attached_assets/bathrooms attached_assets/gardens attached_assets/exteriors attached_assets/common-areas attached_assets/landscape dist/public/",
+  "buildCommand": "npx vite build && mkdir -p dist/public/bedrooms dist/public/bathrooms && cp attached_assets/bedrooms/casa-flora-room-*.jpg dist/public/bedrooms/ && cp attached_assets/bathrooms/casa-flora-bathroom-*.jpg dist/public/bathrooms/",
   "outputDirectory": "dist/public",
   "installCommand": "npm ci",
   "framework": null,
   "rewrites": [
-    { "source": "/((?!assets/|bedrooms/|bathrooms/|gardens/|exteriors/|common-areas/|landscape/|videos/|robots\\.txt|sitemap\\.xml|llms\\.txt|og\\.jpg).*)", "destination": "/index.html" }
+    { "source": "/((?!assets/|bedrooms/|bathrooms/|videos/|robots\\.txt|sitemap\\.xml|llms\\.txt|og\\.jpg).*)", "destination": "/index.html" }
   ]
 }
