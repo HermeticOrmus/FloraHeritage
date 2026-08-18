@@ -78,7 +78,16 @@
   },
   "gallery": {
     "title": "Casa Del Puente",
+    "pageTitle": "Photo Gallery",
     "description": "A home with charming details and modern amenities in a fantastic location — just an 8-minute walk to town center, with a private heritage garden, fantastic hikes within walking distance, and a public riverside walkway right in front.",
+    "filters": {
+      "all": "All photos",
+      "exterior": "Exterior",
+      "rooms": "Bedrooms",
+      "gardens": "Gardens",
+      "heritage": "Heritage",
+      "amenities": "Inside"
+    },
     "images": {
       "casaDelPuente": "Casa Del Puente",
       "heritageArchitecture": "Heritage Architecture",

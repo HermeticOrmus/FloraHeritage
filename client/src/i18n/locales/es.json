@@ -78,7 +78,16 @@
   },
   "gallery": {
     "title": "Casa Del Puente",
+    "pageTitle": "Galería",
     "description": "Detalles auténticos y comodidades modernas en una ubicación fantástica — a solo 8 minutos a pie del centro del pueblo, con un jardín patrimonial privado, fabulosas caminatas a poca distancia, y un paseo público junto al río, justo frente a la propiedad.",
+    "filters": {
+      "all": "Todas",
+      "exterior": "Exterior",
+      "rooms": "Habitaciones",
+      "gardens": "Jardines",
+      "heritage": "Patrimonio",
+      "amenities": "Interior"
+    },
     "images": {
       "casaDelPuente": "Casa Del Puente",
       "heritageArchitecture": "Arquitectura Patrimonial",

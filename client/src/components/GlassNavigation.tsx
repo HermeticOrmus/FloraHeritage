@@ -48,6 +48,13 @@ export default function GlassNavigation() {
     }
   }, [isInitialized]);
 
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path.startsWith("/gallery")) setActiveSection("gallery");
+    else if (path.startsWith("/rules")) setActiveSection("rules");
+    else if (path.startsWith("/heritage")) setActiveSection("home");
+  }, []);
+
   // Subtle hover effect - color only, no scale
   const handleItemHover = (index: number, isEntering: boolean) => {
     const item = itemRefs.current[index];
@@ -122,17 +129,17 @@ export default function GlassNavigation() {
     setActiveSection(id);
     
     if (href.startsWith('/')) {
-      // Page navigation with heritage timing
       setTimeout(() => {
         window.location.href = href;
-      }, 300); // Allow time for animations
+      }, 300);
     } else {
-      // Smooth scroll for anchors
       const element = document.querySelector(href);
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: "smooth" });
         }, 200);
+      } else {
+        window.location.href = `/${href}`;
       }
     }
   };
@@ -145,7 +152,7 @@ export default function GlassNavigation() {
         <div className="fixed top-0 left-0 right-0 z-[9999] px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" className="flex-shrink-0" data-testid="nav-logo">
+            <a href="/" className="flex-shrink-0" data-testid="nav-logo">
               <img
                 src={logoBlack}
                 alt="Casa Del Puente Logo"
@@ -236,7 +243,7 @@ export default function GlassNavigation() {
     >
       <nav className="flex items-center gap-8 px-8 py-5">
         {/* Casa Del Puente Logo */}
-        <a href="#home" className="mr-2 flex-shrink-0" data-testid="nav-logo">
+        <a href="/" className="mr-2 flex-shrink-0" data-testid="nav-logo">
           <img
             src={logoBlack}
             alt="Casa Del Puente Logo"

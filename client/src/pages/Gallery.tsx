@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 import { X } from "lucide-react";
 import SEO from "@/components/SEO";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { Button } from "@/components/ui/button";
 
 // Import exterior images
 import mainHouse from "@assets/foto-principal-casa-del-puente_1760137696009.jpg";
@@ -50,7 +52,6 @@ import common3 from "@assets/common-areas/casa-flora-interior-common-living-room
 import common4 from "@assets/common-areas/casa-flora-interior-common-dining-room.jpg";
 import common5 from "@assets/common-areas/casa-flora-interior-common-entryway.jpg";
 import common6 from "@assets/common-areas/casa-flora-interior-common-tv-room.jpg";
-import common7 from "@assets/common-areas/casa-flora-interior-common-stairs-upstairs.jpg";
 import common8 from "@assets/common-areas/casa-flora-interior-hallway.jpg";
 import common9 from "@assets/common-areas/casa-flora-interior-library-bookshelf.jpg";
 
@@ -322,13 +323,6 @@ const galleryImages: GalleryImage[] = [
     title: "TV Room"
   },
   {
-    id: "common-stairs",
-    src: common7,
-    alt: "Casa Del Puente upstairs stairway",
-    category: "amenities",
-    title: "Heritage Staircase"
-  },
-  {
     id: "common-hallway",
     src: common8,
     alt: "Casa Del Puente interior hallway",
@@ -369,16 +363,10 @@ const galleryImages: GalleryImage[] = [
   },
 ];
 
-const categories = [
-  { id: 'all', label: 'All Photos' },
-  { id: 'exterior', label: 'Exterior' },
-  { id: 'rooms', label: 'Bedrooms' },
-  { id: 'gardens', label: 'Gardens' },
-  { id: 'heritage', label: 'Heritage' },
-  { id: 'amenities', label: 'Amenities' },
-];
+const categoryIds = ['all', 'exterior', 'rooms', 'gardens', 'heritage', 'amenities'] as const;
 
 export default function Gallery() {
+  const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
@@ -452,9 +440,32 @@ export default function Gallery() {
       />
 
       <div className="min-h-screen bg-background">
-        {/* Gallery Grid */}
-        <section className="py-16 px-6">
+        <section className="px-6 pt-32 pb-16 md:pt-40">
           <div className="max-w-7xl mx-auto">
+            <header className="mb-10 text-center">
+              <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
+                {t('gallery.pageTitle')}
+              </h1>
+              <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                {t('gallery.description')}
+              </p>
+            </header>
+
+            <div className="flex flex-wrap justify-center gap-2 mb-10">
+              {categoryIds.map((id) => (
+                <Button
+                  key={id}
+                  type="button"
+                  size="sm"
+                  variant={selectedCategory === id ? "default" : "outline"}
+                  onClick={() => setSelectedCategory(id)}
+                  data-testid={`gallery-filter-${id}`}
+                >
+                  {t(`gallery.filters.${id}`)}
+                </Button>
+              ))}
+            </div>
+
             {filteredImages.length === 0 ? (
               <div className="text-center py-20">
                 <p className="text-muted-foreground text-lg">No images found in this category.</p>
