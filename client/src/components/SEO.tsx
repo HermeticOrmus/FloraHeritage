@@ -110,11 +110,11 @@ export default function SEO({
           '@type': 'VideoObject',
           name: 'Casa Del Puente property tour',
           description:
-            'Short tour of Casa Del Puente in Boquete: house exterior, highland garden, living room, and pool terrace.',
+            'Real footage tour of Casa Del Puente in Boquete: the namesake bridge, aerial of the house, garden walk, and dusk facade.',
           thumbnailUrl: `${SITE}/videos/hero-poster.jpg`,
           contentUrl: `${SITE}/videos/hero-tour.mp4`,
           uploadDate: '2026-08-17',
-          duration: 'PT24S',
+          duration: 'PT18S',
         })}
       </script>
     </Helmet>
