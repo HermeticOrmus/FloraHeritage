@@ -103,7 +103,7 @@ export default function HeroSection() {
         alt=""
         className="absolute inset-0 hidden h-full w-full object-cover motion-reduce:block"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/75" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/50" />
       <div className="relative z-10 text-center text-white max-w-4xl px-6">
         <h1
           ref={titleRef}
