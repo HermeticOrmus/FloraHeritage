@@ -41,8 +41,8 @@ export const BOTANICAL_ROOMS: Record<RoomName, BotanicalRoom> = {
   geisha: {
     id: 'geisha',
     displayName: 'Geisha',
-    flowerNameEnglish: 'Geisha Flower',
-    flowerNameSpanish: 'Flor Geisha',
+    flowerNameEnglish: 'Geisha coffee',
+    flowerNameSpanish: 'Café geisha',
     floor: 'downstairs',
     bathroomType: 'ensuite',
     bedConfiguration: '2 single beds',

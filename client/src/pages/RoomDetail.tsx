@@ -62,7 +62,7 @@ export default function RoomDetail() {
         description={`${room.displayName} at Casa Del Puente — ${room.bedConfiguration}, ${room.bathroomType === 'ensuite' ? 'en-suite bathroom' : 'shared bathroom'}. Whole-house rental in Boquete, Panama.`}
       />
       {/* Hero Section with Room Image */}
-      <section className="relative h-[60vh] overflow-hidden">
+      <section className="relative h-[60vh] pt-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{

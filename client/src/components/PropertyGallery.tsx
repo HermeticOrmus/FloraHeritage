@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import GlassCard from "@/components/GlassCard";
 import orchidDivider from "@assets/orchid-divider_1760144115381.png";
@@ -23,7 +24,7 @@ const getGalleryImages = (t: any) => [
   },
   {
     src: gardenWalkway,
-    title: t('gallery.images.heritageArchitecture')
+    title: t('gallery.images.gardenPath')
   },
   {
     src: livingRoom,
@@ -31,7 +32,7 @@ const getGalleryImages = (t: any) => [
   },
   {
     src: houseSunset,
-    title: t('gallery.images.gardenViews')
+    title: t('gallery.images.sunset')
   },
   {
     src: gardenFlowers,
@@ -187,6 +188,14 @@ export default function PropertyGallery() {
               </GlassCard>
             </div>
           ))}
+        </div>
+        <div className="flex flex-wrap justify-center gap-4 mt-10">
+          <Link href="/gallery" className="font-serif text-lg text-casa-blue-deep hover:underline" data-testid="gallery-see-all">
+            {t("gallery.seeAll")}
+          </Link>
+          <Link href="/tour" className="font-serif text-lg text-casa-blue-deep hover:underline" data-testid="gallery-walk-house">
+            {t("tour.walkCta")}
+          </Link>
         </div>
       </div>
     </section>

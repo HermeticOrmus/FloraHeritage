@@ -2,30 +2,33 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SEO from "@/components/SEO";
-import GlassNavigation from "@/components/GlassNavigation";
 import HeroSection from "@/components/HeroSection";
-import BotanicalRoomStories from "@/components/BotanicalRoomStories";
 import PropertyGallery from "@/components/PropertyGallery";
+import BotanicalRoomStories from "@/components/BotanicalRoomStories";
+import SleepingPlan from "@/components/SleepingPlan";
+import BookingInvite from "@/components/BookingInvite";
 import HouseAmenities from "@/components/HouseAmenities";
-import PropertyWalkthroughs from "@/components/PropertyWalkthroughs";
 import LocationMap from "@/components/LocationMap";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import bougainvilleaDivider from "@assets/bougainvillea-divider_1760151444026.png";
 
-// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CasaFlora() {
   useEffect(() => {
-    // Set GSAP defaults for consistent feel
     gsap.defaults({
       duration: 1.2,
-      ease: "power2.out"
+      ease: "power2.out",
     });
-
-    // Refresh ScrollTrigger on load
     ScrollTrigger.refresh();
+
+    if (window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
 
     return () => {
       ScrollTrigger.killAll();
@@ -35,44 +38,42 @@ export default function CasaFlora() {
   return (
     <div className="relative min-h-screen bg-background">
       <SEO path="/" />
-      <GlassNavigation />
 
       <main>
         <section id="home">
           <HeroSection />
         </section>
 
-        <section id="location">
-          <LocationMap />
+        <section id="gallery">
+          <PropertyGallery />
         </section>
+
+        <SleepingPlan />
+
+        <BookingInvite />
 
         <section id="rooms">
           <BotanicalRoomStories />
         </section>
 
-        <PropertyWalkthroughs />
-
-        <section id="gallery">
-          <PropertyGallery />
-        </section>
-
         <section id="amenities" className="bg-background">
           <HouseAmenities />
         </section>
+
+        <section id="location">
+          <LocationMap />
+        </section>
       </main>
 
-      {/* Bougainvillea Divider before Footer */}
       <div>
-        <img 
-          src={bougainvilleaDivider} 
-          alt="" 
-          className="w-full h-auto opacity-90 dark:opacity-70 block" 
+        <img
+          src={bougainvilleaDivider}
+          alt=""
+          className="w-full h-auto opacity-90 dark:opacity-70 block"
         />
       </div>
 
       <Footer />
-
-      {/* Floating WhatsApp Button */}
       <WhatsAppButton floating />
     </div>
   );

@@ -7,6 +7,7 @@
     "amenities": "Amenities",
     "location": "Location",
     "booking": "Booking",
+    "book": "Book",
     "heritage": "Heritage",
     "rules": "Rules"
   },
@@ -24,7 +25,7 @@
     "subtitle": "4 Bedrooms, One Century-Old Story",
     "description": "Rent the entire heritage home in Boquete, Panama's Flower Capital",
     "bookNow": "Book Your Stay",
-    "learnMore": "Discover Our Home",
+    "learnMore": "Walk the house",
     "heritageSince": "Heritage Since 1920",
     "heritageDesc": "Four generations of family hospitality in Panama's highland gardens"
   },
@@ -45,7 +46,9 @@
     "inGarden": "In the garden",
     "inArea": "In the area",
     "groundFloor": "Ground Floor",
-    "topFloor": "Top Floor"
+    "topFloor": "Top Floor",
+    "sharedBath": "Shared bathroom",
+    "seeRoom": "See this room"
   },
   "roomDetails": {
     "geisha": {
@@ -99,6 +102,7 @@
     "watchFull": "Watch the full tour"
   },
   "tour": {
+    "walkCta": "Walk the house",
     "pageTitle": "Walk the house",
     "description": "Step through Casa Del Puente. Look around each room, then click a doorway — or use the arrows — to walk on.",
     "hint": "Move to look around. Click a glowing spot to walk through.",
@@ -142,15 +146,18 @@
       "botanicalHeritage": "Botanical Heritage",
       "diningRoom": "Dining Room",
       "tropicalGarden": "Tropical garden",
-      "mountainSetting": "Mountain Setting"
-    }
+      "mountainSetting": "Mountain Setting",
+      "gardenPath": "Garden path",
+      "sunset": "Golden hour"
+    },
+    "seeAll": "See all photos"
   },
   "amenities": {
     "title": "What Is Included",
     "highSpeedWifi": "High-Speed WiFi",
     "wifiDesc": "Stay connected with reliable internet throughout the property",
-    "beds": "Up to 10 Beds",
-    "bedsDesc": "Comfortable sleeping arrangements for large groups and families",
+    "beds": "Sleeps 10",
+    "bedsDesc": "Eight sleeping places across four rooms for up to ten guests",
     "familyFriendly": "Family Friendly",
     "familyDesc": "Perfect for multi-generational family gatherings and celebrations",
     "babyFriendly": "Baby Friendly",
@@ -193,7 +200,16 @@
     "coffee": "Geisha Coffee Capital",
     "coffeeDesc": "Surrounded by renowned coffee farms"
   },
+  "sleep": {
+    "title": "How ten people sleep",
+    "lead": "The whole house is yours. Two ensuite rooms downstairs, two rooms upstairs sharing a bath. Veranera has bunks for four.",
+    "downstairs": "Geisha and Orquídea — two single beds each, private bathrooms.",
+    "upstairs": "Hortensia — two singles, shared bath. Veranera — two bunks, sleeps four, same shared bath."
+  },
   "booking": {
+    "inviteTitle": "Book with Erika",
+    "inviteBody": "WhatsApp is the way. Tell her your dates and how many people. Whole house only.",
+    "hostName": "Erika",
     "title": "Book the Entire Heritage House",
     "description": "Rent the complete {{bedrooms}}-bedroom home for your group in Boquete, Panama's flower capital and ideal climate, spring year round.",
     "bedrooms": "Bedrooms",

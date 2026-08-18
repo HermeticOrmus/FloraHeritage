@@ -71,7 +71,7 @@ export default function HeroSection() {
     
     // Navigate based on action
     if (action === "Discover Home") {
-      setTimeout(() => setLocation("/gallery"), 300);
+      setTimeout(() => setLocation("/tour"), 300);
     } else if (action === "Book Stay") {
       // Open WhatsApp with pre-filled message
       const message = t('whatsapp.message');

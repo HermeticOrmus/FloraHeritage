@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { Link } from "wouter";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
@@ -20,8 +21,7 @@ import veraneraRoom from "@assets/bedrooms/casa-flora-room-veranera-bunk-beds.jp
 import geishaBathroom from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite.jpg";
 import geishaBathroom2 from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite-angle2.jpg";
 import geishaBathroomShower from "@assets/bathrooms/casa-flora-bathroom-geisha-ensuite-shower.jpg";
-import orquideaBathroom from "@assets/bathrooms/casa-flora-bathroom-groundfloor-guest.jpg";
-import groundFloorGuestBathroom from "@assets/bathrooms/casa-flora-bathroom-orquidea-ensuite.jpg";
+import orquideaBathroom from "@assets/bathrooms/casa-flora-bathroom-orquidea-ensuite.jpg";
 import upstairsSharedBathroom from "@assets/bathrooms/casa-flora-bathroom-upstairs-shared.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -265,43 +265,26 @@ function RoomCard({ room, index, setCardRef, isPremium, t }: RoomCardProps) {
 
         {/* Room Content */}
         <div className="p-6 flex-1 flex flex-col">
-          {/* Room Name & Flower */}
           <div className="mb-4">
             <h3 className="font-serif text-2xl font-bold text-foreground mb-1">
               {room.displayName}
             </h3>
-            <p className="text-sm text-muted-foreground italic">
-              {room.flowerNameEnglish} • {room.flowerNameSpanish}
+            <p className="text-sm text-muted-foreground">
+              {t(`roomDetails.${room.id}.bedConfiguration`)} · {room.capacity} {t("rooms.guestsCount")} · {room.bathroomType === "ensuite" ? t("rooms.ensuite") : t("rooms.sharedBath")}
             </p>
           </div>
 
-          {/* Heritage Story */}
           <p className="text-foreground/90 leading-relaxed mb-4 flex-1">
             {t(`roomDetails.${room.id}.heritageStory`)}
           </p>
 
-          {/* Garden Location */}
-          <div className="mb-4 p-3 bg-mountain-sage/10 rounded-lg">
-            <p className="text-sm text-foreground/80">
-              <span className="font-semibold text-mountain-forest">{room.id === 'geisha' ? t('rooms.inArea') : t('rooms.inGarden')}:</span> {t(`roomDetails.${room.id}.gardenLocation`)}
-            </p>
-          </div>
-
-          {/* Room Details */}
-          <div className="space-y-3 border-t border-foreground/10 pt-4">
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground">{t('rooms.beds')}:</span>
-              <span className="text-sm font-medium text-foreground">{t(`roomDetails.${room.id}.bedConfiguration`)}</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground">{t('rooms.sleeps')}:</span>
-              <span className="text-sm font-medium text-foreground">{room.capacity} {t('rooms.guestsCount')}</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground">{t('rooms.blooms')}:</span>
-              <span className="text-sm font-medium text-hydrangea-deep">{t(`roomDetails.${room.id}.bloomingSeason`)}</span>
-            </div>
-          </div>
+          <Link
+            href={`/rooms/${room.id}`}
+            className="text-sm font-semibold text-casa-blue-deep hover:underline mt-auto"
+            data-testid={`room-link-${room.id}`}
+          >
+            {t("rooms.seeRoom")}
+          </Link>
 
           {/* Features */}
           <div className="mt-4">

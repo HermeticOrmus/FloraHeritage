@@ -50,9 +50,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#booking" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/#booking" className="text-muted-foreground hover:text-foreground transition-colors">
                   {t('nav.booking')}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

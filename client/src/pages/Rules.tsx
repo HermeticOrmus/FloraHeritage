@@ -206,7 +206,7 @@ export default function Rules() {
 
       <section
         ref={heroRef}
-        className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-casa-blue-light/20 via-background to-hydrangea-soft/10"
+        className="relative h-[50vh] pt-24 flex items-center justify-center overflow-hidden bg-gradient-to-br from-casa-blue-light/20 via-background to-hydrangea-soft/10"
       >
         <div className="relative z-10 text-center max-w-4xl px-6">
           <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6 text-foreground">

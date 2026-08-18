@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SEO from "@/components/SEO";
-import GlassNavigation from "@/components/GlassNavigation";
 import HeritageTimeline from "@/components/HeritageTimeline";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
@@ -36,7 +35,7 @@ export default function Heritage() {
 
       {/* Heritage Hero Section */}
       <section 
-        className="relative h-[60vh] flex items-center justify-center overflow-hidden"
+        className="relative h-[60vh] pt-24 flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url(${heroImage})`,
           backgroundSize: 'cover',

@@ -1,287 +1,171 @@
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
-  SheetClose,
   SheetTitle,
   SheetDescription,
   SheetOverlay,
   SheetPortal,
 } from "@/components/ui/sheet";
-
-import { useRippleEffect, rippleContainerClass } from "@/lib/rippleEffect";
 import logoWhite from "@assets/Logo Without Text-white@3x_1760138616483.png";
 import logoBlack from "@assets/Logo Without Text-black_1760138616482.png";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { openErikaWhatsApp } from "@/components/BookingInvite";
 
-const navigationItemsKeys = [
+const navigationItems = [
   { id: "home", key: "nav.home", href: "/" },
-  { id: "rooms", key: "nav.rooms", href: "#rooms" },
+  { id: "rooms", key: "nav.rooms", href: "/#rooms" },
   { id: "tour", key: "nav.tour", href: "/tour" },
   { id: "gallery", key: "nav.gallery", href: "/gallery" },
-  { id: "amenities", key: "nav.amenities", href: "#amenities" },
+  { id: "amenities", key: "nav.amenities", href: "/#amenities" },
   { id: "rules", key: "nav.rules", href: "/rules" },
-];
+] as const;
+
+function sectionFromPath(path: string): string {
+  if (path.startsWith("/gallery")) return "gallery";
+  if (path.startsWith("/tour")) return "tour";
+  if (path.startsWith("/rules")) return "rules";
+  if (path.startsWith("/rooms")) return "rooms";
+  if (path.startsWith("/heritage")) return "home";
+  return "home";
+}
 
 export default function GlassNavigation() {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
-  const [activeSection, setActiveSection] = useState("home");
-  const [isInitialized, setIsInitialized] = useState(false);
+  const [location, setLocation] = useLocation();
+  const [activeSection, setActiveSection] = useState(() => sectionFromPath(location));
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { createRipple } = useRippleEffect('glass');
-  
-  // Refs for GSAP animations
-  const navRef = useRef<HTMLDivElement>(null);
-  const itemRefs = useRef<(HTMLSpanElement | null)[]>([]);
-  
-
-  // Simple initialization without transforms that interfere with fixed positioning
-  useLayoutEffect(() => {
-    if (!isInitialized) {
-      setIsInitialized(true);
-    }
-  }, [isInitialized]);
 
   useEffect(() => {
-    const path = window.location.pathname;
-    if (path.startsWith("/gallery")) setActiveSection("gallery");
-    else if (path.startsWith("/tour")) setActiveSection("tour");
-    else if (path.startsWith("/rules")) setActiveSection("rules");
-    else if (path.startsWith("/heritage")) setActiveSection("home");
-  }, []);
+    setActiveSection(sectionFromPath(location));
+  }, [location]);
 
-  // Subtle hover effect - color only, no scale
-  const handleItemHover = (index: number, isEntering: boolean) => {
-    const item = itemRefs.current[index];
-    if (!item || !isInitialized) return;
-    
-    gsap.to(item, {
-      color: isEntering ? "hsl(200, 32%, 56%)" : "", // Casa Del Puente brand blue hover
-      duration: 0.3,
-      ease: "power2.out",
-      overwrite: "auto"
-    });
-  };
-  
-  // Smooth active state transitions
-  const animateActiveTransition = (newActiveId: string) => {
-    const currentActiveIndex = navigationItemsKeys.findIndex(item => item.id === activeSection);
-    const newActiveIndex = navigationItemsKeys.findIndex(item => item.id === newActiveId);
-    
-    // Create a timeline for coordinated transitions
-    const tl = gsap.timeline();
-    
-    if (currentActiveIndex >= 0) {
-      const currentItem = itemRefs.current[currentActiveIndex];
-      if (currentItem) {
-        tl.to(currentItem, {
-          scale: 0.95,
-          duration: 0.2,
-          ease: "power2.out",
-          overwrite: "auto"
-        })
-        .to(currentItem, {
-          scale: 1,
-          duration: 0.15,
-          ease: "power2.out"
-        }, "-=0.05");
-      }
-    }
-    
-    if (newActiveIndex >= 0) {
-      const newItem = itemRefs.current[newActiveIndex];
-      if (newItem) {
-        tl.fromTo(newItem, 
-          { scale: 1 },
-          {
-            scale: 1.08,
-            duration: 0.25,
-            ease: "power2.out",
-            overwrite: "auto"
-          }, "-=0.1")
-        .to(newItem, {
-          scale: 1,
-          duration: 0.2,
-          ease: "power2.out"
-        }, "-=0.05");
-      }
-    }
-  };
-
-  const handleNavClick = (event: React.MouseEvent, href: string, id: string) => {
-    // Create heritage glass ripple effect
-    createRipple(event);
-    
-    // Animate active state transition if changing sections
-    if (id !== activeSection) {
-      animateActiveTransition(id);
-    }
-    
-    // Close mobile menu if open
+  const go = (href: string, id: string) => {
     setMobileMenuOpen(false);
-    
-    console.log(`Navigating to ${href}`);
     setActiveSection(id);
-    
-    if (href.startsWith('/')) {
-      setTimeout(() => {
-        window.location.href = href;
-      }, 300);
-    } else {
-      const element = document.querySelector(href);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth" });
-        }, 200);
-      } else {
-        window.location.href = `/${href}`;
+
+    if (href.startsWith("/#")) {
+      const hash = href.slice(1);
+      if (window.location.pathname !== "/") {
+        window.location.assign(href);
+        return;
       }
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+      return;
     }
+
+    setLocation(href);
   };
 
-  // Mobile Navigation
+  const book = () => {
+    setMobileMenuOpen(false);
+    openErikaWhatsApp(t("whatsapp.message"));
+  };
+
   if (isMobile) {
     return (
-      <>
-        {/* Minimalist Mobile Header */}
-        <div className="fixed top-0 left-0 right-0 z-[9999] px-4 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <a href="/" className="flex-shrink-0" data-testid="nav-logo">
-              <img
-                src={logoBlack}
-                alt="Casa Del Puente Logo"
-                className="h-11 w-auto dark:hidden drop-shadow-sm"
-              />
-              <img
-                src={logoWhite}
-                alt="Casa Del Puente Logo"
-                className="h-11 w-auto hidden dark:block drop-shadow-lg"
-              />
-            </a>
-            
-            {/* Language & Menu */}
-            <div className="flex items-center gap-2">
-              <LanguageSwitcher />
-              
-              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-                <SheetTrigger asChild>
-                  <button
-                    className="p-2"
-                    data-testid="button-mobile-menu"
-                    aria-label="Menu"
-                  >
-                    {mobileMenuOpen ? (
-                      <X className="h-6 w-6 text-gray-900 dark:text-white drop-shadow-md" strokeWidth={2} />
-                    ) : (
-                      <Menu className="h-6 w-6 text-gray-900 dark:text-white drop-shadow-md" strokeWidth={2} />
-                    )}
-                  </button>
-                </SheetTrigger>
-                <SheetPortal>
-                  <SheetOverlay className="bg-black/40" />
-                  <SheetContent 
-                    side="right" 
-                    className="w-[280px] border-0 bg-white dark:bg-gray-900 p-0 [&>button]:hidden"
-                  >
-                    <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                    <SheetDescription className="sr-only">
-                      Main navigation for Casa Del Puente
-                    </SheetDescription>
-                  
-                  {/* Clean Navigation List */}
+      <div className="fixed top-0 left-0 right-0 z-[9999] px-4 py-3">
+        <div className="flex items-center justify-between rounded-2xl bg-background/80 backdrop-blur-xl border border-border/70 px-3 py-2 shadow-sm">
+          <button type="button" className="flex-shrink-0" data-testid="nav-logo" onClick={() => go("/", "home")}>
+            <img src={logoBlack} alt="Casa Del Puente" className="h-10 w-auto dark:hidden" />
+            <img src={logoWhite} alt="Casa Del Puente" className="h-10 w-auto hidden dark:block" />
+          </button>
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <button className="p-2" data-testid="button-mobile-menu" aria-label="Menu">
+                  {mobileMenuOpen ? (
+                    <X className="h-6 w-6 text-foreground" strokeWidth={2} />
+                  ) : (
+                    <Menu className="h-6 w-6 text-foreground" strokeWidth={2} />
+                  )}
+                </button>
+              </SheetTrigger>
+              <SheetPortal>
+                <SheetOverlay className="bg-black/40" />
+                <SheetContent side="right" className="w-[280px] border-0 bg-background p-0 [&>button]:hidden">
+                  <SheetTitle className="sr-only">Navigation</SheetTitle>
+                  <SheetDescription className="sr-only">Casa Del Puente</SheetDescription>
                   <div className="flex flex-col h-full py-8 pt-16">
                     <div className="flex-1 px-6 space-y-1">
-                      {navigationItemsKeys.map((item) => (
+                      {navigationItems.map((item) => (
                         <button
                           key={item.id}
+                          type="button"
                           className={cn(
-                            "w-full font-serif text-lg text-left transition-all duration-200 px-4 py-3.5 rounded-md",
-                            activeSection === item.id 
-                              ? "text-casa-blue-deep dark:text-casa-blue-light font-semibold bg-casa-blue-light/30 dark:bg-casa-blue-deep/30" 
-                              : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900"
+                            "w-full font-serif text-lg text-left px-4 py-3.5 rounded-md",
+                            activeSection === item.id
+                              ? "text-casa-blue-deep font-semibold bg-casa-blue-light/30"
+                              : "text-foreground hover:bg-muted",
                           )}
-                          onClick={(event) => handleNavClick(event, item.href, item.id)}
+                          onClick={() => go(item.href, item.id)}
                           data-testid={`nav-${item.id}`}
                         >
                           {t(item.key)}
                         </button>
                       ))}
-                    </div>
-                    
-                    {/* Subtle Footer */}
-                    <div className="px-6 pt-6 border-t border-gray-200 dark:border-gray-800">
-                      <p className="font-serif text-sm text-gray-500 dark:text-gray-500 italic">
-                        Casa Del Puente
-                      </p>
-                      <p className="text-xs text-gray-400 dark:text-gray-600 mt-0.5">
-                        Boquete, Panamá
-                      </p>
+                      <button
+                        type="button"
+                        className="w-full font-serif text-lg text-left px-4 py-3.5 rounded-md text-white bg-casa-blue-deep mt-2"
+                        onClick={book}
+                        data-testid="nav-book"
+                      >
+                        {t("nav.book")}
+                      </button>
                     </div>
                   </div>
                 </SheetContent>
-                </SheetPortal>
-              </Sheet>
-            </div>
+              </SheetPortal>
+            </Sheet>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 
-  // Desktop Navigation
   return (
-    <div
-      ref={navRef}
-      className="fixed top-0 left-1/2 transform -translate-x-1/2 z-[9999] mt-6"
-      style={{ position: 'fixed' }}
-    >
-      <nav className="flex items-center gap-6 px-8 py-5">
-        {/* Casa Del Puente Logo */}
-        <a href="/" className="mr-2 flex-shrink-0" data-testid="nav-logo">
-          <img
-            src={logoBlack}
-            alt="Casa Del Puente Logo"
-            className="h-14 w-auto dark:hidden transition-transform duration-300 hover:scale-105"
-          />
-          <img
-            src={logoWhite}
-            alt="Casa Del Puente Logo"
-            className="h-14 w-auto hidden dark:block transition-transform duration-300 hover:scale-105"
-          />
-        </a>
-        
-        {/* Navigation Items */}
-        {navigationItemsKeys.map((item, index) => (
-          <span
+    <div className="fixed top-0 left-1/2 -translate-x-1/2 z-[9999] mt-5">
+      <nav className="flex items-center gap-5 rounded-full bg-background/80 backdrop-blur-xl border border-border/70 px-6 py-3 shadow-sm">
+        <button type="button" className="mr-1 flex-shrink-0" data-testid="nav-logo" onClick={() => go("/", "home")}>
+          <img src={logoBlack} alt="Casa Del Puente" className="h-11 w-auto dark:hidden" />
+          <img src={logoWhite} alt="Casa Del Puente" className="h-11 w-auto hidden dark:block" />
+        </button>
+        {navigationItems.map((item) => (
+          <button
             key={item.id}
-            ref={(el) => { itemRefs.current[index] = el; }}
+            type="button"
             className={cn(
-              "font-serif text-xl cursor-pointer transition-all duration-300",
-              activeSection === item.id 
-                ? "text-foreground font-semibold" 
-                : "text-gray-800 dark:text-foreground"
+              "font-serif text-lg cursor-pointer transition-colors",
+              activeSection === item.id
+                ? "text-casa-blue-deep font-semibold"
+                : "text-foreground/80 hover:text-casa-blue-medium",
             )}
-            onClick={(event) => handleNavClick(event, item.href, item.id)}
-            onMouseEnter={() => handleItemHover(index, true)}
-            onMouseLeave={() => handleItemHover(index, false)}
+            onClick={() => go(item.href, item.id)}
             data-testid={`nav-${item.id}`}
           >
             {t(item.key)}
-          </span>
+          </button>
         ))}
-        
-        {/* Language Switcher */}
-        <div className="ml-2">
-          <LanguageSwitcher />
-        </div>
+        <button
+          type="button"
+          className="font-serif text-lg rounded-full bg-casa-blue-deep text-white px-4 py-1.5 hover:bg-casa-blue-medium"
+          onClick={book}
+          data-testid="nav-book"
+        >
+          {t("nav.book")}
+        </button>
+        <LanguageSwitcher />
       </nav>
     </div>
   );

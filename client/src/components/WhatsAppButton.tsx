@@ -41,7 +41,7 @@ export default function WhatsAppButton({
       data-testid="whatsapp-button"
     >
       <MessageCircle className="w-5 h-5" />
-      Contact via WhatsApp
+      {t('booking.contactWhatsApp')}
     </button>
   );
 }

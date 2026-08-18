@@ -7,6 +7,7 @@
     "amenities": "Comodidades",
     "location": "Ubicación",
     "booking": "Reservar",
+    "book": "Reservar",
     "heritage": "Historia",
     "rules": "Normas"
   },
@@ -24,7 +25,7 @@
     "subtitle": "4 Habitaciones, Una Historia Centenaria",
     "description": "Alquila la casa patrimonial completa en Boquete,\nla Capital de las Flores de Panamá",
     "bookNow": "Reserva Tu Estadía",
-    "learnMore": "Descubre Nuestro Hogar",
+    "learnMore": "Recorre la casa",
     "heritageSince": "Patrimonio Desde 1920",
     "heritageDesc": "Cuatro generaciones de hospitalidad familiar en los jardines de montaña de Panamá"
   },
@@ -45,7 +46,9 @@
     "inGarden": "En el jardín",
     "inArea": "En el área",
     "groundFloor": "Planta Baja",
-    "topFloor": "Planta Alta"
+    "topFloor": "Planta Alta",
+    "sharedBath": "Baño compartido",
+    "seeRoom": "Ver esta habitación"
   },
   "roomDetails": {
     "geisha": {
@@ -99,6 +102,7 @@
     "watchFull": "Ver el recorrido completo"
   },
   "tour": {
+    "walkCta": "Recorre la casa",
     "pageTitle": "Recorre la casa",
     "description": "Entra a Casa Del Puente. Mira alrededor de cada habitación y toca una puerta — o las flechas — para seguir caminando.",
     "hint": "Mueve para mirar. Toca un punto brillante para entrar.",
@@ -142,15 +146,18 @@
       "botanicalHeritage": "Herencia Botánica",
       "diningRoom": "Comedor",
       "tropicalGarden": "Jardín tropical",
-      "mountainSetting": "Entorno Montañoso"
-    }
+      "mountainSetting": "Entorno Montañoso",
+      "gardenPath": "Sendero del jardín",
+      "sunset": "Hora dorada"
+    },
+    "seeAll": "Ver todas las fotos"
   },
   "amenities": {
     "title": "Lo Que Está Incluido",
     "highSpeedWifi": "WiFi de Alta Velocidad",
     "wifiDesc": "Mantente conectado con internet confiable en toda la propiedad",
-    "beds": "Hasta 10 Camas",
-    "bedsDesc": "Arreglos cómodos para dormir para grupos grandes y familias",
+    "beds": "Hasta 10 huéspedes",
+    "bedsDesc": "Ocho plazas en cuatro habitaciones, hasta diez personas",
     "familyFriendly": "Para Familias",
     "familyDesc": "Perfecto para estadías familiares",
     "babyFriendly": "Para Bebés",
@@ -193,7 +200,16 @@
     "coffee": "Capital del Café Geisha",
     "coffeeDesc": "Rodeado de renombradas fincas de café"
   },
+  "sleep": {
+    "title": "Cómo duermen diez personas",
+    "lead": "La casa completa es de ustedes. Dos habitaciones en suite abajo, dos arriba con baño compartido. Veranera tiene literas para cuatro.",
+    "downstairs": "Geisha y Orquídea — dos camas individuales cada una, baño privado.",
+    "upstairs": "Hortensia — dos individuales, baño compartido. Veranera — dos literas, duermen cuatro, el mismo baño compartido."
+  },
   "booking": {
+    "inviteTitle": "Reserva con Erika",
+    "inviteBody": "WhatsApp es el camino. Dile tus fechas y cuántas personas. Solo casa completa.",
+    "hostName": "Erika",
     "title": "Reserva la Casa Patrimonial Completa",
     "description": "Alquila la casa completa de {{bedrooms}} habitaciones para tu grupo en Boquete, la capital de las flores de Panamá con clima ideal, primavera todo el año.",
     "bedrooms": "Habitaciones",
