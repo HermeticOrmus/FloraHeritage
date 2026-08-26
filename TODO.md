@@ -147,3 +147,4 @@ While we have 1 photo per room, we should capture:
 **Document Created**: 2025-10-03
 **Status**: Active task tracking
 **Priority Items**: Begonia room photo, flower close-ups
+- [ ] 3D splat tour, Phase 6c: send the capture brief (docs/capture-brief-3d.md) to whoever is at the house (Erika or Goly), decide recipient first. Videos must come back as WhatsApp documents or via Drive. Then retrain on Mercury/Sun and embed the splat viewer on /tour. (parked 2026-08-26)
