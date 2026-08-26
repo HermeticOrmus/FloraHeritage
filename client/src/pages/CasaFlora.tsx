@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SEO from "@/components/SEO";
@@ -8,7 +8,9 @@ import BotanicalRoomStories from "@/components/BotanicalRoomStories";
 import SleepingPlan from "@/components/SleepingPlan";
 import BookingInvite from "@/components/BookingInvite";
 import HouseAmenities from "@/components/HouseAmenities";
-import LocationMap from "@/components/LocationMap";
+
+// mapbox-gl is the heaviest dependency on the site; keep it out of the main chunk.
+const LocationMap = lazy(() => import("@/components/LocationMap"));
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import bougainvilleaDivider from "@assets/bougainvillea-divider_1760151444026.png";
@@ -61,7 +63,9 @@ export default function CasaFlora() {
         </section>
 
         <section id="location">
-          <LocationMap />
+          <Suspense fallback={<div className="min-h-[400px] bg-background" />}>
+            <LocationMap />
+          </Suspense>
         </section>
       </main>
 
