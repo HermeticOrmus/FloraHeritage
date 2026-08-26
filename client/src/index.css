@@ -114,7 +114,7 @@
   --chart-4: 280 45% 55%;
   --chart-5: 180 45% 45%;
 
-  --font-sans: Inter, sans-serif;
+  --font-sans: Lora, Georgia, serif;
   --font-serif: "Playfair Display", serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem; /* 8px */

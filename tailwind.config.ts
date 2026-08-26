@@ -113,7 +113,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Lora", "Georgia", "serif"],
         serif: ["Playfair Display", "serif"],
         mono: ["var(--font-mono)"],
       },
