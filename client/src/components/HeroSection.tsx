@@ -120,11 +120,6 @@ export default function HeroSection() {
           <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto whitespace-pre-line">
             {t('hero.description')}
           </p>
-          <div className="mt-6 inline-flex items-baseline gap-2 bg-black/55 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/25">
-            <span className="text-4xl md:text-5xl font-serif font-bold text-white">{t('pricing.amount')}</span>
-            <span className="text-lg text-white/95">/ {t('pricing.night')}</span>
-            <span className="text-white/85 ml-2">• {t('pricing.minNights')}</span>
-          </div>
         </div>
         
         <div ref={ctaRef} className="transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
