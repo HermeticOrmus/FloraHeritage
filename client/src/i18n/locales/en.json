@@ -9,7 +9,7 @@
     "booking": "Booking",
     "book": "Book",
     "heritage": "Heritage",
-    "rules": "Rules"
+    "rules": "Before You Arrive"
   },
   "whatsapp": {
     "message": "Hello! I'm interested in renting Casa Del Puente in Boquete, Panama ($550/night, whole house, minimum 2 nights)."
@@ -23,7 +23,7 @@
   "hero": {
     "title": "Casa Del Puente",
     "subtitle": "4 Bedrooms, One Century-Old Story",
-    "description": "Rent the entire heritage home in Boquete, Panama's Flower Capital",
+    "description": "A century-old home wrapped in storied gardens\nin the Boquete highlands. A place that invites you to stay.",
     "bookNow": "Book Your Stay",
     "learnMore": "Walk the house",
     "heritageSince": "Heritage Since 1920",
@@ -52,28 +52,28 @@
   },
   "roomDetails": {
     "geisha": {
-      "heritageStory": "Geisha celebrates the delicate beauty and refined elegance that defines this special room. Named for its graceful aesthetic and serene atmosphere, this downstairs bedroom offers peaceful garden views.",
-      "gardenLocation": "Boquete is one of the world's geisha coffee capitals, with prized coffee plants thriving throughout this renowned growing region. You'll find geisha coffee farms and plantations all around town.",
+      "heritageStory": "Serene and refined like the geisha coffee that made Boquete famous: ground floor, soft light, and quiet garden views.",
+      "gardenLocation": "Boquete is one of the world's geisha coffee capitals: you'll find prize-winning farms all around town.",
       "bloomingSeason": "Year-round garden beauty",
       "bedConfiguration": "2 single beds",
       "features": ["Private en-suite bathroom", "2 single beds", "Garden views", "Original hardwood details", "Elegant décor"]
     },
     "orquidea": {
-      "heritageStory": "Orquídea honors Panama's national flower—the exquisite \"Holy Ghost Orchid\" (Peristeria elata). Orchids flourish in Boquete's cloud forests and are the crown jewel of our annual Flower Fair each January.",
+      "heritageStory": "Named for Panama's national flower, the Holy Ghost Orchid, which blooms in Boquete's cloud forests.",
       "gardenLocation": "Look for orchids throughout our gardens, especially near shaded walkways and tree trunks where they grow naturally.",
       "bloomingSeason": "Year-round (peak in January during Flower Fair)",
       "bedConfiguration": "2 single beds",
       "features": ["Private en-suite bathroom", "2 single beds", "Premium room", "Cloud forest views", "Elegant orchid accents"]
     },
     "hortensia": {
-      "heritageStory": "Hortensia celebrates the romantic hydrangeas that thrive in Boquete's cool highland climate. These European immigrants have flourished here for over a century, their white and light blue blossoms can be seen all over the garden.",
+      "heritageStory": "Hydrangeas arrived from Europe over a century ago and stayed: their white and blue blooms paint the whole garden.",
       "gardenLocation": "Find hydrangeas in the garden and throughout the property.",
       "bloomingSeason": "Year-round (peak bloom in rainy season)",
       "bedConfiguration": "2 single beds",
       "features": ["2 single beds", "Shared upstairs bathroom", "Peaceful garden views", "Hydrangea-themed accents", "Mountain breeze windows"]
     },
     "veranera": {
-      "heritageStory": "Veranera celebrates the vibrant bougainvillea that cascades over our walls and fences in brilliant magenta and purple. The Spanish name \"Veranera\" means \"summer flower,\" evoking endless tropical warmth.",
+      "heritageStory": "Bougainvillea spills in magenta cascades over the house walls. \"Veranera\" means summer flower, and that is how it feels.",
       "gardenLocation": "See bougainvillea cascading over walls and fences throughout the property, creating brilliant color arrangements.",
       "bloomingSeason": "Year-round",
       "bedConfiguration": "2 bunk beds",
@@ -129,7 +129,7 @@
   "gallery": {
     "title": "Casa Del Puente",
     "pageTitle": "Photo Gallery",
-    "description": "A home with charming details and modern amenities in a fantastic location — just an 8-minute walk to town center, with a private heritage garden, fantastic hikes within walking distance, and a public riverside walkway right in front.",
+    "description": "A home full of charming details, an 8-minute walk from town: heritage garden, trails nearby, and the riverside walkway right out front.",
     "filters": {
       "all": "All photos",
       "exterior": "Exterior",
@@ -211,7 +211,7 @@
     "inviteBody": "WhatsApp is the way. Tell her your dates and how many people. Whole house only.",
     "hostName": "Erika",
     "title": "Book the Entire Heritage House",
-    "description": "Rent the complete {{bedrooms}}-bedroom home for your group in Boquete, Panama's flower capital and ideal climate, spring year round.",
+    "description": "A beautiful home with four bedrooms, four bathrooms, and warm spaces made for sharing with family. Wrapped in storied gardens and the natural beauty of the Boquete highlands, it is a place that invites you to stay, enjoy, and connect.",
     "bedrooms": "Bedrooms",
     "guestsMax": "Guests Maximum",
     "heritage": "Years of Heritage",
@@ -230,8 +230,8 @@
     "submitting": "Submitting..."
   },
   "rules": {
-    "title": "House Rules",
-    "description": "We appreciate your cooperation to ensure a pleasant stay for all our guests",
+    "title": "Before You Arrive",
+    "description": "Everything you need to know for an easy, happy stay",
     "checkIn": "Check-In / Check-Out",
     "checkInDesc": "Check-in starts at 3:00 PM. Check-out is at 11:00 AM. Early check-in or late check-out may be arranged based on availability.",
     "maxGuests": "Maximum Occupancy",

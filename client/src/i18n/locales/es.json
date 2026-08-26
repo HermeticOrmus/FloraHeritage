@@ -9,7 +9,7 @@
     "booking": "Reservar",
     "book": "Reservar",
     "heritage": "Historia",
-    "rules": "Normas"
+    "rules": "Antes de Llegar"
   },
   "whatsapp": {
     "message": "¡Hola! Estoy interesado en alquilar Casa Del Puente en Boquete, Panamá ($550/noche, casa completa, mínimo 2 noches)."
@@ -23,7 +23,7 @@
   "hero": {
     "title": "Casa Del Puente",
     "subtitle": "4 Habitaciones, Una Historia Centenaria",
-    "description": "Alquila la casa patrimonial completa en Boquete,\nla Capital de las Flores de Panamá",
+    "description": "Una casa centenaria rodeada de jardines llenos de historia,\nen las montañas de Boquete. Un lugar que invita a quedarse.",
     "bookNow": "Reserva Tu Estadía",
     "learnMore": "Recorre la casa",
     "heritageSince": "Patrimonio Desde 1920",
@@ -52,28 +52,28 @@
   },
   "roomDetails": {
     "geisha": {
-      "heritageStory": "Geisha celebra la belleza delicada y la elegancia refinada que define esta habitación especial. Nombrada por su estética graciosa y atmósfera serena, esta habitación de planta baja ofrece vistas tranquilas al jardín.",
-      "gardenLocation": "Boquete es una de las capitales mundiales del café geisha, con plantas de café premiadas prosperando en toda esta reconocida región cafetalera. Encontrarás fincas y plantaciones de café geisha por toda la ciudad.",
+      "heritageStory": "Serena y refinada como el café geisha que hizo famosa a Boquete: planta baja, luz suave y vistas tranquilas al jardín.",
+      "gardenLocation": "Boquete es una de las capitales mundiales del café geisha: encontrarás fincas premiadas alrededor de todo el pueblo.",
       "bloomingSeason": "Belleza del jardín todo el año",
       "bedConfiguration": "2 camas individuales",
       "features": ["Baño privado en suite", "2 camas individuales", "Vistas al jardín", "Detalles originales de madera", "Decoración elegante"]
     },
     "orquidea": {
-      "heritageStory": "Orquídea honra la flor nacional de Panamá—la exquisita \"Orquídea del Espíritu Santo\" (Peristeria elata). Las orquídeas florecen en los bosques nublados de Boquete y son la joya de la corona de nuestra Feria de las Flores anual cada enero.",
+      "heritageStory": "Honra la flor nacional de Panamá, la Orquídea del Espíritu Santo, que florece en los bosques nublados de Boquete.",
       "gardenLocation": "Busca orquídeas en nuestros jardines, especialmente cerca de los pasillos sombreados y troncos de árboles donde crecen naturalmente.",
       "bloomingSeason": "Todo el año (pico en enero durante la Feria de las Flores)",
       "bedConfiguration": "2 camas individuales",
       "features": ["Baño privado en suite", "2 camas individuales", "Habitación premium", "Vistas al bosque nublado", "Acentos elegantes de orquídeas"]
     },
     "hortensia": {
-      "heritageStory": "Hortensia celebra las románticas hortensias que prosperan en el clima fresco de las tierras altas de Boquete. Estas inmigrantes europeas han florecido aquí durante más de un siglo, sus flores blancas y azul claro se pueden ver por todo el jardín.",
+      "heritageStory": "Las hortensias llegaron de Europa hace más de un siglo y se quedaron: sus flores blancas y azules pintan todo el jardín.",
       "gardenLocation": "Encuentra hortensias en el jardín y por toda la propiedad.",
       "bloomingSeason": "Todo el año (floración máxima en temporada de lluvias)",
       "bedConfiguration": "2 camas individuales",
       "features": ["2 camas individuales", "Baño compartido planta alta", "Vistas tranquilas al jardín", "Acentos temáticos de hortensias", "Ventanas con brisa de montaña"]
     },
     "veranera": {
-      "heritageStory": "Veranera celebra las vibrantes buganvilias que caen en cascada sobre nuestros muros y cercas en brillante magenta y púrpura. El nombre español \"Veranera\" significa \"flor de verano,\" evocando la calidez tropical sin fin.",
+      "heritageStory": "La buganvilia cae en cascada magenta sobre los muros de la casa. \"Veranera\" significa flor de verano, y así se siente.",
       "gardenLocation": "Observa veraneras cayendo sobre muros y cercas por toda la propiedad, creando cascadas de brillantes colores.",
       "bloomingSeason": "Todo el año",
       "bedConfiguration": "2 literas",
@@ -129,7 +129,7 @@
   "gallery": {
     "title": "Casa Del Puente",
     "pageTitle": "Galería",
-    "description": "Detalles auténticos y comodidades modernas en una ubicación fantástica — a solo 8 minutos a pie del centro del pueblo, con un jardín patrimonial privado, fabulosas caminatas a poca distancia, y un paseo público junto al río, justo frente a la propiedad.",
+    "description": "Una casa llena de detalles con encanto, a 8 minutos a pie del centro: jardín patrimonial, senderos cercanos y el paseo del río justo al frente.",
     "filters": {
       "all": "Todas",
       "exterior": "Exterior",
@@ -211,7 +211,7 @@
     "inviteBody": "WhatsApp es el camino. Dile tus fechas y cuántas personas. Solo casa completa.",
     "hostName": "Erika",
     "title": "Reserva la Casa Patrimonial Completa",
-    "description": "Alquila la casa completa de {{bedrooms}} habitaciones para tu grupo en Boquete, la capital de las flores de Panamá con clima ideal, primavera todo el año.",
+    "description": "Una hermosa casa de cuatro habitaciones, cuatro baños y espacios acogedores para compartir en familia. Rodeada de jardines llenos de historia y de la belleza natural de las montañas de Boquete, es un lugar que invita a quedarse, disfrutar y conectar.",
     "bedrooms": "Habitaciones",
     "guestsMax": "Huéspedes Máximo",
     "heritage": "Años de Historia",
@@ -230,8 +230,8 @@
     "submitting": "Enviando..."
   },
   "rules": {
-    "title": "Normas de la Casa",
-    "description": "Apreciamos tu cooperación para garantizar una estancia agradable para todos nuestros huéspedes",
+    "title": "Antes de tu Llegada",
+    "description": "Todo lo que necesitas saber para una estadía feliz y sin sorpresas",
     "checkIn": "Entrada / Salida",
     "checkInDesc": "El check-in comienza a las 3:00 PM. El check-out es a las 11:00 AM. Se puede organizar entrada temprana o salida tardía según disponibilidad.",
     "maxGuests": "Ocupación Máxima",
