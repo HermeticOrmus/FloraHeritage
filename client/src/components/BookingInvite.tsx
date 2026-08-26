@@ -25,7 +25,7 @@ export default function BookingInvite() {
           {t("booking.hostName")} · {ERIKA_DISPLAY}
         </p>
         <p className="text-sm text-muted-foreground mb-8">
-          {t("pricing.amount")} / {t("pricing.night")} · {t("pricing.minNights")} · {t("pricing.sleeps")}
+          {t("pricing.minNights")} · {t("pricing.sleeps")}
         </p>
         <button
           type="button"
