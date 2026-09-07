@@ -8,6 +8,7 @@ interface ThemeProviderProps {
 export function ThemeProvider({ children, defaultTheme = "dark" }: ThemeProviderProps) {
   useEffect(() => {
     // Set the default theme on mount
+    document.documentElement.classList.remove(defaultTheme === "light" ? "dark" : "light");
     document.documentElement.classList.add(defaultTheme);
     
     // Clean up function to remove theme class if component unmounts

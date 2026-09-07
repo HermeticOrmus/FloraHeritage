@@ -129,7 +129,7 @@ export default function HouseAmenities() {
         </div>
 
         {/* Main amenities grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
           {mainAmenities.map((amenity, index) => {
             const IconComponent = amenity.icon;
             return (
@@ -140,7 +140,7 @@ export default function HouseAmenities() {
               >
                 <GlassCard className="p-6 text-center hover-elevate h-full">
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${amenity.color}`}>
-                    <IconComponent className="w-8 h-8 text-white" />
+                    <IconComponent className="w-8 h-8 text-casa-blue-deep" />
                   </div>
                   <h3 className="font-serif text-lg font-semibold text-foreground mb-3">
                     {amenity.title}

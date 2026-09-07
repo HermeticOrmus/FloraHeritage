@@ -72,7 +72,7 @@
 
   --casa-blue-medium: 200 32% 56%;
 
-  --casa-blue-deep: 200 35% 44%;
+  --casa-blue-deep: 200 40% 30%;
 
   --casa-blue-dark: 200 36% 32%;
 
@@ -114,8 +114,8 @@
   --chart-4: 280 45% 55%;
   --chart-5: 180 45% 45%;
 
-  --font-sans: Open Sans, sans-serif;
-  --font-serif: Georgia, serif;
+  --font-sans: Lora, Georgia, serif;
+  --font-serif: "Playfair Display", serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem; /* 8px */
   --shadow-2xs: 0px 2px 0px 0px hsl(208 20% 20% / 0.02);

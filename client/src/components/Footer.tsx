@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { Phone, MapPin, Instagram } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
 
 export default function Footer() {
@@ -50,9 +50,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#booking" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/#booking" className="text-muted-foreground hover:text-foreground transition-colors">
                   {t('nav.booking')}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -69,10 +69,6 @@ export default function Footer() {
                 <Phone size={16} className="flex-shrink-0 text-casa-blue-medium" />
                 <a href="tel:+50764160902">+507 6416-0902</a>
               </li>
-              <li className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-                <Mail size={16} className="flex-shrink-0 text-casa-blue-medium" />
-                <a href="mailto:info@casadelpuente.com">info@casadelpuente.com</a>
-              </li>
             </ul>
           </div>
 
@@ -87,7 +83,7 @@ export default function Footer() {
                 className="text-muted-foreground hover:text-casa-blue-medium transition-colors"
                 aria-label="TikTok"
               >
-                <SiTiktok size={20} />
+                <SiTiktok size={20} aria-hidden="true" />
               </a>
               <a
                 href="https://instagram.com/casadelpuente_bqt"
@@ -96,7 +92,7 @@ export default function Footer() {
                 className="text-muted-foreground hover:text-hydrangea-deep transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram size={20} />
+                <Instagram size={20} aria-hidden="true" />
               </a>
             </div>
             <div className="pt-4">

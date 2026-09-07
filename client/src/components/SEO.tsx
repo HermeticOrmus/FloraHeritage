@@ -14,7 +14,6 @@ const LODGING_JSON_LD = {
   description:
     'Century-old heritage home in Boquete, Panama. Whole-house rental, four botanical bedrooms, gardens, and river access. Four generations of family stewardship since 1920.',
   telephone: PHONE,
-  email: 'info@casadelpuente.com',
   priceRange: 'USD 550',
   currenciesAccepted: 'USD',
   address: {
@@ -62,7 +61,7 @@ interface SEOProps {
 
 export default function SEO({
   title = 'Casa Del Puente | Heritage Whole-House Rental in Boquete, Panama',
-  description = 'Rent the entire century-old Casa Del Puente in Boquete, Panama. Four botanical bedrooms, gardens, and river access. $550/night, minimum 2 nights, sleeps 10. Book on WhatsApp.',
+  description = 'Rent the entire century-old Casa Del Puente in Boquete, Panama. Four botanical bedrooms, storied gardens, and river access. Whole house, sleeps 10. Book on WhatsApp.',
   keywords = 'Casa Del Puente, Boquete vacation rental, heritage home Panama, whole house rental Boquete, Chiriqui, geisha coffee region, flower capital Panama',
   image = DEFAULT_IMAGE,
   path = '/',

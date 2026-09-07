@@ -32,7 +32,7 @@ export default function LanguageSwitcher() {
       variant="ghost"
       size="sm"
       onClick={toggleLanguage}
-      className="hover-elevate font-serif font-semibold min-w-[3rem]"
+      className="hover-elevate font-serif font-semibold min-w-[3rem] text-foreground"
       data-testid="button-language-switch"
       title={`Switch to ${otherLanguage.name}`}
     >
