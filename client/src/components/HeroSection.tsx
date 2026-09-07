@@ -84,7 +84,7 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative h-screen flex items-center justify-center overflow-hidden bg-stone-950"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-stone-950 pt-28 md:pt-32 pb-12"
       data-testid="hero-section"
     >
       <video
