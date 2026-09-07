@@ -74,7 +74,7 @@ export default function GlassNavigation() {
 
   if (isMobile) {
     return (
-      <div className="fixed top-0 left-0 right-0 z-[9999] px-4 py-3">
+      <div className="absolute top-0 left-0 right-0 z-[9999] px-4 py-3">
         <div className="flex items-center justify-between rounded-full bg-background/80 backdrop-blur-xl border border-border/70 px-3 py-2 shadow-lg shadow-black/10">
           <button type="button" className="flex-shrink-0" data-testid="nav-logo" onClick={() => go("/", "home")}>
             <img src={logoBlack} alt="Casa Del Puente" className="h-10 w-auto dark:hidden" />
@@ -135,7 +135,7 @@ export default function GlassNavigation() {
   }
 
   return (
-    <div className="fixed top-0 inset-x-0 z-[9999] mt-5 flex justify-center pointer-events-none">
+    <div className="absolute top-0 inset-x-0 z-[9999] mt-5 flex justify-center pointer-events-none">
       <nav className="pointer-events-auto flex items-center gap-2 lg:gap-3 rounded-full bg-background/95 backdrop-blur-xl border border-border/70 pl-4 pr-3 py-2 shadow-lg shadow-black/10">
         <button type="button" className="flex-shrink-0" data-testid="nav-logo" onClick={() => go("/", "home")}>
           <img src={logoBlack} alt="Casa Del Puente" className="h-11 w-auto dark:hidden" />

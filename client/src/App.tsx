@@ -36,7 +36,7 @@ function App() {
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-        <ThemeProvider defaultTheme="light">
+        <ThemeProvider defaultTheme="dark">
           <TooltipProvider>
             <GlassNavigation />
             <Toaster />
