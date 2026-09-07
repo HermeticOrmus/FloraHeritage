@@ -14,7 +14,6 @@ const LODGING_JSON_LD = {
   description:
     'Century-old heritage home in Boquete, Panama. Whole-house rental, four botanical bedrooms, gardens, and river access. Four generations of family stewardship since 1920.',
   telephone: PHONE,
-  priceRange: 'USD 550',
   currenciesAccepted: 'USD',
   address: {
     '@type': 'PostalAddress',
